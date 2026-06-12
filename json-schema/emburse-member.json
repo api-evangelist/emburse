@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/json-schema/emburse-member.json",
+  "title": "APIMember",
+  "description": "Emburse APIMember schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "url": {
+      "type": "string",
+      "readOnly": true
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "first_name": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "last_name": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "role": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string",
+      "nullable": true,
+      "pattern": "^[0-9A-z\\.\\-]+$",
+      "minLength": 1,
+      "maxLength": 36
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "phone_number": {
+      "type": "string",
+      "nullable": true
+    },
+    "requires_terms_agreement": {
+      "type": "string",
+      "readOnly": true
+    }
+  }
+}

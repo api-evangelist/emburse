@@ -46,6 +46,8 @@ apis:
     properties:
       - type: Documentation
         url: https://cards.emburse.com/api/v1/docs/
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-virtual-cards-openapi.yml
   - name: Emburse Enterprise REST APIs
     description: >
       Swagger-documented REST APIs for Emburse Enterprise (Chrome River)
@@ -63,6 +65,30 @@ apis:
     properties:
       - type: Documentation
         url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-allocation-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-entity-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-expense-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-exported-reports-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-paid-expense-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-expense-image-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-invoice-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-person-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-preapproval-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-purchase-order-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-vendor-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-contacts-openapi.yml
   - name: Emburse Professional API
     description: >
       REST API for Emburse Professional (formerly Certify) supporting push/pull
@@ -113,6 +139,10 @@ common:
     url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/rate-limits/emburse-rate-limits.yml
   - type: FinOps
     url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/finops/emburse-finops.yml
+  - type: Vocabulary
+    url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/vocabulary/emburse-vocabulary.yml
+  - type: JSONLDContext
+    url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/json-ld/emburse-context.jsonld
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/json-schema/emburse-allowance.json",
+  "title": "APIAllowance",
+  "description": "Emburse APIAllowance schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "url": {
+      "type": "string",
+      "readOnly": true
+    },
+    "interval": {
+      "type": "string",
+      "nullable": true
+    },
+    "amount": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "maximum": 100000000000000,
+      "minimum": 0.0
+    },
+    "transaction_limit": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "maximum": 100000000000000,
+      "minimum": 0.0,
+      "nullable": true
+    },
+    "daily_limit": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "maximum": 100000000000000,
+      "minimum": 0.01,
+      "nullable": true
+    },
+    "single_use": {
+      "type": "boolean"
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "maximum": 9223372036854775807,
+        "minimum": 1,
+        "format": "int64"
+      },
+      "maxItems": 10
+    },
+    "balance": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "maximum": 100000000000000,
+      "minimum": -100000000000000,
+      "readOnly": true
+    },
+    "reset": {
+      "type": "boolean",
+      "writeOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "increment": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "maximum": 100000000000000,
+      "minimum": 0.0,
+      "writeOnly": true
+    }
+  }
+}

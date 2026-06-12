@@ -1,0 +1,149 @@
+vocabulary:
+  name: Emburse API Vocabulary
+  description: >
+    Key terms and concepts used across Emburse APIs including Virtual Cards,
+    Enterprise (Chrome River), Professional (Certify), and Spend (Abacus) products.
+  url: https://www.emburse.com/api-docs
+  version: '1.0'
+
+terms:
+
+  - term: Card
+    definition: >
+      A virtual or physical corporate spending card issued to a member.
+      Cards have a status (active, frozen, closed), spend controls via allowances,
+      and are linked to an account.
+    apis:
+      - Emburse Virtual Cards API
+    paths:
+      - /cards
+      - /cards/{id}
+
+  - term: Account
+    definition: >
+      A funding account associated with a company that backs one or more cards.
+      Accounts hold balance and statement lines.
+    apis:
+      - Emburse Virtual Cards API
+    paths:
+      - /accounts
+      - /accounts/{id}
+
+  - term: Member
+    definition: >
+      A user or cardholder within the Emburse platform who can be assigned cards
+      and associated with transactions and allowances.
+    apis:
+      - Emburse Virtual Cards API
+    paths:
+      - /members
+      - /members/{id}
+
+  - term: Transaction
+    definition: >
+      A financial transaction made using an Emburse card, including merchant details,
+      amount, currency, and status.
+    apis:
+      - Emburse Virtual Cards API
+    paths:
+      - /transactions
+      - /transactions/{id}
+
+  - term: Allowance
+    definition: >
+      Spend controls applied to a card that limit how much, how often, and in what
+      categories the card can be used.
+    apis:
+      - Emburse Virtual Cards API
+    paths:
+      - /allowances/{id}
+
+  - term: ExpenseReport
+    definition: >
+      A collection of expense line items submitted by an employee for reimbursement.
+      Core entity in Enterprise and Professional APIs.
+    apis:
+      - Emburse Enterprise REST APIs
+      - Emburse Professional API
+
+  - term: Invoice
+    definition: >
+      An accounts payable document from a vendor representing an amount owed.
+      Managed via the Enterprise Invoice API.
+    apis:
+      - Emburse Enterprise REST APIs
+
+  - term: PreApproval
+    definition: >
+      A request submitted before incurring a business expense to obtain manager
+      or policy approval. Managed via the Enterprise PreApproval API.
+    apis:
+      - Emburse Enterprise REST APIs
+
+  - term: PurchaseOrder
+    definition: >
+      A formal document issued to a vendor authorizing a purchase. Managed
+      via the Enterprise Purchase Order API.
+    apis:
+      - Emburse Enterprise REST APIs
+
+  - term: Allocation
+    definition: >
+      A cost center, project code, or GL account assignment applied to an expense
+      or transaction for accounting categorization.
+    apis:
+      - Emburse Enterprise REST APIs
+
+  - term: Person
+    definition: >
+      An employee or user record in the Emburse Enterprise system including
+      profile information, roles, and organizational hierarchy.
+    apis:
+      - Emburse Enterprise REST APIs
+
+  - term: Vendor
+    definition: >
+      A supplier or payee entity in the accounts payable workflow used for
+      invoice and purchase order management.
+    apis:
+      - Emburse Enterprise REST APIs
+
+  - term: Requisition
+    definition: >
+      An internal purchase request that may be converted into a purchase order
+      or used to provision a virtual card.
+    apis:
+      - Emburse Virtual Cards API
+
+  - term: OAuth2
+    definition: >
+      The authentication protocol used by the Emburse Virtual Cards API.
+      Clients obtain bearer tokens via the /oauth/token endpoint using
+      client credentials or authorization code flows.
+    apis:
+      - Emburse Virtual Cards API
+
+  - term: IdempotencyKey
+    definition: >
+      A unique key passed in request headers to safely retry POST operations
+      without creating duplicate records. Supported by the Virtual Cards API.
+    apis:
+      - Emburse Virtual Cards API
+
+  - term: StatementLine
+    definition: >
+      An individual line item on an account statement representing a posted
+      transaction or credit.
+    apis:
+      - Emburse Virtual Cards API
+    paths:
+      - /accounts/{account_pk}/statement-lines
+
+  - term: ShippingAddress
+    definition: >
+      A physical mailing address used for delivering physical cards to members.
+    apis:
+      - Emburse Virtual Cards API
+    paths:
+      - /shipping-addresses
+      - /shipping-addresses/{id}

@@ -1,0 +1,152 @@
+openapi: 3.1.0
+info:
+  title: Hades API
+  version: v1
+servers:
+  - url: http://hades.pool
+    description: Generated server url
+tags:
+  - name: person-controller-v4
+    description: Person Controller v4
+  - name: person-controller-v3
+    description: Person Controller v3
+  - name: person-controller-v2
+    description: Person Controller v2
+  - name: sap-person-controller
+    description: Sap Person Controller
+paths:
+  /v1/contacts:
+    post:
+      tags:
+        - /v1/contacts
+      summary: Create external guests
+      description: This web service allows customers who have Customer Relationship
+        Management (CRM) systems import contact information from their CRM into
+        Chrome River to be used as a lookup for guests to add to line items.
+      operationId: createContacts
+      parameters:
+        - name: chain-id
+          in: header
+          description: Reference to track a request
+          required: true
+          schema:
+            type: string
+        - name: x-api-key
+          in: header
+          description: API key for Authentication
+          required: true
+        - name: customer-code
+          in: header
+          description: Unique customer identifier provided by Chrome River
+          required: true
+      requestBody:
+        description: Array of contacts
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/ContactsView"
+        required: true
+      responses:
+        "200":
+          description: All contacts were successfully created
+          content:
+            "*/*":
+              schema:
+                type: object
+        "207":
+          description: Some contacts were successfully created with some failures
+          content:
+            "*/*":
+              schema:
+                type: object
+        "400":
+          description: Invalid information was provided
+          content:
+            "*/*":
+              schema:
+                type: object
+        "401":
+          description: Unauthorized
+          content:
+            "*/*":
+              schema:
+                type: object
+        "500":
+          description: Unexpected server error
+          content:
+            "*/*":
+              schema:
+                type: object
+        "503":
+          description: Service unavailable
+          content:
+            "*/*":
+              schema:
+                type: object
+components:
+  schemas:
+    ContactsView:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: Contact's first name. Max 100 characters
+          example: John
+        lastName:
+          type: string
+          description: Contact's last name. Max 100 characters
+          example: Doe
+        title:
+          type: string
+          description: Contact's title. Max 100 characters
+          example: Manager
+        externalUniqueId:
+          type: string
+          description: Contact's unique record identifier. Max 100 characters
+          example: ID-1
+        systemCode:
+          type: string
+          description: Code to identify source of the contact. Max 100 characters
+          example: contact-source-123
+        contactType:
+          type: string
+          description: Contact type
+          example: CRMGuest
+        status:
+          type: string
+          description: Contact's status
+          enum:
+            - "0"
+            - "1"
+          example: 1
+        accountId:
+          type: string
+          description: Contact's account identifier. Max 50 characters
+          example: chromeriver5757
+        accountName:
+          type: string
+          description: Contact's account name. Max 100 characters
+          example: Chrome River
+        guestTypeId:
+          type: integer
+          format: int32
+          description: Guest Type ID. 1=External, 2=Internal, 3=HealthCareProvider,
+            4=Temporary HealthCareProvider, 5=CRM
+          enum:
+            - "1"
+            - "2"
+            - "3"
+            - "4"
+            - "5"
+          example: 1
+      required:
+        - accountId
+        - accountName
+        - externalUniqueId
+        - firstName
+        - guestTypeId
+        - lastName
+        - status
+        - title

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/json-schema/emburse-shippingaddress.json",
+  "title": "APIShippingAddress",
+  "description": "Emburse APIShippingAddress schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "url": {
+      "type": "string",
+      "readOnly": true
+    },
+    "address_1": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "address_2": {
+      "type": "string",
+      "default": ""
+    },
+    "city": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "state": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "country": {
+      "type": "string",
+      "default": "US",
+      "maxLength": 2
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "zip_code": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    }
+  }
+}

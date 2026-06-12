@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/json-schema/emburse-account.json",
+  "title": "APIAccount",
+  "description": "Emburse APIAccount schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "url": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "number": {
+      "type": "string",
+      "readOnly": true
+    },
+    "ledger_balance": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "maximum": 100000000000000,
+      "minimum": -100000000000000,
+      "readOnly": true
+    },
+    "available_balance": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "maximum": 100000000000000,
+      "minimum": -100000000000000,
+      "readOnly": true
+    },
+    "currency_code": {
+      "type": "string",
+      "readOnly": true
+    },
+    "minimum_balance": {
+      "type": "string",
+      "readOnly": true
+    },
+    "available_credit": {
+      "type": "string",
+      "readOnly": true
+    },
+    "pending_credits": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "maximum": 100000000000000,
+      "minimum": -100000000000000,
+      "readOnly": true
+    },
+    "credit_limit": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "maximum": 100000000000000,
+      "minimum": -100000000000000,
+      "readOnly": true
+    },
+    "funding_source": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "readOnly": true,
+          "maxLength": 255
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true,
+          "maxLength": 255
+        },
+        "number": {
+          "type": "string",
+          "readOnly": true
+        },
+        "is_verified": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "description",
+        "name"
+      ],
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    }
+  }
+}

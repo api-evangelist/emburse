@@ -1,0 +1,20 @@
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "url": "string",
+  "name": "string",
+  "number": "string",
+  "ledger_balance": 0.0,
+  "available_balance": 0.0,
+  "currency_code": "string",
+  "minimum_balance": "string",
+  "available_credit": "string",
+  "pending_credits": 0.0,
+  "credit_limit": 0.0,
+  "funding_source": {
+    "description": "string",
+    "name": "string",
+    "number": "string",
+    "is_verified": false
+  },
+  "created_at": "2024-01-15T10:30:00Z"
+}

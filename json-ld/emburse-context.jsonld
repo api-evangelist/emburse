@@ -1,0 +1,94 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "emburse": "https://www.emburse.com/api-docs#",
+
+    "Card": "emburse:Card",
+    "Account": "emburse:Account",
+    "Member": "emburse:Member",
+    "Transaction": "emburse:Transaction",
+    "Allowance": "emburse:Allowance",
+    "Requisition": "emburse:Requisition",
+    "ShippingAddress": "emburse:ShippingAddress",
+    "StatementLine": "emburse:StatementLine",
+    "ExpenseReport": "emburse:ExpenseReport",
+    "Invoice": "emburse:Invoice",
+    "PreApproval": "emburse:PreApproval",
+    "PurchaseOrder": "emburse:PurchaseOrder",
+    "Allocation": "emburse:Allocation",
+    "Person": "emburse:Person",
+    "Vendor": "emburse:Vendor",
+
+    "id": "@id",
+    "type": "@type",
+
+    "status": {
+      "@id": "schema:status",
+      "@type": "xsd:string"
+    },
+    "amount": {
+      "@id": "schema:price",
+      "@type": "xsd:decimal"
+    },
+    "currency": {
+      "@id": "schema:priceCurrency",
+      "@type": "xsd:string"
+    },
+    "createdAt": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "updatedAt": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "name": "schema:name",
+    "email": "schema:email",
+    "description": "schema:description",
+    "address": "schema:address",
+    "card": {
+      "@id": "emburse:card",
+      "@type": "@id"
+    },
+    "account": {
+      "@id": "emburse:account",
+      "@type": "@id"
+    },
+    "member": {
+      "@id": "emburse:member",
+      "@type": "@id"
+    },
+    "transactions": {
+      "@id": "emburse:transaction",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "allowances": {
+      "@id": "emburse:allowance",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "balance": {
+      "@id": "emburse:balance",
+      "@type": "xsd:decimal"
+    },
+    "last4": {
+      "@id": "emburse:last4",
+      "@type": "xsd:string"
+    },
+    "expirationDate": {
+      "@id": "schema:expires",
+      "@type": "xsd:string"
+    },
+    "merchantName": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "merchantCategory": {
+      "@id": "schema:category",
+      "@type": "xsd:string"
+    }
+  }
+}

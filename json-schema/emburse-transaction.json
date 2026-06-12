@@ -1,0 +1,369 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/json-schema/emburse-transaction.json",
+  "title": "APITransaction",
+  "description": "Emburse APITransaction schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "url": {
+      "type": "string",
+      "readOnly": true
+    },
+    "amount": {
+      "type": "string",
+      "readOnly": true
+    },
+    "currency_code": {
+      "type": "string",
+      "readOnly": true,
+      "nullable": true,
+      "maxLength": 4
+    },
+    "foreign_amount": {
+      "type": "string",
+      "readOnly": true
+    },
+    "foreign_currency_code": {
+      "type": "string",
+      "readOnly": true,
+      "nullable": true,
+      "maxLength": 3
+    },
+    "state": {
+      "type": "string",
+      "readOnly": true
+    },
+    "response_code": {
+      "type": "string",
+      "readOnly": true
+    },
+    "merchant": {
+      "type": "string",
+      "readOnly": true
+    },
+    "vendor": {
+      "type": "string",
+      "readOnly": true
+    },
+    "bank_account": {
+      "type": "string",
+      "readOnly": true
+    },
+    "card": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "url": {
+          "type": "string",
+          "readOnly": true
+        },
+        "state": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true,
+          "maxLength": 255
+        },
+        "last_four": {
+          "type": "string",
+          "readOnly": true,
+          "pattern": "^[0-9]{4}$",
+          "maxLength": 4
+        }
+      },
+      "required": [
+        "description",
+        "last_four"
+      ],
+      "readOnly": true
+    },
+    "is_online": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "member": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "url": {
+          "type": "string",
+          "readOnly": true
+        },
+        "email": {
+          "type": "string",
+          "readOnly": true
+        },
+        "code": {
+          "type": "string",
+          "readOnly": true,
+          "nullable": true,
+          "pattern": "^[0-9A-z\\.\\-]+$",
+          "maxLength": 36,
+          "minLength": 1
+        },
+        "first_name": {
+          "type": "string",
+          "readOnly": true,
+          "maxLength": 255
+        },
+        "last_name": {
+          "type": "string",
+          "readOnly": true,
+          "maxLength": 255
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name"
+      ],
+      "readOnly": true
+    },
+    "category": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true,
+          "maxLength": 255
+        },
+        "code": {
+          "type": "string",
+          "readOnly": true,
+          "nullable": true,
+          "pattern": "^[0-9A-z\\.\\-]+$",
+          "maxLength": 36,
+          "minLength": 1
+        },
+        "parent": {
+          "type": "object",
+          "properties": {},
+          "readOnly": true
+        },
+        "is_archived": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "url": {
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "name",
+        "parent"
+      ],
+      "nullable": true
+    },
+    "department": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true,
+          "maxLength": 255
+        },
+        "code": {
+          "type": "string",
+          "readOnly": true,
+          "nullable": true,
+          "pattern": "^[0-9A-z\\.\\-]+$",
+          "maxLength": 36,
+          "minLength": 1
+        },
+        "parent": {
+          "type": "object",
+          "properties": {},
+          "readOnly": true
+        },
+        "is_archived": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "url": {
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "name",
+        "parent"
+      ],
+      "nullable": true
+    },
+    "label": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true,
+          "maxLength": 255
+        },
+        "code": {
+          "type": "string",
+          "readOnly": true,
+          "nullable": true,
+          "pattern": "^[0-9A-z\\.\\-]+$",
+          "maxLength": 36,
+          "minLength": 1
+        },
+        "parent": {
+          "type": "object",
+          "properties": {},
+          "readOnly": true
+        },
+        "is_archived": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "url": {
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "name",
+        "parent"
+      ],
+      "nullable": true
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true,
+          "maxLength": 255
+        },
+        "code": {
+          "type": "string",
+          "readOnly": true,
+          "nullable": true,
+          "pattern": "^[0-9A-z\\.\\-]+$",
+          "maxLength": 36,
+          "minLength": 1
+        },
+        "parent": {
+          "type": "object",
+          "properties": {},
+          "readOnly": true
+        },
+        "is_archived": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "url": {
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "required": [
+        "name",
+        "parent"
+      ],
+      "nullable": true
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "receipt": {
+      "type": "string",
+      "readOnly": true
+    },
+    "attachments": {
+      "type": "string",
+      "readOnly": true
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "posted_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "review_status": {
+      "enum": [
+        "pending",
+        "approved",
+        "denied",
+        "out_of_policy",
+        "exempt"
+      ],
+      "type": "string",
+      "readOnly": true,
+      "nullable": true
+    },
+    "requisition": {
+      "type": "string",
+      "readOnly": true,
+      "nullable": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "purchase_details": {
+      "type": "object",
+      "readOnly": true
+    }
+  }
+}
