@@ -1,0 +1,200 @@
+spec: API Commons Plans 0.1
+provider: Emburse
+providerId: emburse
+created: 2026-06-12
+modified: 2026-06-12
+reconciled: true
+description: >
+  Emburse offers pricing across multiple product lines. Emburse Professional
+  (formerly Certify) offers Essential, Pro, and Enterprise tiers billed per
+  user per month. Emburse Cards/Spend offers Starter, Business/Plus, and
+  Enterprise tiers. API access is available on Plus and Enterprise plans for
+  Spend, and through account manager engagement for Enterprise customers.
+plans:
+  - name: Emburse Professional Essential
+    description: >
+      Entry-level plan for small and medium-sized organizations needing core
+      expense management with mobile app, receipt scanning, automated expense
+      report creation, and credit card integrations.
+    type: paid
+    pricing:
+      model: per-user
+      price: 9.00
+      currency: USD
+      period: month
+      minimumAnnual: 3000
+    features:
+      - type: boolean
+        name: Mobile App and Receipt Scanning
+        value: true
+      - type: boolean
+        name: Automated Expense Report Creation
+        value: true
+      - type: boolean
+        name: Policy Enforcement and Approval Routing
+        value: true
+      - type: boolean
+        name: Full Reporting Suite
+        value: true
+      - type: boolean
+        name: Credit Card Integrations
+        value: true
+      - type: boolean
+        name: API Access
+        value: false
+  - name: Emburse Professional Pro
+    description: >
+      Mid-tier plan for organizations with higher expense volumes requiring
+      advanced workflows, ERP integrations, and more comprehensive controls.
+    type: paid
+    pricing:
+      model: per-user
+      price: 15.00
+      currency: USD
+      period: month
+    features:
+      - type: boolean
+        name: All Essential Features
+        value: true
+      - type: boolean
+        name: ERP Integrations
+        value: true
+      - type: boolean
+        name: Advanced Workflows
+        value: true
+      - type: boolean
+        name: Multi-Currency Support (140+)
+        value: true
+      - type: boolean
+        name: Multi-Language Support (64 languages)
+        value: true
+      - type: boolean
+        name: API Access
+        value: false
+  - name: Emburse Professional Enterprise
+    description: >
+      Enterprise plan for large organizations with complex workflows, multiple
+      subsidiaries, and dedicated implementation support. Includes API access.
+      Custom pricing via sales contact.
+    type: enterprise
+    pricing:
+      model: custom
+      currency: USD
+      period: month
+    contact: hi@emburse.com
+    features:
+      - type: boolean
+        name: All Pro Features
+        value: true
+      - type: boolean
+        name: API Access
+        value: true
+      - type: boolean
+        name: Dedicated Implementation Support
+        value: true
+      - type: boolean
+        name: Custom Integrations
+        value: true
+      - type: boolean
+        name: Multi-Subsidiary Support
+        value: true
+  - name: Emburse Cards Starter
+    description: >
+      Starter plan for small teams needing virtual card management for up
+      to 10 employees.
+    type: paid
+    pricing:
+      model: flat
+      price: 50.00
+      currency: USD
+      period: month
+    features:
+      - type: quota
+        name: Employees
+        limit: 10
+        unit: employees
+      - type: boolean
+        name: Virtual Cards
+        value: true
+      - type: boolean
+        name: Transaction Management
+        value: true
+      - type: boolean
+        name: API Access
+        value: false
+  - name: Emburse Cards Business
+    description: >
+      Business plan for teams of 10-100 employees with per-user pricing.
+      Includes API access for partners and integrations.
+    type: paid
+    pricing:
+      model: per-user
+      price: 7.00
+      currency: USD
+      period: month
+    features:
+      - type: quota
+        name: Employees
+        limit: 100
+        unit: employees
+      - type: boolean
+        name: Virtual Cards
+        value: true
+      - type: boolean
+        name: Physical Cards
+        value: true
+      - type: boolean
+        name: Transaction Management
+        value: true
+      - type: boolean
+        name: Accounting Integrations
+        value: true
+      - type: boolean
+        name: API Access (Partners)
+        value: true
+  - name: Emburse Cards Enterprise
+    description: >
+      Enterprise plan for large organizations requiring custom card programs
+      and full API access. Pricing by negotiation.
+    type: enterprise
+    pricing:
+      model: custom
+      currency: USD
+      period: month
+    contact: hi@emburse.com
+    features:
+      - type: boolean
+        name: All Business Features
+        value: true
+      - type: boolean
+        name: Full API Access
+        value: true
+      - type: boolean
+        name: Custom Card Programs
+        value: true
+      - type: boolean
+        name: Dedicated Account Manager
+        value: true
+  - name: Emburse Spend Plus
+    description: >
+      Plus plan for Emburse Spend (formerly Abacus) that unlocks API access
+      for partners and integrated customers.
+    type: paid
+    pricing:
+      model: per-user
+      price: 9.00
+      currency: USD
+      period: month
+    features:
+      - type: boolean
+        name: Expense Management
+        value: true
+      - type: boolean
+        name: Card Management
+        value: true
+      - type: boolean
+        name: API Access
+        value: true
+      - type: boolean
+        name: OAuth 2.0 Authentication
+        value: true

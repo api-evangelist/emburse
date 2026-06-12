@@ -1,0 +1,81 @@
+spec: FinOps Framework 1.0
+provider: Emburse
+created: 2026-06-12
+modified: 2026-06-12
+description: >
+  Emburse's billing models vary by product line. Emburse Professional uses
+  per-user-per-month SaaS pricing with annual minimums. Emburse Cards uses
+  flat monthly or per-user pricing depending on plan tier. API access is
+  bundled with Business/Plus and Enterprise plans rather than metered
+  separately. Enterprise customers negotiate custom pricing and API quotas
+  with account managers.
+billingModel:
+  type: hybrid
+  description: >
+    Per-user SaaS subscription for Professional and Spend products;
+    flat monthly fee for small Cards plans; custom negotiated pricing
+    for Enterprise. No publicly metered API call billing.
+  currency: USD
+  billingPeriod: monthly
+  annualDiscount: available
+focusColumns:
+  - ChargePeriodStart
+  - ChargePeriodEnd
+  - ChargeType
+  - BilledCost
+  - EffectiveCost
+  - ServiceName
+  - SkuId
+  - SkuDescription
+  - PricingUnit
+  - PricingQuantity
+  - ResourceType
+meters:
+  - name: Active Users
+    unit: user/month
+    description: >
+      Billed per active user per month for Professional (Essential $9,
+      Pro $15) and Cards Business ($7) plans.
+    products:
+      - Emburse Professional Essential
+      - Emburse Professional Pro
+      - Emburse Cards Business
+  - name: Flat Monthly Subscription
+    unit: month
+    description: >
+      Fixed monthly fee for Emburse Cards Starter plan ($50/month
+      for up to 10 employees).
+    products:
+      - Emburse Cards Starter
+  - name: Enterprise Contract
+    unit: contract
+    description: >
+      Annual or multi-year enterprise contracts with custom pricing
+      negotiated based on user count, product scope, and API access
+      requirements.
+    products:
+      - Emburse Professional Enterprise
+      - Emburse Cards Enterprise
+principles:
+  Visibility:
+    description: >
+      Emburse's own platform provides expense visibility and spend analytics
+      for finance teams. For API consumers, costs are straightforward
+      subscription fees with no variable API call charges. Enterprise
+      customers should track user counts to manage subscription costs.
+    recommendations:
+      - Track active user counts monthly to avoid overprovisioning
+      - Review annual contract terms before adding subsidiaries or products
+      - Use Emburse reporting suite to monitor expense volumes and ROI
+  Optimization:
+    description: >
+      Optimize Emburse spend by right-sizing plan tier to actual user count
+      and feature requirements. API access is unlocked at higher tiers so
+      factor integration requirements into plan selection.
+    recommendations:
+      - Audit user licenses quarterly to remove inactive accounts
+      - Evaluate whether Essential vs Pro feature set matches workflows
+      - For API integrations consider the Plus/Business tier unlock vs Enterprise cost
+      - Negotiate multi-year enterprise contracts for volume discounts
+      - Use Emburse's free mobile app and unlimited receipt storage to maximize
+        plan value without additional per-feature costs

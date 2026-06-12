@@ -1,0 +1,118 @@
+aid: emburse
+name: Emburse
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/apis.yml
+created: 2026-06-12
+modified: 2026-06-12
+specificationVersion: '0.19'
+description: >
+  Emburse is an expense management and accounts payable automation platform
+  serving over 4 million finance leaders and business travelers worldwide.
+  The company offers REST APIs across its product lines including Emburse
+  Professional (formerly Certify), Emburse Spend (formerly Abacus), and
+  Emburse Enterprise (Chrome River), enabling integrations for expense
+  reports, corporate card management, invoice processing, receipt capture,
+  and reimbursement workflows. The Virtual Cards API provides OAuth2-secured
+  endpoints for creating and managing virtual and physical cards, transactions,
+  members, and accounting data. Emburse Enterprise exposes Swagger-documented
+  APIs for Expense, Invoice, Person, PreApproval, Purchase Order, Vendor, and
+  Allocation resources. API access for the Spend product is available to
+  Partners and customers on the Plus plan or higher.
+tags:
+  - Expense Management
+  - AP Automation
+  - Corporate Cards
+  - Virtual Cards
+  - Receipt Capture
+  - Reimbursement
+  - Invoice Processing
+  - Finance
+  - FinTech
+apis:
+  - name: Emburse Virtual Cards API
+    description: >
+      REST API for managing virtual and physical corporate cards, transactions,
+      members, accounts, and accounting categories. Uses OAuth2 token-based
+      authentication and supports idempotency keys for safe retries.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.emburse.com/api-docs
+    baseURL: https://api.emburse.com/v1/
+    tags:
+      - Virtual Cards
+      - Corporate Cards
+      - Transactions
+      - Members
+    properties:
+      - type: Documentation
+        url: https://cards.emburse.com/api/v1/docs/
+  - name: Emburse Enterprise REST APIs
+    description: >
+      Swagger-documented REST APIs for Emburse Enterprise (Chrome River)
+      covering Allocation, Entity, Expense, Exported Reports, Paid Expense,
+      Expense Image, Invoice, Person, PreApproval, Purchase Order, Vendor,
+      and Contacts resources for enterprise expense and AP automation.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+    baseURL: https://api.emburse.com/
+    tags:
+      - Enterprise
+      - Expense
+      - Invoice
+      - AP Automation
+    properties:
+      - type: Documentation
+        url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+  - name: Emburse Professional API
+    description: >
+      REST API for Emburse Professional (formerly Certify) supporting push/pull
+      of users, departments, categories, expense reports, expense lines, receipt
+      data, and invoices. Base URL is https://api.certify.com/v1/.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://help.certify.com/hc/en-us/articles/15460725432077-API-Overview
+    baseURL: https://api.certify.com/v1/
+    tags:
+      - Expense Reports
+      - Receipts
+      - Invoices
+      - Professional
+    properties:
+      - type: Documentation
+        url: https://pro.emburse.app/APIDoc.aspx
+  - name: Emburse Spend API
+    description: >
+      Modern REST API for Emburse Spend (formerly Abacus) using OAuth 2.0
+      authentication and JSON for expense and card management. Available to
+      Partners and customers on the Plus plan or higher.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://help.spend.emburse.com/hc/en-us/articles/4424782291341-Emburse-Spend-API
+    baseURL: https://api.emburse.com/
+    tags:
+      - Spend Management
+      - Expense
+      - Cards
+    properties:
+      - type: Documentation
+        url: https://help.spend.emburse.com/hc/en-us/articles/4424782291341-Emburse-Spend-API
+common:
+  - type: Website
+    url: https://www.emburse.com/
+  - type: Documentation
+    url: https://www.emburse.com/api-docs
+  - type: GitHubOrganization
+    url: https://github.com/emburse
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/emburse
+  - type: X
+    url: https://twitter.com/emburse
+  - type: Blog
+    url: https://www.emburse.com/blog
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/plans/emburse-plans-pricing.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/rate-limits/emburse-rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/finops/emburse-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

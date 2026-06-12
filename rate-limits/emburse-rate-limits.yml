@@ -1,0 +1,54 @@
+spec: API Commons Rate Limits 0.1
+provider: Emburse
+providerId: emburse
+created: 2026-06-12
+modified: 2026-06-12
+description: >
+  Emburse does not publicly document specific numerical rate limits for its
+  APIs. The Virtual Cards API (api.emburse.com) supports pagination with a
+  maximum of 1000 records per request. The API returns HTTP 429 on throttling
+  and uses standard retry-after semantics. Enterprise and partner API access
+  is subject to limits negotiated with account managers. The Certify/Professional
+  API base URL is api.certify.com/v1. Rate limit details for Enterprise REST
+  APIs require contacting support@emburse.com.
+headers:
+  retryAfter: Retry-After
+errorCodes:
+  throttled: 429
+limits:
+  - scope: Virtual Cards API
+    metric: requests
+    limit: unspecified
+    timeFrame: per minute
+    notes: >
+      Specific numerical limit not publicly documented. API returns 429 when
+      throttled. Contact hi@emburse.com or account manager for current limits.
+  - scope: Virtual Cards API pagination
+    metric: records per request
+    limit: 1000
+    timeFrame: per request
+    notes: >
+      Maximum of 1000 records returned per paginated list request using limit
+      and offset query parameters.
+  - scope: Enterprise REST APIs
+    metric: requests
+    limit: unspecified
+    timeFrame: per minute
+    notes: >
+      Rate limits for Emburse Enterprise (Chrome River) REST APIs are not
+      publicly documented. Contact support@emburse.com for specifications.
+  - scope: Professional API (Certify)
+    metric: requests
+    limit: unspecified
+    timeFrame: per minute
+    notes: >
+      Rate limits for Emburse Professional (api.certify.com/v1) are not
+      publicly documented. Contact hi@emburse.com for current limits.
+  - scope: Spend API
+    metric: requests
+    limit: unspecified
+    timeFrame: per minute
+    notes: >
+      Available to Partners and Plus plan customers. Specific rate limits
+      are not publicly documented. OAuth 2.0 access tokens do not expire
+      but can be revoked by administrators.
