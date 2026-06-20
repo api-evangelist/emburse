@@ -1,7 +1,7 @@
 aid: emburse
 name: Emburse
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/apis.yml
 created: 2026-06-12
 modified: 2026-06-12
@@ -35,7 +35,7 @@ apis:
       REST API for managing virtual and physical corporate cards, transactions,
       members, accounts, and accounting categories. Uses OAuth2 token-based
       authentication and supports idempotency keys for safe retries.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.emburse.com/api-docs
     baseURL: https://api.emburse.com/v1/
     tags:
@@ -54,7 +54,7 @@ apis:
       covering Allocation, Entity, Expense, Exported Reports, Paid Expense,
       Expense Image, Invoice, Person, PreApproval, Purchase Order, Vendor,
       and Contacts resources for enterprise expense and AP automation.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
     baseURL: https://api.emburse.com/
     tags:
@@ -94,7 +94,7 @@ apis:
       REST API for Emburse Professional (formerly Certify) supporting push/pull
       of users, departments, categories, expense reports, expense lines, receipt
       data, and invoices. Base URL is https://api.certify.com/v1/.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://help.certify.com/hc/en-us/articles/15460725432077-API-Overview
     baseURL: https://api.certify.com/v1/
     tags:
@@ -110,7 +110,7 @@ apis:
       Modern REST API for Emburse Spend (formerly Abacus) using OAuth 2.0
       authentication and JSON for expense and card management. Available to
       Partners and customers on the Plus plan or higher.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://help.spend.emburse.com/hc/en-us/articles/4424782291341-Emburse-Spend-API
     baseURL: https://api.emburse.com/
     tags:
