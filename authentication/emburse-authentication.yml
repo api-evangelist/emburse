@@ -1,0 +1,24 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/emburse-enterprise-expense-image-openapi.yml, openapi/emburse-virtual-cards-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: x-api-key
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  description: API key for Authentication
+  sources:
+  - openapi/emburse-enterprise-expense-image-openapi.yml
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  description: 'OAuth2 access token. Include in Authorization header: `Authorization: Bearer
+    YOUR_ACCESS_TOKEN`'
+  sources:
+  - openapi/emburse-virtual-cards-openapi.yml

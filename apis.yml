@@ -121,6 +121,12 @@ apis:
       - type: Documentation
         url: https://help.spend.emburse.com/hc/en-us/articles/4424782291341-Emburse-Spend-API
 common:
+  - type: VulnerabilityDisclosure
+    url: security/emburse-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/emburse-domain-security.yml
+  - type: Authentication
+    url: authentication/emburse-authentication.yml
   - type: Website
     url: https://www.emburse.com/
   - type: Documentation
