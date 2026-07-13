@@ -2,13 +2,14 @@
   "repo": "emburse",
   "feeds": [
     {
-      "source": "https://www.emburse.com/blog",
-      "feed_url": "",
+      "source": "https://twitter.com/emburse",
+      "feed_url": "https://twitter.com/emburse",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape"
+      "method": "none"
     }
   ],
-  "fetched": "2026-06-27T12:38:55Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 1,
   "agent_pulled": "2026-06-27"
 }
