@@ -1,0 +1,412 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Members API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Members
+paths:
+  /members:
+    get:
+      operationId: get_members
+      description: ''
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: email
+        required: false
+        in: query
+        description: email
+        schema:
+          type: string
+      - name: is_active
+        required: false
+        in: query
+        description: is_active
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - count
+                - results
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=400&limit=100
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=200&limit=100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/APIMember'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Members
+    post:
+      operationId: post_members
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIMember'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIMember'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Members
+  /members/{id}:
+    get:
+      operationId: get_members_by_id
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: email
+        required: false
+        in: query
+        description: email
+        schema:
+          type: string
+      - name: is_active
+        required: false
+        in: query
+        description: is_active
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIMember'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Members
+    put:
+      operationId: put_members_by_id
+      description: Always perform a partial update.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: email
+        required: false
+        in: query
+        description: email
+        schema:
+          type: string
+      - name: is_active
+        required: false
+        in: query
+        description: is_active
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIMember'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIMember'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Members
+    delete:
+      operationId: delete_members_by_id
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: email
+        required: false
+        in: query
+        description: email
+        schema:
+          type: string
+      - name: is_active
+        required: false
+        in: query
+        description: is_active
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Members
+  /members/{member_pk}/terms-of-service:
+    post:
+      operationId: post_members_by_member_pk_terms_of_service
+      description: Handle duplicate `TosAgreement` creation.
+      parameters:
+      - name: member_pk
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Members
+components:
+  schemas:
+    APIMember:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        url:
+          type: string
+          readOnly: true
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+          maxLength: 255
+        last_name:
+          type: string
+          maxLength: 255
+        role:
+          type: string
+        code:
+          type: string
+          nullable: true
+          pattern: ^[0-9A-z\.\-]+$
+          minLength: 1
+          maxLength: 36
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        is_active:
+          type: boolean
+        phone_number:
+          type: string
+          nullable: true
+        requires_terms_agreement:
+          type: string
+          readOnly: true
+      required:
+      - email
+      - first_name
+      - last_name
+      - created_at

@@ -1,0 +1,915 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts person-controller-v4 API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: person-controller-v4
+  description: Person Web Services
+paths:
+  /v4/persons/{personUniqueId}/person-entities/{person-entity-id}:
+    get:
+      tags:
+      - person-controller-v4
+      summary: Get Person Relationship Attributes by Identifier
+      description: This web service allows the ability to find a person relational entity by its identifier
+      operationId: getPersonEntityById
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: personUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: person-entity-id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    put:
+      tags:
+      - person-controller-v4
+      summary: Modify Person Relationship Attributes by Identifier
+      description: This web service allows the ability to alter a person relational entity by its identifier
+      operationId: modifyPersonEntityById
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: personUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: person-entity-id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonEntityView'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    delete:
+      tags:
+      - person-controller-v4
+      summary: Delete Person Relationship Attributes by Identifier
+      description: This web service allows the ability to delete a person relational entity by its identifier
+      operationId: deletePersonEntityById
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: personUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: person-entity-id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /v4/persons:
+    get:
+      tags:
+      - person-controller-v4
+      summary: Get Persons
+      description: 'This web service allows the ability to get a list persons based on filter queries. Note: this endpoint does not include personEntities in the response body.  If needed, please see /v4/persons/{personUniqueId}/person-entities. The default batch number is 20'
+      operationId: getPersons
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: firstName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: lastName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: emailAddress
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: vendorCode1
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: vendorCode2
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: statuses
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    post:
+      tags:
+      - person-controller-v4
+      summary: Create a Person
+      description: This web service provides the ability to create a Person.  This is the only POST method that properly upserts data. (v2 and v3 POST both do not fully function as an upsert as they overwrite data as NULL if it is not sent in the payload.)
+      operationId: createPerson
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonView'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /v4/persons/{toPersonUniqueId}/assists/{fromPersonUniqueId}:
+    post:
+      tags:
+      - person-controller-v4
+      summary: Add Person Delegate
+      description: This web service allows the ability to add a person delegate
+      operationId: addPersonDelegate
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: toPersonUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fromPersonUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    delete:
+      tags:
+      - person-controller-v4
+      summary: Delete Person Delegate
+      description: This web service allows the ability to delete a person delegate
+      operationId: deletePersonDelegate
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: toPersonUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fromPersonUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /v4/persons/{personUniqueId}/udas:
+    get:
+      tags:
+      - person-controller-v4
+      summary: Fetch Person's User Defined Attributes
+      description: This web service allows users to retrieve a person's user defined attributes.
+      operationId: getPersonUdas
+      parameters:
+      - name: personUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    post:
+      tags:
+      - person-controller-v4
+      summary: Creates Person's User Defined Attribute
+      description: This web service allows the ability to create user defined attributes for a person.
+      operationId: createPersonUda
+      parameters:
+      - name: personUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonUdaView'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /v4/persons/{personUniqueId}/person-entities:
+    get:
+      tags:
+      - person-controller-v4
+      summary: Get Person Relationship Attributes
+      description: This web service allows the ability to find all person relational entities
+      operationId: getPersonEntities
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: personUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    post:
+      tags:
+      - person-controller-v4
+      summary: Create a Person-to-Entity association
+      description: Links the specified Person and a single Entity
+      operationId: addEntityToPerson
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: personUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonEntityView'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /v4/persons/reprocess-depersonalization:
+    post:
+      tags:
+      - person-controller-v4
+      summary: Reprocess depersonalization for a person
+      description: This web service allows the ability to reprocess depersonalization for a person
+      operationId: reprocessDepersonalization
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/PersonView'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /v4/persons/batch:
+    post:
+      tags:
+      - person-controller-v4
+      summary: Create/update persons
+      description: This web service provides the ability to create/update persons.
+      operationId: upsertPersons
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/PersonView'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+  /v4/persons/{personUniqueId}:
+    get:
+      tags:
+      - person-controller-v4
+      summary: Get Person
+      description: 'This web service allows the ability to get a person by its unique identifier. Note: this endpoint does not include personEntities in the response body.  If needed, please see /v4/persons/{personUniqueId}/person-entities'
+      operationId: getPersonByUniqueId
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: personUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    patch:
+      tags:
+      - person-controller-v4
+      summary: PATCH a Person
+      description: This web service provides the ability to patch just certain fields. To remove the value, pass a null value for that property
+      operationId: patch
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: personUniqueId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: {}
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /v4/persons/search:
+    get:
+      tags:
+      - person-controller-v4
+      summary: Search for Persons
+      description: This web service allows the ability to get a list persons based on search term
+      operationId: searchPersons
+      parameters:
+      - name: chain-id
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: customer-id
+        in: header
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: searchTerm
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 100
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+components:
+  schemas:
+    AlternateCurrency:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Currency type
+          enum:
+          - ALT
+          - OTHER
+          example: ALT
+        code:
+          type: string
+          description: Currency code in ISO-4217
+          example: USD
+      required:
+      - code
+      - type
+    PersonEntityView:
+      type: object
+      properties:
+        roleName:
+          type: string
+          description: The name of the role for the person-entity relationship. Max 50 characters
+          example: APReview
+        entityTypeCode:
+          type: string
+          description: The entity type code for the person-entity relationship. Max 50 characters
+          example: DEPT
+        entityTypeName:
+          type: string
+          description: The entity type name for the person-entity relationship; not required for create/update. Max 50 characters
+          example: Department
+        entityCode:
+          type: string
+          description: The entity code for the person-entity relationship. Max 50 characters
+          example: 100
+        entityName:
+          type: string
+          description: The entity name for the person-entity relationship; not required for create/update. Max 100 characters
+          example: Administrative
+      required:
+      - entityCode
+      - entityTypeCode
+      - roleName
+    PersonView:
+      type: object
+      properties:
+        personResourceId:
+          type: string
+          description: Unique identifier for the person, used by external partners (fixed-length hash, non-updateable). 8 characters.
+          example: J066anNm
+        username:
+          type: string
+          description: Person's user name for login. Max 50 characters.
+          example: jdoe
+        personUniqueId:
+          type: string
+          description: Person's unique record identifier. Max 100 characters.
+          example: jdoe1
+        primaryEmailAddress:
+          type: string
+          description: Unique email address for the person. Max 100 characters
+          example: john.doe@company.com
+        firstName:
+          type: string
+          description: Person's first name. Maximum 50 characters
+          example: John
+        lastName:
+          type: string
+          description: Person's last name. Maximum 50 characters
+          example: Doe
+        primaryCurrency:
+          type: string
+          description: Primary currency in ISO-4217
+          example: USD
+        locale:
+          type: string
+          description: Person's assigned language code. Defaults to "en"
+          enum:
+          - en
+          - ld
+          - fr
+          - it
+          - ja
+          - de
+          - fr_CA
+          - es
+          - pt_BR
+          - ru
+          - zh_CN
+          - pl
+          - en_GB
+          - hr
+          - bg
+          - el
+          - cs
+          - et
+          - mk
+          - hu
+          - lv
+          - ro
+          - sr
+          - sk
+          - uk
+          - nl
+          - ko
+          - en_UK
+          - lt
+          - ms
+          - hy
+          - zh_HK
+          - tr
+          - sl
+          - km
+          - th
+          - vi
+          - es_ES
+          - fi
+          - pt_PT
+          example: en
+        reportsToPersonUniqueId:
+          type: string
+          description: PersonUniqueID for direct reporting used for business rules. Maximum 100 characters.
+          example: fsmith
+        status:
+          type: string
+          description: Person's status in the system
+          enum:
+          - Pending
+          - Active
+          - Suspended
+          - Disabled
+          - Deleted
+          example: Pending
+        title:
+          type: string
+          description: Person's title. Maximum 255 characters.
+          example: Sr. Manager
+        vendorCode1:
+          type: string
+          description: Valid Accounts Payable Vendor1 ID for this person. Maximum 100 characters.
+          example: 35171-001
+        vendorCode2:
+          type: string
+          description: Valid Accounts Payable Vendor2 ID for this person. Maximum 100 characters.
+          example: 35171-001
+        dateFormat:
+          type: string
+          description: Person's date format preference. Default value is "MM/DD/YYYY"
+          enum:
+          - MM/DD/YYYY
+          - DD/MM/YYYY
+          example: MM/DD/YYYY
+        numberFormat:
+          type: string
+          description: Person's currency format preference. Default value is "##,###.00"
+          enum:
+          - '###.###,00'
+          - '###,###.00'
+          example: '###,###.00'
+        defaultMosaic:
+          type: string
+          description: Name of customer's default (primary) mosaic
+          example: Primary
+        vatLocation:
+          type: string
+          description: Person's ISO Alpha-2 country code for VAT purposes
+          example: US
+        adminAccess:
+          type: boolean
+          description: Configure whether user has access to administration module
+          example: false
+        copyingItems:
+          type: boolean
+          description: Configure copy behavior of previous data from one expense entry to the next to simplify expense entry
+          example: true
+        superDelegate:
+          type: boolean
+          description: User can delegate to full list of users for delegate access
+          example: true
+        analyticsModules:
+          type: string
+          description: Modules configuration for access to the Analytics Reporting tool
+          enum:
+          - 'NULL'
+          - M01
+          - M02
+          - M03
+          - M04
+          - M05
+          - M06
+          - M07
+          - M08
+          - M09
+          - M10
+          example: M01
+        analyticsUserType:
+          type: string
+          description: User type for access to the Analytics Reporting Tool
+          enum:
+          - 'NULL'
+          - U99
+          - U01
+          - U02
+          - U03
+          - U04
+          example: U01
+        analyticsView:
+          type: string
+          description: View configuration for access to the Analytics Reporting tool
+          enum:
+          - 'NULL'
+          - V01
+          - V02
+          - V03
+          - V04
+          - V05
+          - V06
+          - V07
+          - V08
+          - V09
+          - V10
+          example: V01
+        alternateEmailAddresses:
+          type: array
+          description: Person's alternate email addresses. Email address limited to 100 characters.
+          example: john.doe@company.com
+          items:
+            type: string
+        alternateCurrencies:
+          type: array
+          description: Person's additional currency codes
+          items:
+            $ref: '#/components/schemas/AlternateCurrency'
+        personEntities:
+          type: array
+          description: Assigns person to a customer's defined Entity structure.
+          items:
+            $ref: '#/components/schemas/PersonEntityView'
+        udas:
+          type: array
+          description: Additional customer defined fields
+          items:
+            $ref: '#/components/schemas/PersonUdaView'
+        interactionUserId:
+          type: string
+          description: ID for interaction integration. Only available to customers with accounts setup to use interaction features. Maximum 50 characters.
+          example: JDOE
+        interactionAccountName:
+          type: string
+          description: Account Name for interaction integration. Only available to customers with accounts setup to use interaction features. Maximum 50 characters.
+          example: JDOE
+      required:
+      - defaultMosaic
+      - firstName
+      - lastName
+      - personUniqueId
+      - primaryCurrency
+      - primaryEmailAddress
+      - status
+      - username
+    Response:
+      type: object
+      properties:
+        personUniqueId:
+          type: string
+          description: Unique identifier for a person
+          example: jdoe
+        result:
+          type: string
+          description: Result of operation
+          enum:
+          - SUCCESS
+          - FAIL
+          example: FAIL
+        errorMessage:
+          type: string
+          description: Error message provided for a FAIL result
+          example: firstName may not be empty
+    PersonUdaView:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'Customer defined field name (Note: UDF1/UDF2/UDF3 are reserved names which are used for population of UDF fields) '
+          example: StartDate
+        value:
+          type: string
+          description: Customer defined field value
+          example: 2017-10-03 00:00:00
+      required:
+      - name
+      - value

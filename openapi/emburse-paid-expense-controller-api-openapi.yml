@@ -1,116 +1,115 @@
 openapi: 3.0.0
 info:
   description: Api Documentation
-  version: "1.0"
-  title: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts paid-expense-controller API
   termsOfService: urn:tos
   contact: {}
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
 tags:
-  - name: paid-expense-controller
-    description: Post payments
+- name: paid-expense-controller
+  description: Post payments
 paths:
   /v1/paid-expense:
     post:
       tags:
-        - paid-expense-controller
+      - paid-expense-controller
       summary: Post a payment
       description: This web service allows an external application to post a payment.
       operationId: createPaidExpenseUsingPOST
       parameters:
-        - name: chain-id
-          in: header
-          description: Used for tracking the flow of the request
-          required: false
-          schema:
-            type: string
-        - name: customer-code
-          in: header
-          description: Unique customer identifier provided by Chrome River
-          required: true
-          schema:
-            type: string
-        - name: x-api-key
-          in: header
-          description: API key for Authentication
-          required: true
-          schema:
-            type: string
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/PaidExpense"
+              $ref: '#/components/schemas/PaidExpense'
         description: Paid expense to create
         required: true
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 type: object
-        "400":
+        '400':
           description: Customer Code is invalid.
-        "401":
+        '401':
           description: Customer Code is not authorized. Cannot post a payment.
-        "503":
+        '503':
           description: Service unavailable.
       deprecated: false
   /v1/paid-expenses:
     post:
       tags:
-        - paid-expense-controller
+      - paid-expense-controller
       summary: Post a collection of payments
-      description: This web service allows an external application to post a
-        collection of payments.
+      description: This web service allows an external application to post a collection of payments.
       operationId: createPaidExpensesUsingPOST
       parameters:
-        - name: chain-id
-          in: header
-          description: Used for tracking the flow of the request
-          required: true
-          schema:
-            type: string
-        - name: customer-code
-          in: header
-          description: Unique customer identifier provided by Chrome River
-          required: true
-          schema:
-            type: string
-        - name: x-api-key
-          in: header
-          description: API key for Authentication
-          required: true
-          schema:
-            type: string
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/PaidExpenseV2"
+                $ref: '#/components/schemas/PaidExpenseV2'
         description: paidExpenses
         required: true
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
                 type: object
-        "400":
+        '400':
           description: Customer Code is invalid.
-        "401":
+        '401':
           description: Customer Code is not authorized. Cannot post a payment.
-        "503":
+        '503':
           description: Service unavailable.
       deprecated: false
-servers:
-  - url: https://service.chromeriver.com
 components:
   schemas:
     PaidExpense:
@@ -124,8 +123,7 @@ components:
           type: integer
           format: int32
           example: 1 or 0 or -1
-          description: Identifies if direct-pay items need to be authorized before they
-            are submitted for payment
+          description: Identifies if direct-pay items need to be authorized before they are submitted for payment
         bankID:
           type: string
           example: 362
@@ -137,35 +135,27 @@ components:
         currencyCode:
           type: string
           example: USD
-          description: "Currency code of the Amount Spent value. Format: ISO 4217 code
-            (alpha)."
+          description: 'Currency code of the Amount Spent value. Format: ISO 4217 code (alpha).'
         customerLastCreateDate:
           type: string
           format: date-time
           example: 2009-06-25 20:25:57:000
-          description: If the field is used, we store the most recent
-            customerLastCreateDate from the previous call. When we process the
-            next call with a date equal to or prior to the date we stored will
-            not be processed. This allows you to send the same record multiple
-            times without having Chrome River process it multiple times.
+          description: If the field is used, we store the most recent customerLastCreateDate from the previous call. When we process the next call with a date equal to or prior to the date we stored will not be processed. This allows you to send the same record multiple times without having Chrome River process it multiple times.
         eventDriven:
           type: boolean
         paidDate:
           type: string
           format: date-time
           example: 2016-09-28 18:46:19:000
-          description: "Date of Voucher Payment. Format: PaidDateMask. Defaults to the
-            date the record was loaded into Chrome River if empty."
+          description: 'Date of Voucher Payment. Format: PaidDateMask. Defaults to the date the record was loaded into Chrome River if empty.'
         paymentType:
           type: string
           example: REIM
-          description: Payment type, either "FIRM" for firm paid item or "REIM" for
-            reimbursement.
+          description: Payment type, either "FIRM" for firm paid item or "REIM" for reimbursement.
         voucherInvoice:
           type: string
-          example: "0000000000000000"
-          description: Voucher Invoice identifier of the expense that Chrome River sends
-            in the export files.
+          example: '0000000000000000'
+          description: Voucher Invoice identifier of the expense that Chrome River sends in the export files.
       title: PaidExpense
     PaidExpenseV2:
       type: object
@@ -178,8 +168,7 @@ components:
           type: integer
           format: int32
           example: 1 or 0 or -1
-          description: Identifies if direct-pay items need to be authorized before they
-            are submitted for payment
+          description: Identifies if direct-pay items need to be authorized before they are submitted for payment
         bankID:
           type: string
           example: 362
@@ -191,18 +180,12 @@ components:
         currencyCode:
           type: string
           example: USD
-          description: "Currency code of the Amount Spent value. Format: ISO 4217 code
-            (alpha)."
+          description: 'Currency code of the Amount Spent value. Format: ISO 4217 code (alpha).'
         customerLastCreateDate:
           type: string
           format: date-time
           example: 2009-06-25 20:25:57:000
-          description: If the field is used, we store the most recent
-            customerLastCreateDate (in UTC) from the previous call. When we
-            process the next call with a date equal to or prior to the date we
-            stored will not be processed. This allows you to send the same
-            record multiple times without having Chrome River process it
-            multiple times.
+          description: If the field is used, we store the most recent customerLastCreateDate (in UTC) from the previous call. When we process the next call with a date equal to or prior to the date we stored will not be processed. This allows you to send the same record multiple times without having Chrome River process it multiple times.
         eventDriven:
           type: boolean
         lineNumber:
@@ -213,13 +196,11 @@ components:
           type: string
           format: date-time
           example: 2016-09-28 18:46:19:000
-          description: "Date (in UTC) of Voucher Payment. Format: PaidDateMask. Defaults
-            to the date the record was loaded into Chrome River if empty."
+          description: 'Date (in UTC) of Voucher Payment. Format: PaidDateMask. Defaults to the date the record was loaded into Chrome River if empty.'
         paymentType:
           type: string
           example: REIM
-          description: Payment type, either "FIRM" for firm paid item or "REIM" for
-            reimbursement.
+          description: Payment type, either "FIRM" for firm paid item or "REIM" for reimbursement.
         reportId:
           type: string
           example: DEV000000003

@@ -1,0 +1,835 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts po-api-controller API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: po-api-controller
+  description: Operations in PO APIs
+paths:
+  /po-api:
+    post:
+      tags:
+      - po-api-controller
+      summary: Create PO
+      description: This web service allows an external application to create a PO
+      operationId: createPOUsingPOST
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PoExternal'
+        description: poExternal
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PoExternal'
+      deprecated: false
+  /po-api/create-or-update:
+    post:
+      tags:
+      - po-api-controller
+      summary: Create or update a PO
+      description: This web service allows an external application to create or update a PO
+      operationId: upsertPOUsingPOST
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/upsertPOUsingPOSTPoexternal'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PoExternal'
+      deprecated: false
+  /po-api/delete:
+    patch:
+      tags:
+      - po-api-controller
+      summary: Delete PO
+      description: This web service allows an external application to delete a PO
+      operationId: deletePoUsingPATCH
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        description: poData
+        required: true
+      responses:
+        '204':
+          description: No Content
+      deprecated: false
+  /po-api/item/catalog/create-or-update:
+    post:
+      tags:
+      - po-api-controller
+      summary: Create Item Catalogs
+      description: This web service allows creating and updating multiple PO Item Catalogs in one call (up to 5000 items at a time). We determine ItemCatalog uniqueness from ItemNumber, VendorUniqueId, and CustomerCode.
+      operationId: createItemCatalogsUsingPOST
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ItemCatalog'
+        description: itemCatalogs
+        required: true
+      responses:
+        '204':
+          description: No Content
+        '401':
+          description: Customer Code or api key is not authorized.
+        '422':
+          description: 'Unprocessable Entity error: "Vendor not found for VendorUniqueId: ***"
+
+            Unprocessable Entity error: "ExpenseTypeName not found for ItemName: ***"
+
+            Unprocessable Entity error: "ItemName is a required field!"
+
+            Unprocessable Entity error: "ItemUm is required field for ItemName: ***"
+
+            Unprocessable Entity error: "CurrencyCode is required field for ItemName: ***"
+
+            Unprocessable Entity error: "ItemUnitPrice is required field for ItemName: ***"
+
+            Unprocessable Entity error: "ItemNumber is required field for ItemName: ***"
+
+            Unprocessable Entity error: "VendorId or VendorUniqueId is required for ItemName: ***"
+
+            Unprocessable Entity error: "ExpenseTypeId or ExpenseTypeName is required for ItemName: ***"'
+      deprecated: false
+  /po-api/poNumber/search:
+    put:
+      tags:
+      - po-api-controller
+      summary: Search PO by po numbers
+      description: This web service allows an external application to search for a list of POs by list of po numbers, in json array format
+      operationId: getExternalApprovedPOByPoNumberUsingPUT
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: hasOpenQty
+        in: query
+        description: hasOpenQty
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        description: poNumber
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PoExternal'
+      deprecated: false
+  /po-api/poNumber/{poNumber}:
+    get:
+      tags:
+      - po-api-controller
+      summary: Get PO by po number
+      description: This web service allows an external application to fetch a PO by po number
+      operationId: getExternalPoByPoNumberUsingGET
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        description: List of po dependencies to include in response object
+        required: false
+        allowEmptyValue: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+          enum:
+          - all
+          - lines
+          - udas
+          - notes
+          - line.all
+          - line.notes
+          - line.vats
+      - name: poNumber
+        in: path
+        description: PO number
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PoExternal'
+      deprecated: false
+  /po-api/poReqId/{poReqId}:
+    get:
+      tags:
+      - po-api-controller
+      summary: Get PO by poReqId
+      description: This web service allows an external application to fetch a PO by poReqId
+      operationId: getExternalPoByPoReqIdUsingGET
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        description: List of po dependencies to include in response object
+        required: false
+        allowEmptyValue: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+          enum:
+          - all
+          - lines
+          - udas
+          - notes
+          - line.all
+          - line.notes
+          - line.vats
+      - name: poReqId
+        in: path
+        description: poReqId
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PoExternal'
+      deprecated: false
+  /po-api/requestNumber/search:
+    put:
+      tags:
+      - po-api-controller
+      summary: Search PO
+      description: This web service allows an external application to search for a list of POs
+      operationId: getExternalPOByRequestNumberUsingPUT
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PoRequestNumberSearchRequest'
+        description: poRequestNumberSearchRequest
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PoExternal'
+      deprecated: false
+  /po-api/requestNumber/{requestNumber}:
+    get:
+      tags:
+      - po-api-controller
+      summary: Get PO by request number
+      description: This web service allows an external application to fetch a PO by request number
+      operationId: getExternalPOUsingGET
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: requestNumber
+        in: path
+        description: PO request number
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PoExternal'
+      deprecated: false
+  /po-api/{poNumber}:
+    delete:
+      tags:
+      - po-api-controller
+      summary: Delete PO
+      description: This web service allows an external application to delete a PO
+      operationId: deletePoByPoNumberUsingDELETE
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: poNumber
+        in: path
+        description: PO number
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+      deprecated: false
+  /po-api/{requestNumber}:
+    patch:
+      tags:
+      - po-api-controller
+      summary: Update PO
+      description: This web service allows an external application to patch a PO
+      operationId: updatePOUsingPATCH
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: requestNumber
+        in: path
+        description: Request number
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/upsertPOUsingPOSTPoexternal'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PoExternal'
+      deprecated: false
+components:
+  schemas:
+    PoReqNotesExternal:
+      type: object
+      properties:
+        note:
+          type: string
+      title: PoReqNotesExternal
+    PoExternal:
+      type: object
+      required:
+      - poCurrencyCode
+      - poNumber
+      properties:
+        cancelDate:
+          type: string
+          format: date-time
+          description: 'Cancel date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        createDate:
+          type: string
+          format: date-time
+          description: 'Create date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        creatorUniqueId:
+          type: string
+          description: Customer's unique ID of the person that is identified as the creator of the PO. The customer will provide this value initially and it needs to be in sync with the value shared with Chrome River.
+        customerAddresses:
+          type: array
+          example:
+          - name: customerAddress1
+            value: '1234'
+          - name: customerAddress2
+            value: '5678'
+          - name: customerAddress3
+            value: '9012'
+          description: UniqueId of the customer address. Will either be customer or Chrome River generated. Could reference a bill to or a ship to address of the customer. Maximum three elements allowed.
+          items:
+            $ref: '#/components/schemas/PoNameValueType'
+        deliveryDate:
+          type: string
+          format: date-time
+          description: 'Delivery date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        description:
+          type: string
+          description: PO description associated with the PO header.
+        lines:
+          type: array
+          description: Line(s) items associated with the PO.
+          items:
+            $ref: '#/components/schemas/PoLineItemExternal'
+        memo:
+          type: string
+          description: PO memo field associated with the PO header.
+        notes:
+          type: array
+          example:
+          - note: API Testing Note1
+          - note: API Testing Note2
+          description: User notes at the header level of the PO.
+          items:
+            $ref: '#/components/schemas/PoReqNotesExternal'
+        plannedDeliveryCost:
+          type: number
+          description: Planned delivery cost
+        poAmount:
+          type: number
+          description: Total amount of the PO in poCurrencyCode.
+        poCurrencyCode:
+          type: string
+          description: Currency in which PO is created. These codes are standard three character values (e.g., USD, GBP, JPY, HKD, etc).
+        poCurrencyCodeScale:
+          type: integer
+          format: int32
+          description: 'The PO Currency Code Scale is used to denote the amount precision for the specified currency, for example: 2 allowing two digit fractional amount; or 0 allowing no/zero fractional amount'
+        poDate:
+          type: string
+          format: date-time
+          description: 'Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ" . If left blank it will be defaulted as current date.'
+        poExchangeRate:
+          type: number
+          description: Exchange rate as on poDate.
+        poNumber:
+          type: string
+          description: This is the customer-unique PO number in their PO System.
+        poReqId:
+          type: string
+          description: The PO Req ID is auto-generated by the system and cannot be specified within the request
+        poUniqueId:
+          type: string
+          description: The PO Unique ID is set by the system as the value of PO Req ID and cannot be specified within the request
+        promiseDate:
+          type: string
+          format: date-time
+          description: 'Promise date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        requesterUniqueId:
+          type: string
+          description: Customer's unique ID of the person that is identified as the Requester of the PO. The customer will provide this value initially and it needs to be in sync with the value shared with Chrome River.
+        status:
+          type: string
+          description: Status of the PO. Will default to "APP" for post transactions.  Examples value are "APP" (APPROVED), "DEL" (DELETED), "CLSD" (CLOSED).
+          enum:
+          - APP
+          - DEL
+          - CLSD
+        submitDate:
+          type: string
+          format: date-time
+          description: 'Po submit date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        termConditionText:
+          type: string
+          description: PO terms and conditions text associated with the PO header.
+        udas:
+          type: array
+          example:
+          - name: <udaName>
+            value: '123'
+          description: User defined field(s) at the header level of the PO. udaName is unique and it should exist in chrome river User defined attribute master table. if udaName is Entity type then value should be chrome river entity code.
+          items:
+            $ref: '#/components/schemas/PoNameValueType'
+        updateDate:
+          type: string
+          format: date-time
+          description: 'Update date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        vendorAddressUniqueId:
+          type: string
+          description: Customer's unique ID for the vendor address that is created from the customer's system. The customer will provide this value initially and it needs to be in sync with the value shared with Chrome River.
+        vendorUniqueId:
+          type: string
+          description: Customer's unique ID of the vendor that is created from the customer's system. The customer will provide this value initially and it needs to be in sync with the value shared with Chrome River.
+      title: PoExternal
+    ItemCatalog:
+      type: object
+      required:
+      - currencyCode
+      - expenseTypeName
+      - isActive
+      - itemCategory
+      - itemName
+      - itemNumber
+      - itemUm
+      - itemUnitPrice
+      - vendorItemNumber
+      - vendorUniqueId
+      properties:
+        currencyCode:
+          type: string
+          example: USD
+          description: Currency of the product. These codes are standard three character values (e.g., USD, GBP, JPY, HKD, etc).
+        expenseTypeName:
+          type: string
+          example: Entity Type Name
+          description: Expense Type for the Product
+        isActive:
+          type: boolean
+          example: true
+          description: Product Status
+        itemCategory:
+          type: string
+          example: Office Supplies
+          description: Product category
+        itemDesc:
+          type: string
+          example: Test Item Description
+          description: Product description
+        itemName:
+          type: string
+          example: Stapler
+          description: Product name
+        itemNumber:
+          type: string
+          example: 12345
+          description: Product number
+        itemUm:
+          type: string
+          example: EA
+          description: Unit of measure for product
+        itemUnitPrice:
+          type: number
+          example: 10
+          description: Product unit price
+        manufacturerItemNumber:
+          type: string
+          example: ABCD123456
+          description: Manufacturer product reference number, will copy itemNumber value if not passed
+        manufacturerName:
+          type: string
+          example: Test Mfr
+          description: Name of the manufacturer
+        vendorItemNumber:
+          type: string
+          example: 001ABCD1234
+          description: Vendor product reference number, will copy itemNumber value if not passed
+        vendorUniqueId:
+          type: string
+          example: Test_Unique_Vendor_ID
+          description: Customer's unique ID of the vendor that is created from the customer's system. The customer will provide this value initially and it needs to be in sync with the value shared with Chrome River.
+      title: ItemCatalog
+    PoReqLineItemVatExternal:
+      type: object
+      properties:
+        taxAmount:
+          type: number
+          description: Tax amount
+        taxCode:
+          type: string
+          description: Tax code
+        taxRate:
+          type: number
+          description: Tax rate
+      title: PoReqLineItemVatExternal
+    PoLineItemExternal:
+      type: object
+      required:
+      - lineItemTypeName
+      properties:
+        adjustedAmount:
+          type: number
+          description: Line item amount spent previously invoiced against the PO line item.
+        adjustedQuantity:
+          type: number
+          description: Line item quantity previously invoiced against the PO line item. It should be in same Unit of Measure as the PO line item's Unit of Measure.
+        amount:
+          type: number
+          description: Line item amount of the PO in currencyCode.
+        cancelDate:
+          type: string
+          format: date-time
+          description: Cancel date, The format of deliveryDate is "yyyy-MM-dd'T'HH:mm:ss.SSSZ" .
+        costCode:
+          type: string
+          description: Customer formatted cost center/cost code/allocation value (separate and distinct from line item allocation field).
+        createDate:
+          type: string
+          format: date-time
+          description: Create date, The format of deliveryDate is "yyyy-MM-dd'T'HH:mm:ss.SSSZ" .
+        customerAddresses:
+          type: array
+          description: UniqueId of the customer address. Will either be customer or Chrome River generated. Could reference a bill to or a ship to address of the customer. Maximum three elements allowed.
+          items:
+            $ref: '#/components/schemas/PoNameValueType'
+        deliveryDate:
+          type: string
+          format: date-time
+          description: Delivery date, The format of deliveryDate is "yyyy-MM-dd'T'HH:mm:ss.SSSZ" .
+        description:
+          type: string
+          description: Free form text line item description on the PO line.
+        extLineItemReference:
+          type: string
+          description: Must be unique within any single PO and represent the customer provided line Item Reference.
+        itemDesc:
+          type: string
+          description: Customer's item description of the item ordered on the PO line.
+        itemId:
+          type: integer
+          format: int32
+          description: Customer's item ID of the item ordered on the PO line.
+        itemQty:
+          type: number
+          description: Customer's line item quantity ordered.
+        itemUm:
+          type: string
+          description: Customer's line item unit of measure.
+        itemUnitPrice:
+          type: number
+          description: Customer's line item unit price for the item ordered.
+        ledgerNumber:
+          type: string
+          description: General Ledger account number. Must be a valid value as defined by the customer GLNumber. Validated against Formatted & Unformatted string. Send EITHER a ledger (GL) number OR a matterNumber for each line item ��� but not both
+        lineItemTypeName:
+          type: string
+          description: It will be validated against Customer's list of Chrome River Expense Types.
+        matterNumber:
+          type: string
+          description: Matter number Identifier for the PO Line. The customer will provide this value initially and it needs to be in synch with the value shared with Chrome River. Send EITHER a ledger (GL) number OR a matterNumber for each line item ��� but not both
+        matterOnSelects:
+          type: array
+          example:
+          - value: <EntityTypeCode>
+            name: <EntityCode>
+            type: MOS1
+          - value: <EntityTypeCode>
+            name: <EntityCode>
+            type: MOS2
+          description: ' Customer formatted cost center/cost code/allocation values (separate and distinct from line item allocation field).'
+          items:
+            $ref: '#/components/schemas/PoNameValueType'
+        notes:
+          type: array
+          example:
+          - note: API Testing Note1
+          - note: API Testing Note2
+          description: User notes at the line item level of the PO.
+          items:
+            $ref: '#/components/schemas/PoReqNotesExternal'
+        openAmount:
+          type: number
+          description: Open amount
+        openQty:
+          type: number
+          description: Open quantity
+        personUniqueId:
+          type: string
+          description: Customer unique ID of the person associated with the PO's line item.
+        promiseDate:
+          type: string
+          format: date-time
+          description: Promise date, The format of deliveryDate is "yyyy-MM-dd'T'HH:mm:ss.SSSZ" .
+        status:
+          type: string
+          description: Status of the PO line item. By default it will be set to "ACT" for post transactions. Examples value are "ACT" (ACTIVE), "DEL" (DELETED).  If header status is set to "CLSD" or "DEL" this will cause all line item statutes on the PO to be set to "DEL".
+          enum:
+          - ACT
+          - DEL
+        termConditionText:
+          type: string
+          description: PO terms and conditions text associated with the PO line item
+        udas:
+          type: array
+          example:
+          - name: <udaName>
+            value: '123'
+          description: User defined field(s) at the line level of the PO. udaName is unique and it should exist in chrome river User defined attribute master table. if udaName is Entity type then value should be chrome river entity code.
+          items:
+            $ref: '#/components/schemas/PoNameValueType'
+        updateDate:
+          type: string
+          format: date-time
+          description: Update date, The format of deliveryDate is "yyyy-MM-dd'T'HH:mm:ss.SSSZ" .
+        vats:
+          type: array
+          example:
+          - taxCode: 09RZ
+            taxRate: 20
+            taxAmount: 15
+          description: Tax information associated with the line item on the PO.
+          items:
+            $ref: '#/components/schemas/PoReqLineItemVatExternal'
+        vendorItemId:
+          type: string
+          description: Vendor's item ID of the item ordered on the PO line.
+      title: PoLineItemExternal
+    PoNameValueType:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - PersonPicker
+          - EntityValue
+          - BooleanValue
+          - StringValue
+          - CurrencyValue
+          - NumberValue
+          - DateValue
+          - MOS1
+          - MOS2
+        value:
+          type: string
+      title: PoNameValueType
+    PoRequestNumberSearchRequest:
+      type: object
+      properties:
+        requestNumber:
+          type: array
+          items:
+            type: string
+        status:
+          type: string
+      title: PoRequestNumberSearchRequest
+  requestBodies:
+    upsertPOUsingPOSTPoexternal:
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+      description: poExternal
+      required: true

@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts returned-payments-controller API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: returned-payments-controller
+  description: Retrieve information concerning returned payments
+paths:
+  /v1/returned-payment-expense-reports/lite:
+    get:
+      tags:
+      - returned-payments-controller
+      summary: Get list of expense report ids with returned payments
+      description: Expense report ids are associated with payment group beneficiaries that have been returned since fromDate for given customer. Returns empty list if none found.
+      operationId: getReturnedPaymentExpenseReportHeaderIdsUsingGET
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        description: 'Date checking back to for returned payments. Timezone UTC. Format: yyyy-MM-dd HH:mm:ss:SSS'
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: fromDate must be in format yyyy-MM-dd HH:mm:ss:SSS
+      deprecated: false

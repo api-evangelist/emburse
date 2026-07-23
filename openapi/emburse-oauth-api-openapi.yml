@@ -1,0 +1,208 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Oauth API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Oauth
+paths:
+  /oauth/token/challenge:
+    get:
+      operationId: get_oauth_token_challenge
+      description: Handle MFA challenges.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - count
+                - results
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=400&limit=100
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=200&limit=100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Answer'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Oauth
+    post:
+      operationId: post_oauth_token_challenge
+      description: Handle MFA challenges.
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Answer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Answer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Answer'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Oauth
+  /oauth/token:
+    post:
+      operationId: post_oauth_token
+      description: Issue access tokens.
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema: {}
+          application/json:
+            schema: {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Oauth
+  /oauth/token/revoke:
+    post:
+      operationId: post_oauth_token_revoke
+      description: Revoke access token.
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RevokeToken'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RevokeToken'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RevokeToken'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Oauth
+components:
+  schemas:
+    Answer:
+      type: object
+      properties:
+        answer:
+          type: string
+          writeOnly: true
+      required:
+      - answer
+    RevokeToken:
+      type: object
+      properties:
+        client_id:
+          type: string
+        client_secret:
+          type: string
+        access_token:
+          type: string
+        company_id:
+          type: string
+          format: uuid
+      required:
+      - client_id
+      - client_secret

@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Merchant Categories API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Merchant Categories
+paths:
+  /merchant-categories:
+    get:
+      operationId: get_merchant_categories
+      description: 'List accepted merchant categories - internal endpoint for Cards Gateway
+
+        For groups we add a stringified display of mcc included'
+      parameters: []
+      responses:
+        '200':
+          description: 'List of accepted merchant category codes (MCC). Each item is a 3-element array: [id, name, mcc_ranges_string].'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: array
+                  description: 'A 3-element array: [0] id — MCC group or code identifier; [1] name — human-readable label; [2] mcc_ranges — stringified MCC ranges (e.g. "1-3, 5, 8-10"), empty string for individual codes.'
+                  items:
+                    type: string
+                  minItems: 3
+                  maxItems: 3
+        '401':
+          description: Unauthorized - Invalid or missing authentication token.
+      tags:
+      - Merchant Categories

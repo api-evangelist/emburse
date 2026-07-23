@@ -1,0 +1,730 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts expense-image-api API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: expense-image-api
+  description: Retrieve Expense Report Receipts / Images
+paths:
+  /expense-image-api/getVoucherInvoices:
+    get:
+      tags:
+      - expense-image-api
+      summary: Get voucher invoices for a given date range.
+      description: Get voucher invoices for a given date range. Returns an xml file.
+      operationId: getByDateRange
+      parameters:
+      - name: fromDate
+        in: query
+        description: Beginning of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss
+        required: true
+        schema:
+          type: string
+          default: ''
+        example: 08/01/2017 or 08/01/2017 23:22:21
+      - name: toDate
+        in: query
+        description: End of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss
+        required: true
+        schema:
+          type: string
+          default: ''
+        example: 08/01/2017 or 08/01/2017 23:22:21
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/VoucherInvoiceTO'
+              examples:
+                voucher invoice list:
+                  description: voucher invoice list
+                  value: "<list>\n    <com.chromeriver.servlet.VoucherInvoiceTO>\n        <reportID>STAG01234567</reportID>\n        <voucherInvoice>0860631509020301</voucherInvoice>\n        <invoiceDate>1502752264000</invoiceDate>\n        <invoiceDateString>2017-08-14 23:11:04</invoiceDateString>\n        <vendorNumber>01234</vendorNumber>\n        <isReceiptUpdatedAfterExport>false</isReceiptUpdatedAfterExport>\n    </com.chromeriver.servlet.VoucherInvoiceTO>\n    <com.chromeriver.servlet.VoucherInvoiceTO>\n        <reportID>STAG12345678</reportID>\n        <voucherInvoice>0860631509020302</voucherInvoice>\n        <invoiceDate>1502752264000</invoiceDate>\n        <invoiceDateString>2017-08-14 23:11:04</invoiceDateString>\n        <vendorNumber>23456</vendorNumber>\n        <isReceiptUpdatedAfterExport>false</isReceiptUpdatedAfterExport>\n    </com.chromeriver.servlet.VoucherInvoiceTO>\n</list>\n"
+        '400':
+          description: Bad date input.
+          content:
+            text:
+              examples:
+                Unparseable date.:
+                  description: Unparseable date.
+                  value: Unparseable date. Date formats are MM/dd/yyyy or MM/dd/yyyy hh:mm:ss
+                Range exceeds maximum days.:
+                  description: Range exceeds maximum days.
+                  value: Range of export dates requested exceeds maximum days supported (X calendar days). Please narrow export date range to X days or less and resubmit your request.
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getVoucherInvoicesForXML:
+    get:
+      tags:
+      - expense-image-api
+      summary: Get voucher invoices for a given date range.
+      description: Get voucher invoices for a given date range. Returns an xml file.
+      operationId: getVoucherInvoicesForXml
+      parameters:
+      - name: fromDateforXml
+        in: query
+        description: Beginning of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss
+        required: true
+        schema:
+          type: string
+          default: ''
+        example: 08/01/2017 or 08/01/2017 23:22:21
+      - name: toDateforXml
+        in: query
+        description: End of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss
+        required: true
+        schema:
+          type: string
+          default: ''
+        example: 08/01/2017 or 08/01/2017 23:22:21
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/VoucherInvoiceTO'
+              examples:
+                voucher invoice list:
+                  description: voucher invoice list
+                  value: "<list>\n    <com.chromeriver.servlet.VoucherInvoiceTO>\n        <reportID>STAG01234567</reportID>\n        <voucherInvoice>0860631509020301</voucherInvoice>\n        <invoiceDate>1502752264000</invoiceDate>\n        <invoiceDateString>2017-08-14 23:11:04</invoiceDateString>\n        <vendorNumber>01234</vendorNumber>\n        <isReceiptUpdatedAfterExport>false</isReceiptUpdatedAfterExport>\n    </com.chromeriver.servlet.VoucherInvoiceTO>\n    <com.chromeriver.servlet.VoucherInvoiceTO>\n        <reportID>STAG12345678</reportID>\n        <voucherInvoice>0860631509020302</voucherInvoice>\n        <invoiceDate>1502752264000</invoiceDate>\n        <invoiceDateString>2017-08-14 23:11:04</invoiceDateString>\n        <vendorNumber>23456</vendorNumber>\n        <isReceiptUpdatedAfterExport>false</isReceiptUpdatedAfterExport>\n    </com.chromeriver.servlet.VoucherInvoiceTO>\n</list>\n"
+        '400':
+          description: Bad date input.
+          content:
+            text:
+              examples:
+                Unparseable date.:
+                  description: Unparseable date.
+                  value: Unparseable date. Date formats are MM/dd/yyyy or MM/dd/yyyy hh:mm:ss
+                Range exceeds maximum days.:
+                  description: Range exceeds maximum days.
+                  value: Range of export dates requested exceeds maximum days supported (X calendar days). Please narrow export date range to X days or less and resubmit your request.
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getVoucherInvoicesForOFD:
+    get:
+      tags:
+      - expense-image-api
+      summary: Get voucher invoices for a given date range.
+      description: Get voucher invoices for a given date range. Returns an xml file.
+      operationId: getVoucherInvoicesForOFD
+      parameters:
+      - name: fromDateForOfd
+        in: query
+        description: Beginning of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss
+        required: true
+        schema:
+          type: string
+          default: ''
+        example: 08/01/2017 or 08/01/2017 23:22:21
+      - name: toDateForOfd
+        in: query
+        description: End of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss
+        required: true
+        schema:
+          type: string
+          default: ''
+        example: 08/01/2017 or 08/01/2017 23:22:21
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/VoucherInvoiceTO'
+              examples:
+                voucher invoice list:
+                  description: voucher invoice list
+                  value: "<list>\n    <com.chromeriver.servlet.VoucherInvoiceTO>\n        <reportID>STAG01234567</reportID>\n        <voucherInvoice>0860631509020301</voucherInvoice>\n        <invoiceDate>1502752264000</invoiceDate>\n        <invoiceDateString>2017-08-14 23:11:04</invoiceDateString>\n        <vendorNumber>01234</vendorNumber>\n        <isReceiptUpdatedAfterExport>false</isReceiptUpdatedAfterExport>\n    </com.chromeriver.servlet.VoucherInvoiceTO>\n    <com.chromeriver.servlet.VoucherInvoiceTO>\n        <reportID>STAG12345678</reportID>\n        <voucherInvoice>0860631509020302</voucherInvoice>\n        <invoiceDate>1502752264000</invoiceDate>\n        <invoiceDateString>2017-08-14 23:11:04</invoiceDateString>\n        <vendorNumber>23456</vendorNumber>\n        <isReceiptUpdatedAfterExport>false</isReceiptUpdatedAfterExport>\n    </com.chromeriver.servlet.VoucherInvoiceTO>\n</list>\n"
+        '400':
+          description: Bad date input.
+          content:
+            text:
+              examples:
+                Unparseable date.:
+                  description: Unparseable date.
+                  value: Unparseable date. Date formats are MM/dd/yyyy or MM/dd/yyyy hh:mm:ss
+                Range exceeds maximum days.:
+                  description: Range exceeds maximum days.
+                  value: Range of export dates requested exceeds maximum days supported (X calendar days). Please narrow export date range to X days or less and resubmit your request.
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getReceipts:
+    get:
+      tags:
+      - expense-image-api
+      summary: Extract PDF of receipts associated to an Expense Report
+      description: This method returns a PDF file of all the images associated with an Expense Report or with the line items within the report.
+      operationId: getReceipts
+      parameters:
+      - name: voucherInvoice
+        in: query
+        description: Voucher invoice number.
+        required: false
+        schema:
+          type: string
+        example: 0860631509020301
+      - name: reportID
+        in: query
+        description: The Report ID is a 12-digit number generated by Chrome River that begins with 0100. Be sure to omit the dashes.
+        required: false
+        schema:
+          type: string
+        example: 010012345678
+      - name: getMileageDetails
+        in: query
+        description: If selected, PDF will include mileage details, including map and distance, if expense was created using Maps
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: getImage
+        in: query
+        description: If selected, PDF will include receipt images attached to the report
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: getPDFReport
+        in: query
+        description: If selected, the original PDF is retrieved first, if available.
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: getPDFReportWithNotes
+        in: query
+        description: If selected, the original PDF will include approval notes
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: imageFirst
+        in: query
+        description: If selected, the images will be retrieved before any PDFs
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: failOnImageFetchError
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/pdf: {}
+        '400':
+          description: Bad input.
+          content:
+            text:
+              examples:
+                getImage and getPDFReport cannot be false both:
+                  description: getImage and getPDFReport cannot be false both
+                  value: getImage and getPDFReport cannot be false both
+                voucherInvoice is required:
+                  description: voucherInvoice is required
+                  value: voucherInvoice is required
+                Invalid voucherInvoice:
+                  description: Invalid voucherInvoice
+                  value: Invalid voucherInvoice
+                Invalid reportID:
+                  description: Invalid reportID
+                  value: Invalid reportID
+                Problem generating images or pdf report.:
+                  description: Problem generating images or pdf report.
+                  value: Problem generating images or pdf report.
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getReceiptsWithCoverPage:
+    get:
+      tags:
+      - expense-image-api
+      summary: Extract PDF of receipts associated to an Expense Report with a CoverPage
+      description: This method returns a PDF file of all the images associated with an Expense Report and includes a CoverPage.
+      operationId: getReceiptsWithCoverPage
+      parameters:
+      - name: voucherInvoice
+        in: query
+        description: Voucher invoice number.
+        required: false
+        schema:
+          type: string
+        example: 0860631509020301
+      - name: reportID
+        in: query
+        description: The Report ID is a 12-digit number generated by Chrome River that begins with 0100. Be sure to omit the dashes.
+        required: false
+        schema:
+          type: string
+        example: 010012345678
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/pdf: {}
+        '400':
+          description: Bad input.
+          content:
+            text:
+              examples:
+                getImage and getPDFReport cannot be false both:
+                  description: getImage and getPDFReport cannot be false both
+                  value: getImage and getPDFReport cannot be false both
+                voucherInvoice is required:
+                  description: voucherInvoice is required
+                  value: voucherInvoice is required
+                Invalid voucherInvoice:
+                  description: Invalid voucherInvoice
+                  value: Invalid voucherInvoice
+                Invalid reportID:
+                  description: Invalid reportID
+                  value: Invalid reportID
+                Problem generating images or pdf report.:
+                  description: Problem generating images or pdf report.
+                  value: Problem generating images or pdf report.
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getReceiptsForXml:
+    get:
+      tags:
+      - expense-image-api
+      summary: Get voucher invoice by its number.
+      description: Get voucher invoice by its number. Returns zip archive with xml file.
+      operationId: getReceiptsForXml
+      parameters:
+      - name: voucherInvoiceForXml
+        in: query
+        description: Voucher invoice number.
+        required: true
+        schema:
+          type: string
+        example: 3411655208121105
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/zip: {}
+        '400':
+          description: Bad input.
+          content:
+            text:
+              examples:
+                VoucherInvoice is required and should contain only digits:
+                  description: VoucherInvoice is required and should contain only digits
+                  value: VoucherInvoice is required and should contain only digits
+                Invalid voucherInvoice for this customer:
+                  description: Invalid voucherInvoice for this customer
+                  value: Invalid voucherInvoice for this customer
+                There are no XMLs associated with this expense report.:
+                  description: There are no XMLs associated with this expense report.
+                  value: There are no XMLs associated with this expense report.
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getReceiptsForOFD:
+    get:
+      tags:
+      - expense-image-api
+      summary: Get OFD receipts associated to a VoucherInvoice Number.
+      description: Get receipt images for a voucher invoice number. Returns zip archive with receipt image files.
+      operationId: getReceiptsForOFD
+      parameters:
+      - name: voucherInvoice
+        in: query
+        description: Voucher invoice number.
+        required: true
+        schema:
+          type: string
+        example: 3411655208121105
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/zip: {}
+        '400':
+          description: Bad input.
+          content:
+            text:
+              examples:
+                VoucherInvoice is required and should contain only digits:
+                  description: VoucherInvoice is required and should contain only digits
+                  value: VoucherInvoice is required and should contain only digits
+                Invalid voucherInvoice for this customer:
+                  description: Invalid voucherInvoice for this customer
+                  value: Invalid voucherInvoice for this customer
+                There are no OFD receipts associated with this expense report.:
+                  description: There are no OFD receipts associated with this expense report.
+                  value: There are no OFD receipts associated with this expense report.
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getLineItemVoucherInvoices:
+    get:
+      tags:
+      - expense-image-api
+      summary: Get list of line item voucher invoices
+      description: This method returns a listing of line item voucher invoices based on a given Voucher Invoice.
+      operationId: getLineItemVoucherInvoices
+      parameters:
+      - name: lineItemVoucherInvoice
+        in: query
+        description: 'Voucher invoice number. '
+        required: true
+        schema:
+          type: string
+        example: 0860631509020301
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/lineItemVoucherInvoiceList'
+              examples:
+                lineItemVoucherInvoice list:
+                  description: lineItemVoucherInvoice list
+                  value: "<list>\n    <lineItemVoucherInvoice>0860631509020301_00010000</lineItemVoucherInvoice>\n</list>"
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: string
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getLineItemReceipts:
+    get:
+      tags:
+      - expense-image-api
+      summary: Extract PDF of receipts for a line item voucher invoice
+      description: This method returns a Line Item Receipts PDF based on the given Line Item Voucher Invoice. This will also work for returning all remaining images that are not linked to any Line Item.
+      operationId: getLineItemReceipts
+      parameters:
+      - name: voucherInvoiceForReceipt
+        in: query
+        description: 'Voucher invoice number that was returned from the getLineItemVoucherInvoices method. Line Item Voucher Invoice format: \<VoucherInvoice\> + "_" + \<LineNumber\> + \<ChildLineNumber\>'
+        required: true
+        schema:
+          type: string
+        example: 0860631509020301_00020000
+      - name: getImage
+        in: query
+        description: If selected, PDF will include receipt images attached to the report
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: getPDFReport
+        in: query
+        description: If selected, the original PDF is retrieved first, if available.
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: getPDFReportWithNotes
+        in: query
+        description: If selected, the original PDF will include approval notes
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: imageFirst
+        in: query
+        description: If selected, the images will be retrieved before any PDFs
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/pdf: {}
+        '400':
+          description: Bad input.
+          content:
+            text:
+              examples:
+                getImage and getPDFReport cannot be false both:
+                  description: getImage and getPDFReport cannot be false both
+                  value: getImage and getPDFReport cannot be false both
+                voucherInvoice is required:
+                  description: voucherInvoice is required
+                  value: voucherInvoice is required
+                Invalid voucherInvoice:
+                  description: Invalid voucherInvoice
+                  value: 'Invalid voucherInvoice. Voucher invoice for this method is of format "{voucherInvoice}_{lineNumber}{4}{HotelNumber}{4}". Ex : 0123456789012345_00010000'
+                There are no receipts associated with this expense report.:
+                  description: There are no receipts associated with this expense report.
+                  value: There are no receipts associated with this expense report.
+                Problem generating images or pdf report.:
+                  description: Problem generating images or pdf report.
+                  value: Problem generating images or pdf report.
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getLineItemReceiptsWithMileageDetails:
+    get:
+      tags:
+      - expense-image-api
+      summary: Extract PDF of receipts for a line item voucher invoice
+      description: This method returns a Line Item Receipts PDF based on the given Line Item Voucher Invoice. This will also work for returning all remaining images that are not linked to any Line Item.
+      operationId: getLineItemReceiptsWithMileageDetails
+      parameters:
+      - name: voucherInvoiceForReceipt
+        in: query
+        description: 'Voucher invoice number that was returned from the getLineItemVoucherInvoices method. Line Item Voucher Invoice format: \<VoucherInvoice\> + "_" + \<LineNumber\> + \<ChildLineNumber\>'
+        required: true
+        schema:
+          type: string
+        example: 0860631509020301_00020000
+      - name: getImage
+        in: query
+        description: If selected, PDF will include receipt images attached to the report
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: getPDFReport
+        in: query
+        description: If selected, the original PDF is retrieved first, if available.
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: getPDFReportWithNotes
+        in: query
+        description: If selected, the original PDF will include approval notes
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: imageFirst
+        in: query
+        description: If selected, the images will be retrieved before any PDFs
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/pdf: {}
+        '400':
+          description: Bad input.
+          content:
+            text:
+              examples:
+                getImage and getPDFReport cannot be false both:
+                  description: getImage and getPDFReport cannot be false both
+                  value: getImage and getPDFReport cannot be false both
+                voucherInvoice is required:
+                  description: voucherInvoice is required
+                  value: voucherInvoice is required
+                Invalid voucherInvoice:
+                  description: Invalid voucherInvoice
+                  value: 'Invalid voucherInvoice. Voucher invoice for this method is of format "{voucherInvoice}_{lineNumber}{4}{HotelNumber}{4}". Ex : 0123456789012345_00010000'
+                There are no receipts associated with this expense report.:
+                  description: There are no receipts associated with this expense report.
+                  value: There are no receipts associated with this expense report.
+                Problem generating images or pdf report.:
+                  description: Problem generating images or pdf report.
+                  value: Problem generating images or pdf report.
+        '412':
+          $ref: '#/components/responses/412'
+  /expense-image-api/getLineItemReceiptsFromLineItemId:
+    get:
+      tags:
+      - expense-image-api
+      summary: Extract PDF of receipts for a line item
+      description: This method returns a Line Item Receipts PDF based on the given Line Item ID.
+      operationId: getLineItemReceiptsFromLineItemId
+      parameters:
+      - name: expenseReportLineItemId
+        in: query
+        description: expenseReportLineItemId
+        required: true
+        schema:
+          type: string
+          default: ''
+        example: 01670304-083d-4c6e-9c76-a5716987de7a
+      - name: getPDFReport
+        in: query
+        description: If selected, the original PDF is retrieved first, if available.
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: getPDFReportWithNotes
+        in: query
+        description: If selected, the original PDF will include approval notes
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: imageFirst
+        in: query
+        description: If selected, the images will be retrieved before any PDFs
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: getMileageCoverPage
+        in: query
+        description: If selected, the mileage cover page will be included if the item type of the line item is of type mileage.
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: x-api-key
+        $ref: '#/components/parameters/x-api-key'
+      - name: chain-id
+        $ref: '#/components/parameters/chain-id'
+      - name: customer-code
+        $ref: '#/components/parameters/customer-code'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/pdf: {}
+        '400':
+          description: Bad input.
+          content:
+            text:
+              examples:
+                expenseReportLineItemId is empty:
+                  description: expenseReportLineItemId is empty
+                  value: expenseReportLineItemId is empty
+                Invalid expense report line item id:
+                  description: Invalid expense report line item id
+                  value: 'Invalid expense report line item id: {expenseReportLineItemId}. Cannot find expense report header for this line item in customer {customerId}'
+                Invalid expense report line item id.:
+                  description: Invalid expense report line item id.
+                  value: 'Invalid expense report line item id: {expenseReportLineItemId}. Cannot find expense report line item in customer {customerId}'
+                Problem generating images or pdf report.:
+                  description: Problem generating images or pdf report.
+                  value: 'getReceiptsFromLineItemId: problem streaming byte array for expense report line item: {expenseReportLineItemId}'
+        '412':
+          $ref: '#/components/responses/412'
+components:
+  parameters:
+    x-api-key:
+      name: x-api-key
+      in: header
+      description: API key for Authentication
+      required: true
+      schema:
+        type: string
+    chain-id:
+      name: chain-id
+      in: header
+      description: Reference used to track the flow of the request
+      required: true
+      schema:
+        type: string
+    customer-code:
+      name: customer-code
+      in: header
+      description: Unique customer identifier provided by Chrome River
+      required: true
+      schema:
+        type: string
+  schemas:
+    lineItemVoucherInvoice:
+      type: string
+    VoucherInvoiceTO:
+      type: object
+      properties:
+        reportID:
+          type: string
+        voucherInvoice:
+          type: string
+        invoiceDate:
+          type: string
+          format: date-time
+        invoiceDateString:
+          type: string
+        vendorNumber:
+          type: string
+        isReceiptUpdatedAfterExport:
+          type: string
+    lineItemVoucherInvoiceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/lineItemVoucherInvoice'
+  responses:
+    '412':
+      description: This feature is not activated for customer = %d. Please contact Support@Chromeriver.com
+      content:
+        text: {}

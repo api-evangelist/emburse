@@ -1,0 +1,76 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts pre-approval-import-controller API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: pre-approval-import-controller
+paths:
+  /v1/preapproval-reports:
+    post:
+      tags:
+      - pre-approval-import-controller
+      summary: Create a draft/approved PreApproval report
+      description: This service allows an external application to create a pre-approval report in DRAFT/APPROVED status
+      operationId: createPreApproval
+      parameters:
+      - name: chain-id
+        in: header
+        description: Reference used to track the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: PreApproval report created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PreApprovalImportOutput'
+        '400':
+          description: Customer Code is invalid. / Unprocessable input payload.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    PreApprovalImportOutput:
+      required:
+      - reportReference
+      type: object
+      properties:
+        reportReference:
+          type: string
+          description: Reference number for newely created pre-approval report

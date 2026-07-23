@@ -1,0 +1,537 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Entity Type API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Entity Type
+  description: Entity Type Controller
+paths:
+  /v1/entity-types:
+    get:
+      tags:
+      - Entity Type
+      summary: Gets list of Entity Types
+      description: This web service allows an external application to fetch a list of Entity Types.  Only returns 100 max results of active entity types.
+      operationId: getEntityTypesUsingGET
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Entity Types were returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EntityType'
+        '400':
+          description: Customer Code is invalid.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+    post:
+      tags:
+      - Entity Type
+      summary: Create an Entity Type
+      description: "This web service allows an external application to create an Entity Type. \n\nDoes not support the 'languages'. Use POST /v1/entity-types/{entityTypeCode}/languages instead. \n\nThis endpoint does not act as an upsert. It will fail for existing entities, unless the entity already is inactive. If the entity is inactive, it'll reactivate the entity."
+      operationId: createEntityTypeUsingPOST
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River.
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntityTypeModel'
+        description: EntityType input JSON payload.
+        required: true
+      responses:
+        '200':
+          description: Entity Type successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityTypeModel'
+        '400':
+          description: Request is invalid. Please check the request specification and try again.
+        '410':
+          description: Entity Type Code already available in system.
+        '422':
+          description: The request was well-formed but was unable to be followed due to semantic errors.
+        '500':
+          description: Server error.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v1/entity-types/{code}:
+    get:
+      tags:
+      - Entity Type
+      summary: Get Entity Type by Code
+      description: This web service allows an external application to fetch an Entity Type by its Code. Only returns active entities.
+      operationId: getEntityTypeByCodeUsingGET
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: code
+        in: path
+        description: Entity Type code
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Entity Type was returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityType'
+        '400':
+          description: Customer Code is invalid.
+        '404':
+          description: Code is invalid
+        '503':
+          description: Service unavailable.
+      deprecated: false
+    put:
+      tags:
+      - Entity Type
+      summary: Put Entity Type by Code
+      description: "This web service allows an external application to replace an Entity Type by its Code. \n\nDoes not support the 'languages'. Use PUT /v1/entity-types/{entityTypeCode}/languages/{languageCode} instead."
+      operationId: replaceEntityTypeByCodeUsingPUT
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: code
+        in: path
+        description: Entity Type code
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River.
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntityTypeModel'
+        description: Entity Type body
+        required: true
+      responses:
+        '200':
+          description: Entity Type was returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityTypeModel'
+        '400':
+          description: Request is invalid. Please check the request specification and try again.
+        '422':
+          description: The request was well-formed but was unable to be followed due to semantic errors.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v1/entity-types/{entityTypeCode}:
+    delete:
+      tags:
+      - Entity Type
+      summary: Delete an entity-type
+      description: This web service allows an external application to delete an Entity Type by entity-code
+      operationId: deleteEntityTypeByCodeUsingDELETE
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River.
+        required: true
+        schema:
+          type: string
+      - name: entityTypeCode
+        in: path
+        description: EntityType code.
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Entity Type successfully deleted
+        '400':
+          description: Customer Code is invalid.
+        '404':
+          description: Entity Type Code is unavailable.
+        '410':
+          description: Entity Type Code already deleted in system.
+        '500':
+          description: Server error.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v1/entity-types/{entityTypeCode}/languages:
+    get:
+      tags:
+      - Entity Type
+      summary: Gets list of language translations for the EntityType
+      description: This web service allows an external application to get a list of localized names for the set of languages under the EntityType.
+      operationId: getLanguagesUsingGET
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River.
+        required: true
+        schema:
+          type: string
+      - name: entityTypeCode
+        in: path
+        description: Entity Type code
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of languages returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EntityTypeLanguage'
+        '404':
+          description: The EntityType code does not exist
+        '503':
+          description: Service unavailable.
+      deprecated: false
+    post:
+      tags:
+      - Entity Type
+      summary: Add a language to an EntityType
+      description: "This web service allows an external application to add a localized name to an EntityType. \n\nThis endpoint is not an upsert. Languages that aleady exist cannot be modified except through PUT /entity-types/{entityTypeCode}/languages/{languageCode}"
+      operationId: addLanguageUsingPOST
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River.
+        required: true
+        schema:
+          type: string
+      - name: entityTypeCode
+        in: path
+        description: Entity Type code
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/EntityTypeLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityTypeLanguage'
+        '201':
+          description: Language created successfuly
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityTypeLanguage'
+        '404':
+          description: The EntityType code does not exist
+        '422':
+          description: Missing/Invalid values in language
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v1/entity-types/{entityTypeCode}/languages/{languageCode}:
+    put:
+      tags:
+      - Entity Type
+      summary: Modify a language to EntityType
+      description: This web service allows an external application to alter existing localized name to an EntityType
+      operationId: updateLanguageUsingPUT
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River.
+        required: true
+        schema:
+          type: string
+      - name: entityTypeCode
+        in: path
+        description: Entity Type code
+        required: true
+        schema:
+          type: string
+      - name: languageCode
+        in: path
+        description: Entity Type langauge code
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/EntityTypeLanguage'
+      responses:
+        '200':
+          description: Language modified successfuly
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityTypeLanguage'
+        '404':
+          description: The EntityType code/Locale does not exist
+        '422':
+          description: Missing/Invalid values in language
+        '503':
+          description: Service unavailable.
+      deprecated: false
+    delete:
+      tags:
+      - Entity Type
+      summary: Delete a language fromEntityType
+      description: This web service allows an external application to delete a localized name from an EntityType
+      operationId: deleteLanguageUsingDELETE
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River.
+        required: true
+        schema:
+          type: string
+      - name: entityTypeCode
+        in: path
+        description: Entity Type code
+        required: true
+        schema:
+          type: string
+      - name: languageCode
+        in: path
+        description: Language code
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Language deleted successfuly
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: The EntityType code or language code does not exist
+        '503':
+          description: Service unavailable.
+      deprecated: false
+components:
+  schemas:
+    EntityTypeModel:
+      type: object
+      required:
+      - code
+      - description
+      - name
+      properties:
+        code:
+          type: string
+          example: DEPT
+        name:
+          type: string
+          example: Department
+        description:
+          type: string
+          example: List of departments
+        loadOnLogin:
+          type: boolean
+          description: Flag to cache Entity Type during login process.
+        sortType:
+          type: string
+          description: Sort type for list of Entities for Entity Type
+          enum:
+          - NAME
+          - CODE
+          - SORT_ORDER
+      title: EntityTypeModel
+    EntityType:
+      type: object
+      required:
+      - code
+      - description
+      - name
+      properties:
+        languages:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntityTypeLanguage'
+        code:
+          type: string
+          example: DEPT
+        name:
+          type: string
+          example: Department
+        description:
+          type: string
+          example: List of departments
+        loadOnLogin:
+          type: boolean
+          description: Flag to cache Entity Type during login process.
+        sortType:
+          type: string
+          description: Sort type for list of Entities for Entity Type
+          enum:
+          - NAME
+          - CODE
+          - SORT_ORDER
+      title: EntityType
+    EntityTypeLanguage:
+      type: object
+      required:
+      - languageCode
+      - name
+      properties:
+        description:
+          type: string
+          description: The description of the EntityType in specified language
+        languageCode:
+          type: string
+          example: en, en_UK, fr, fr_CA
+          description: The locale either ISO 639_1 or a combination of ISO 639_1 and ISO 3166
+        name:
+          type: string
+          description: The name of the EntityType in specified language
+      title: EntityTypeLanguage
+  requestBodies:
+    EntityTypeLanguage:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EntityTypeLanguage'
+      description: entityTypeLanguage
+      required: true

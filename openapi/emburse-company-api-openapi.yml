@@ -1,0 +1,236 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Company API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Company
+paths:
+  /company:
+    get:
+      operationId: get_company
+      description: Show company instance instead of listing companies.
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - count
+                - results
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=400&limit=100
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=200&limit=100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/APICompany'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Company
+  /company/{id}:
+    get:
+      operationId: get_company_by_id
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APICompany'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Company
+components:
+  schemas:
+    APICompany:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        billing_address:
+          type: object
+          properties:
+            address_1:
+              type: string
+            address_2:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            postal_code:
+              type: string
+            zip_code:
+              type: string
+            country:
+              type: string
+          required:
+          - address_1
+          - address_2
+          - city
+          - state
+          - postal_code
+          - zip_code
+          - country
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+          maxLength: 255
+        partner:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              readOnly: true
+            token:
+              type: string
+              readOnly: true
+              pattern: ^[\w-]+$
+              maxLength: 255
+            brand_name:
+              type: string
+              readOnly: true
+              maxLength: 255
+          required:
+          - token
+          - brand_name
+          readOnly: true
+        shipping_address:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              readOnly: true
+            url:
+              type: string
+              readOnly: true
+            address_1:
+              type: string
+              readOnly: true
+              maxLength: 255
+            address_2:
+              type: string
+              readOnly: true
+              default: ''
+            city:
+              type: string
+              readOnly: true
+              maxLength: 255
+            state:
+              type: string
+              readOnly: true
+              maxLength: 255
+            zip_code:
+              type: string
+              readOnly: true
+          required:
+          - address_1
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        website:
+          type: string
+          format: uri
+          readOnly: true
+          maxLength: 200
+          pattern: "^(?:[a-z0-9.+-]*)://(?:[^\\s:@/]+(?::[^\\s:@/]*)?@)?(?:(?:0|25[0-5]|2[0-4][0-9]|1[0-9]?[0-9]?|[1-9][0-9]?)(?:\\.(?:0|25[0-5]|2[0-4][0-9]|1[0-9]?[0-9]?|[1-9][0-9]?)){3}|\\[[0-9a-f:.]+\\]|([a-z¡-\uFFFF0-9](?:[a-z¡-\uFFFF0-9-]{0,61}[a-z¡-\uFFFF0-9])?(?:\\.(?!-)[a-z¡-\uFFFF0-9-]{1,63}(?<!-))*\\.(?!-)(?:[a-z¡-\uFFFF-]{2,63}|xn--[a-z0-9]{1,59})(?<!-)\\.?|localhost))(?::[0-9]{1,5})?(?:[/?#][^\\s]*)?\\z"
+        verification_status:
+          type: string
+          readOnly: true
+      required:
+      - billing_address
+      - created_at
+      - name
+      - partner
+      - shipping_address
+      - verification_status

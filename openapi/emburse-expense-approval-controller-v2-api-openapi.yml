@@ -1,0 +1,1572 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts expense-approval-controller-v2 API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: expense-approval-controller-v2
+  description: Approve, return and reassign expense reports using username or email of approver.
+paths:
+  /v2/expense-report-approvals:
+    get:
+      tags:
+      - expense-approval-controller-v2
+      summary: Get list of reports for approval
+      description: This web service allows an external application to get a list of expense reports awaiting approval by a user
+      operationId: getApprovalsUsingGET_1
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: email-address
+        in: header
+        description: Unique email of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: person-unique-id
+        in: header
+        description: Unique ID of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: username
+        in: header
+        description: Unique user-name of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExpenseReport'
+        '400':
+          description: Customer Code is invalid.
+        '401':
+          description: Customer Code is not authorized.  Cannot get list of expense reports for approval.
+        '403':
+          description: Logged in user does not exist.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v2/expense-report-approvals/count:
+    get:
+      tags:
+      - expense-approval-controller-v2
+      summary: Get count of reports for approval
+      description: This web service returns a count of expense reports awaiting approval by a user.
+      operationId: getExpenseReportCountUsingGET_1
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: email-address
+        in: header
+        description: Unique email of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: person-unique-id
+        in: header
+        description: Unique ID of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: username
+        in: header
+        description: Unique user-name of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/CountModel'
+        '400':
+          description: Customer Code is invalid
+        '401':
+          description: Customer Code is not authorized.  Cannot get expense report count.
+        '403':
+          description: Logged in user does not exist.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v2/expense-report-approvals/{reportId}:
+    get:
+      tags:
+      - expense-approval-controller-v2
+      summary: Get expense report details
+      description: This web service allows an external application to get the details of an expense report
+      operationId: getExpenseReportUsingGET_1
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: email-address
+        in: header
+        description: Unique email of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: person-unique-id
+        in: header
+        description: Unique ID of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: reportId
+        in: path
+        description: Report ID for report
+        required: true
+        schema:
+          type: string
+      - name: username
+        in: header
+        description: Unique user-name of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/ExpenseReport'
+        '400':
+          description: Customer Code is invalid.
+        '401':
+          description: Customer Code is not authorized.  Cannot get expense report.
+        '403':
+          description: Logged in user is not allowed to view details expense report or Logged in user does not exist
+        '404':
+          description: Expense Report does not exist.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v2/expense-reports/{reportId}/approve:
+    post:
+      tags:
+      - expense-approval-controller-v2
+      summary: Approve an expense report
+      description: This web service allows an external application to approve a specified expense report
+      operationId: approveExpenseReportUsingPOST_1
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: email-address
+        in: header
+        description: Unique email of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: person-unique-id
+        in: header
+        description: Unique ID of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: reportId
+        in: path
+        description: Report ID for report
+        required: true
+        schema:
+          type: string
+      - name: username
+        in: header
+        description: Unique user-name of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/NotesModel2'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+        '400':
+          description: Customer Code is invalid.
+        '401':
+          description: Customer Code is not authorized.  Cannot approve expense report.
+        '403':
+          description: Logged in user is not authorized to approve report or Logged in user does not exist.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v2/expense-reports/{reportId}/reassign:
+    post:
+      tags:
+      - expense-approval-controller-v2
+      summary: Reassign an expense report
+      description: This web service allows an external application to reassign a specified expense report to another approver for review
+      operationId: reassignExpenseReportUsingPOST_1
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: email-address
+        in: header
+        description: Unique email of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: person-unique-id
+        in: header
+        description: Unique ID of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: reportId
+        in: path
+        description: Report ID for report
+        required: true
+        schema:
+          type: string
+      - name: username
+        in: header
+        description: Unique user-name of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReassignModelV2'
+        description: Payload required to do a reassign
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+        '400':
+          description: Customer Code is invalid.
+        '401':
+          description: Customer Code is not authorized.  Cannot reassign expense report.
+        '403':
+          description: Logged in user is not authorized to reassign report or Logged in user does not exist.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v2/expense-reports/{reportId}/return:
+    post:
+      tags:
+      - expense-approval-controller-v2
+      summary: Return an expense report
+      description: This web service allows an external application to return a specified expense report to the expense owner
+      operationId: returnExpenseReportUsingPOST_1
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: email-address
+        in: header
+        description: Unique email of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: person-unique-id
+        in: header
+        description: Unique ID of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: reportId
+        in: path
+        description: Report ID for report
+        required: true
+        schema:
+          type: string
+      - name: username
+        in: header
+        description: Unique user-name of the approver making a request
+        required: false
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/NotesModel'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+        '400':
+          description: Customer Code is invalid.
+        '401':
+          description: Customer Code is not authorized.  Cannot return expense report.
+        '403':
+          description: Logged in user is not authorized to return report or Logged in user does not exist.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v2/expense-reports/{reportId}/submit:
+    post:
+      tags:
+      - expense-approval-controller-v2
+      summary: Submit an expense report
+      description: This web service allows an external application to submit a specified expense report
+      operationId: submitExpenseReportUsingPOST_1
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: email-address
+        in: header
+        description: Unique email of the submitter making a request
+        required: false
+        schema:
+          type: string
+      - name: person-unique-id
+        in: header
+        description: Unique ID of the submitter making a request
+        required: false
+        schema:
+          type: string
+      - name: reportId
+        in: path
+        description: Report ID for report
+        required: true
+        schema:
+          type: string
+      - name: username
+        in: header
+        description: Unique user-name of the submitter making a request
+        required: false
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/ExpenseSubmit'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/ExpenseSubmitResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseSubmitResponse'
+        '400':
+          description: Customer Code is invalid.
+        '401':
+          description: Customer Code is not authorized.  Cannot submit expense report.
+        '403':
+          description: Logged in user is not authorized to submit report or Logged in user does not exist.
+        '422':
+          description: Expense report has not been submitted. Report have some business rules violations
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/ExpenseSubmitResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseSubmitResponse'
+        '503':
+          description: Service unavailable.
+      deprecated: false
+components:
+  schemas:
+    ExpenseSubmitResponse:
+      type: object
+      properties:
+        complianceItems:
+          type: array
+          description: List of compliance issues associated with report
+          items:
+            $ref: '#/components/schemas/ComplianceItem'
+        hasComplianceItems:
+          type: boolean
+          description: Indicates if compliance issues are associated with report
+        submitted:
+          type: boolean
+      title: ExpenseSubmitResponse
+    Entity:
+      type: object
+      properties:
+        code:
+          type: string
+          example: 100
+          description: Entity code. Max 50 characters
+        extraData1:
+          type: string
+          example: Main
+          description: Extra data field. Max 1000 characters
+        extraData2:
+          type: string
+          example: Office
+          description: Extra data field. Max 1000 characters
+        extraData3:
+          type: string
+          example: 1000
+          description: Extra data field. Max 1000 characters
+        extraData4:
+          type: string
+          example: 900
+          description: Extra data field. Max 1000 characters
+        extraData5:
+          type: string
+          example: '0000'
+          description: Extra data field. Max 1000 characters
+        name:
+          type: string
+          example: Los Angeles
+          description: Name of entity. Max 100 characters
+      title: Entity
+    Person:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: Smith
+          description: Person's last name. Max 100 characters
+        lastName:
+          type: string
+          example: Jacob
+          description: Person's first name. Max 100 characters
+        personEntities:
+          type: array
+          description: List of person entities associated with person
+          items:
+            $ref: '#/components/schemas/PersonEntities'
+        personUniqueId:
+          type: string
+          example: jsmith
+          description: Unique identifier for person. Max 100 characters
+        primaryEmailAddress:
+          type: string
+          example: jacob.smith@cpa.org
+          description: Person's primary email address. Max 100 characters
+        reportsToUniqueId:
+          type: string
+          example: lkemp
+          description: Unique identifier for manager person reports to
+        title:
+          type: string
+          example: Associate Accountant
+          description: Person's title. Max 255 characters
+        uniquePersonId:
+          type: string
+      title: Person
+    CountModel:
+      type: object
+      properties:
+        reportsToApprove:
+          type: integer
+          format: int32
+          example: 9
+          description: The number of expense reports awaiting approval by approver.
+      title: CountModel
+    PaLineItemType:
+      type: object
+      properties:
+        externalRef:
+          type: string
+          example: 4320
+          description: Reference to an external system's expense types. Max 50 characters
+        id:
+          type: integer
+          format: int32
+          example: 1398
+          description: Internal ID of preapproval line item
+        name:
+          type: string
+          example: Airfare
+          description: Expense type of preapproval line item. Max 50 characters
+        type:
+          type: string
+          example: LineItem
+          enum:
+          - LineItem
+          - Header
+      title: PaLineItemType
+    ExpenseReportLineItemPersonGuest:
+      type: object
+      properties:
+        amount:
+          type: number
+          example: 11.98
+          description: Amount of expense spent by/for guest
+        company:
+          type: string
+          example: CFA Consultants
+          description: Company of guest. Max 100 characters
+        firstName:
+          type: string
+          example: Jennifer
+          description: First name of guest. Max 100 characters
+        guestType:
+          type: string
+          example: InternalGuest
+          description: Type of guest
+          enum:
+          - InternalGuest
+          - ExternalGuest
+          - HealthCareProvider
+          - TemporaryHealthCareProvider
+          - CRMGuest
+        lastName:
+          type: string
+          example: Garth
+          description: Last name of guest. Max 100 characters
+        percentage:
+          type: number
+          example: 10
+          description: Percentage of expense spent by/for guest
+        title:
+          type: string
+          example: Legal Consultant
+          description: Title of guest. Max 255 characters
+      title: ExpenseReportLineItemPersonGuest
+    ExpenseReportLineItem:
+      type: object
+      properties:
+        allocations:
+          type: array
+          description: List of allocations selected for line item
+          items:
+            $ref: '#/components/schemas/LineItemAllocation'
+        amount:
+          type: number
+          example: 119.81
+          description: Amount of line item
+        amountApproved:
+          type: number
+          example: 119.81
+          description: Approved amount due to expense owner
+        amountCustomer:
+          type: number
+          example: 0
+          description: AmountSpent * customer's exchange rate
+        amountSpent:
+          type: number
+          example: 119.81
+          description: Amount spent of line item
+        approvalStatus:
+          type: string
+          example: Pending Approval
+          description: NULL for parent line items (parent == true)
+          enum:
+          - Draft
+          - Pending Approval
+          - Approved For Payment
+          - Returned
+          - Exported
+          - Paid
+          - Partially Paid
+        businessPurpose:
+          type: string
+          example: Conference
+          description: Business purpose of expense. Max 2500 characters
+        children:
+          type: array
+          description: List of child expenses. Used for hotel items.
+          items:
+            $ref: '#/components/schemas/ExpenseReportLineItem'
+        comments:
+          type: array
+          description: List of comments attached to line item
+          items:
+            $ref: '#/components/schemas/Comment'
+        complianceItems:
+          type: array
+          description: List of compliance issues associated with the line item
+          items:
+            $ref: '#/components/schemas/ComplianceItem'
+        createDate:
+          type: string
+          format: date-time
+          example: 2022-01-03 05:53:39:000
+          description: Date expense line item was created on report
+        currencyCodeCustomer:
+          type: string
+          example: USD
+          description: Customer's default ISO-4217 currency code
+        currencySpent:
+          type: string
+          example: USD
+          description: ' ISO-4217 Currency code spent'
+        currentApprovers:
+          type: array
+          description: List of approvers where line item is currently pending
+          items:
+            $ref: '#/components/schemas/Person'
+        description:
+          type: string
+          example: Flight to St. Louis
+          description: Description of expense. Max 2500 characters
+        expenseItemType:
+          type: string
+          example: Airfare
+          description: Expense category of line item. Max 50 characters
+        exportStatus:
+          type: string
+          example: Exported
+          description: Export status of line item
+          enum:
+          - In Export
+          - Waiting for Export
+          - Exported
+          - Paid
+          - Partially Paid
+        feedCode:
+          type: string
+          example: CreditCardAmex
+          description: Name of feed for expense transaction
+        feedName:
+          type: string
+          example: Amex Corporate Card
+          description: Name of feed for expense transaction
+        firmPaid:
+          type: boolean
+        guests:
+          type: array
+          description: List of guests for line item
+          items:
+            $ref: '#/components/schemas/ExpenseReportLineItemPersonGuest'
+        hasReceipt:
+          type: boolean
+          example: true
+          description: Is a receipt attached
+        hasTaxReceipt:
+          type: boolean
+          example: true
+          description: Is a tax receipt attached
+        id:
+          type: string
+          example: b0dd069a-ce1a-45bf-b9dd-48cac24735ff
+          description: Internal ID of expense report line item. 36 characters
+        images:
+          type: array
+          description: Filenames of images attached to this line item
+          items:
+            type: string
+        isCreditCard:
+          type: boolean
+          example: true
+          description: Returns true if feed of expense transaction is a credit card feed
+        paLineItemType:
+          $ref: '#/components/schemas/PaLineItemType'
+        parent:
+          type: boolean
+        perDiemLineItem:
+          $ref: '#/components/schemas/PerDiemLineItem'
+        personal:
+          type: boolean
+        transactionDate:
+          type: string
+          format: date-time
+          example: 2022-01-03 05:53:39:000
+          description: Date of transaction
+        udas:
+          type: array
+          description: List of line item user defined attributes.
+          items:
+            $ref: '#/components/schemas/UserDefinedAttribute'
+        updateDate:
+          type: string
+          format: date-time
+          example: 2022-01-03 05:53:39:000
+          description: Date expense line item was last updated on report
+        vatAmount:
+          type: number
+          example: 5.99
+          description: Amount of VAT tax
+        vatAmount2:
+          type: number
+          example: 5.99
+          description: Amount of 2nd VAT tax
+        vatAmount3:
+          type: number
+          example: 5.99
+          description: Amount of 3rd VAT tax
+        vatAmountApplied:
+          type: number
+          example: 5.99
+          description: VAT amount applied to expense
+        vatAmountApplied2:
+          type: number
+          example: 5.99
+          description: VAT amount applied to expense
+        vatAmountApplied3:
+          type: number
+          example: 5.99
+          description: VAT amount applied to expense
+        vatAmountAppliedRemainder:
+          type: number
+          example: 5.99
+          description: Remainder of VAT amount applied
+        vatAmountAppliedRemainder2:
+          type: number
+          example: 5.99
+          description: Remainder of VAT amount applied
+        vatAmountAppliedRemainder3:
+          type: number
+          example: 5.99
+          description: Remainder of VAT amount applied
+        vatAmountEntered:
+          type: number
+          example: 5.99
+          description: VAT amount as entered by user
+        vatAmountEntered2:
+          type: number
+          example: 5.99
+          description: VAT amount as entered by user
+        vatAmountEntered3:
+          type: number
+          example: 5.99
+          description: VAT amount as entered by user
+        vatLocation:
+          type: string
+          example: Canada
+          description: Location of VAT taxation. Max 50 characters
+        vatTaxCode:
+          type: string
+          example: GST
+          description: VAT tax code. Max 10 characters
+        vatTaxCode2:
+          type: string
+          example: HST
+          description: VAT tax code 2. Max 10 characters
+        vatTaxCode3:
+          type: string
+          example: PST
+          description: VAT tax code 3. Max 10 characters
+        vatTaxPercentage:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+        vatTaxPercentage2:
+          type: number
+          example: 5
+          description: Rate of 2nd VAT tax
+        vatTaxPercentage3:
+          type: number
+          example: 5
+          description: Rate of 3rd VAT tax
+        vatTaxPercentageReclaim:
+          type: number
+          example: 100
+          description: Rate of VAT refund
+        vatTaxPercentageReclaim2:
+          type: number
+          example: 100
+          description: Rate of VAT refund for 2nd VAT tax code
+        vatTaxPercentageReclaim3:
+          type: number
+          example: 100
+          description: Rate of VAT refund for 3rd VAT tax code
+      title: ExpenseReportLineItem
+    ReassignModelV2:
+      type: object
+      required:
+      - note
+      properties:
+        assignedEntityCode:
+          type: string
+          example: 4404291000
+          description: Entity Code for the group to which the report is assigned.  Must be used with assignedRoleName, and assignedEntityTypeCode. Max 50 characters
+        assignedEntityTypeCode:
+          type: string
+          example: DEPT
+          description: Entity Type Code for the group to which the report is assigned.  Must be used with assignedRoleName, and assignedEntityCode. Max 32 characters
+        assignedRoleName:
+          type: string
+          example: Part Of
+          description: Role Name for the group to which the report is assigned.  Must be used with assignedEntityCode, and assignedEntityTypeCode. Max 50 characters
+        assignedUserEmailAddress:
+          type: string
+          example: lsuarez@chromeriver.com
+          description: Unique Email for user to whom the report is assigned to. If provided, 'assignedUserName' and 'assignedUserUniqueId' are not required. Max 100 characters
+        assignedUserName:
+          type: string
+          example: lsuarez
+          description: Unique username for user to whom the report is assigned to. If provided, 'assignedUserUniqueId' and 'assignedUserEmailAddress' are not required. Max 50 characters
+        assignedUserUniqueId:
+          type: string
+          example: lsuarez
+          description: Unique ID for user to whom the report is assigned to. If provided, 'assignedUserName' and 'assignedUserEmailAddress' are not required. Max 100 characters
+        note:
+          type: string
+          example: Please review this pre-approval report
+          description: Any comment/note that will be tied with the Reassign. Max 2000 characters
+      title: ReassignModelV2
+    ExpenseReport:
+      type: object
+      properties:
+        budgetDetails:
+          type: array
+          description: Details of budget encumbrance/liquidation amounts associated with the preapproval attached to the report. Only relevant for customers using encumbrance/liquidation.
+          items:
+            $ref: '#/components/schemas/BudgetDetail'
+        comments:
+          type: array
+          description: List of comments written on the expense report
+          items:
+            $ref: '#/components/schemas/Comment'
+        complianceItems:
+          type: array
+          description: List of compliance item issues associated with the expense report
+          items:
+            $ref: '#/components/schemas/ComplianceItem'
+        createDate:
+          type: string
+          format: date-time
+          example: 2022-01-12 03:34:32:000
+          description: Date expense report was created
+        currencyCode:
+          type: string
+          example: USD
+          description: Employee's PayMeInCurrency
+        expenseReportUrl:
+          type: string
+          example: https://app.chromeriver.com/expense_reports_app/DEV034334052?customerCode=CF7H
+          description: URL of expense report
+        hasComplianceItems:
+          type: boolean
+          example: false
+          description: Used in expense-report-approval summaries to notify if header, line item, or children items have compliance items
+        images:
+          type: array
+          description: Filenames of images attached to expense report header
+          items:
+            type: string
+        lineItems:
+          type: array
+          description: List of expense report line items
+          items:
+            $ref: '#/components/schemas/ExpenseReportLineItem'
+        numberOfExpenseLineItems:
+          type: integer
+          format: int32
+          example: 1
+          description: Number of expense items in report
+        preApprovalReportId:
+          type: string
+          example: 010038294829
+          description: 12 character ID of preapproval attached to expense report
+        receiptUrl:
+          type: string
+          example: https://chromeriver.com/v2/expense-report-receipts/010034331701?customerCode=ABCD
+          description: URL of receipt attached to report
+        reportId:
+          type: string
+          example: 010083927384
+          description: 12 character ID of expense report
+        reportName:
+          type: string
+          example: Trip to St. Louis 9/19-9/20
+          description: Name of expense report. Max 45 characters
+        reportOwner:
+          $ref: '#/components/schemas/Person'
+        reportStatus:
+          type: string
+          example: Submitted
+          description: Status of expense report
+          enum:
+          - New
+          - Draft
+          - Submitted
+          - Deleted
+          - Returned
+        reportTotalAmount:
+          type: number
+          example: 119.81
+          description: Total of expenses in report
+        reportTotalAmountApproved:
+          type: number
+          example: 119.81
+          description: Total of approved expenses in report
+        reportTotalFirmPaidAmount:
+          type: number
+          example: 119.81
+          description: Total of firm paid expenses in report
+        reportTotalPayMeAmount:
+          type: number
+          example: 119.81
+          description: Total of amount due to expense owner
+        submitDate:
+          type: string
+          format: date-time
+          example: 2022-01-12 05:34:32:000
+          description: Date expense report was submitted
+        transactionGroupReferenceNumber:
+          type: string
+          example: IBQRNA1
+          description: Expense transaction group reference number associated with the expense report. Max 255 characters
+        udas:
+          type: array
+          description: Returned on GET requests. POST/PATCH/PUT requests with this field will result in a BAD_REQUEST
+          items:
+            $ref: '#/components/schemas/UserDefinedAttribute'
+        updateDate:
+          type: string
+          format: date-time
+          example: 2022-01-12 05:34:32:000
+          description: Date expense report was last updated
+      title: ExpenseReport
+    PerDiemLineItem:
+      type: object
+      properties:
+        additionalDeductionAmount:
+          type: number
+          example: 0
+          description: Any additional amounts that need to be deducted not covered by the itemized line items
+        address:
+          type: string
+          example: 5700 Olympic Blvd
+          description: Address for expense. Max 400 characters
+        allowableAmount:
+          type: number
+        alocholAmount:
+          type: number
+        amountPerDiem:
+          type: number
+          example: 150
+          description: Amount of per diem expense
+        baseRate:
+          type: number
+        breakfastAmountIMR:
+          type: number
+          example: 11
+          description: Individual meal rate- breakfast
+        breakfastDeductionAmount:
+          type: number
+          example: 0
+          description: Amount of breakfast deduction
+        city:
+          type: string
+          example: Los Angeles
+          description: City of expense. Max 100 characters
+        country:
+          type: string
+          example: United States
+          description: Country of expense. Max 50 characters
+        county:
+          type: string
+          example: Los Angeles County
+          description: County of expense. Max 100 characters
+        currencyCode:
+          type: string
+          example: USD
+          description: Currency code of per diem line item. ISO-4217
+        dinnerAmountIMR:
+          type: number
+          example: 22
+          description: Individual meal rate- dinner
+        dinnerDeductionAmount:
+          type: number
+          example: 0
+          description: Amount of dinner deduction
+        endDate:
+          type: string
+          format: date-time
+          description: End date of per diem expense
+        foodAmount:
+          type: number
+        foodOverage:
+          type: number
+        incidentalDeductionAmount:
+          type: number
+          example: 0
+          description: The dollar amount of any incidental per diem allowance
+        isArriveNextDay:
+          type: boolean
+          example: false
+          description: Indicates whether traveller will arrive the following day
+        isArrivePreviousDay:
+          type: boolean
+          example: false
+          description: Indicates if person arrived previous day
+        isBreakfastDeducted:
+          type: boolean
+          example: false
+          description: Indicates if breakfast deduction is taken
+        isDinnerDeducted:
+          type: boolean
+          example: false
+          description: Indicates if dinner deduction is taken
+        isDiscardedDay:
+          type: boolean
+        isFullTravelDay:
+          type: boolean
+          example: false
+          description: Indicates whether travel is full day
+        isLodgingDeducted:
+          type: boolean
+          example: false
+          description: Indicates if lodging is deducted
+        isLunchDeducted:
+          type: boolean
+          example: false
+          description: Indicates if lunch deduction is taken
+        isOvernightStay:
+          type: boolean
+          example: false
+          description: Indicates if trip had an overnight stay
+        isTravelDayDeducted:
+          type: boolean
+          description: If the travel day deduction is taken, this field will be true
+        latitude:
+          type: number
+          format: double
+          example: 193.29283
+          description: Latitude of start position
+        lodgingDeductionAmount:
+          type: number
+          example: 0
+          description: Amount of lodging deduction
+        longitude:
+          type: number
+          format: double
+          example: 30.5445022
+          description: Longitude of start position
+        lunchAmountIMR:
+          type: number
+          example: 23
+          description: Individual meal rate- lunch
+        lunchDeductionAmount:
+          type: number
+          example: 0
+          description: Amount of lunch deduction
+        mealType:
+          type: string
+          example: Dinner
+          description: Meal type for meal expense. Max 15 characters
+        numberOfAttendees:
+          type: integer
+          format: int32
+          example: Dinner
+          description: Meal type for meal expense. Max 15 characters
+        otherCity:
+          type: string
+          example: San Diego
+          description: Another city where travel took place if trip spans >1 city. Max 50 characters
+        perDiemDayPosition:
+          type: string
+          example: SNGL
+          description: Position of day in trip
+          enum:
+          - FRST
+          - LAST
+          - NORM
+          - SNGL
+        rate:
+          $ref: '#/components/schemas/PerDiemRate'
+        rooms:
+          type: integer
+          format: int32
+          example: 1
+          description: Number of rooms for lodging expense
+        startDate:
+          type: string
+          format: date-time
+          description: Start date of per diem expense
+        state:
+          type: string
+          example: CA
+          description: State of expense. Max 50 characters
+        taxTip:
+          type: number
+        totalAlcoholAmount:
+          type: number
+        totalFoodAmount:
+          type: number
+      title: PerDiemLineItem
+    ExpenseSubmit:
+      type: object
+      properties:
+        comment:
+          type: string
+          example: Submitted via API
+          description: Comment to add to report submission. Max 10000 characters
+        moveIncompleteLineItemsToNewReport:
+          type: boolean
+          example: true
+          description: Flag to indicate that incomplete line items should be moved to a new report before submission
+        responsesForWarnings:
+          type: object
+          description: 'Compliance warning responses. (ie. "302": "OK with no receipt")'
+          additionalProperties:
+            type: string
+      title: ExpenseSubmit
+    PerDiemRate:
+      type: object
+      properties:
+        amountMaximumPerDiem:
+          type: number
+        city:
+          type: string
+      title: PerDiemRate
+    LineItemAllocation:
+      type: object
+      properties:
+        allocationId:
+          type: string
+          example: 001109-600001_001109
+          description: Allocation identifier. Max 255 characters
+        allocationRefereceString:
+          type: string
+          example: 1000-7302-FirmPaid
+          description: Concatenated string of all allocation reference values. Max 1650 characters
+        allocationReference:
+          $ref: '#/components/schemas/LineItemAllocationReference'
+        amount:
+          type: number
+          example: 25
+          description: Amount of total expense due to allocation
+        amountSpentApproved:
+          type: number
+          example: 25
+          description: Amount of total approved expense due to allocation
+        clientName:
+          type: string
+          example: FIRM FUNCTIONS (CHICAGO)
+          description: Allocation client name. Max 130 characters
+        clientNumber:
+          type: string
+          example: 1000
+          description: Allocation number. Max 150 characters
+        costCodeOverride:
+          type: string
+          example: 617500
+          description: Cost code override value. Max 50 characters
+        description:
+          type: string
+          example: Athletics
+          description: Description of allocation. Max 255 characters
+        entityField1:
+          type: string
+          example: 801
+          description: Entity field. Max 50 characters
+        entityField2:
+          type: string
+          example: 700
+          description: Entity field. Max 50 characters
+        entityField3:
+          type: string
+          example: 9999
+          description: Entity field. Max 50 characters
+        glAccount:
+          type: string
+          example: 617500
+          description: GL account. Max 50 characters
+        isPersonal:
+          type: boolean
+          example: false
+          description: Indicates whether this is a personal allocation
+        matterOnSelect1:
+          type: string
+          description: Matter on select 1. Max 50 characters
+        matterOnSelect2:
+          type: string
+          description: Matter on select 2. Max 50 characters
+        number:
+          type: string
+          example: 001109-600001
+          description: Allocation number. Max 150 characters
+        percent:
+          type: number
+          example: 50
+          description: Percent of total expense due to allocation
+        type:
+          type: string
+          example: 1000
+          description: Allocation type. Max 10 characters
+        udf1:
+          type: string
+          example: General
+          description: User defined field. Max 50 characters
+        udf2:
+          type: string
+          example: PTBSM1
+          description: User defined field. Max 50 characters
+        udf3:
+          type: string
+          example: RCM2
+          description: User defined field. Max 50 characters
+        udf4:
+          type: string
+          description: User defined field. Max 50 characters
+        vatAmount:
+          type: number
+          example: 4.33
+          description: Amount of VAT tax
+        vatAmount2:
+          type: number
+          example: 4.33
+          description: Amount of VAT tax
+        vatAmount3:
+          type: number
+          example: 4.33
+          description: Amount of VAT tax
+        vatTaxCode:
+          type: string
+          example: HST
+          description: VAT tax code. Max 10 characters
+        vatTaxCode2:
+          type: string
+          example: GST
+          description: VAT tax code 2. Max 10 characters
+        vatTaxCode3:
+          type: string
+          example: PST
+          description: VAT tax code 3. Max 10 characters
+        vatTaxPercentage:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+        vatTaxPercentage2:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+        vatTaxPercentage3:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+      title: LineItemAllocation
+    NotesModel:
+      type: object
+      properties:
+        note:
+          type: string
+          example: Returned due to missing receipts
+          description: Any comment/note that will be tied with the Approval/Return. Max 2000 characters
+      title: NotesModel
+    Comment:
+      type: object
+      properties:
+        comment:
+          type: string
+          example: Submitted via Chrome River Application. Max 2000 characters
+        createDate:
+          type: string
+          format: date-time
+          example: 2023-01-09 10:57:53+00:00
+          description: Date of comment creation.
+        creatorName:
+          type: string
+          example: Jason Klein
+          description: Name of comment author
+      title: Comment
+    PersonEntities:
+      type: object
+      properties:
+        entityCode:
+          type: string
+          example: FIN
+          description: Entity code. Max 50 characters
+        entityName:
+          type: string
+          example: Finance
+          description: Entity name. Max 100 characters
+        entityTypeCode:
+          type: string
+          example: DEPT
+          description: Entity type code. Max 32 characters
+        entityTypeName:
+          type: string
+          example: Department
+          description: Entity type name. Max 50 characters
+        roleName:
+          type: string
+          example: Part Of
+          description: Role name for the person-entity relationship. Max 50 characters
+      title: PersonEntities
+    UserDefinedAttribute:
+      type: object
+      properties:
+        booleanValue:
+          type: boolean
+          description: Populated if UDA is a boolean value
+        currencyValue:
+          type: number
+          example: 100
+          description: Populated if UDA is a monetary value
+        dateValue:
+          type: string
+          format: date-time
+          description: Populated if UDA is a date value
+        entityValue:
+          $ref: '#/components/schemas/Entity'
+        entityValueInt:
+          type: integer
+          format: int32
+          example: 90
+          description: Populated if UDA is an entity. ID of entity
+        numberValue:
+          type: number
+          example: 100
+          description: Populated if UDA is a number value
+        stringValue:
+          type: string
+          example: 1000 North Sunset Road
+          description: Populated if UDA is a String value. Max 1000 characters
+        udaDataType:
+          type: string
+          example: booleanValue
+          description: DataType of UDA
+          enum:
+          - booleanValue
+          - stringValue
+          - numberValue
+          - currencyValue
+          - entityValue
+          - dateValue
+        udaName:
+          type: string
+          description: Name of user defined attribute. Max 60 characters
+      title: UserDefinedAttribute
+    LineItemAllocationReference:
+      type: object
+      properties:
+        allocationSeg1:
+          type: string
+          description: Allocation reference segment 1. Max 100 characters
+        allocationSeg10:
+          type: string
+          description: Allocation reference segment 10. Max 100 characters
+        allocationSeg11:
+          type: string
+          description: Allocation reference segment 11. Max 100 characters
+        allocationSeg12:
+          type: string
+          description: Allocation reference segment 12. Max 100 characters
+        allocationSeg13:
+          type: string
+          description: Allocation reference segment 13. Max 100 characters
+        allocationSeg14:
+          type: string
+          description: Allocation reference segment 14. Max 100 characters
+        allocationSeg15:
+          type: string
+          description: Allocation reference segment 15. Max 100 characters
+        allocationSeg16:
+          type: string
+          description: Allocation reference segment 16. Max 100 characters
+        allocationSeg2:
+          type: string
+          description: Allocation reference segment 2. Max 100 characters
+        allocationSeg3:
+          type: string
+          description: Allocation reference segment 3. Max 100 characters
+        allocationSeg4:
+          type: string
+          description: Allocation reference segment 4. Max 100 characters
+        allocationSeg5:
+          type: string
+          description: Allocation reference segment 5. Max 100 characters
+        allocationSeg6:
+          type: string
+          description: Allocation reference segment 6. Max 100 characters
+        allocationSeg7:
+          type: string
+          description: Allocation reference segment 7. Max 100 characters
+        allocationSeg8:
+          type: string
+          description: Allocation reference segment 8. Max 100 characters
+        allocationSeg9:
+          type: string
+          description: Allocation reference segment 9. Max 100 characters
+      title: LineItemAllocationReference
+    BudgetDetail:
+      type: object
+      properties:
+        amount:
+          type: number
+        budgetId:
+          type: string
+        docLineItemId:
+          type: string
+        docType:
+          type: string
+        encumbered:
+          type: boolean
+        externalReference:
+          type: string
+        ruleCode:
+          type: string
+        type:
+          type: string
+      title: BudgetDetail
+    ComplianceItem:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Receipt must be attached > 10.00 USD
+          description: Description of compliance issue
+        messageCode:
+          type: string
+          example: 422
+          description: Compliance code that was issued. Max 10 characters
+        response:
+          type: string
+          example: Lost the receipt
+          description: Expense owner's response to compliance issue. Max 255 characters
+        status:
+          type: string
+          example: Validated
+          description: Compliance status
+          enum:
+          - New
+          - Violation
+          - Warning
+          - Validated
+          - NonValidated
+        type:
+          type: integer
+          format: int32
+          example: 0
+          enum:
+          - 0
+          - 1
+      title: ComplianceItem
+  requestBodies:
+    NotesModel2:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/NotesModel'
+      description: Optional note tied to Approval
+    ExpenseSubmit:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExpenseSubmit'
+      description: Optional body
+    NotesModel:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/NotesModel'
+      description: Note tied to Return
+      required: true

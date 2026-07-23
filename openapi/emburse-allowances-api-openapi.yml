@@ -1,0 +1,171 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Allowances API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Allowances
+paths:
+  /allowances/{id}:
+    get:
+      operationId: get_allowances_by_id
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIAllowance'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Allowances
+    put:
+      operationId: put_allowances_by_id
+      description: Always perform a partial update.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIAllowance'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIAllowance'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Allowances
+components:
+  schemas:
+    APIAllowance:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        url:
+          type: string
+          readOnly: true
+        interval:
+          type: string
+          nullable: true
+        amount:
+          type: number
+          multipleOf: 0.01
+          maximum: 100000000000000
+          minimum: 0.0
+        transaction_limit:
+          type: number
+          multipleOf: 0.01
+          maximum: 100000000000000
+          minimum: 0.0
+          nullable: true
+        daily_limit:
+          type: number
+          multipleOf: 0.01
+          maximum: 100000000000000
+          minimum: 0.01
+          nullable: true
+        single_use:
+          type: boolean
+        start_time:
+          type: string
+          format: date-time
+          nullable: true
+        end_time:
+          type: string
+          format: date-time
+          nullable: true
+        scope:
+          type: array
+          items:
+            type: integer
+            maximum: 9223372036854775807
+            minimum: 1
+            format: int64
+          maxItems: 10
+        balance:
+          type: number
+          multipleOf: 0.01
+          maximum: 100000000000000
+          minimum: -100000000000000
+          readOnly: true
+        reset:
+          type: boolean
+          writeOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        increment:
+          type: number
+          multipleOf: 0.01
+          maximum: 100000000000000
+          minimum: 0.0
+          writeOnly: true
+      required:
+      - balance
+      - created_at

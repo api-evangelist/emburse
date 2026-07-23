@@ -1,0 +1,99 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts sap-person-controller API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: sap-person-controller
+  description: Sap Person Controller
+paths:
+  /v4/sap-persons:
+    post:
+      tags:
+      - sap-person-controller
+      summary: Create/update persons
+      description: This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS.
+      operationId: sapPatchyPostBecauseReasons
+      parameters:
+      - name: chain-id
+        in: header
+        description: Reference used to track the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+      responses:
+        '200':
+          description: All persons were processed successfully.
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+        '207':
+          description: Response consists of successes and failures.
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+        '400':
+          description: Processing or Data Issue - See errorMessage in response body for details
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+        '422':
+          description: All persons were not processed due to errors.
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+        '503':
+          description: Service unavailable.
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+components:
+  schemas:
+    Response:
+      type: object
+      properties:
+        personUniqueId:
+          type: string
+          description: Unique identifier for a person
+          example: jdoe
+        result:
+          type: string
+          description: Result of operation
+          enum:
+          - SUCCESS
+          - FAIL
+          example: FAIL
+        errorMessage:
+          type: string
+          description: Error message provided for a FAIL result
+          example: firstName may not be empty

@@ -1,0 +1,300 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts po-api-receipt-controller API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: po-api-receipt-controller
+  description: Operations in PO Receipts APIs
+paths:
+  /po-api/receipts:
+    post:
+      tags:
+      - po-api-receipt-controller
+      summary: Create PO receipt
+      description: This web service allows an external application to create a PO receipt
+      operationId: createReceiptUsingPOST
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PoReceiptExternal'
+        description: poReceiptExternal
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PoReceiptExternal'
+      deprecated: false
+  /po-api/receipts/create-or-update:
+    post:
+      tags:
+      - po-api-receipt-controller
+      summary: Create or update a PO receipt
+      description: This web service allows an external application to create or update a PO receipt
+      operationId: upsertReceiptUsingPOST
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/upsertReceiptUsingPOSTPoreceiptexternal'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PoReceiptExternal'
+      deprecated: false
+  /po-api/receipts/{receiptNumber}:
+    delete:
+      tags:
+      - po-api-receipt-controller
+      summary: Delete PO receipt
+      description: This web service allows an external application to delete a PO receipt
+      operationId: deleteReceiptByReceiptNumberUsingDELETE
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: receiptNumber
+        in: path
+        description: Receipt number
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+      deprecated: false
+    patch:
+      tags:
+      - po-api-receipt-controller
+      summary: Update PO receipt
+      description: This web service allows an external application to update a PO receipt
+      operationId: updateReceiptUsingPATCH
+      parameters:
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: receiptNumber
+        in: path
+        description: Receipt number
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/upsertReceiptUsingPOSTPoreceiptexternal'
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PoReceiptExternal'
+      deprecated: false
+components:
+  schemas:
+    PoReceiptLineExternal:
+      type: object
+      required:
+      - itemQty
+      - lineNumber
+      - poLineNumber
+      - poNumber
+      properties:
+        amount:
+          type: number
+          description: Line item amount of the receipt in currencyCode.
+        currencyCode:
+          type: string
+          description: Currency code
+        currencyCodeScale:
+          type: integer
+          format: int32
+          description: Currency code scale
+        currencyRate:
+          type: number
+          description: Exchange rate as on receiptDate.
+        extLineItemReference:
+          type: string
+          description: Must be unique within any single Receipt and represent the customer provided line Item Reference.
+        itemDesc:
+          type: string
+          description: Customer's item description of the item ordered on the Receipt line.
+        itemId:
+          type: integer
+          format: int32
+          description: Customer's ordered item ID on the Receipt line.
+        itemQty:
+          type: number
+          description: Customer's line item quantity received.
+        itemUm:
+          type: string
+          description: Customer's unit of measure on the line item.
+        itemUnitPrice:
+          type: number
+          description: Customer's line item unit price.
+        lineNumber:
+          type: string
+          description: 'Must be unique within any single Receipt. '
+        notes:
+          type: array
+          example:
+          - note: API Testing Note1
+          - note: API Testing Note2
+          description: User notes at the line item level of the Receipt.
+          items:
+            $ref: '#/components/schemas/PoReceiptNoteExternal'
+        poLineNumber:
+          type: string
+          description: Unique identifier of associated PO Line with the Receipt.  Must be in the same format as corresponding PO data previously replicated
+        poNumber:
+          type: string
+          description: Unique identifier of associated PO number with the Receipt.  Must be in the same format as corresponding PO data previously replicated
+        status:
+          type: string
+          description: 'status of the receipt line (Accepted values: ''ACT'', ''DEL''). Default value when created will be ''ACT''.'
+          enum:
+          - ACT
+          - DEL
+        vendorItemId:
+          type: string
+          description: Vendor's item ID on the Receipt line.
+      title: PoReceiptLineExternal
+    PoReceiptExternal:
+      type: object
+      required:
+      - lines
+      - receiptDate
+      - receiptNumber
+      properties:
+        amount:
+          type: number
+          description: Total amount of the receipt in currencyCode.
+        creatorUniqueId:
+          type: string
+          description: Customer's unique ID of the person that is identified as the creator of the Receipt. The customer will provide this value initially and it needs to be in synch with the value shared with Chrome River.
+        currencyCode:
+          type: string
+          description: Currency in which receipt is created. These codes are standard three character values (e.g., USD, GBP, JPY, HKD, etc).
+        currencyCodeScale:
+          type: integer
+          format: int32
+          description: Currency code scale
+        currencyRate:
+          type: number
+          description: Exchange rate as on receiptDate.
+        description:
+          type: string
+          description: 'Receipt description associated with the Receipt header. '
+        lines:
+          type: array
+          description: line(s) items associated with the Receipt.
+          items:
+            $ref: '#/components/schemas/PoReceiptLineExternal'
+        memo:
+          type: string
+          description: Receipt memo field associated with the Receipt header.
+        notes:
+          type: array
+          example:
+          - note: API Testing Note1
+          - note: API Testing Note2
+          description: User notes at the header level of the Receipt.
+          items:
+            $ref: '#/components/schemas/PoReceiptNoteExternal'
+        receiptAddressUniqueId:
+          type: string
+          description: Customer's unique ID for the receipt address/location that is created from the customer's system. The customer will provide this value initially and it needs to be in synch with the value shared with Chrome River.
+        receiptDate:
+          type: string
+          format: date-time
+          description: 'Receipt date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        receiptNumber:
+          type: string
+          description: Customer-unique receipt number in their GR System.
+        receiverUniqueId:
+          type: string
+          description: Customer's unique ID of the person that is identified as the receiver of the Receipt. The customer will provide this value initially and it needs to be in synch with the value shared with Chrome River.
+        status:
+          type: string
+          description: status of the receipt. Accepted values are 'SUBM' for submitted and 'DRAF' for Draft. Default value if missed will be 'SUBM'. Receipt header can only be marked as Deleted('DEL') thru the DELETE Endpoint.
+          enum:
+          - SUBM
+          - DEL
+          - DRAF
+        vendorAddressUniqueId:
+          type: string
+          description: Customer's unique ID for the vendor address that is created from the customer's system. The customer will provide this value initially and it needs to be in sync with the value shared with Chrome River.
+        vendorUniqueId:
+          type: string
+          description: Customer's unique ID of the vendor that is created from the customer's system. The customer will provide this value initially and it needs to be in sync with the value shared with Chrome River.
+      title: PoReceiptExternal
+    PoReceiptNoteExternal:
+      type: object
+      properties:
+        note:
+          type: string
+      title: PoReceiptNoteExternal
+  requestBodies:
+    upsertReceiptUsingPOSTPoreceiptexternal:
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+      description: poReceiptExternal
+      required: true

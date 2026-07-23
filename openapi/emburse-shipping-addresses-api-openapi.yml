@@ -1,0 +1,320 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Shipping Addresses API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Shipping Addresses
+paths:
+  /shipping-addresses:
+    get:
+      operationId: get_shipping_addresses
+      description: ''
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - count
+                - results
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=400&limit=100
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=200&limit=100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/APIShippingAddress'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Shipping Addresses
+    post:
+      operationId: post_shipping_addresses
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIShippingAddress'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIShippingAddress'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Shipping Addresses
+  /shipping-addresses/{id}:
+    get:
+      operationId: get_shipping_addresses_by_id
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIShippingAddress'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Shipping Addresses
+    put:
+      operationId: put_shipping_addresses_by_id
+      description: Always perform a partial update.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIShippingAddress'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIShippingAddress'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Shipping Addresses
+    delete:
+      operationId: delete_shipping_addresses_by_id
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Shipping Addresses
+components:
+  schemas:
+    APIShippingAddress:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        url:
+          type: string
+          readOnly: true
+        address_1:
+          type: string
+          maxLength: 255
+        address_2:
+          type: string
+          default: ''
+        city:
+          type: string
+          maxLength: 255
+        state:
+          type: string
+          maxLength: 255
+        country:
+          type: string
+          default: US
+          maxLength: 2
+        postal_code:
+          type: string
+        zip_code:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - address_1
+      - created_at

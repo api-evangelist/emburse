@@ -1,0 +1,250 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Entity (V2) API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Entity (V2)
+  description: V2 Entity Controller
+paths:
+  /v2/entities:
+    get:
+      tags:
+      - Entity (V2)
+      summary: Get List of Entities
+      description: This web service allows an external application to get a list of active entities. This endpoint allows for filtering by entityCode, entityTypeCode or status.
+      operationId: getUsingGET_1
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River.
+        required: true
+        schema:
+          type: string
+      - name: entityCode
+        in: query
+        description: Entity code.
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: string
+      - name: entityTypeCode
+        in: query
+        description: Entity type code.
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: string
+      - name: isActive
+        in: query
+        description: Active flag. Defaults to (true).
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: boolean
+          default: true
+      - name: page
+        in: query
+        description: Page number. Defaults to (0).
+        required: false
+        allowEmptyValue: false
+        example: 0
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: pageSize
+        in: query
+        description: Page size. Defaults to (0).
+        required: false
+        allowEmptyValue: false
+        example: 0
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: x-api-key
+        in: header
+        description: API key for Authentication.
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEntitiesApiResponse'
+        '400':
+          description: Customer Code is invalid.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+  /v2/entities/search:
+    get:
+      tags:
+      - Entity (V2)
+      summary: Search for Entities
+      description: This web service allows an external application to search for entities. This endpoint allows search by search term and entityTypeId.
+      operationId: searchUsingGET
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request.
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer code provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: entityTypeId
+        in: query
+        description: Entity type Id
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: integer
+          format: int32
+      - name: languageId
+        in: query
+        description: The language id used to localize the entity type
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: page
+        in: query
+        description: Page number. Defaults to (0).
+        required: false
+        allowEmptyValue: false
+        example: 0
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: pageSize
+        in: query
+        description: Page size. Defaults to (0).
+        required: false
+        allowEmptyValue: false
+        example: 0
+        schema:
+          type: integer
+          format: int32
+          default: 100
+      - name: searchTerm
+        in: query
+        description: search term
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEntitiesApiResponse'
+        '400':
+          description: Customer code is invalid
+        '401':
+          description: Unauthorized Customer code.
+        '403':
+          description: Customer code is forbidden to get expense types
+        '503':
+          description: Service unavailable
+      deprecated: false
+components:
+  schemas:
+    EntityLanguage:
+      type: object
+      properties:
+        locale:
+          type: string
+        name:
+          type: string
+      title: EntityLanguage
+    Entity:
+      type: object
+      required:
+      - entityCode
+      - entityTypeCode
+      properties:
+        entityCode:
+          type: string
+        entityTypeCode:
+          type: string
+        extraData1:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        extraData2:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        extraData3:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        extraData4:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        extraData5:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        sortOrder:
+          type: string
+          description: SortOrder to be used by EntityType.SortType
+        status:
+          type: string
+          description: ACT or DEL.  If not provided, no updates are done to existing entity, otherwise defaults to ACT for new entities
+          enum:
+          - ACT
+          - DEL
+        entityId:
+          type: integer
+          format: int32
+          description: entity Id
+        localizedEntityName:
+          type: string
+          description: entity name for the languageId
+        entityNames:
+          type: array
+          description: List of names in different Locales.  List should always include an engligh locale (en) as default
+          items:
+            $ref: '#/components/schemas/EntityLanguage'
+      title: Entity
+    GetEntitiesApiResponse:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        total:
+          type: integer
+          format: int32
+      title: GetEntitiesApiResponse

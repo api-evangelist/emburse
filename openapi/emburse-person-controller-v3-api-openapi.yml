@@ -1,0 +1,482 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts person-controller-v3 API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: person-controller-v3
+  description: Person Controller v3
+paths:
+  /v3/persons:
+    get:
+      tags:
+      - person-controller-v3
+      summary: Search/get persons
+      description: This web service provides ability to search/get persons by Name and Email.
+      operationId: getPersons_1
+      parameters:
+      - name: chain-id
+        in: header
+        description: Reference used to track the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: firstName
+        in: query
+        description: First Name
+        required: false
+        schema:
+          type: string
+      - name: lastName
+        in: query
+        description: Last Name
+        required: false
+        schema:
+          type: string
+      - name: emailAddress
+        in: query
+        description: Email address
+        required: false
+        schema:
+          type: string
+      - name: personUniqueId
+        in: query
+        description: Person Unique Identifier
+        required: false
+        schema:
+          type: string
+      - name: vendorCode1
+        in: query
+        description: Vendor Code1
+        required: false
+        schema:
+          type: string
+      - name: vendorCode2
+        in: query
+        description: Vendor Code2
+        required: false
+        schema:
+          type: string
+      - name: statuses
+        in: query
+        description: Statuses
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+      responses:
+        '200':
+          description: Person was retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PersonView'
+        '400':
+          description: Processing or Data Issue - See errorMessage in response body for details
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PersonView'
+        '401':
+          description: Customer Code is not authorized.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PersonView'
+        '404':
+          description: All the parameters are empty
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PersonView'
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PersonView'
+    post:
+      tags:
+      - person-controller-v3
+      summary: Create/update persons
+      description: 'This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS. This endpoint tokenizes all PII data before sending the request to Chrome River.
+
+        '
+      operationId: bulkUpsertPersonsForSAPConnector
+      parameters:
+      - name: chain-id
+        in: header
+        description: Reference used to track the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+      responses:
+        '200':
+          description: All persons were processed successfully.
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+        '207':
+          description: Response consists of successes and failures.
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+        '400':
+          description: Processing or Data Issue - See errorMessage in response body for details
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+        '422':
+          description: All persons were not processed due to errors.
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+        '503':
+          description: Service unavailable.
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Response'
+components:
+  schemas:
+    AlternateCurrency:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Currency type
+          enum:
+          - ALT
+          - OTHER
+          example: ALT
+        code:
+          type: string
+          description: Currency code in ISO-4217
+          example: USD
+      required:
+      - code
+      - type
+    PersonEntityView:
+      type: object
+      properties:
+        roleName:
+          type: string
+          description: The name of the role for the person-entity relationship. Max 50 characters
+          example: APReview
+        entityTypeCode:
+          type: string
+          description: The entity type code for the person-entity relationship. Max 50 characters
+          example: DEPT
+        entityTypeName:
+          type: string
+          description: The entity type name for the person-entity relationship; not required for create/update. Max 50 characters
+          example: Department
+        entityCode:
+          type: string
+          description: The entity code for the person-entity relationship. Max 50 characters
+          example: 100
+        entityName:
+          type: string
+          description: The entity name for the person-entity relationship; not required for create/update. Max 100 characters
+          example: Administrative
+      required:
+      - entityCode
+      - entityTypeCode
+      - roleName
+    PersonView:
+      type: object
+      properties:
+        personResourceId:
+          type: string
+          description: Unique identifier for the person, used by external partners (fixed-length hash, non-updateable). 8 characters.
+          example: J066anNm
+        username:
+          type: string
+          description: Person's user name for login. Max 50 characters.
+          example: jdoe
+        personUniqueId:
+          type: string
+          description: Person's unique record identifier. Max 100 characters.
+          example: jdoe1
+        primaryEmailAddress:
+          type: string
+          description: Unique email address for the person. Max 100 characters
+          example: john.doe@company.com
+        firstName:
+          type: string
+          description: Person's first name. Maximum 50 characters
+          example: John
+        lastName:
+          type: string
+          description: Person's last name. Maximum 50 characters
+          example: Doe
+        primaryCurrency:
+          type: string
+          description: Primary currency in ISO-4217
+          example: USD
+        locale:
+          type: string
+          description: Person's assigned language code. Defaults to "en"
+          enum:
+          - en
+          - ld
+          - fr
+          - it
+          - ja
+          - de
+          - fr_CA
+          - es
+          - pt_BR
+          - ru
+          - zh_CN
+          - pl
+          - en_GB
+          - hr
+          - bg
+          - el
+          - cs
+          - et
+          - mk
+          - hu
+          - lv
+          - ro
+          - sr
+          - sk
+          - uk
+          - nl
+          - ko
+          - en_UK
+          - lt
+          - ms
+          - hy
+          - zh_HK
+          - tr
+          - sl
+          - km
+          - th
+          - vi
+          - es_ES
+          - fi
+          - pt_PT
+          example: en
+        reportsToPersonUniqueId:
+          type: string
+          description: PersonUniqueID for direct reporting used for business rules. Maximum 100 characters.
+          example: fsmith
+        status:
+          type: string
+          description: Person's status in the system
+          enum:
+          - Pending
+          - Active
+          - Suspended
+          - Disabled
+          - Deleted
+          example: Pending
+        title:
+          type: string
+          description: Person's title. Maximum 255 characters.
+          example: Sr. Manager
+        vendorCode1:
+          type: string
+          description: Valid Accounts Payable Vendor1 ID for this person. Maximum 100 characters.
+          example: 35171-001
+        vendorCode2:
+          type: string
+          description: Valid Accounts Payable Vendor2 ID for this person. Maximum 100 characters.
+          example: 35171-001
+        dateFormat:
+          type: string
+          description: Person's date format preference. Default value is "MM/DD/YYYY"
+          enum:
+          - MM/DD/YYYY
+          - DD/MM/YYYY
+          example: MM/DD/YYYY
+        numberFormat:
+          type: string
+          description: Person's currency format preference. Default value is "##,###.00"
+          enum:
+          - '###.###,00'
+          - '###,###.00'
+          example: '###,###.00'
+        defaultMosaic:
+          type: string
+          description: Name of customer's default (primary) mosaic
+          example: Primary
+        vatLocation:
+          type: string
+          description: Person's ISO Alpha-2 country code for VAT purposes
+          example: US
+        adminAccess:
+          type: boolean
+          description: Configure whether user has access to administration module
+          example: false
+        copyingItems:
+          type: boolean
+          description: Configure copy behavior of previous data from one expense entry to the next to simplify expense entry
+          example: true
+        superDelegate:
+          type: boolean
+          description: User can delegate to full list of users for delegate access
+          example: true
+        analyticsModules:
+          type: string
+          description: Modules configuration for access to the Analytics Reporting tool
+          enum:
+          - 'NULL'
+          - M01
+          - M02
+          - M03
+          - M04
+          - M05
+          - M06
+          - M07
+          - M08
+          - M09
+          - M10
+          example: M01
+        analyticsUserType:
+          type: string
+          description: User type for access to the Analytics Reporting Tool
+          enum:
+          - 'NULL'
+          - U99
+          - U01
+          - U02
+          - U03
+          - U04
+          example: U01
+        analyticsView:
+          type: string
+          description: View configuration for access to the Analytics Reporting tool
+          enum:
+          - 'NULL'
+          - V01
+          - V02
+          - V03
+          - V04
+          - V05
+          - V06
+          - V07
+          - V08
+          - V09
+          - V10
+          example: V01
+        alternateEmailAddresses:
+          type: array
+          description: Person's alternate email addresses. Email address limited to 100 characters.
+          example: john.doe@company.com
+          items:
+            type: string
+        alternateCurrencies:
+          type: array
+          description: Person's additional currency codes
+          items:
+            $ref: '#/components/schemas/AlternateCurrency'
+        personEntities:
+          type: array
+          description: Assigns person to a customer's defined Entity structure.
+          items:
+            $ref: '#/components/schemas/PersonEntityView'
+        udas:
+          type: array
+          description: Additional customer defined fields
+          items:
+            $ref: '#/components/schemas/PersonUdaView'
+        interactionUserId:
+          type: string
+          description: ID for interaction integration. Only available to customers with accounts setup to use interaction features. Maximum 50 characters.
+          example: JDOE
+        interactionAccountName:
+          type: string
+          description: Account Name for interaction integration. Only available to customers with accounts setup to use interaction features. Maximum 50 characters.
+          example: JDOE
+      required:
+      - defaultMosaic
+      - firstName
+      - lastName
+      - personUniqueId
+      - primaryCurrency
+      - primaryEmailAddress
+      - status
+      - username
+    Response:
+      type: object
+      properties:
+        personUniqueId:
+          type: string
+          description: Unique identifier for a person
+          example: jdoe
+        result:
+          type: string
+          description: Result of operation
+          enum:
+          - SUCCESS
+          - FAIL
+          example: FAIL
+        errorMessage:
+          type: string
+          description: Error message provided for a FAIL result
+          example: firstName may not be empty
+    PersonUdaView:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'Customer defined field name (Note: UDF1/UDF2/UDF3 are reserved names which are used for population of UDF fields) '
+          example: StartDate
+        value:
+          type: string
+          description: Customer defined field value
+          example: 2017-10-03 00:00:00
+      required:
+      - name
+      - value

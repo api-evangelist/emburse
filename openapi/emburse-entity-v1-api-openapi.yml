@@ -1,0 +1,257 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Entity (V1) API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Entity (V1)
+  description: V1 Entity Controller
+paths:
+  /v1/entities:
+    get:
+      tags:
+      - Entity (V1)
+      summary: Get list of Entities
+      description: This web service allows an external application to get a list of active entities. This endpoint does not provide filtering by entity code, type code, or status. If filtering is necessary, use GET v2/entities.
+      operationId: getUsingGET
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Entity'
+        '400':
+          description: Customer Code is invalid.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+    post:
+      tags:
+      - Entity (V1)
+      summary: Create/Update Entities
+      description: This web service allows an external application to create or update a list of entities.
+      operationId: upsertEntitiesUsingPOST
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/EntityArray'
+      responses:
+        '200':
+          description: All entities were processed successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        '207':
+          description: Some of the entities couldn't be processed successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        '400':
+          description: Customer Code is invalid.
+        '422':
+          description: Failed while processing all entities.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+    delete:
+      tags:
+      - Entity (V1)
+      summary: Delete Entities
+      description: This web service allows an external application to delete a list of entities.
+      operationId: deleteEntitiesUsingDELETE
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: 'API key for Authentication '
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/EntityArray'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        '204':
+          description: All Entities Are Deleted
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        '207':
+          description: Any Combination of 204, 404, 410
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Entity Not Found
+        '410':
+          description: Entity Already Deleted
+        '503':
+          description: Service unavailable
+      deprecated: false
+components:
+  schemas:
+    EntityLanguage:
+      type: object
+      properties:
+        locale:
+          type: string
+        name:
+          type: string
+      title: EntityLanguage
+    Entity:
+      type: object
+      required:
+      - entityCode
+      - entityTypeCode
+      properties:
+        entityCode:
+          type: string
+        entityTypeCode:
+          type: string
+        extraData1:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        extraData2:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        extraData3:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        extraData4:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        extraData5:
+          type: string
+          description: extraData for entity.  To remove value, set to empty string.
+        sortOrder:
+          type: string
+          description: SortOrder to be used by EntityType.SortType
+        status:
+          type: string
+          description: ACT or DEL.  If not provided, no updates are done to existing entity, otherwise defaults to ACT for new entities
+          enum:
+          - ACT
+          - DEL
+        entityId:
+          type: integer
+          format: int32
+          description: entity Id
+        localizedEntityName:
+          type: string
+          description: entity name for the languageId
+        entityNames:
+          type: array
+          description: List of names in different Locales.  List should always include an engligh locale (en) as default
+          items:
+            $ref: '#/components/schemas/EntityLanguage'
+      title: Entity
+    ApiResponse:
+      type: object
+      properties:
+        entityCode:
+          type: string
+        entityTypeCode:
+          type: string
+        errorMessage:
+          type: string
+        operationType:
+          type: string
+          enum:
+          - INSERT
+          - UPDATE
+          - DELETE
+        result:
+          type: string
+          enum:
+          - SUCCESS
+          - FAIL
+      title: ApiResponse
+  requestBodies:
+    EntityArray:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Entity'
+      description: List of entities

@@ -1,0 +1,304 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts allocation-api-controller-v-2 API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: allocation-api-controller-v-2
+paths:
+  /v2/allocations:
+    get:
+      tags:
+      - allocation-api-controller-v-2
+      summary: Get list of allocations
+      description: This web service allows an external application to get list of allocation details
+      operationId: getAllocationsUsingGET
+      parameters:
+      - name: allocation-number
+        in: query
+        description: Unique allocation number
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: string
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: client-number
+        in: query
+        description: Unique Client number
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: string
+      - name: closed
+        in: query
+        description: Allocation is closed
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: boolean
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: deleted
+        in: query
+        description: Allocation is deleted
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: boolean
+      - name: page
+        in: query
+        description: Starting page number for getting parts of results
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        description: Size of page for getting parts of results
+        required: false
+        allowEmptyValue: false
+        schema:
+          type: integer
+          format: int32
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AllocationView'
+        '400':
+          description: Customer Code is invalid.
+        '401':
+          description: Customer Code is not authorized.  Cannot get allocation details.
+        '503':
+          description: Service unavailable.
+      deprecated: false
+    post:
+      tags:
+      - allocation-api-controller-v-2
+      summary: Create/update list of allocations
+      description: This web service allows an external application to create/update list of allocations.
+      operationId: bulkUpsertAllocationsUsingPOST
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/AllocationViewArray'
+      responses:
+        '200':
+          description: Allocations are created/updated successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        '207':
+          description: Some of the allocations are created/updated successfully and the remaining allocations are skipped due to error.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        '400':
+          description: Customer Code is invalid.
+        '401':
+          description: Customer Code is not authorized.  Cannot create/update allocations.
+        '422':
+          description: Allocations are skipped due to error.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        '503':
+          description: Service unavailable.
+      deprecated: false
+components:
+  schemas:
+    UDAPerson:
+      type: object
+      properties:
+        name:
+          type: string
+        personUniqueId:
+          type: string
+      title: UDAPerson
+    ApiResponse:
+      type: object
+      properties:
+        allocationId:
+          type: string
+          example: 1000-001_cn1000
+          description: Unique identifier for the allocation.
+        errorMessage:
+          type: string
+          example: Invalid entity1 specified.
+          description: Error message for the failed allocation.
+        result:
+          type: string
+          example: SUCCESS
+          description: Status of the allocation.
+          enum:
+          - SUCCESS
+          - FAIL
+      title: ApiResponse
+    AllocationEntity:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      title: AllocationEntity
+    AllocationView:
+      type: object
+      properties:
+        allocationEntities:
+          type: array
+          description: List of allocation entities.
+          items:
+            $ref: '#/components/schemas/AllocationEntity'
+        allocationName:
+          type: string
+          example: AUTOAPPROVE (BY)
+          description: Corresponding Allocation name.
+        allocationNumber:
+          type: string
+          example: 1000-001
+          description: Unique Allocation number.
+        clientName:
+          type: string
+          example: Autoapprove
+          description: Corresponding Client name.
+        clientNumber:
+          type: string
+          example: cn1000
+          description: Unique Client number.
+        closedDate:
+          type: string
+          example: 2017-10-18 18:46:19+00:00
+          description: Allocation is unavailable for selection after the closedDate.
+        currency:
+          type: string
+          example: USD
+          description: 'Currency code of the Allocation. Format: ISO 4217 code (alpha)'
+        extraLineItemData1LegalValues:
+          type: string
+          example: 00,10,20,30,40
+          description: List of valid GLDept values that may be selected along with this specific allocation. Must map to customer's CodeType.  Values separated by commas
+        filterTerms1:
+          type: array
+          description: List of search terms used for 1st allocation filter.
+          items:
+            type: string
+        filterTerms2:
+          type: array
+          description: List of search terms used for 2nd allocation filter.
+          items:
+            type: string
+        glAccount:
+          type: string
+          example: test GL
+          description: General Ledger Account.
+        locale:
+          type: string
+          example: en
+          description: 'Language of the Allocation. Format: ISO 639-1 (2-letter code)'
+        onSelect1EntityTypeCode:
+          type: string
+          example: false
+          description: Entity Type that will be linked to the allocation On Select 1.
+        onSelect2EntityTypeCode:
+          type: string
+          example: DEP
+          description: Entity Type that will be linked to the allocation On Select 2.
+        parentClientNumber:
+          type: string
+          example: cn1000
+          description: Optional Parent Grouping Identifier.
+        routeIndependent:
+          type: boolean
+          example: true
+          description: Assigns the status of an allocation to treat uniquely when it is considered billable.
+        startDate:
+          type: string
+          example: 2017-10-18 18:46:19+00:00
+          description: Allocation is available for selection from the startDate.
+        type:
+          type: string
+          example: B
+          description: Allocation type.
+        udaPersons:
+          type: array
+          description: List of PersonUniqueIDs used for allocation assignment.
+          items:
+            $ref: '#/components/schemas/UDAPerson'
+        udas:
+          type: array
+          description: List of User Defined Attributes.
+          items:
+            $ref: '#/components/schemas/AllocationUDA'
+      title: AllocationView
+    AllocationUDA:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      title: AllocationUDA
+  requestBodies:
+    AllocationViewArray:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/AllocationView'
+      description: List of allocations
+      required: true

@@ -1,0 +1,810 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts Cards API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: Cards
+paths:
+  /cards:
+    get:
+      operationId: get_cards
+      description: ''
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: assigned_to
+        required: false
+        in: query
+        description: assigned_to
+        schema:
+          type: string
+      - name: category
+        required: false
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: department
+        required: false
+        in: query
+        description: department
+        schema:
+          type: string
+      - name: label
+        required: false
+        in: query
+        description: label
+        schema:
+          type: string
+      - name: location
+        required: false
+        in: query
+        description: location
+        schema:
+          type: string
+      - name: state
+        required: false
+        in: query
+        description: 'Filter by card state. Accepts a comma-separated list of states. Valid values: active, unactivated, suspended, terminated.'
+        schema:
+          type: string
+          example: active,suspended
+        example: active,suspended
+      - name: description
+        required: false
+        in: query
+        description: description
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - count
+                - results
+                properties:
+                  count:
+                    type: integer
+                    example: 123
+                  next:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=400&limit=100
+                  previous:
+                    type: string
+                    nullable: true
+                    format: uri
+                    example: http://api.example.org/accounts/?offset=200&limit=100
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/APICard'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Cards
+    post:
+      operationId: post_cards
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APICard'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APICard'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Cards
+  /cards/{id}:
+    get:
+      operationId: get_cards_by_id
+      description: APICardPAN model requires "has_pan_access" privileges.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APICardPAN'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Cards
+    put:
+      operationId: put_cards_by_id
+      description: Always perform a partial update.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: assigned_to
+        required: false
+        in: query
+        description: assigned_to
+        schema:
+          type: string
+      - name: category
+        required: false
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: department
+        required: false
+        in: query
+        description: department
+        schema:
+          type: string
+      - name: label
+        required: false
+        in: query
+        description: label
+        schema:
+          type: string
+      - name: location
+        required: false
+        in: query
+        description: location
+        schema:
+          type: string
+      - name: state
+        required: false
+        in: query
+        description: 'Filter by card state. Accepts a comma-separated list of states. Valid values: active, unactivated, suspended, terminated.'
+        schema:
+          type: string
+          example: active,suspended
+        example: active,suspended
+      - name: description
+        required: false
+        in: query
+        description: description
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APICard'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APICard'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Cards
+    delete:
+      operationId: delete_cards_by_id
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      - name: assigned_to
+        required: false
+        in: query
+        description: assigned_to
+        schema:
+          type: string
+      - name: category
+        required: false
+        in: query
+        description: category
+        schema:
+          type: string
+      - name: department
+        required: false
+        in: query
+        description: department
+        schema:
+          type: string
+      - name: label
+        required: false
+        in: query
+        description: label
+        schema:
+          type: string
+      - name: location
+        required: false
+        in: query
+        description: location
+        schema:
+          type: string
+      - name: state
+        required: false
+        in: query
+        description: 'Filter by card state. Accepts a comma-separated list of states. Valid values: active, unactivated, suspended, terminated.'
+        schema:
+          type: string
+          example: active,suspended
+        example: active,suspended
+      - name: description
+        required: false
+        in: query
+        description: description
+        schema:
+          type: string
+      - name: created_before
+        required: false
+        in: query
+        description: created_before
+        schema:
+          type: string
+      - name: created_after
+        required: false
+        in: query
+        description: created_after
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Cards
+  /cards/{id}/pan:
+    get:
+      operationId: get_cards_by_id_pan
+      description: APICardPAN model requires "has_pan_access" privileges.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APICardPAN'
+          description: ''
+        '400':
+          description: Bad Request - Invalid arguments or malformed request
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+        '403':
+          description: Forbidden - Insufficient permissions for this operation
+        '404':
+          description: Not Found - Resource does not exist
+        '409':
+          description: Conflict - Request conflicts with existing data
+        '429':
+          description: Too Many Requests - Rate limit exceeded
+        '500':
+          description: Internal Server Error
+      tags:
+      - Cards
+components:
+  schemas:
+    APICardPAN:
+      type: object
+      properties:
+        pan:
+          type: string
+          readOnly: true
+        cvv:
+          type: string
+          readOnly: true
+    APICard:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        url:
+          type: string
+          readOnly: true
+        description:
+          type: string
+        name:
+          type: string
+          readOnly: true
+        product:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+          writeOnly: true
+          nullable: true
+        is_virtual:
+          type: boolean
+        last_four:
+          type: string
+          readOnly: true
+          pattern: ^[0-9]{4}$
+          maxLength: 4
+        state:
+          type: string
+        suspension_reason:
+          type: string
+          nullable: true
+        assigned_to:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+            url:
+              type: string
+              readOnly: true
+            email:
+              type: string
+              readOnly: true
+            code:
+              type: string
+              readOnly: true
+              nullable: true
+              pattern: ^[0-9A-z\.\-]+$
+              maxLength: 36
+              minLength: 1
+            first_name:
+              type: string
+              readOnly: true
+              maxLength: 255
+            last_name:
+              type: string
+              readOnly: true
+              maxLength: 255
+          required:
+          - first_name
+          - last_name
+          nullable: true
+        category:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+            name:
+              type: string
+              readOnly: true
+              maxLength: 255
+            code:
+              type: string
+              readOnly: true
+              nullable: true
+              pattern: ^[0-9A-z\.\-]+$
+              maxLength: 36
+              minLength: 1
+            parent:
+              type: object
+              properties: {}
+              readOnly: true
+            is_archived:
+              type: boolean
+              readOnly: true
+            created_at:
+              type: string
+              format: date-time
+              readOnly: true
+            url:
+              type: string
+              readOnly: true
+          required:
+          - name
+          - parent
+          nullable: true
+        department:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+            name:
+              type: string
+              readOnly: true
+              maxLength: 255
+            code:
+              type: string
+              readOnly: true
+              nullable: true
+              pattern: ^[0-9A-z\.\-]+$
+              maxLength: 36
+              minLength: 1
+            parent:
+              type: object
+              properties: {}
+              readOnly: true
+            is_archived:
+              type: boolean
+              readOnly: true
+            created_at:
+              type: string
+              format: date-time
+              readOnly: true
+            url:
+              type: string
+              readOnly: true
+          required:
+          - name
+          - parent
+          nullable: true
+        location:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+            name:
+              type: string
+              readOnly: true
+              maxLength: 255
+            code:
+              type: string
+              readOnly: true
+              nullable: true
+              pattern: ^[0-9A-z\.\-]+$
+              maxLength: 36
+              minLength: 1
+            parent:
+              type: object
+              properties: {}
+              readOnly: true
+            is_archived:
+              type: boolean
+              readOnly: true
+            created_at:
+              type: string
+              format: date-time
+              readOnly: true
+            url:
+              type: string
+              readOnly: true
+          required:
+          - name
+          - parent
+          nullable: true
+        label:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+            name:
+              type: string
+              readOnly: true
+              maxLength: 255
+            code:
+              type: string
+              readOnly: true
+              nullable: true
+              pattern: ^[0-9A-z\.\-]+$
+              maxLength: 36
+              minLength: 1
+            parent:
+              type: object
+              properties: {}
+              readOnly: true
+            is_archived:
+              type: boolean
+              readOnly: true
+            created_at:
+              type: string
+              format: date-time
+              readOnly: true
+            url:
+              type: string
+              readOnly: true
+          required:
+          - name
+          - parent
+          nullable: true
+        allowance:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              readOnly: true
+            url:
+              type: string
+              readOnly: true
+            interval:
+              type: string
+              nullable: true
+            amount:
+              type: number
+              multipleOf: 0.01
+              maximum: 100000000000000
+              minimum: 0.0
+            transaction_limit:
+              type: number
+              multipleOf: 0.01
+              maximum: 100000000000000
+              minimum: 0.0
+              nullable: true
+            daily_limit:
+              type: number
+              multipleOf: 0.01
+              maximum: 100000000000000
+              minimum: 0.01
+              nullable: true
+            single_use:
+              type: boolean
+            start_time:
+              type: string
+              format: date-time
+              nullable: true
+            end_time:
+              type: string
+              format: date-time
+              nullable: true
+            scope:
+              type: array
+              items:
+                type: integer
+                maximum: 9223372036854775807
+                minimum: 1
+                format: int64
+              maxItems: 10
+            balance:
+              type: number
+              multipleOf: 0.01
+              maximum: 100000000000000
+              minimum: -100000000000000
+              readOnly: true
+          required:
+          - balance
+        expiration:
+          type: string
+          format: date
+          readOnly: true
+        billing_name:
+          type: string
+        billing_address:
+          type: string
+          nullable: true
+        shipping_address:
+          type: string
+          nullable: true
+        shipping:
+          type: object
+          properties:
+            address:
+              type: object
+              properties:
+                attn:
+                  type: string
+                address_1:
+                  type: string
+                address_2:
+                  type: string
+                city:
+                  type: string
+                state:
+                  type: string
+                postal_code:
+                  type: string
+                country:
+                  type: string
+              required:
+              - address_1
+              - postal_code
+              - country
+              nullable: true
+            carrier:
+              enum:
+              - fedex
+              - usps
+              - royal_mail
+              - dhl
+              type: string
+              readOnly: true
+            eta:
+              type: string
+              format: date-time
+              readOnly: true
+            name:
+              type: string
+              readOnly: true
+            order_size:
+              enum:
+              - individual
+              - bulk
+              type: string
+            phone_number:
+              type: string
+              nullable: true
+            require_signature:
+              type: boolean
+            service:
+              enum:
+              - standard
+              - express
+              - priority
+              type: string
+            status:
+              enum:
+              - pending
+              - shipped
+              - delivered
+              - returned
+              - failure
+              - canceled
+              type: string
+              readOnly: true
+            tracking_number:
+              type: string
+              readOnly: true
+            tracking_url:
+              type: string
+              readOnly: true
+          required:
+          - address
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        network:
+          type: string
+          readOnly: true
+          nullable: true
+      required:
+      - description
+      - is_virtual
+      - last_four
+      - allowance
+      - expiration
+      - created_at

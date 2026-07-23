@@ -1,0 +1,592 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts pre-approval-api-controller API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: pre-approval-api-controller
+paths:
+  /v1/preapproval-reports/{reportId}/return:
+    post:
+      tags:
+      - pre-approval-api-controller
+      summary: Return a pre-approval report
+      description: This web service allows an external application to return the specified pre-approval report to the expense owner
+      operationId: returnPreApproval
+      parameters:
+      - name: reportId
+        in: path
+        description: Report ID for report
+        required: true
+        schema:
+          type: string
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: logged-in-user-id
+        in: header
+        description: Unique ID for the approver logged in making request
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Customer Code is invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+        '403':
+          description: Logged in user is not authorized to return report or Logged in user does not exist.
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/preapproval-reports/{reportId}/reassign:
+    post:
+      tags:
+      - pre-approval-api-controller
+      summary: Reassign a pre-approval report
+      description: This web service allows an external application to reassign a specified pre-approval report to another approver for review
+      operationId: reassignPreApproval
+      parameters:
+      - name: reportId
+        in: path
+        description: Report ID for report
+        required: true
+        schema:
+          type: string
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: logged-in-user-id
+        in: header
+        description: Unique ID for the approver logged in making request
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Customer Code is invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized.  Cannot reassign PreApproval report.
+          content:
+            application/json:
+              schema:
+                type: object
+        '403':
+          description: Logged in user is not authorized to reassign PreApproval or Logged in user does not exist.
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/preapproval-reports/{reportId}/approve:
+    post:
+      tags:
+      - pre-approval-api-controller
+      summary: Approve a pre-approval report
+      description: This web service allows an external application to approve the specified pre-approval report
+      operationId: approvePreApproval
+      parameters:
+      - name: reportId
+        in: path
+        description: Report ID for report
+        required: true
+        schema:
+          type: string
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: logged-in-user-id
+        in: header
+        description: Unique ID for the approver logged in making request
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Customer Code is invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+        '403':
+          description: Logged in user is not authorized to approve report or Logged in user does not exist.
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/preapproval-reports/itemType:
+    get:
+      tags:
+      - pre-approval-api-controller
+      summary: Get PALineItem Type information for expense Type
+      description: This web service allows an external application to get PALineItem type information by expense Type
+      operationId: getPreApprovalLineItemType
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: expense-item-type
+        in: query
+        description: Expense Type to get PALineItem type information
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Customer Code is invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/preapproval-report-approved:
+    get:
+      tags:
+      - pre-approval-api-controller
+      summary: Get list of pre-approval reports that have been approved but not yet exported
+      description: This web service allows an external application to get a list of pre-approval reports that have been approved but not yet exported
+      operationId: getPreApprovalsApprovedDBPagination
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number for response pagination
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: page-size
+        in: query
+        description: Page size for response pagination
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 6
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Customer Code is invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/preapproval-report-approvals:
+    get:
+      tags:
+      - pre-approval-api-controller
+      summary: Get list of pre-approval reports for approval
+      description: This web service allows an external application to get a list of pre-approval reports awaiting approval by a user
+      operationId: getPreApprovalApprovals
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: logged-in-user-id
+        in: header
+        description: Unique ID for the approver logged in making request
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Customer Code is invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+        '403':
+          description: Logged in user does not exist.
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/preapproval-report-approvals/{reportId}:
+    get:
+      tags:
+      - pre-approval-api-controller
+      summary: Get pre-approval report details
+      description: This web service allows an external application to get the details of pre-approval report
+      operationId: getPreApproval_1
+      parameters:
+      - name: reportId
+        in: path
+        description: Report ID for pre-approval report
+        required: true
+        schema:
+          type: string
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: logged-in-user-id
+        in: header
+        description: Unique ID for the approver logged in making request
+        required: true
+        schema:
+          type: string
+      - name: lockable
+        in: query
+        description: Indicates whether a report is lockable for 15 minutes or not
+        required: false
+        schema:
+          type: boolean
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '400':
+          description: Customer Code is invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+        '403':
+          description: Logged in user is not allowed to view details pre-approval report or Logged in user does not exist
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: Pre-Approval Report does not exist.
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/preapproval-report-approvals/count:
+    get:
+      tags:
+      - pre-approval-api-controller
+      summary: Get count of pre-approval reports for approval
+      description: This web service allows an external application to a count of pre-approval reports awaiting approval by auser
+      operationId: getPreApprovalCount
+      parameters:
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: logged-in-user-id
+        in: header
+        description: Unique ID for the approver logged in making request
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Customer Code is invalid
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+        '403':
+          description: Logged in user does not exist.
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/preapproval-reports/{reportId}:
+    delete:
+      tags:
+      - pre-approval-api-controller
+      summary: Delete a pre-approval
+      description: This web service allows an external application to delete a pre-approval
+      operationId: deletePreApproval
+      parameters:
+      - name: reportId
+        in: path
+        description: Report ID for pre-approval
+        required: true
+        schema:
+          type: string
+      - name: chain-id
+        in: header
+        description: Used for tracking the flow of the request
+        required: true
+        schema:
+          type: string
+      - name: expense-owner-id
+        in: header
+        description: Unique ID of the expense-owner
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer identifier provided by Chrome River
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Delete successful
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Customer Code is invalid
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Customer Code is not authorized
+          content:
+            application/json:
+              schema:
+                type: object
+        '403':
+          description: Forbidden operation
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: Pre-Approval does not exist
+          content:
+            application/json:
+              schema:
+                type: object
+        '503':
+          description: Service unavailable
+          content:
+            application/json:
+              schema:
+                type: object

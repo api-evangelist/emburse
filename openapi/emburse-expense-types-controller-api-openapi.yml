@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts expense-types-controller API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: expense-types-controller
+  description: Retrieve expense type information
+paths:
+  /v1/expense-types:
+    get:
+      tags:
+      - expense-types-controller
+      summary: Expose expense types of a customer user
+      description: This web service allows an external application to operate on expense types.
+      operationId: getExpenseTypesUsingGET
+      parameters:
+      - name: chain-id
+        in: header
+        description: Tracking identifier for logging request flow
+        required: false
+        schema:
+          type: string
+      - name: customer-code
+        in: header
+        description: Unique customer code provided by Chrome River
+        required: true
+        schema:
+          type: string
+      - name: logged-in-user-id
+        in: header
+        description: Unique person identifier provided by external client
+        required: true
+        schema:
+          type: string
+      - name: x-api-key
+        in: header
+        description: API key for Authentication
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseTypes'
+        '400':
+          description: Customer Code is invalid
+        '401':
+          description: Unauthorized Customer code.
+        '403':
+          description: Customer code is forbidden to get expense types
+        '503':
+          description: Service unavailable
+      deprecated: false
+components:
+  schemas:
+    ExpenseTypes:
+      type: object
+      properties:
+        expenseBarId:
+          type: integer
+          format: int32
+          example: 100
+          description: Identifier for a mosaic of expense types
+        expenseTypes:
+          type: array
+          example: Airfare, Hotel, ...
+          description: List of expense type.
+          items:
+            type: string
+      title: ExpenseTypes

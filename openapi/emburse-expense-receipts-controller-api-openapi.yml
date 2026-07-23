@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  description: Api Documentation
+  version: '1.0'
+  title: Api Documentation Accounts expense-receipts-controller API
+  termsOfService: urn:tos
+  contact: {}
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://service.chromeriver.com
+tags:
+- name: expense-receipts-controller
+  description: Retrieve expense receipt PDF
+paths:
+  /v1/expense-receipts/{reportId}:
+    get:
+      tags:
+      - expense-receipts-controller
+      summary: Retrieve an expense receipt PDF
+      description: This web service allows an external application to fetch a receipt PDF.
+      operationId: getExpenseReceiptsUsingGET
+      parameters:
+      - name: customer-id
+        in: header
+        description: customer-id
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: person-id
+        in: header
+        description: person-id
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: reportId
+        in: path
+        description: reportId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: byte
+      deprecated: false
