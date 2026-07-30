@@ -1,7 +1,20 @@
 aid: emburse
 name: Emburse
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/emburse.png
 url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/apis.yml
 created: 2026-06-12
 modified: 2026-06-12
@@ -30,96 +43,686 @@ tags:
   - Finance
   - FinTech
 apis:
-  - name: Emburse Virtual Cards API
-    description: >
-      REST API for managing virtual and physical corporate cards, transactions,
-      members, accounts, and accounting categories. Uses OAuth2 token-based
-      authentication and supports idempotency keys for safe retries.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.emburse.com/api-docs
-    baseURL: https://api.emburse.com/v1/
-    tags:
-      - Virtual Cards
-      - Corporate Cards
-      - Transactions
-      - Members
-    properties:
-      - type: Documentation
-        url: https://cards.emburse.com/api/v1/docs/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-virtual-cards-openapi.yml
-  - name: Emburse Enterprise REST APIs
-    description: >
-      Swagger-documented REST APIs for Emburse Enterprise (Chrome River)
-      covering Allocation, Entity, Expense, Exported Reports, Paid Expense,
-      Expense Image, Invoice, Person, PreApproval, Purchase Order, Vendor,
-      and Contacts resources for enterprise expense and AP automation.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
-    baseURL: https://api.emburse.com/
-    tags:
-      - Enterprise
-      - Expense
-      - Invoice
-      - AP Automation
-    properties:
-      - type: Documentation
-        url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-allocation-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-entity-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-expense-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-exported-reports-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-paid-expense-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-expense-image-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-invoice-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-person-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-preapproval-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-purchase-order-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-vendor-openapi.yml
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/openapi/emburse-enterprise-contacts-openapi.yml
-  - name: Emburse Professional API
-    description: >
-      REST API for Emburse Professional (formerly Certify) supporting push/pull
-      of users, departments, categories, expense reports, expense lines, receipt
-      data, and invoices. Base URL is https://api.certify.com/v1/.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://help.certify.com/hc/en-us/articles/15460725432077-API-Overview
-    baseURL: https://api.certify.com/v1/
-    tags:
-      - Expense Reports
-      - Receipts
-      - Invoices
-      - Professional
-    properties:
-      - type: Documentation
-        url: https://pro.emburse.app/APIDoc.aspx
-  - name: Emburse Spend API
-    description: >
-      Modern REST API for Emburse Spend (formerly Abacus) using OAuth 2.0
-      authentication and JSON for expense and card management. Available to
-      Partners and customers on the Plus plan or higher.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://help.spend.emburse.com/hc/en-us/articles/4424782291341-Emburse-Spend-API
-    baseURL: https://api.emburse.com/
-    tags:
-      - Spend Management
-      - Expense
-      - Cards
-    properties:
-      - type: Documentation
-        url: https://help.spend.emburse.com/hc/en-us/articles/4424782291341-Emburse-Spend-API
+- name: Emburse Professional API
+  description: >
+    REST API for Emburse Professional (formerly Certify) supporting push/pull of users, departments, categories,
+    expense reports, expense lines, receipt data, and invoices. Base URL is https://api.certify.com/v1/.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://help.certify.com/hc/en-us/articles/15460725432077-API-Overview
+  baseURL: https://api.certify.com/v1/
+  tags:
+  - Expense Reports
+  - Receipts
+  - Invoices
+  - Professional
+  properties:
+  - type: Documentation
+    url: https://pro.emburse.app/APIDoc.aspx
+- name: Emburse Spend API
+  description: >
+    Modern REST API for Emburse Spend (formerly Abacus) using OAuth 2.0 authentication and JSON for expense
+    and card management. Available to Partners and customers on the Plus plan or higher.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://help.spend.emburse.com/hc/en-us/articles/4424782291341-Emburse-Spend-API
+  baseURL: https://api.emburse.com/
+  tags:
+  - Spend Management
+  - Expense
+  - Cards
+  properties:
+  - type: Documentation
+    url: https://help.spend.emburse.com/hc/en-us/articles/4424782291341-Emburse-Spend-API
+- aid: emburse:emburse-accounts-api
+  name: Emburse Accounts API
+  description: The Accounts API from Emburse — 4 operation(s) for accounts.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-allocation-api-controller-v-1-api
+  name: Emburse allocation-api-controller-v-1 API
+  description: >-
+    The allocation-api-controller-v-1 API from Emburse — 1 operation(s) for allocation-api-controller-v-1.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - allocation-api-controller-v-1
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-allocation-api-controller-v-1-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-allocation-api-controller-v-2-api
+  name: Emburse allocation-api-controller-v-2 API
+  description: >-
+    The allocation-api-controller-v-2 API from Emburse — 1 operation(s) for allocation-api-controller-v-2.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - allocation-api-controller-v-2
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-allocation-api-controller-v-2-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-allocation-api-controller-v-3-api
+  name: Emburse allocation-api-controller-v-3 API
+  description: >-
+    V3 endpoints include better support and error handling for allocation user defined attributes (UDA).
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - allocation-api-controller-v-3
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-allocation-api-controller-v-3-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-allowances-api
+  name: Emburse Allowances API
+  description: The Allowances API from Emburse — 1 operation(s) for allowances.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Allowances
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-allowances-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-cards-api
+  name: Emburse Cards API
+  description: The Cards API from Emburse — 3 operation(s) for cards.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Cards
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-cards-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-categories-api
+  name: Emburse Categories API
+  description: The Categories API from Emburse — 2 operation(s) for categories.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-categories-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-company-api
+  name: Emburse Company API
+  description: The Company API from Emburse — 2 operation(s) for company.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Company
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-company-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-departments-api
+  name: Emburse Departments API
+  description: The Departments API from Emburse — 2 operation(s) for departments.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Departments
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-departments-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-entity-type-api
+  name: Emburse Entity Type API
+  description: Entity Type Controller
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Entity Type
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-entity-type-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-entity-v1-api
+  name: Emburse Entity (V1) API
+  description: V1 Entity Controller
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Entity (V1)
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-entity-v1-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-entity-v2-api
+  name: Emburse Entity (V2) API
+  description: V2 Entity Controller
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Entity (V2)
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-entity-v2-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-approval-controller-v1-api
+  name: Emburse expense-approval-controller-v1 API
+  description: Approve, return and reassign expense reports.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-approval-controller-v1
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-approval-controller-v1-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-approval-controller-v2-api
+  name: Emburse expense-approval-controller-v2 API
+  description: Approve, return and reassign expense reports using username or email of approver.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-approval-controller-v2
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-approval-controller-v2-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-controller-v1-api
+  name: Emburse expense-controller-v1 API
+  description: Retrieve expense report information and create draft expense reports
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-controller-v1
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-controller-v1-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-controller-v3-api
+  name: Emburse expense-controller-v3 API
+  description: Retrieve expense reports by filter(s)
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-controller-v3
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-controller-v3-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-export-controller-v1-api
+  name: Emburse expense-export-controller-v1 API
+  description: Get and post expense export information.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-export-controller-v1
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-export-controller-v1-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-export-controller-v2-api
+  name: Emburse expense-export-controller-v2 API
+  description: Get and post expense or invoice export information.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-export-controller-v2
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-export-controller-v2-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-image-api-api
+  name: Emburse expense-image-api API
+  description: Retrieve Expense Report Receipts / Images
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-image-api
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-image-api-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-receipts-controller-api
+  name: Emburse expense-receipts-controller API
+  description: Retrieve expense receipt PDF
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-receipts-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-receipts-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-report-line-item-controller-api
+  name: Emburse expense-report-line-item-controller API
+  description: Retrieve expense report line items
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-report-line-item-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-report-line-item-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-expense-types-controller-api
+  name: Emburse expense-types-controller API
+  description: Retrieve expense type information
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - expense-types-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-expense-types-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-invoice-api-external-controller-api
+  name: Emburse invoice-api-external-controller API
+  description: Operations in Invoice Api
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - invoice-api-external-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-invoice-api-external-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-labels-api
+  name: Emburse Labels API
+  description: The Labels API from Emburse — 2 operation(s) for labels.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Labels
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-labels-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-locations-api
+  name: Emburse Locations API
+  description: The Locations API from Emburse — 2 operation(s) for locations.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-locations-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-members-api
+  name: Emburse Members API
+  description: The Members API from Emburse — 3 operation(s) for members.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Members
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-members-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-merchant-categories-api
+  name: Emburse Merchant Categories API
+  description: The Merchant Categories API from Emburse — 1 operation(s) for merchant categories.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Merchant Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-merchant-categories-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-oauth-api
+  name: Emburse Oauth API
+  description: The Oauth API from Emburse — 3 operation(s) for oauth.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-oauth-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-paid-expense-controller-api
+  name: Emburse paid-expense-controller API
+  description: Post payments
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - paid-expense-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-paid-expense-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-person-controller-v2-api
+  name: Emburse person-controller-v2 API
+  description: Person Controller v2
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - person-controller-v2
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-person-controller-v2-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-person-controller-v3-api
+  name: Emburse person-controller-v3 API
+  description: Person Controller v3
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - person-controller-v3
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-person-controller-v3-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-person-controller-v4-api
+  name: Emburse person-controller-v4 API
+  description: Person Web Services
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - person-controller-v4
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-person-controller-v4-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-po-api-controller-api
+  name: Emburse po-api-controller API
+  description: Operations in PO APIs
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - po-api-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-po-api-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-po-api-receipt-controller-api
+  name: Emburse po-api-receipt-controller API
+  description: Operations in PO Receipts APIs
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - po-api-receipt-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-po-api-receipt-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-pre-approval-api-controller-api
+  name: Emburse pre-approval-api-controller API
+  description: >-
+    The pre-approval-api-controller API from Emburse — 9 operation(s) for pre-approval-api-controller.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - pre-approval-api-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-pre-approval-api-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-pre-approval-api-controller-v-2-api
+  name: Emburse pre-approval-api-controller-v-2 API
+  description: >-
+    The pre-approval-api-controller-v-2 API from Emburse — 3 operation(s) for pre-approval-api-controller-v-2.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - pre-approval-api-controller-v-2
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-pre-approval-api-controller-v-2-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-pre-approval-api-export-controller-api
+  name: Emburse pre-approval-api-export-controller API
+  description: >-
+    The pre-approval-api-export-controller API from Emburse — 4 operation(s) for pre-approval-api-export-controller.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - pre-approval-api-export-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-pre-approval-api-export-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-pre-approval-import-controller-api
+  name: Emburse pre-approval-import-controller API
+  description: >-
+    The pre-approval-import-controller API from Emburse — 1 operation(s) for pre-approval-import-controller.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - pre-approval-import-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-pre-approval-import-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-requisitions-api
+  name: Emburse Requisitions API
+  description: The Requisitions API from Emburse — 2 operation(s) for requisitions.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Requisitions
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-requisitions-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-returned-payments-controller-api
+  name: Emburse returned-payments-controller API
+  description: Retrieve information concerning returned payments
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - returned-payments-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-returned-payments-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-sap-person-controller-api
+  name: Emburse sap-person-controller API
+  description: Sap Person Controller
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - sap-person-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-sap-person-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-shared-links-api
+  name: Emburse Shared Links API
+  description: The Shared Links API from Emburse — 2 operation(s) for shared links.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Shared Links
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-shared-links-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-shipping-addresses-api
+  name: Emburse Shipping Addresses API
+  description: The Shipping Addresses API from Emburse — 2 operation(s) for shipping addresses.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Shipping Addresses
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-shipping-addresses-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-transactions-api
+  name: Emburse Transactions API
+  description: The Transactions API from Emburse — 2 operation(s) for transactions.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-v1-contacts-api
+  name: Emburse /v1/contacts API
+  description: The /v1/contacts API from Emburse — 1 operation(s) for /v1/contacts.
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - /v1/contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-v1-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-vendor-api-controller-api
+  name: Emburse vendor-api-controller API
+  description: Operations in Vendor API application service
+  humanURL: https://www.emburse.com/api-docs
+  baseURL: https://api.emburse.com/v1/
+  tags:
+  - vendor-api-controller
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-vendor-api-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 common:
   - type: AgenticAccess
     url: agentic-access/emburse-agentic-access.yml
