@@ -1,0 +1,356 @@
+{
+  "item": [
+    {
+      "id": "9065bd05-74bd-43f6-a8e3-8d3096707318",
+      "name": "sap-person-controller",
+      "description": {
+        "content": "Sap Person Controller",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bc08e223-d639-4cda-9283-5d878fc1d38d",
+          "name": "Create/update persons",
+          "request": {
+            "name": "Create/update persons",
+            "description": {
+              "content": "This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "sap-persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d8f63b83-dff4-4639-a8c0-0e0157665573",
+              "name": "All persons were processed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "sap-persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ff965eb-91ca-42d4-b6b5-0fef5dc058e0",
+              "name": "Response consists of successes and failures.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "sap-persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Multi-Status (WebDAV) (RFC 4918)",
+              "code": 207,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b84ceace-375f-427d-8d1e-9cd88f8e5f7a",
+              "name": "Processing or Data Issue - See errorMessage in response body for details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "sap-persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c392404-194f-4aae-a301-27cf8ee57967",
+              "name": "All persons were not processed due to errors.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "sap-persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "20f00584-b256-4369-9d9f-3a52f8e1608d",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "sap-persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3b786959-42ab-43db-a296-b36c84499915",
+    "name": "Api Documentation Accounts sap-person-controller API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

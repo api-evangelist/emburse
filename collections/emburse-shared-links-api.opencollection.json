@@ -1,0 +1,208 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts Shared Links API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shared Links",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get_shared_links",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/shared-links",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The initial index from which to return the results."
+              },
+              {
+                "name": "card",
+                "value": "",
+                "type": "query",
+                "description": "card"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_shared_links",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/shared-links",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "get_shared_links_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/shared-links/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "card",
+                "value": "",
+                "type": "query",
+                "description": "card"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_shared_links_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/shared-links/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "card",
+                "value": "",
+                "type": "query",
+                "description": "card"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Always perform a partial update."
+        },
+        {
+          "info": {
+            "name": "delete_shared_links_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/shared-links/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "card",
+                "value": "",
+                "type": "query",
+                "description": "card"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

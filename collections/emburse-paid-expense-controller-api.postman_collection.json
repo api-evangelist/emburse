@@ -1,0 +1,638 @@
+{
+  "item": [
+    {
+      "id": "883b346d-8f89-4597-b622-3174b1d17eca",
+      "name": "paid-expense-controller",
+      "description": {
+        "content": "Post payments",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1b1e3547-fec5-4c43-9637-8d58983efd05",
+          "name": "Post a payment",
+          "request": {
+            "name": "Post a payment",
+            "description": {
+              "content": "This web service allows an external application to post a payment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "paid-expense"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"<number>\",\n  \"authorized\": \"<integer>\",\n  \"bankID\": \"<string>\",\n  \"checkNumber\": \"<string>\",\n  \"currencyCode\": \"<string>\",\n  \"customerLastCreateDate\": \"<dateTime>\",\n  \"eventDriven\": \"<boolean>\",\n  \"paidDate\": \"<dateTime>\",\n  \"paymentType\": \"<string>\",\n  \"voucherInvoice\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d34b2a5c-67db-42f0-9c87-13fb11403547",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paid-expense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 15.25,\n  \"authorized\": \"<integer>\",\n  \"bankID\": \"<string>\",\n  \"checkNumber\": \"<string>\",\n  \"currencyCode\": \"USD\",\n  \"customerLastCreateDate\": \"<dateTime>\",\n  \"eventDriven\": \"<boolean>\",\n  \"paidDate\": \"<dateTime>\",\n  \"paymentType\": \"REIM\",\n  \"voucherInvoice\": \"0000000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c7ab3f43-92c0-4081-844d-37b98fdefec7",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paid-expense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 15.25,\n  \"authorized\": \"<integer>\",\n  \"bankID\": \"<string>\",\n  \"checkNumber\": \"<string>\",\n  \"currencyCode\": \"USD\",\n  \"customerLastCreateDate\": \"<dateTime>\",\n  \"eventDriven\": \"<boolean>\",\n  \"paidDate\": \"<dateTime>\",\n  \"paymentType\": \"REIM\",\n  \"voucherInvoice\": \"0000000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a2a13d21-4b50-409b-8b3f-b4023bd093fb",
+              "name": "Customer Code is not authorized. Cannot post a payment.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paid-expense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 15.25,\n  \"authorized\": \"<integer>\",\n  \"bankID\": \"<string>\",\n  \"checkNumber\": \"<string>\",\n  \"currencyCode\": \"USD\",\n  \"customerLastCreateDate\": \"<dateTime>\",\n  \"eventDriven\": \"<boolean>\",\n  \"paidDate\": \"<dateTime>\",\n  \"paymentType\": \"REIM\",\n  \"voucherInvoice\": \"0000000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8415b5a8-0e98-4ab7-81d2-3594da1a4521",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paid-expense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 15.25,\n  \"authorized\": \"<integer>\",\n  \"bankID\": \"<string>\",\n  \"checkNumber\": \"<string>\",\n  \"currencyCode\": \"USD\",\n  \"customerLastCreateDate\": \"<dateTime>\",\n  \"eventDriven\": \"<boolean>\",\n  \"paidDate\": \"<dateTime>\",\n  \"paymentType\": \"REIM\",\n  \"voucherInvoice\": \"0000000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a227b85-6c39-470a-b4ab-021221fed966",
+          "name": "Post a collection of payments",
+          "request": {
+            "name": "Post a collection of payments",
+            "description": {
+              "content": "This web service allows an external application to post a collection of payments.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "paid-expenses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"amount\": \"<number>\",\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"<string>\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"<string>\",\n    \"reportId\": \"<string>\"\n  },\n  {\n    \"amount\": \"<number>\",\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"<string>\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"<string>\",\n    \"reportId\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "03acf9d5-631a-427d-b42c-60b27d22c9af",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paid-expenses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"amount\": 15.25,\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"USD\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"REIM\",\n    \"reportId\": \"DEV000000003\"\n  },\n  {\n    \"amount\": 15.25,\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"USD\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"REIM\",\n    \"reportId\": \"DEV000000003\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e48d6637-f605-432a-bb79-ca8f8df4d9e7",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paid-expenses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"amount\": 15.25,\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"USD\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"REIM\",\n    \"reportId\": \"DEV000000003\"\n  },\n  {\n    \"amount\": 15.25,\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"USD\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"REIM\",\n    \"reportId\": \"DEV000000003\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bfc05e5b-baac-4091-8873-a616bcce0116",
+              "name": "Customer Code is not authorized. Cannot post a payment.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paid-expenses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"amount\": 15.25,\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"USD\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"REIM\",\n    \"reportId\": \"DEV000000003\"\n  },\n  {\n    \"amount\": 15.25,\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"USD\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"REIM\",\n    \"reportId\": \"DEV000000003\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5b61ca87-fe77-493a-bdcc-ae230d7ba05f",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "paid-expenses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"amount\": 15.25,\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"USD\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"REIM\",\n    \"reportId\": \"DEV000000003\"\n  },\n  {\n    \"amount\": 15.25,\n    \"authorized\": \"<integer>\",\n    \"bankID\": \"<string>\",\n    \"checkNumber\": \"<string>\",\n    \"currencyCode\": \"USD\",\n    \"customerLastCreateDate\": \"<dateTime>\",\n    \"eventDriven\": \"<boolean>\",\n    \"lineNumber\": \"<string>\",\n    \"paidDate\": \"<dateTime>\",\n    \"paymentType\": \"REIM\",\n    \"reportId\": \"DEV000000003\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f86b8bd8-e263-4cdd-8f61-1bb90fd2cec4",
+    "name": "Api Documentation Accounts paid-expense-controller API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

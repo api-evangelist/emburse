@@ -1,0 +1,2672 @@
+{
+  "item": [
+    {
+      "id": "7243c0c4-a1fb-4cf9-a8a1-e85f4bebb049",
+      "name": "Transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bcb8b9d1-7669-4c61-8d8c-90e40f05d668",
+          "name": "get transactions",
+          "request": {
+            "name": "get transactions",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The initial index from which to return the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "card",
+                  "value": "<string>",
+                  "description": "card"
+                },
+                {
+                  "disabled": false,
+                  "key": "member",
+                  "value": "<string>",
+                  "description": "member"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "category"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>",
+                  "description": "department"
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "location"
+                },
+                {
+                  "disabled": false,
+                  "key": "label",
+                  "value": "<string>",
+                  "description": "label"
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<string>",
+                  "description": "before"
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<string>",
+                  "description": "after"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_declines",
+                  "value": "<string>",
+                  "description": "exclude_declines"
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_verifications",
+                  "value": "<string>",
+                  "description": "exclude_verifications"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Order results by field. Prefix with - for descending order."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "840e347e-2c85-42df-8592-ebee0aeadd2b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 123,\n  \"results\": [\n    {\n      \"time\": \"2010-01-11T11:26:40.350Z\",\n      \"created_at\": \"1985-02-08T01:00:11.545Z\",\n      \"posted_at\": \"1964-01-18T03:22:50.830Z\",\n      \"purchase_details\": {},\n      \"id\": \"ef3ef507-a4c4-2efa-26dd-6757fda8b727\",\n      \"url\": \"string\",\n      \"amount\": \"string\",\n      \"currency_code\": \"stri\",\n      \"foreign_amount\": \"string\",\n      \"foreign_currency_code\": \"str\",\n      \"state\": \"string\",\n      \"response_code\": \"string\",\n      \"merchant\": \"string\",\n      \"vendor\": \"string\",\n      \"bank_account\": \"string\",\n      \"card\": {\n        \"description\": \"string\",\n        \"last_four\": \"5813\",\n        \"id\": \"77ef888b-f18a-8cad-cfbd-9b287d9fa264\",\n        \"url\": \"string\",\n        \"state\": \"string\"\n      },\n      \"is_online\": true,\n      \"member\": {\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"id\": \"2da791ed-0444-8ce6-3eaf-a1adf88cef7b\",\n        \"url\": \"string\",\n        \"email\": \"string\",\n        \"code\": \"-H6IUvbpZE\"\n      },\n      \"category\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"89d1ed8d-5042-1932-bb45-519c0a4d8dd3\",\n        \"code\": \"jA5y\",\n        \"is_archived\": true,\n        \"created_at\": \"1982-04-04T22:09:42.017Z\",\n        \"url\": \"string\"\n      },\n      \"department\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"ee2e5823-0449-20ca-eb5c-8ee17ded2b42\",\n        \"code\": \"kTW\",\n        \"is_archived\": false,\n        \"created_at\": \"1984-09-03T03:18:09.795Z\",\n        \"url\": \"string\"\n      },\n      \"label\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"ffbe1c49-5fc9-f3ed-f720-74d4f79c3e34\",\n        \"code\": \".rTFDCMW.\",\n        \"is_archived\": false,\n        \"created_at\": \"2010-11-10T09:03:33.691Z\",\n        \"url\": \"string\"\n      },\n      \"location\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"ff66fdb1-2b80-2f0f-ed92-bdbd9562dca6\",\n        \"code\": \"WFFYCg\",\n        \"is_archived\": false,\n        \"created_at\": \"1975-04-12T00:45:03.619Z\",\n        \"url\": \"string\"\n      },\n      \"note\": \"string\",\n      \"receipt\": \"string\",\n      \"attachments\": \"string\",\n      \"review_status\": \"approved\",\n      \"requisition\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"time\": \"1999-09-23T00:39:11.321Z\",\n      \"created_at\": \"2016-03-28T22:26:00.370Z\",\n      \"posted_at\": \"1994-01-10T07:39:22.894Z\",\n      \"purchase_details\": {},\n      \"id\": \"2b6db0a5-2b67-a98e-01c3-879733c17515\",\n      \"url\": \"string\",\n      \"amount\": \"string\",\n      \"currency_code\": \"stri\",\n      \"foreign_amount\": \"string\",\n      \"foreign_currency_code\": \"str\",\n      \"state\": \"string\",\n      \"response_code\": \"string\",\n      \"merchant\": \"string\",\n      \"vendor\": \"string\",\n      \"bank_account\": \"string\",\n      \"card\": {\n        \"description\": \"string\",\n        \"last_four\": \"7540\",\n        \"id\": \"ebc2a77d-0c77-1cd4-1260-a8e79390850c\",\n        \"url\": \"string\",\n        \"state\": \"string\"\n      },\n      \"is_online\": false,\n      \"member\": {\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"id\": \"817338fa-1699-736e-bbb7-40e527b1a586\",\n        \"url\": \"string\",\n        \"email\": \"string\",\n        \"code\": \"qH986AJ4\"\n      },\n      \"category\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"0b55adfc-4702-e8de-35f4-fd6c28c3b2a8\",\n        \"code\": \"n9\",\n        \"is_archived\": false,\n        \"created_at\": \"2019-05-05T05:24:45.741Z\",\n        \"url\": \"string\"\n      },\n      \"department\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"fb2f883c-95b7-2dab-0581-ccec78c33f16\",\n        \"code\": \"`e6ha5uRGv1\",\n        \"is_archived\": false,\n        \"created_at\": \"1993-07-31T04:49:17.089Z\",\n        \"url\": \"string\"\n      },\n      \"label\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"d57a0ee0-5d3a-e3c6-e31b-96b0a5443870\",\n        \"code\": \"6tY\",\n        \"is_archived\": false,\n        \"created_at\": \"2024-11-24T20:13:34.768Z\",\n        \"url\": \"string\"\n      },\n      \"location\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"6e73bf1e-84fa-5cac-a663-2238570c0a95\",\n        \"code\": \"C\",\n        \"is_archived\": true,\n        \"created_at\": \"1957-12-06T06:07:19.708Z\",\n        \"url\": \"string\"\n      },\n      \"note\": \"string\",\n      \"receipt\": \"string\",\n      \"attachments\": \"string\",\n      \"review_status\": \"exempt\",\n      \"requisition\": \"string\",\n      \"type\": \"string\"\n    }\n  ],\n  \"next\": \"http://api.example.org/accounts/?offset=400&limit=100\",\n  \"previous\": \"http://api.example.org/accounts/?offset=200&limit=100\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a6e2755-a38e-4bb5-8c95-832bd2a25864",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dd1120ec-427e-4402-89bb-252a1e87be03",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3b4574c-c906-4f23-943e-3cfc25253b68",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "acca10f3-f406-4863-8c5e-dff8f63ffe8d",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "26415daf-e301-4c48-9f56-906d19f0d6fc",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e387614b-d27d-477b-9541-ea4dbe8812e2",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b8b3f84-c3fa-4e06-a196-8d1805292dc4",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52e527d8-10c5-4315-8a97-bec6688d5a8a",
+          "name": "get transactions by id",
+          "request": {
+            "name": "get transactions by id",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transactions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "card",
+                  "value": "<string>",
+                  "description": "card"
+                },
+                {
+                  "disabled": false,
+                  "key": "member",
+                  "value": "<string>",
+                  "description": "member"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "category"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>",
+                  "description": "department"
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "location"
+                },
+                {
+                  "disabled": false,
+                  "key": "label",
+                  "value": "<string>",
+                  "description": "label"
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<string>",
+                  "description": "before"
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<string>",
+                  "description": "after"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_declines",
+                  "value": "<string>",
+                  "description": "exclude_declines"
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_verifications",
+                  "value": "<string>",
+                  "description": "exclude_verifications"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Order results by field. Prefix with - for descending order."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fbee3785-d77a-47c0-86bc-2dbe5e520b85",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"time\": \"1958-07-04T09:43:33.321Z\",\n  \"created_at\": \"1968-11-16T00:37:10.312Z\",\n  \"posted_at\": \"1998-09-29T06:27:39.172Z\",\n  \"purchase_details\": {},\n  \"id\": \"bd4aba89-e4c6-7f57-b766-68d0564f05a8\",\n  \"url\": \"string\",\n  \"amount\": \"string\",\n  \"currency_code\": \"stri\",\n  \"foreign_amount\": \"string\",\n  \"foreign_currency_code\": \"str\",\n  \"state\": \"string\",\n  \"response_code\": \"string\",\n  \"merchant\": \"string\",\n  \"vendor\": \"string\",\n  \"bank_account\": \"string\",\n  \"card\": {\n    \"description\": \"string\",\n    \"last_four\": \"3641\",\n    \"id\": \"dd7bfe1a-2162-3a4e-7cb9-11e2abc743f9\",\n    \"url\": \"string\",\n    \"state\": \"string\"\n  },\n  \"is_online\": true,\n  \"member\": {\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"id\": \"ec58e52a-59dc-ad77-0e47-d98a6988b3db\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"M.kTr7cE\"\n  },\n  \"category\": {\n    \"name\": \"string\",\n    \"parent\": {},\n    \"id\": \"35a6369c-c840-32dd-4b4e-7d8b76ca04d4\",\n    \"code\": \"MSnfRzU\",\n    \"is_archived\": true,\n    \"created_at\": \"2008-01-28T09:33:02.626Z\",\n    \"url\": \"string\"\n  },\n  \"department\": {\n    \"name\": \"string\",\n    \"parent\": {},\n    \"id\": \"08680a6e-af2e-4a8b-b30c-6e80ce367d78\",\n    \"code\": \"OBrDRjYQKL[\",\n    \"is_archived\": true,\n    \"created_at\": \"2004-01-24T06:43:43.225Z\",\n    \"url\": \"string\"\n  },\n  \"label\": {\n    \"name\": \"string\",\n    \"parent\": {},\n    \"id\": \"98230bd3-0111-6830-d712-bac594252545\",\n    \"code\": \"TU\",\n    \"is_archived\": false,\n    \"created_at\": \"1972-08-06T21:28:31.815Z\",\n    \"url\": \"string\"\n  },\n  \"location\": {\n    \"name\": \"string\",\n    \"parent\": {},\n    \"id\": \"6612fc92-c1a6-daa9-2ed1-02682580382e\",\n    \"code\": \"dQCJIJeni\",\n    \"is_archived\": false,\n    \"created_at\": \"1961-06-03T04:43:34.943Z\",\n    \"url\": \"string\"\n  },\n  \"note\": \"string\",\n  \"receipt\": \"string\",\n  \"attachments\": \"string\",\n  \"review_status\": \"pending\",\n  \"requisition\": \"string\",\n  \"type\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "baab1e5b-84fc-465f-8d33-46069276bb06",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ff3556da-e0f5-485e-baa6-90e4c3fe090f",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e5cf094c-c106-4816-8828-ac210b497322",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e14c2815-e86b-4d85-b42a-88852e8e4ec6",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "525a0fb8-f1ee-4f6f-a138-51d2c701bcf7",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dd5e8397-0d52-4ff5-bdc7-51f16031a158",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "912d0845-9a5f-4b0c-a2c3-06d2bff30929",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1cecc14c-67b7-4db1-a431-97002a8bb57b",
+          "name": "put transactions by id",
+          "request": {
+            "name": "put transactions by id",
+            "description": {
+              "content": "Always perform a partial update.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "transactions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "card",
+                  "value": "<string>",
+                  "description": "card"
+                },
+                {
+                  "disabled": false,
+                  "key": "member",
+                  "value": "<string>",
+                  "description": "member"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "category"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>",
+                  "description": "department"
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "location"
+                },
+                {
+                  "disabled": false,
+                  "key": "label",
+                  "value": "<string>",
+                  "description": "label"
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<string>",
+                  "description": "before"
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<string>",
+                  "description": "after"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_declines",
+                  "value": "<string>",
+                  "description": "exclude_declines"
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_verifications",
+                  "value": "<string>",
+                  "description": "exclude_verifications"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Order results by field. Prefix with - for descending order."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b8ade5df-0d89-45ac-bb50-ca76f10ac396",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"e41a6643-1880-8c21-39f4-fdeae80eb821\",\n  \"url\": \"string\",\n  \"amount\": \"string\",\n  \"currency_code\": \"stri\",\n  \"foreign_amount\": \"string\",\n  \"foreign_currency_code\": \"str\",\n  \"state\": \"string\",\n  \"response_code\": \"string\",\n  \"merchant\": \"string\",\n  \"vendor\": \"string\",\n  \"bank_account\": \"string\",\n  \"card\": {\n    \"description\": \"string\",\n    \"last_four\": \"2580\",\n    \"id\": \"4c67ce52-5a9f-b0ca-3a10-759af06ecbdf\",\n    \"url\": \"string\",\n    \"state\": \"string\"\n  },\n  \"is_online\": false,\n  \"member\": {\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"id\": \"ddd78eaf-13e2-4ba3-a503-a482ee46783a\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"jT5eY8j\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"x\",\n    \"parent\": {},\n    \"is_archived\": true,\n    \"created_at\": \"1955-06-07T04:00:42.245Z\",\n    \"url\": \"string\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"_P-\",\n    \"parent\": {},\n    \"is_archived\": true,\n    \"created_at\": \"1985-05-07T19:08:50.277Z\",\n    \"url\": \"string\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"eEeae\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"1999-10-04T00:27:58.827Z\",\n    \"url\": \"string\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"2Chx.\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"1966-04-17T05:51:04.841Z\",\n    \"url\": \"string\"\n  },\n  \"note\": \"<string>\",\n  \"receipt\": \"string\",\n  \"attachments\": \"string\",\n  \"time\": \"2017-09-29T08:13:43.848Z\",\n  \"created_at\": \"1996-05-25T02:30:25.991Z\",\n  \"posted_at\": \"2025-05-15T12:48:24.715Z\",\n  \"review_status\": \"out_of_policy\",\n  \"requisition\": \"string\",\n  \"type\": \"string\",\n  \"purchase_details\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70b3b40c-5779-4e26-ab6e-210b21e214d9",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "750bef4e-7331-49c9-99ac-0a0eb2f489cf",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c54a529b-1dac-4636-a7a5-2814c72a97cc",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3cfb6ea-7950-470d-b002-1590b3bfa5de",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1e9e4088-a40e-4f0b-8182-ea63160f902c",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a27e33f-ed7b-4863-8287-412925edbc1b",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ba3e56c-905b-4b1b-918a-fb629c9e941f",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transactions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_declines",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_verifications",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "309e9c55-ed34-43c0-9f63-170e9f53f928",
+    "name": "Api Documentation Accounts Transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

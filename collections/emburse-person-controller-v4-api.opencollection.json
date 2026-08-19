@@ -1,0 +1,543 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts person-controller-v4 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "person-controller-v4",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Person Relationship Attributes by Identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v4/persons/:personUniqueId/person-entities/:person-entity-id",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "person-entity-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This web service allows the ability to find a person relational entity by its identifier"
+        },
+        {
+          "info": {
+            "name": "Modify Person Relationship Attributes by Identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/v4/persons/:personUniqueId/person-entities/:person-entity-id",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "person-entity-id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows the ability to alter a person relational entity by its identifier"
+        },
+        {
+          "info": {
+            "name": "Delete Person Relationship Attributes by Identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/v4/persons/:personUniqueId/person-entities/:person-entity-id",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "person-entity-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This web service allows the ability to delete a person relational entity by its identifier"
+        },
+        {
+          "info": {
+            "name": "Get Persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v4/persons",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "firstName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lastName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "emailAddress",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vendorCode1",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vendorCode2",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "statuses",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This web service allows the ability to get a list persons based on filter queries. Note: this endpoint does not include personEntities in the response body.  If needed, please see /v4/persons/{personUniqueId}/person-entities. The default batch number is 20"
+        },
+        {
+          "info": {
+            "name": "Create a Person",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v4/persons",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service provides the ability to create a Person.  This is the only POST method that properly upserts data. (v2 and v3 POST both do not fully function as an upsert as they overwrite data as NULL if it is not sent in the payload.)"
+        },
+        {
+          "info": {
+            "name": "Add Person Delegate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v4/persons/:toPersonUniqueId/assists/:fromPersonUniqueId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "toPersonUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fromPersonUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This web service allows the ability to add a person delegate"
+        },
+        {
+          "info": {
+            "name": "Delete Person Delegate",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/v4/persons/:toPersonUniqueId/assists/:fromPersonUniqueId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "toPersonUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fromPersonUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This web service allows the ability to delete a person delegate"
+        },
+        {
+          "info": {
+            "name": "Fetch Person's User Defined Attributes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v4/persons/:personUniqueId/udas",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This web service allows users to retrieve a person's user defined attributes."
+        },
+        {
+          "info": {
+            "name": "Creates Person's User Defined Attribute",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v4/persons/:personUniqueId/udas",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows the ability to create user defined attributes for a person."
+        },
+        {
+          "info": {
+            "name": "Get Person Relationship Attributes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v4/persons/:personUniqueId/person-entities",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This web service allows the ability to find all person relational entities"
+        },
+        {
+          "info": {
+            "name": "Create a Person-to-Entity association",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v4/persons/:personUniqueId/person-entities",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Links the specified Person and a single Entity"
+        },
+        {
+          "info": {
+            "name": "Reprocess depersonalization for a person",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v4/persons/reprocess-depersonalization",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows the ability to reprocess depersonalization for a person"
+        },
+        {
+          "info": {
+            "name": "Create/update persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v4/persons/batch",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service provides the ability to create/update persons."
+        },
+        {
+          "info": {
+            "name": "Get Person",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v4/persons/:personUniqueId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This web service allows the ability to get a person by its unique identifier. Note: this endpoint does not include personEntities in the response body.  If needed, please see /v4/persons/{personUniqueId}/person-entities"
+        },
+        {
+          "info": {
+            "name": "PATCH a Person",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://service.chromeriver.com/v4/persons/:personUniqueId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service provides the ability to patch just certain fields. To remove the value, pass a null value for that property"
+        },
+        {
+          "info": {
+            "name": "Search for Persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v4/persons/search",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This web service allows the ability to get a list persons based on search term"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

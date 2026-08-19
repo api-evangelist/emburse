@@ -1,0 +1,273 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts expense-controller-v1 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "expense-controller-v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get list of reports summary by expense owner",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/expense-reports",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "expenseOwnerId",
+                "value": "",
+                "type": "query",
+                "description": "Unique ID for the owner of the expense report. Either expenseOwnerId or (header) logged-in-user-id is required."
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch a list of report summaries by owner. This excludes deleted reports of the owner"
+        },
+        {
+          "info": {
+            "name": "Create a draft expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/expense-reports",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "creator-user-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create a draft expense report."
+        },
+        {
+          "info": {
+            "name": "Get details of report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/expense-reports/:reportId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "expenseOwnerId",
+                "value": "",
+                "type": "query",
+                "description": "Unique ID for the owner of the expense report."
+              },
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier for the expense report."
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch details of a report."
+        },
+        {
+          "info": {
+            "name": "Delete an expense report line item",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/v1/expense-reports/:reportId/line-items",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "externalTransactionId",
+                "value": "",
+                "type": "query",
+                "description": "External transaction ID for transaction"
+              },
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for report"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to delete the specified expense report line item."
+        },
+        {
+          "info": {
+            "name": "Add a note to an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/expense-reports/:reportId/notes",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "reportId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to add a note to an expense report."
+        },
+        {
+          "info": {
+            "name": "Get expense report tracking details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/expense-reports/:reportId/tracking",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier for the expense report."
+              }
+            ]
+          },
+          "docs": "Returns routing and approval tracking details for the specified expense report."
+        },
+        {
+          "info": {
+            "name": "Get list of open expense reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/open-expense-reports",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch open expense reports."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

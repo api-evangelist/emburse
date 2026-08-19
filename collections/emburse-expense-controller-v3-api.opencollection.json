@@ -1,0 +1,315 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts expense-controller-v3 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "expense-controller-v3",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get list of reports by filter(s)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v3/expense-reports",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "approverEmailAddress",
+                "value": "emailAddress@gmail.com",
+                "type": "query",
+                "description": "Unique email of the approver making a request"
+              },
+              {
+                "name": "approverUniqueId",
+                "value": "personUniqueId",
+                "type": "query",
+                "description": "Unique ID of the approver making a request"
+              },
+              {
+                "name": "approverUserName",
+                "value": "userName",
+                "type": "query",
+                "description": "Unique user-name of the approver making a request"
+              },
+              {
+                "name": "createDate",
+                "value": "2021-03-21",
+                "type": "query",
+                "description": "Filter by reports created this date (yyyy-MM-dd)"
+              },
+              {
+                "name": "createSource",
+                "value": "AUTOMATIC",
+                "type": "query",
+                "description": "How the report was created"
+              },
+              {
+                "name": "exportDate",
+                "value": "2021-03-21",
+                "type": "query",
+                "description": "Filter by reports exported this date (yyyy-MM-dd)"
+              },
+              {
+                "name": "getPDFReport",
+                "value": "false",
+                "type": "query",
+                "description": "Flag to indicate if PDF report should be included"
+              },
+              {
+                "name": "getPDFReportWithNotes",
+                "value": "false",
+                "type": "query",
+                "description": "Flag to indicate if PDF report with notes should be included"
+              },
+              {
+                "name": "imageFirst",
+                "value": "false",
+                "type": "query",
+                "description": "Flag to indicate if image should be retrieved first"
+              },
+              {
+                "name": "includeCollections",
+                "value": "",
+                "type": "query",
+                "description": "List of collections to include in the report"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return. If no value is passed, it will be taken from the configurable property file, where this value is equal to 10 by default"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The (zero-based) offset of the first item returned in the collection. If no value is passed, it will be taken from the configurable property file, where this value is equal to 10 by default. This value is limited to 100 to ensure reasonable use of system resources."
+              },
+              {
+                "name": "ownerCountryAlpha2",
+                "value": "US",
+                "type": "query",
+                "description": "Reports owner countryAlpha2"
+              },
+              {
+                "name": "ownerEmailAddress",
+                "value": "emailAddress@gmail.com",
+                "type": "query",
+                "description": "Unique email of the expense owner making a request"
+              },
+              {
+                "name": "ownerUniqueId",
+                "value": "personUniqueId",
+                "type": "query",
+                "description": "Unique ID of the expense owner making a request"
+              },
+              {
+                "name": "ownerUserName",
+                "value": "userName",
+                "type": "query",
+                "description": "Unique user-name of the expense owner making a request"
+              },
+              {
+                "name": "reportStatus",
+                "value": "Returned",
+                "type": "query",
+                "description": "Filter by report status"
+              },
+              {
+                "name": "submitDate",
+                "value": "2021-03-21",
+                "type": "query",
+                "description": "Filter by reports submitted this date (yyyy-MM-dd)"
+              },
+              {
+                "name": "voucherInvoice",
+                "value": "",
+                "type": "query",
+                "description": "Voucher Invoice parameter"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get a list of expense reports using different criteria"
+        },
+        {
+          "info": {
+            "name": "Get expense report details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v3/expense-reports/:reportId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "getPDFReport",
+                "value": "false",
+                "type": "query",
+                "description": "Flag to indicate if PDF report should be included"
+              },
+              {
+                "name": "getPDFReportWithNotes",
+                "value": "false",
+                "type": "query",
+                "description": "Flag to indicate if PDF report with notes should be included"
+              },
+              {
+                "name": "imageFirst",
+                "value": "false",
+                "type": "query",
+                "description": "Flag to indicate if image should be retrieved first"
+              },
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier for the expense report."
+              },
+              {
+                "name": "voucherInvoice",
+                "value": "",
+                "type": "query",
+                "description": "Voucher Invoice parameter"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get details of expense report by ReportID (including reports with deleted status)"
+        },
+        {
+          "info": {
+            "name": "Get expense report line item details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v3/expense-reports/:reportId/line-items",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "createDate",
+                "value": "2021-04-21",
+                "type": "query",
+                "description": "Filter by line item created this date (yyyy-MM-dd)"
+              },
+              {
+                "name": "downloadImages",
+                "value": "",
+                "type": "query",
+                "description": "Flag to indicate if images should be downloaded"
+              },
+              {
+                "name": "exportDate",
+                "value": "2021-04-21",
+                "type": "query",
+                "description": "Filter by line item exported this date (yyyy-MM-dd)"
+              },
+              {
+                "name": "getMileageCoverPage",
+                "value": "false",
+                "type": "query",
+                "description": "Voucher Invoice parameter"
+              },
+              {
+                "name": "getPDFReport",
+                "value": "false",
+                "type": "query",
+                "description": "Flag to indicate if PDF report should be included"
+              },
+              {
+                "name": "getPDFReportWithNotes",
+                "value": "false",
+                "type": "query",
+                "description": "Flag to indicate if PDF report with notes should be included"
+              },
+              {
+                "name": "imageFirst",
+                "value": "",
+                "type": "query",
+                "description": "Flag to indicate if image should be retrieved first"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return. If no value is passed, it will be taken from the configurable property file, where this value is equal to 10 by default"
+              },
+              {
+                "name": "lineItemStatus",
+                "value": "Returned",
+                "type": "query",
+                "description": "Filter by line item status"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The (zero-based) offset of the first item returned in the collection. If no value is passed, it will be taken from the configurable property file, where this value is equal to 10 by default. This value is limited to 100 to ensure reasonable use of system resources."
+              },
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "reportId"
+              },
+              {
+                "name": "submitDate",
+                "value": "2021-04-21",
+                "type": "query",
+                "description": "Filter by line item submitted this date (yyyy-MM-dd)"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get line item details of expense report by ReportID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

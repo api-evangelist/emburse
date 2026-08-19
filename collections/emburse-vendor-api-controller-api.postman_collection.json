@@ -1,0 +1,1480 @@
+{
+  "item": [
+    {
+      "id": "2eab1cda-f081-47b1-9a8c-1b6883a0d3f6",
+      "name": "vendor-api-controller",
+      "description": {
+        "content": "Operations in Vendor API application service",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6086ebbf-e6fe-4b78-b305-9a59166bbc2d",
+          "name": "Create vendor",
+          "request": {
+            "name": "Create vendor",
+            "description": {
+              "content": "This web service allows an external application to create vendor in Chrome River",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendor-api",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9f3f4731-f0a5-48c5-bf8a-629ba9fd8bf9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f407f4d9-e701-48d1-a748-7cb52e4b904e",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a027cfa2-35c7-4aa5-bc77-c8b285ef2239",
+              "name": "Customer Code or api key is not authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0ecec60f-c145-4f01-9f3b-ae7486ecc712",
+              "name": "Vendor is not created. Vendor data has some business rules violations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9a07db7d-7d7a-4374-9d2e-f6cb51f4a8c4",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61e15f01-9379-4baa-9aa5-f94dc1df2f64",
+          "name": "Create or Update vendor",
+          "request": {
+            "name": "Create or Update vendor",
+            "description": {
+              "content": "This web service allows an external application to create or update vendor in chromeriver",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendor-api",
+                "create-or-update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ea0006dc-aaa0-4d56-9888-beab5975097d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    "create-or-update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0bbf5bf9-3ea5-4d2e-a356-97c2bf894227",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    "create-or-update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76bea60b-bf23-4359-8866-bb0f72073939",
+              "name": "Customer Code or api key is not authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    "create-or-update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4dc2a07c-4af5-4928-b4b5-a9d26553bc76",
+              "name": "Vendor is not created or updated. Vendor have some business rules violations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    "create-or-update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "53f5542b-4838-4b5e-bddf-91d0112bdb9d",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    "create-or-update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8cfe45a8-b59e-493e-b8b9-1c9a62837be3",
+          "name": "Get vendor",
+          "request": {
+            "name": "Get vendor",
+            "description": {
+              "content": "This web service allows an external application to get vendor information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendor-api",
+                ":vendorUniqueId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeVendorAddress",
+                  "value": "true",
+                  "description": "Include Vendor Address in response"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vendorUniqueId",
+                  "description": "(Required) Unique vendor identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bd55c3e1-d011-4196-aaa9-ec2c12b5b6e7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeVendorAddress",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) Unique vendor identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "092db8c3-cb67-4013-aa02-954e94842140",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeVendorAddress",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) Unique vendor identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b32fd86e-382f-4e12-ac36-c352c881d2dc",
+              "name": "Customer Code or api key is not authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeVendorAddress",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) Unique vendor identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6d2f1833-7320-45ce-9d43-0b59d3ed3ec7",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeVendorAddress",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) Unique vendor identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "584fe3f5-02fa-49e0-8ee8-840b70e4e09d",
+          "name": "Update vendor",
+          "request": {
+            "name": "Update vendor",
+            "description": {
+              "content": "This web service allows an external application to update vendor in Chrome River",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendor-api",
+                ":vendorUniqueId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vendorUniqueId",
+                  "description": "(Required) vendorUniqueId"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "44e9bd85-114f-4840-baac-e8947ca223eb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) vendorUniqueId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a48f491b-6924-40f4-8320-7cfa13327555",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) vendorUniqueId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3f7a1c89-623a-4c7f-8eaa-2d789a32d986",
+              "name": "Customer Code or api key is not authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) vendorUniqueId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c5918a1e-0ddf-437b-8795-abde57bab466",
+              "name": "Vendor is not updated. Vendor have some business rules violations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) vendorUniqueId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c9135b2f-e77b-49b0-9deb-1c03ab5d09e3",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) vendorUniqueId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vendorName\": \"<string>\",\n  \"vendorRequestDate\": \"<dateTime>\",\n  \"vendorUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vendorAddresses\": [\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    },\n    {\n      \"addressDescription1\": \"<string>\",\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"status\": \"<string>\",\n      \"vendorAddressName\": \"<string>\",\n      \"vendorAddressUniqueId\": \"<string>\",\n      \"zipCode\": \"<string>\",\n      \"addressDescription2\": \"<string>\",\n      \"bankAccountName\": \"<string>\",\n      \"bankAccountNumber\": \"<string>\",\n      \"bankCode\": \"<string>\",\n      \"bankIBANNumber\": \"<string>\",\n      \"bankName\": \"<string>\",\n      \"bankRoutingNumber\": \"<string>\",\n      \"currencyCode\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"emailAddress2\": \"<string>\",\n      \"maximumCardAmount\": \"<number>\",\n      \"paymentModeACH\": \"<string>\",\n      \"paymentModeCard\": \"<string>\",\n      \"paymentModeCheck\": \"<string>\",\n      \"paymentModeWire\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"requestDate\": \"<dateTime>\",\n      \"specialPayTerm\": \"<integer>\",\n      \"specialPayTermDiscPct\": \"<number>\",\n      \"standardPayTerm\": \"<integer>\",\n      \"taxCode\": \"<string>\",\n      \"type\": \"<string>\",\n      \"udf1\": \"<string>\",\n      \"udf2\": \"<string>\",\n      \"udf3\": \"<string>\",\n      \"udf4\": \"<string>\",\n      \"udf5\": \"<string>\",\n      \"vatRegistrationNumber\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1134851-0a41-4b51-8b13-e7bc63627d3c",
+          "name": "Get vendor address",
+          "request": {
+            "name": "Get vendor address",
+            "description": {
+              "content": "This web service allows an external application to get vendor address information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vendor-api",
+                ":vendorUniqueId",
+                "addresses",
+                ":vendorAddressUniqueId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vendorAddressUniqueId",
+                  "description": "(Required) Unique vendor address identifier"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vendorUniqueId",
+                  "description": "(Required) Unique vendor identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b6d6982-41a1-4c84-a464-196d095e0a62",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendor-api",
+                    ":vendorUniqueId",
+                    "addresses",
+                    ":vendorAddressUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorAddressUniqueId",
+                      "description": "(Required) Unique vendor address identifier"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vendorUniqueId",
+                      "description": "(Required) Unique vendor identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"addressDescription1\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"stateProvince\": \"<string>\",\n  \"status\": \"<string>\",\n  \"vendorAddressName\": \"<string>\",\n  \"vendorAddressUniqueId\": \"<string>\",\n  \"zipCode\": \"<string>\",\n  \"addressDescription2\": \"<string>\",\n  \"bankAccountName\": \"<string>\",\n  \"bankAccountNumber\": \"<string>\",\n  \"bankCode\": \"<string>\",\n  \"bankIBANNumber\": \"<string>\",\n  \"bankName\": \"<string>\",\n  \"bankRoutingNumber\": \"<string>\",\n  \"currencyCode\": \"<string>\",\n  \"emailAddress\": \"<string>\",\n  \"emailAddress2\": \"<string>\",\n  \"maximumCardAmount\": \"<number>\",\n  \"paymentModeACH\": \"<string>\",\n  \"paymentModeCard\": \"<string>\",\n  \"paymentModeCheck\": \"<string>\",\n  \"paymentModeWire\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"requestDate\": \"<dateTime>\",\n  \"specialPayTerm\": \"<integer>\",\n  \"specialPayTermDiscPct\": \"<number>\",\n  \"standardPayTerm\": \"<integer>\",\n  \"taxCode\": \"<string>\",\n  \"type\": \"<string>\",\n  \"udf1\": \"<string>\",\n  \"udf2\": \"<string>\",\n  \"udf3\": \"<string>\",\n  \"udf4\": \"<string>\",\n  \"udf5\": \"<string>\",\n  \"vatRegistrationNumber\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "27838f13-b887-4cdb-b400-fcd5d9a6e9c8",
+    "name": "Api Documentation Accounts vendor-api-controller API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

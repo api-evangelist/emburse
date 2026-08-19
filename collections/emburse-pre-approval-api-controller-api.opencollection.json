@@ -1,0 +1,339 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts pre-approval-api-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "pre-approval-api-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return a pre-approval report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/preapproval-reports/:reportId/return",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for report"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to return the specified pre-approval report to the expense owner"
+        },
+        {
+          "info": {
+            "name": "Reassign a pre-approval report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/preapproval-reports/:reportId/reassign",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for report"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to reassign a specified pre-approval report to another approver for review"
+        },
+        {
+          "info": {
+            "name": "Approve a pre-approval report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/preapproval-reports/:reportId/approve",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for report"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to approve the specified pre-approval report"
+        },
+        {
+          "info": {
+            "name": "Get PALineItem Type information for expense Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/preapproval-reports/itemType",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "expense-item-type",
+                "value": "",
+                "type": "query",
+                "description": "Expense Type to get PALineItem type information"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get PALineItem type information by expense Type"
+        },
+        {
+          "info": {
+            "name": "Get list of pre-approval reports that have been approved but not yet exported",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/preapproval-report-approved",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for response pagination"
+              },
+              {
+                "name": "page-size",
+                "value": "",
+                "type": "query",
+                "description": "Page size for response pagination"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get a list of pre-approval reports that have been approved but not yet exported"
+        },
+        {
+          "info": {
+            "name": "Get list of pre-approval reports for approval",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/preapproval-report-approvals",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get a list of pre-approval reports awaiting approval by a user"
+        },
+        {
+          "info": {
+            "name": "Get pre-approval report details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/preapproval-report-approvals/:reportId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for pre-approval report"
+              },
+              {
+                "name": "lockable",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether a report is lockable for 15 minutes or not"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get the details of pre-approval report"
+        },
+        {
+          "info": {
+            "name": "Get count of pre-approval reports for approval",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/preapproval-report-approvals/count",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to a count of pre-approval reports awaiting approval by auser"
+        },
+        {
+          "info": {
+            "name": "Delete a pre-approval",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/v1/preapproval-reports/:reportId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "expense-owner-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for pre-approval"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to delete a pre-approval"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

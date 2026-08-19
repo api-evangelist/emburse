@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts person-controller-v3 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "person-controller-v3",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search/get persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v3/persons",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "firstName",
+                "value": "",
+                "type": "query",
+                "description": "First Name"
+              },
+              {
+                "name": "lastName",
+                "value": "",
+                "type": "query",
+                "description": "Last Name"
+              },
+              {
+                "name": "emailAddress",
+                "value": "",
+                "type": "query",
+                "description": "Email address"
+              },
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "query",
+                "description": "Person Unique Identifier"
+              },
+              {
+                "name": "vendorCode1",
+                "value": "",
+                "type": "query",
+                "description": "Vendor Code1"
+              },
+              {
+                "name": "vendorCode2",
+                "value": "",
+                "type": "query",
+                "description": "Vendor Code2"
+              },
+              {
+                "name": "statuses",
+                "value": "",
+                "type": "query",
+                "description": "Statuses"
+              }
+            ]
+          },
+          "docs": "This web service provides ability to search/get persons by Name and Email."
+        },
+        {
+          "info": {
+            "name": "Create/update persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v3/persons",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS. This endpoint tokenizes all PII data before sending the request to Chrome River.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

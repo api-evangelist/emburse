@@ -1,0 +1,2997 @@
+{
+  "item": [
+    {
+      "id": "41815951-9f94-47ee-8794-4bdfd534128d",
+      "name": "Entity Type",
+      "description": {
+        "content": "Entity Type Controller",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6a3457c5-e80b-4ece-9894-f737140ccb80",
+          "name": "Gets list of Entity Types",
+          "request": {
+            "name": "Gets list of Entity Types",
+            "description": {
+              "content": "This web service allows an external application to fetch a list of Entity Types.  Only returns 100 max results of active entity types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "entity-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "da0484a6-ef9b-4726-9c02-70bf84fbc81a",
+              "name": "Entity Types were returned successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"code\": \"DEPT\",\n    \"description\": \"List of departments\",\n    \"name\": \"Department\",\n    \"languages\": [\n      {\n        \"languageCode\": \"en, en_UK, fr, fr_CA\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"languageCode\": \"en, en_UK, fr, fr_CA\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"loadOnLogin\": true,\n    \"sortType\": \"CODE\"\n  },\n  {\n    \"code\": \"DEPT\",\n    \"description\": \"List of departments\",\n    \"name\": \"Department\",\n    \"languages\": [\n      {\n        \"languageCode\": \"en, en_UK, fr, fr_CA\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"languageCode\": \"en, en_UK, fr, fr_CA\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"loadOnLogin\": true,\n    \"sortType\": \"SORT_ORDER\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dbff95e9-66f9-4953-a1b4-3098ce4bf450",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6cca0f55-c52d-402e-8d1e-566084f5470b",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "21fa57a7-1717-4897-9f28-151fa7b6106a",
+          "name": "Create an Entity Type",
+          "request": {
+            "name": "Create an Entity Type",
+            "description": {
+              "content": "This web service allows an external application to create an Entity Type. \n\nDoes not support the 'languages'. Use POST /v1/entity-types/{entityTypeCode}/languages instead. \n\nThis endpoint does not act as an upsert. It will fail for existing entities, unless the entity already is inactive. If the entity is inactive, it'll reactivate the entity.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "entity-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request.",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River.",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication.",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2b7e1644-2ef8-415c-80f9-92f8820a17b3",
+              "name": "Entity Type successfully created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8ff69e0-0218-4584-bec7-de273e9a59c8",
+              "name": "Request is invalid. Please check the request specification and try again.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7a1b9c6b-9e24-4836-9a0a-7ad7d2f9652c",
+              "name": "Entity Type Code already available in system.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "384d9547-bd10-431c-9bb3-c92dcc380e4c",
+              "name": "The request was well-formed but was unable to be followed due to semantic errors.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b28e219f-b1db-4cd7-9de3-a82368f70867",
+              "name": "Server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5d04734c-4b34-493d-b8fb-558a05e992e9",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45b98486-4aef-4491-bb3b-f18ff29eca33",
+          "name": "Get Entity Type by Code",
+          "request": {
+            "name": "Get Entity Type by Code",
+            "description": {
+              "content": "This web service allows an external application to fetch an Entity Type by its Code. Only returns active entities.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "entity-types",
+                ":code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "code",
+                  "description": "(Required) Entity Type code"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request.",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "03efae2e-da73-47ed-a816-e60d4839bae3",
+              "name": "Entity Type was returned successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"languages\": [\n    {\n      \"languageCode\": \"en, en_UK, fr, fr_CA\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"languageCode\": \"en, en_UK, fr, fr_CA\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"loadOnLogin\": true,\n  \"sortType\": \"NAME\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6729acfc-81cd-4341-97cb-d69f7d682574",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b4f33121-15d9-47b7-9fab-c88f6a1d1a75",
+              "name": "Code is invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4913d1d2-9613-4c86-a2bd-43945ac3d9dd",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7272749-6aff-4e2d-b302-0f92580836d5",
+          "name": "Put Entity Type by Code",
+          "request": {
+            "name": "Put Entity Type by Code",
+            "description": {
+              "content": "This web service allows an external application to replace an Entity Type by its Code. \n\nDoes not support the 'languages'. Use PUT /v1/entity-types/{entityTypeCode}/languages/{languageCode} instead.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "entity-types",
+                ":code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "code",
+                  "description": "(Required) Entity Type code"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request.",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River.",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication.",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f195065c-29c5-4f33-a796-e3a5ce12db62",
+              "name": "Entity Type was returned successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a96cf06c-95b3-4904-86e9-e38e0651bc1a",
+              "name": "Request is invalid. Please check the request specification and try again.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1ec609a2-70f9-4cde-9b2f-8ea1b653f44a",
+              "name": "The request was well-formed but was unable to be followed due to semantic errors.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "39ce39bf-c045-4b59-aff0-39e1b91fb90a",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"DEPT\",\n  \"description\": \"List of departments\",\n  \"name\": \"Department\",\n  \"loadOnLogin\": \"<boolean>\",\n  \"sortType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b0c8ad1-835f-461d-8edf-b0e1947312d6",
+          "name": "Delete an entity-type",
+          "request": {
+            "name": "Delete an entity-type",
+            "description": {
+              "content": "This web service allows an external application to delete an Entity Type by entity-code",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "entity-types",
+                ":entityTypeCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityTypeCode",
+                  "description": "(Required) EntityType code."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request.",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River.",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication.",
+                "key": "x-api-key",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0bb3a05e-6e5e-49d0-b9b7-694e4a3c779a",
+              "name": "Entity Type successfully deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) EntityType code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "338d6c3a-4d05-4fd1-93d1-bac14b624f7b",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) EntityType code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63a13df8-ff90-4b32-9ca0-5aadef195215",
+              "name": "Entity Type Code is unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) EntityType code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "37da3ede-b029-4e1f-b259-577962a9516b",
+              "name": "Entity Type Code already deleted in system.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) EntityType code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f080de87-6d38-488c-96b1-8125215901c5",
+              "name": "Server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) EntityType code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e4887395-b2a6-4b89-8247-573f1a0b7cc3",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) EntityType code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f11d0be-8644-4a7e-99dc-5cca02ee9906",
+          "name": "Gets list of language translations for the EntityType",
+          "request": {
+            "name": "Gets list of language translations for the EntityType",
+            "description": {
+              "content": "This web service allows an external application to get a list of localized names for the set of languages under the EntityType.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "entity-types",
+                ":entityTypeCode",
+                "languages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityTypeCode",
+                  "description": "(Required) Entity Type code"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request.",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River.",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication.",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5642749-3100-4998-871d-9709bbd6eaaf",
+              "name": "List of languages returned successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"languageCode\": \"en, en_UK, fr, fr_CA\",\n    \"name\": \"string\",\n    \"description\": \"string\"\n  },\n  {\n    \"languageCode\": \"en, en_UK, fr, fr_CA\",\n    \"name\": \"string\",\n    \"description\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72c08bd8-c72b-4c06-89a0-aa9bf1ebaa6b",
+              "name": "The EntityType code does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "33f250e9-0719-4412-b648-96d94cf62c31",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8942e3ea-c076-46ae-b64a-9b2505817d85",
+          "name": "Add a language to an EntityType",
+          "request": {
+            "name": "Add a language to an EntityType",
+            "description": {
+              "content": "This web service allows an external application to add a localized name to an EntityType. \n\nThis endpoint is not an upsert. Languages that aleady exist cannot be modified except through PUT /entity-types/{entityTypeCode}/languages/{languageCode}",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "entity-types",
+                ":entityTypeCode",
+                "languages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityTypeCode",
+                  "description": "(Required) Entity Type code"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request.",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River.",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication.",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"languageCode\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d0011433-931b-4bd9-b06c-50a31a4369c8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"languageCode\": \"en, en_UK, fr, fr_CA\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65be8d23-602c-4de2-a4d6-ee085de6d3cb",
+              "name": "Language created successfuly",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"languageCode\": \"en, en_UK, fr, fr_CA\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47cc5ac9-0342-4483-8be3-cc6d9a2e8710",
+              "name": "The EntityType code does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4e607174-a2f5-49d9-bf21-a1e4fc3a31f7",
+              "name": "Missing/Invalid values in language",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3bb1f697-73cc-4a71-87af-6fa18b5ef6c3",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cafe7eec-55d9-4e95-b09f-d78d6b6b827d",
+          "name": "Modify a language to EntityType",
+          "request": {
+            "name": "Modify a language to EntityType",
+            "description": {
+              "content": "This web service allows an external application to alter existing localized name to an EntityType",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "entity-types",
+                ":entityTypeCode",
+                "languages",
+                ":languageCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityTypeCode",
+                  "description": "(Required) Entity Type code"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "languageCode",
+                  "description": "(Required) Entity Type langauge code"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request.",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River.",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication.",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"languageCode\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a68ae42-6036-4126-be00-28ce78380d6e",
+              "name": "Language modified successfuly",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages",
+                    ":languageCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "languageCode",
+                      "description": "(Required) Entity Type langauge code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"languageCode\": \"en, en_UK, fr, fr_CA\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d22aae19-d579-47d0-bb74-be44d1a1a613",
+              "name": "The EntityType code/Locale does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages",
+                    ":languageCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "languageCode",
+                      "description": "(Required) Entity Type langauge code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9000d435-3578-4ad7-8763-82f1e4cc847a",
+              "name": "Missing/Invalid values in language",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages",
+                    ":languageCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "languageCode",
+                      "description": "(Required) Entity Type langauge code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d83964ff-d75c-446e-8821-8f3f4536ae24",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages",
+                    ":languageCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "languageCode",
+                      "description": "(Required) Entity Type langauge code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d4eff74-1ede-46c4-85bd-624aa5c06f5e",
+          "name": "Delete a language fromEntityType",
+          "request": {
+            "name": "Delete a language fromEntityType",
+            "description": {
+              "content": "This web service allows an external application to delete a localized name from an EntityType",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "entity-types",
+                ":entityTypeCode",
+                "languages",
+                ":languageCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entityTypeCode",
+                  "description": "(Required) Entity Type code"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "languageCode",
+                  "description": "(Required) Language code"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request.",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River.",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication.",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eb0a6fc3-46aa-402e-a412-5980337a547d",
+              "name": "Language deleted successfuly",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages",
+                    ":languageCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "languageCode",
+                      "description": "(Required) Language code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a6600b0b-ea86-4701-8c49-e2bd4e381bcf",
+              "name": "The EntityType code or language code does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages",
+                    ":languageCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "languageCode",
+                      "description": "(Required) Language code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "43a4dc83-628e-455a-baed-f1a6f958cb8f",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entity-types",
+                    ":entityTypeCode",
+                    "languages",
+                    ":languageCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entityTypeCode",
+                      "description": "(Required) Entity Type code"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "languageCode",
+                      "description": "(Required) Language code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request.",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River.",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication.",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "803d68b8-f83b-4083-8526-0efaca745be7",
+    "name": "Api Documentation Accounts Entity Type API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

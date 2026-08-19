@@ -1,0 +1,120 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts expense-export-controller-v1 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "expense-export-controller-v1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Post status of an expense export.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/export-status",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "export-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to post status of an expense export."
+        },
+        {
+          "info": {
+            "name": "Repost External Export Status By ExportIds.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://service.chromeriver.com/v1/export-status/re-post",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "The context of the export (e.g. invoice, expense)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to repost External Export Status By ExportIds."
+        },
+        {
+          "info": {
+            "name": "Retrieve either a list of incoming expense export IDs or export details for a specific expense export.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/exports",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "present",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch either a list of incoming expense export IDs or fetch export details for a specific export. To retrieve the list of export IDs, no export-id should be passed in the header of this call. To retrieve details of a specific export, the export-id header should be populated with the desired export ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

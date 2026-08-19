@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts expense-receipts-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "expense-receipts-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an expense receipt PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/expense-receipts/:reportId",
+            "headers": [
+              {
+                "name": "customer-id",
+                "value": ""
+              },
+              {
+                "name": "person-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "reportId"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch a receipt PDF."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

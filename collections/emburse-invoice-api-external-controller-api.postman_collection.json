@@ -1,0 +1,2241 @@
+{
+  "item": [
+    {
+      "id": "cc9dcdc7-435b-432f-a36d-df9b9d44e9ee",
+      "name": "invoice-api-external-controller",
+      "description": {
+        "content": "Operations in Invoice Api",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3a290c39-2f03-4714-8255-276efff44de8",
+          "name": "Returns invoices by InvoiceFilter.",
+          "request": {
+            "name": "Returns invoices by InvoiceFilter.",
+            "description": {
+              "content": "Date filtering expects RFC3339 / ISO-8601 timestamps (UTC recommended).\nPreferred examples:\n  - 2022-12-01T00:00:00Z\n  - 2022-12-01T00:00:00+00:00\nLegacy format currently accepted for backward compatibility (discouraged):\n  - 2022-12-01T00:00:00+0000",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "invoice-api",
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fromDate\": \"<string>\",\n  \"toDate\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "27ab5957-5569-4db6-915c-aa8d57e3beee",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fromDate\": \"2025-12-01 00:01:00+00:00\",\n  \"toDate\": \"2025-12-02 00:00:00+00:00\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"invoiceId\": \"test\",\n    \"invoiceNumber\": \"test\",\n    \"addressUniqueId\": \"string\",\n    \"invoiceDate\": \"1988-08-28T20:08:37.794Z\",\n    \"vendorUniqueId\": \"string\"\n  },\n  {\n    \"invoiceId\": \"test\",\n    \"invoiceNumber\": \"test\",\n    \"addressUniqueId\": \"string\",\n    \"invoiceDate\": \"1958-09-26T18:52:25.291Z\",\n    \"vendorUniqueId\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43f1070c-7da3-48dd-9dd8-9c411ff8b904",
+          "name": "Returns images/invoice-report in pdf file format.",
+          "request": {
+            "name": "Returns images/invoice-report in pdf file format.",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "invoice-api",
+                "invoices",
+                "images",
+                "pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "getImage",
+                  "value": "true",
+                  "description": "Flag to fetch images attached to the invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "getPDFReport",
+                  "value": "true",
+                  "description": "Flag to fetch and attach invoice pdf report."
+                },
+                {
+                  "disabled": false,
+                  "key": "imageFirst",
+                  "value": "true",
+                  "description": "Flag to put images first and invoice pdf report at the end of the pdf file, vice versa."
+                },
+                {
+                  "disabled": false,
+                  "key": "invoiceId",
+                  "value": "<string>",
+                  "description": "(Required) Invoice Id to get images."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6a8baf10-63b9-4214-a080-49a249e6a335",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    "images",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "true"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    },
+                    {
+                      "key": "invoiceId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "240a0c0c-f9a2-4f77-8259-5e4168237655",
+          "name": "Get invoice payment",
+          "request": {
+            "name": "Get invoice payment",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "invoice-api",
+                "invoices",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"invoiceId\": \"<string>\",\n  \"paidDateFrom\": \"<dateTime>\",\n  \"paidDateTo\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e6c88efc-67bc-44a3-9ae5-d85e789f69f7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"invoiceId\": \"test\",\n  \"paidDateFrom\": \"<dateTime>\",\n  \"paidDateTo\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"amount\": 1000,\n  \"currencyCode\": \"USD\",\n  \"invoiceId\": \"test\",\n  \"paidDate\": \"1985-10-16T04:45:48.888Z\",\n  \"achPaymentCompleteDate\": \"1972-03-21T15:21:02.451Z\",\n  \"achPaymentStatus\": \"COMPLETED\",\n  \"amountDiscount\": 1000,\n  \"bankNumber\": \"string\",\n  \"batchNumber\": \"string\",\n  \"checkMailedDate\": \"1995-06-07T16:54:44.146Z\",\n  \"checkNumber\": \"string\",\n  \"createSource\": \"FEED\",\n  \"extReferenceId\": \"string\",\n  \"lastFourCardDigits\": \"string\",\n  \"paymentMethod\": \"ACH\",\n  \"status\": \"PAID\",\n  \"transactionNumber\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa952269-bcb6-4039-a333-cdec5580fa02",
+              "name": "Customer Code or api key is not authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"invoiceId\": \"test\",\n  \"paidDateFrom\": \"<dateTime>\",\n  \"paidDateTo\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "702ef035-7fa9-4a7b-8329-14fdaef1ee77",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"invoiceId\": \"test\",\n  \"paidDateFrom\": \"<dateTime>\",\n  \"paidDateTo\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0421cc0a-5db8-422e-ba1c-64b5781cfc71",
+          "name": "Post SDI invoice xml",
+          "request": {
+            "name": "Post SDI invoice xml",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "invoice-api",
+                "invoices",
+                "sdi",
+                "xml"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) file"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5f1fbd6c-ea46-4f98-8d72-ddc58931a9db",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    "sdi",
+                    "xml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) file",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"amountSpent\": 4463.563454682107,\n    \"currencyCodeSpent\": \"string\",\n    \"headerStatus\": \"string\",\n    \"invoiceDate\": \"1975-09-10T13:59:24.988Z\",\n    \"invoiceId\": \"string\",\n    \"invoiceNumber\": \"string\"\n  },\n  \"errors\": [\n    {\n      \"chain-id\": \"string\",\n      \"code\": \"string\",\n      \"detail\": \"string\",\n      \"id\": \"string\",\n      \"message\": \"string\",\n      \"meta\": {},\n      \"session-id\": \"string\",\n      \"status\": \"string\",\n      \"title\": \"string\"\n    },\n    {\n      \"chain-id\": \"string\",\n      \"code\": \"string\",\n      \"detail\": \"string\",\n      \"id\": \"string\",\n      \"message\": \"string\",\n      \"meta\": {},\n      \"session-id\": \"string\",\n      \"status\": \"string\",\n      \"title\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2976a248-2ccc-412e-a74e-a701dc751697",
+              "name": "Invoice created with warnings",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    "sdi",
+                    "xml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) file",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"amountSpent\": 7310.5566896552955,\n    \"currencyCodeSpent\": \"string\",\n    \"headerStatus\": \"string\",\n    \"invoiceDate\": \"1954-02-06T07:17:06.798Z\",\n    \"invoiceId\": \"string\",\n    \"invoiceNumber\": \"string\"\n  },\n  \"errors\": [\n    {\n      \"chain-id\": \"string\",\n      \"code\": \"string\",\n      \"detail\": \"string\",\n      \"id\": \"string\",\n      \"message\": \"string\",\n      \"meta\": {},\n      \"session-id\": \"string\",\n      \"status\": \"string\",\n      \"title\": \"string\"\n    },\n    {\n      \"chain-id\": \"string\",\n      \"code\": \"string\",\n      \"detail\": \"string\",\n      \"id\": \"string\",\n      \"message\": \"string\",\n      \"meta\": {},\n      \"session-id\": \"string\",\n      \"status\": \"string\",\n      \"title\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "46b7bddd-bf75-4b72-8471-97a55da3d9a0",
+              "name": "Customer Code or api key is not authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    "sdi",
+                    "xml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) file",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f71e5e24-de65-4ea8-b463-08f7dfae2092",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    "sdi",
+                    "xml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) file",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33751b45-95e1-42bd-abcb-87a11eff7da5",
+          "name": "Approve Specified Invoice",
+          "request": {
+            "name": "Approve Specified Invoice",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "invoice-api",
+                "invoices",
+                ":invoiceId",
+                "approve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "approverPersonUniqueId",
+                  "value": "<string>",
+                  "description": "(Required) Unique identifier of a person"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "invoiceId",
+                  "description": "(Required) Invoice Id to approve"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"approvalMethod\": \"<string>\",\n  \"invoiceId\": \"<string>\",\n  \"routingType\": \"<string>\",\n  \"submitSource\": \"<string>\",\n  \"additionalPersonUniqueId\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8e42ab76-efbb-4420-aa64-a53ba3857234",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "approve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approverPersonUniqueId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to approve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e453d34a-e8d8-4f75-9af9-8362e9d8cd58",
+              "name": "bad-request: invoiceId not found\nbad-request: approverUniqueId not found\nbad-request: additionalPersonUniqueId not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "approve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approverPersonUniqueId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to approve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3047c89a-0f33-47ff-9189-0a044b6ed8f4",
+              "name": "Invoice has been deleted or no longer assigned for approval.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "approve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approverPersonUniqueId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to approve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df110826-a460-4ea4-9271-95354b083a72",
+          "name": "Assign Specified Invoice To Person Or Entity",
+          "request": {
+            "name": "Assign Specified Invoice To Person Or Entity",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "invoice-api",
+                "invoices",
+                ":invoiceId",
+                "assign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "approverPersonUniqueId",
+                  "value": "<string>",
+                  "description": "(Required) Unique identifier of a person"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "invoiceId",
+                  "description": "(Required) Invoice Id to assign"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"approvalMethod\": \"<string>\",\n  \"entityCode\": \"<string>\",\n  \"entityTypeCode\": \"<string>\",\n  \"invoiceId\": \"<string>\",\n  \"roleName\": \"<string>\",\n  \"routingType\": \"<string>\",\n  \"submitSource\": \"<string>\",\n  \"additionalPersonUniqueId\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da5ee8f1-8306-4cfe-9a3a-0d105d5d4fca",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "assign"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approverPersonUniqueId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to assign"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"approvalMethod\": \"EMAI\",\n  \"entityCode\": \"<string>\",\n  \"entityTypeCode\": \"DEPT\",\n  \"invoiceId\": \"test\",\n  \"roleName\": \"APReview\",\n  \"routingType\": \"ENTY\",\n  \"submitSource\": \"INVS\",\n  \"additionalPersonUniqueId\": \"<string>\",\n  \"notes\": \"Example Comment For My Invoice\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "25662ab8-dd6f-4ab0-bd0a-d36fe6892d03",
+              "name": "bad-request: invoiceId not found\nbad-request: approverUniqueId not found\nbad-request: additionalPersonUniqueId not found\nbad-request: Move to Person or Entity details must be present",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "assign"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approverPersonUniqueId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to assign"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"approvalMethod\": \"EMAI\",\n  \"entityCode\": \"<string>\",\n  \"entityTypeCode\": \"DEPT\",\n  \"invoiceId\": \"test\",\n  \"roleName\": \"APReview\",\n  \"routingType\": \"ENTY\",\n  \"submitSource\": \"INVS\",\n  \"additionalPersonUniqueId\": \"<string>\",\n  \"notes\": \"Example Comment For My Invoice\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "140d9065-0c06-4586-be49-87c70d071d63",
+              "name": "Invoice has been deleted or no longer assigned for approval.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "assign"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approverPersonUniqueId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to assign"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"approvalMethod\": \"EMAI\",\n  \"entityCode\": \"<string>\",\n  \"entityTypeCode\": \"DEPT\",\n  \"invoiceId\": \"test\",\n  \"roleName\": \"APReview\",\n  \"routingType\": \"ENTY\",\n  \"submitSource\": \"INVS\",\n  \"additionalPersonUniqueId\": \"<string>\",\n  \"notes\": \"Example Comment For My Invoice\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8c54fb0-7e56-426b-b012-16b3a1f33297",
+          "name": "Get images uploaded for OCR",
+          "request": {
+            "name": "Get images uploaded for OCR",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "invoice-api",
+                "invoices",
+                ":invoiceId",
+                "ocr",
+                "images"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "invoiceId",
+                  "description": "(Required) Invoice Id to retrieve"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6d79b69c-778a-4d05-a181-d2cab4f96cad",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "ocr",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "618be9e5-7c7d-4ef5-9df7-ab2af3fcad58",
+              "name": "Valid request, but no content returned \n \n Either Invoice does not exist or Invoice does not have OCR images",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "ocr",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05537b85-0fc3-4e50-a8eb-73463b220c3b",
+              "name": "Customer Code or api key is not authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "ocr",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to retrieve"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "989601fd-5036-4396-a4ef-9cab5a5743ec",
+          "name": "Post paid invoice data",
+          "request": {
+            "name": "Post paid invoice data",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "invoice-api",
+                "invoices",
+                ":invoiceId",
+                "payment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "checkDupePayments",
+                  "value": "false",
+                  "description": "Flag that will enable a check for duplicate payments. Add dupe check fields in the payload. If flag is not present, it will default to false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "invoiceId",
+                  "description": "(Required) Invoice Id to update status"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"<number>\",\n  \"currencyCode\": \"<string>\",\n  \"invoiceId\": \"<string>\",\n  \"paidDate\": \"<dateTime>\",\n  \"amountDiscount\": \"<number>\",\n  \"bankNumber\": \"<string>\",\n  \"checkMailedDate\": \"<dateTime>\",\n  \"checkNumber\": \"<string>\",\n  \"dupeChecks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"paymentMethod\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f7ee18a5-e3ae-4269-bca8-334246f12dfd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "payment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "checkDupePayments",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to update status"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 1000,\n  \"currencyCode\": \"USD\",\n  \"invoiceId\": \"test\",\n  \"paidDate\": \"<dateTime>\",\n  \"amountDiscount\": 1000,\n  \"bankNumber\": \"<string>\",\n  \"checkMailedDate\": \"<dateTime>\",\n  \"checkNumber\": \"<string>\",\n  \"dupeChecks\": [\n    \"InvoiceID\",\n    \"AmountSpent\"\n  ],\n  \"paymentMethod\": \"ACH\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"amount\": 1000,\n  \"amountDiscount\": 1000,\n  \"currencyCode\": \"USD\",\n  \"invoiceId\": \"test\",\n  \"paidDate\": \"1996-02-11T04:52:08.627Z\",\n  \"bankNumber\": \"string\",\n  \"checkMailedDate\": \"1960-03-17T06:07:50.760Z\",\n  \"checkNumber\": \"string\",\n  \"paymentMethod\": \"ACH\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ed31f745-e712-431e-a6a6-9dfb623ed905",
+              "name": "Unprocessable Entity when a duplicate payment is passed, without checkDupePayments set to true  \n\n There are duplicate payments with the same values in fields: amount,invoiceID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "payment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "checkDupePayments",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to update status"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": 1000,\n  \"currencyCode\": \"USD\",\n  \"invoiceId\": \"test\",\n  \"paidDate\": \"<dateTime>\",\n  \"amountDiscount\": 1000,\n  \"bankNumber\": \"<string>\",\n  \"checkMailedDate\": \"<dateTime>\",\n  \"checkNumber\": \"<string>\",\n  \"dupeChecks\": [\n    \"InvoiceID\",\n    \"AmountSpent\"\n  ],\n  \"paymentMethod\": \"ACH\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f799b11f-0a2a-49d2-b527-a03e439958ba",
+          "name": "Return Specified Invoice",
+          "request": {
+            "name": "Return Specified Invoice",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "invoice-api",
+                "invoices",
+                ":invoiceId",
+                "return"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "approverPersonUniqueId",
+                  "value": "<string>",
+                  "description": "(Required) Unique identifier of a person"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "invoiceId",
+                  "description": "(Required) Invoice Id to return"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"approvalMethod\": \"<string>\",\n  \"invoiceId\": \"<string>\",\n  \"routingType\": \"<string>\",\n  \"submitSource\": \"<string>\",\n  \"additionalPersonUniqueId\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "12f32330-2ed2-4248-9364-b9352e3e2dae",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "return"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approverPersonUniqueId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to return"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "728730c6-3c5c-4cd3-8e53-2aad42897f7b",
+              "name": "bad-request: invoiceId not found\nbad-request: approverUniqueId not found\nbad-request: additionalPersonUniqueId not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "return"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approverPersonUniqueId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to return"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "60adf398-0e7d-476d-9cd6-82ddf9b60107",
+              "name": "Invoice has been deleted or no longer assigned for approval.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "invoice-api",
+                    "invoices",
+                    ":invoiceId",
+                    "return"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approverPersonUniqueId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) Invoice Id to return"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "38563fee-ac08-4b01-a34b-965e4332539f",
+    "name": "Api Documentation Accounts invoice-api-external-controller API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

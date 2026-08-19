@@ -1,0 +1,215 @@
+{
+  "item": [
+    {
+      "id": "3bc113a0-163a-4243-b40f-c80a7d4018fe",
+      "name": "expense-report-line-item-controller",
+      "description": {
+        "content": "Retrieve expense report line items",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "24ba174a-3c0f-4e72-b1b3-eba070da0ab4",
+          "name": "getLineItems",
+          "request": {
+            "name": "getLineItems",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "expense-report-line-item-search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "createDate",
+                  "value": "<dateTime>",
+                  "description": "Filter by line item created this date (yyyy-MM-dd)"
+                },
+                {
+                  "disabled": false,
+                  "key": "expenseReportHeaderIds",
+                  "value": "<string>",
+                  "description": "Filter to only include line items that belong to a list of comma-separated list of expense report header IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "expenseReportHeaderIds",
+                  "value": "<string>",
+                  "description": "Filter to only include line items that belong to a list of comma-separated list of expense report header IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "exportDate",
+                  "value": "<dateTime>",
+                  "description": "Filter by line item exported this date (yyyy-MM-dd)"
+                },
+                {
+                  "disabled": false,
+                  "key": "hasComplianceItems",
+                  "value": "<boolean>",
+                  "description": "Filter by whether a line item has compliance items"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeMergedTransactions",
+                  "value": "<boolean>",
+                  "description": "Return child transactions in the expenseTransaction data (for merge sets)"
+                },
+                {
+                  "disabled": false,
+                  "key": "isCreatedByAces",
+                  "value": "<boolean>",
+                  "description": "Filter by whether a line item was created by the ACES (Accelerated Expense Service)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineItemStatus",
+                  "value": "<string>",
+                  "description": "Filter by line item status"
+                },
+                {
+                  "disabled": false,
+                  "key": "reportId",
+                  "value": "<string>",
+                  "description": "Filter by line item's header report ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "submitDate",
+                  "value": "<dateTime>",
+                  "description": "Filter by line item submitted this date (yyyy-MM-dd)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec0343f7-28db-4956-8d3c-c0ba3cfa0987",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "expense-report-line-item-search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "createDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "expenseReportHeaderIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expenseReportHeaderIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exportDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "hasComplianceItems",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "includeMergedTransactions",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "isCreatedByAces",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineItemStatus",
+                      "value": "Returned"
+                    },
+                    {
+                      "key": "reportId",
+                      "value": "DEV028700864"
+                    },
+                    {
+                      "key": "submitDate",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8"
+                }
+              ],
+              "body": "[\n  {\n    \"allocations\": [\n      {\n        \"allocationId\": \"001109-600001_001109\",\n        \"allocationRefereceString\": \"1000-7302-FirmPaid\",\n        \"allocationReference\": {\n          \"allocationSeg1\": \"string\",\n          \"allocationSeg10\": \"string\",\n          \"allocationSeg11\": \"string\",\n          \"allocationSeg12\": \"string\",\n          \"allocationSeg13\": \"string\",\n          \"allocationSeg14\": \"string\",\n          \"allocationSeg15\": \"string\",\n          \"allocationSeg16\": \"string\",\n          \"allocationSeg2\": \"string\",\n          \"allocationSeg3\": \"string\",\n          \"allocationSeg4\": \"string\",\n          \"allocationSeg5\": \"string\",\n          \"allocationSeg6\": \"string\",\n          \"allocationSeg7\": \"string\",\n          \"allocationSeg8\": \"string\",\n          \"allocationSeg9\": \"string\"\n        },\n        \"amount\": 25,\n        \"amountSpentApproved\": 25,\n        \"clientName\": \"FIRM FUNCTIONS (CHICAGO)\",\n        \"clientNumber\": \"string\",\n        \"costCodeOverride\": \"string\",\n        \"description\": \"Athletics\",\n        \"entityField1\": \"string\",\n        \"entityField2\": \"string\",\n        \"entityField3\": \"string\",\n        \"glAccount\": \"string\",\n        \"isPersonal\": false,\n        \"matterOnSelect1\": \"string\",\n        \"matterOnSelect2\": \"string\",\n        \"number\": \"001109-600001\",\n        \"percent\": 50,\n        \"type\": \"string\",\n        \"udf1\": \"General\",\n        \"udf2\": \"PTBSM1\",\n        \"udf3\": \"RCM2\",\n        \"udf4\": \"string\",\n        \"vatAmount\": 4.33,\n        \"vatAmount2\": 4.33,\n        \"vatAmount3\": 4.33,\n        \"vatTaxCode\": \"HST\",\n        \"vatTaxCode2\": \"GST\",\n        \"vatTaxCode3\": \"PST\",\n        \"vatTaxPercentage\": 5,\n        \"vatTaxPercentage2\": 5,\n        \"vatTaxPercentage3\": 5\n      },\n      {\n        \"allocationId\": \"001109-600001_001109\",\n        \"allocationRefereceString\": \"1000-7302-FirmPaid\",\n        \"allocationReference\": {\n          \"allocationSeg1\": \"string\",\n          \"allocationSeg10\": \"string\",\n          \"allocationSeg11\": \"string\",\n          \"allocationSeg12\": \"string\",\n          \"allocationSeg13\": \"string\",\n          \"allocationSeg14\": \"string\",\n          \"allocationSeg15\": \"string\",\n          \"allocationSeg16\": \"string\",\n          \"allocationSeg2\": \"string\",\n          \"allocationSeg3\": \"string\",\n          \"allocationSeg4\": \"string\",\n          \"allocationSeg5\": \"string\",\n          \"allocationSeg6\": \"string\",\n          \"allocationSeg7\": \"string\",\n          \"allocationSeg8\": \"string\",\n          \"allocationSeg9\": \"string\"\n        },\n        \"amount\": 25,\n        \"amountSpentApproved\": 25,\n        \"clientName\": \"FIRM FUNCTIONS (CHICAGO)\",\n        \"clientNumber\": \"string\",\n        \"costCodeOverride\": \"string\",\n        \"description\": \"Athletics\",\n        \"entityField1\": \"string\",\n        \"entityField2\": \"string\",\n        \"entityField3\": \"string\",\n        \"glAccount\": \"string\",\n        \"isPersonal\": false,\n        \"matterOnSelect1\": \"string\",\n        \"matterOnSelect2\": \"string\",\n        \"number\": \"001109-600001\",\n        \"percent\": 50,\n        \"type\": \"string\",\n        \"udf1\": \"General\",\n        \"udf2\": \"PTBSM1\",\n        \"udf3\": \"RCM2\",\n        \"udf4\": \"string\",\n        \"vatAmount\": 4.33,\n        \"vatAmount2\": 4.33,\n        \"vatAmount3\": 4.33,\n        \"vatTaxCode\": \"HST\",\n        \"vatTaxCode2\": \"GST\",\n        \"vatTaxCode3\": \"PST\",\n        \"vatTaxPercentage\": 5,\n        \"vatTaxPercentage2\": 5,\n        \"vatTaxPercentage3\": 5\n      }\n    ],\n    \"amountApproved\": 0,\n    \"amountCustomer\": 0,\n    \"amountSpent\": 119.81,\n    \"amountSpentConverted\": 119.81,\n    \"amountSpentPersonal\": 0,\n    \"businessPurpose\": \"Conference\",\n    \"childLineItemIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"children\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ExpenseReportLineItemV3 detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ExpenseReportLineItemV3 detected>\"\n      }\n    ],\n    \"comments\": [\n      {\n        \"comment\": \"Submitted via Chrome River Application. Max 2000 characters\",\n        \"createDate\": \"2023-01-09 10:57:53+00:00\",\n        \"creatorName\": \"Jason Klein\"\n      },\n      {\n        \"comment\": \"Submitted via Chrome River Application. Max 2000 characters\",\n        \"createDate\": \"2023-01-09 10:57:53+00:00\",\n        \"creatorName\": \"Jason Klein\"\n      }\n    ],\n    \"complianceItems\": [\n      {\n        \"description\": \"Receipt must be attached > 10.00 USD\",\n        \"messageCode\": \"string\",\n        \"response\": \"Lost the receipt\",\n        \"status\": \"Validated\",\n        \"type\": 0\n      },\n      {\n        \"description\": \"Receipt must be attached > 10.00 USD\",\n        \"messageCode\": \"string\",\n        \"response\": \"Lost the receipt\",\n        \"status\": \"Validated\",\n        \"type\": 0\n      }\n    ],\n    \"createDate\": \"1983-06-22T09:15:55.057Z\",\n    \"currencyCustomer\": \"USD\",\n    \"currencySpent\": \"USD\",\n    \"currencySpentApproved\": \"USD\",\n    \"currencySpentConverted\": \"string\",\n    \"currencySpentPersonal\": \"USD\",\n    \"currentApprover\": [\n      {\n        \"assignedDate\": \"2008-05-08T18:19:35.902Z\",\n        \"emailAddress\": \"larry.kemp@crane.com\",\n        \"firstName\": \"Larry\",\n        \"lastName\": \"Kemp\",\n        \"personUniqueId\": \"lkemp\",\n        \"title\": \"Sr. Manager\"\n      },\n      {\n        \"assignedDate\": \"2008-03-07T11:25:13.649Z\",\n        \"emailAddress\": \"larry.kemp@crane.com\",\n        \"firstName\": \"Larry\",\n        \"lastName\": \"Kemp\",\n        \"personUniqueId\": \"lkemp\",\n        \"title\": \"Sr. Manager\"\n      }\n    ],\n    \"description\": \"Flight to St. Louis\",\n    \"expenseItemType\": \"Breakfast\",\n    \"expenseItemTypeDisplayName\": \"Meal - Breakfast\",\n    \"expenseItemTypeIcon\": \"coffee.png\",\n    \"expenseTransactions\": {\n      \"amountEditable\": false,\n      \"amountOriginal\": 100,\n      \"amountSpent\": 100,\n      \"childrenMergedTransactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/ExpenseTransaction detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/ExpenseTransaction detected>\"\n        }\n      ],\n      \"createDate\": \"2008-04-21T17:31:00.350Z\",\n      \"currencyCodeOriginal\": \"USD\",\n      \"currencyCodeSpent\": \"USD\",\n      \"currencyEditable\": false,\n      \"dateEditable\": false,\n      \"expenseTypePredictions\": [\n        {\n          \"confidence\": 119.78063718911413,\n          \"expenseReportItemTypeId\": 3032,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"confidence\": 716.2480654489789,\n          \"expenseReportItemTypeId\": 7289,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"feedTransactionUniqueID\": \"5q6CFwAKlPRZoQT0PbbD-39454187904441-1\",\n      \"merchant\": \"Amazon.com Services LLC\",\n      \"merchantUda\": \"Amazon.com Services LLC\",\n      \"numImages\": 1,\n      \"primaryTransactionDate\": \"1959-12-17T21:31:44.556Z\",\n      \"transactionId\": 7236\n    },\n    \"exportDate\": \"2015-08-31T07:10:47.279Z\",\n    \"exportStatus\": \"Exported\",\n    \"feed\": {\n      \"code\": \"CreditCardAmex\",\n      \"financialInstitution\": \"Amex\",\n      \"isCreditCard\": true,\n      \"name\": \"Amex Credit Card Feed\",\n      \"typeName\": \"Credit Card\"\n    },\n    \"firmPaid\": true,\n    \"guests\": [\n      {\n        \"amount\": 11.98,\n        \"company\": \"CFA Consultants\",\n        \"firstName\": \"Jennifer\",\n        \"guestType\": \"InternalGuest\",\n        \"lastName\": \"Garth\",\n        \"percentage\": 10,\n        \"title\": \"Legal Consultant\"\n      },\n      {\n        \"amount\": 11.98,\n        \"company\": \"CFA Consultants\",\n        \"firstName\": \"Jennifer\",\n        \"guestType\": \"InternalGuest\",\n        \"lastName\": \"Garth\",\n        \"percentage\": 10,\n        \"title\": \"Legal Consultant\"\n      }\n    ],\n    \"hasReceipt\": true,\n    \"hasTaxReceipt\": true,\n    \"imagesUrl\": \"file:///receipts/receipt2.pdf\",\n    \"lineItemId\": \"b0dd069a-ce1a-45bf-b9dd-48cac24735ff\",\n    \"lineItemStatus\": \"Pending Approval\",\n    \"lineNumber\": 1,\n    \"lineNumber2\": 1328,\n    \"merchant\": \"string\",\n    \"mileageDetails\": {\n      \"carPlanModifierGroup\": \"Passengers_CA\",\n      \"carPlanName\": \"US Personal Car\",\n      \"carPlanTierName\": \"< 1000 KM\",\n      \"mapImageURL\": \"string\",\n      \"rate\": 50,\n      \"trips\": [\n        {\n          \"address\": \"500 North Wilshire Blvd.\",\n          \"amount\": 115.53,\n          \"calculatedMiles\": 15,\n          \"category\": \"Business- Travel\",\n          \"deductionAmount\": 15,\n          \"deductionDistance\": 15,\n          \"distanceUnit\": \"miles\",\n          \"latitude\": 30.29048912,\n          \"longitude\": 93.2894802,\n          \"miles\": 15,\n          \"personalTrip\": false,\n          \"roundTrip\": false,\n          \"tripStep\": 1\n        },\n        {\n          \"address\": \"500 North Wilshire Blvd.\",\n          \"amount\": 115.53,\n          \"calculatedMiles\": 15,\n          \"category\": \"Business- Travel\",\n          \"deductionAmount\": 15,\n          \"deductionDistance\": 15,\n          \"distanceUnit\": \"miles\",\n          \"latitude\": 30.29048912,\n          \"longitude\": 93.2894802,\n          \"miles\": 15,\n          \"personalTrip\": false,\n          \"roundTrip\": false,\n          \"tripStep\": 1\n        }\n      ]\n    },\n    \"paLineItemType\": {\n      \"externalRef\": \"string\",\n      \"id\": 1398,\n      \"name\": \"Airfare\",\n      \"type\": \"LineItem\"\n    },\n    \"parent\": false,\n    \"parentId\": \"string\",\n    \"perDiemLineItem\": {\n      \"additionalDeductionAmount\": 0,\n      \"address\": \"5700 Olympic Blvd\",\n      \"allowableAmount\": 8078.06383355731,\n      \"alocholAmount\": 6328.9022068881195,\n      \"amountPerDiem\": 150,\n      \"baseRate\": 1694.2732214931434,\n      \"breakfastAmountIMR\": 11,\n      \"breakfastDeductionAmount\": 0,\n      \"city\": \"Los Angeles\",\n      \"country\": \"United States\",\n      \"county\": \"Los Angeles County\",\n      \"currencyCode\": \"USD\",\n      \"dinnerAmountIMR\": 22,\n      \"dinnerDeductionAmount\": 0,\n      \"endDate\": \"1969-11-07T14:31:40.271Z\",\n      \"foodAmount\": 5381.801719794133,\n      \"foodOverage\": 6090.087420531283,\n      \"incidentalDeductionAmount\": 0,\n      \"isArriveNextDay\": false,\n      \"isArrivePreviousDay\": false,\n      \"isBreakfastDeducted\": false,\n      \"isDinnerDeducted\": false,\n      \"isDiscardedDay\": true,\n      \"isFullTravelDay\": false,\n      \"isLodgingDeducted\": false,\n      \"isLunchDeducted\": false,\n      \"isOvernightStay\": false,\n      \"isTravelDayDeducted\": false,\n      \"latitude\": 193.29283,\n      \"lodgingDeductionAmount\": 0,\n      \"longitude\": 30.5445022,\n      \"lunchAmountIMR\": 23,\n      \"lunchDeductionAmount\": 0,\n      \"mealType\": \"Dinner\",\n      \"numberOfAttendees\": 4772,\n      \"otherCity\": \"San Diego\",\n      \"perDiemDayPosition\": \"SNGL\",\n      \"rate\": {\n        \"amountMaximumPerDiem\": 1547.2334982720026,\n        \"city\": \"string\"\n      },\n      \"rooms\": 1,\n      \"startDate\": \"1953-09-17T07:39:59.024Z\",\n      \"state\": \"CA\",\n      \"taxTip\": 5072.742318068476,\n      \"totalAlcoholAmount\": 2064.0528077967747,\n      \"totalFoodAmount\": 6849.590127648794\n    },\n    \"personal\": false,\n    \"previousApprover\": [\n      {\n        \"assignedDate\": \"1989-03-30T07:49:52.200Z\",\n        \"completedDate\": \"1977-03-30T02:41:24.533Z\",\n        \"emailAddress\": \"larry.kemp@crane.com\",\n        \"firstName\": \"Larry\",\n        \"lastName\": \"Kemp\",\n        \"personUniqueId\": \"lkemp\",\n        \"statusApproved\": \"DRAFT\",\n        \"stepNumber\": 7764,\n        \"title\": \"Sr. Manager\"\n      },\n      {\n        \"assignedDate\": \"1984-11-01T16:42:10.147Z\",\n        \"completedDate\": \"1976-10-31T19:03:12.842Z\",\n        \"emailAddress\": \"larry.kemp@crane.com\",\n        \"firstName\": \"Larry\",\n        \"lastName\": \"Kemp\",\n        \"personUniqueId\": \"lkemp\",\n        \"statusApproved\": \"REASSIGNED\",\n        \"stepNumber\": 4000,\n        \"title\": \"Sr. Manager\"\n      }\n    ],\n    \"transactionDate\": \"1977-05-11T00:52:30.174Z\",\n    \"udas\": [\n      {\n        \"booleanValue\": false,\n        \"currencyValue\": 100,\n        \"dateValue\": \"2000-01-25T06:36:12.568Z\",\n        \"entityValue\": {\n          \"code\": \"string\",\n          \"extraData1\": \"Main\",\n          \"extraData2\": \"Office\",\n          \"extraData3\": \"string\",\n          \"extraData4\": \"string\",\n          \"extraData5\": \"0000\",\n          \"name\": \"Los Angeles\"\n        },\n        \"entityValueInt\": 90,\n        \"numberValue\": 100,\n        \"stringValue\": \"1000 North Sunset Road\",\n        \"udaDataType\": \"booleanValue\",\n        \"udaName\": \"string\"\n      },\n      {\n        \"booleanValue\": false,\n        \"currencyValue\": 100,\n        \"dateValue\": \"2022-11-04T19:30:41.581Z\",\n        \"entityValue\": {\n          \"code\": \"string\",\n          \"extraData1\": \"Main\",\n          \"extraData2\": \"Office\",\n          \"extraData3\": \"string\",\n          \"extraData4\": \"string\",\n          \"extraData5\": \"0000\",\n          \"name\": \"Los Angeles\"\n        },\n        \"entityValueInt\": 90,\n        \"numberValue\": 100,\n        \"stringValue\": \"1000 North Sunset Road\",\n        \"udaDataType\": \"booleanValue\",\n        \"udaName\": \"string\"\n      }\n    ],\n    \"updateDate\": \"2023-07-31T14:25:44.866Z\",\n    \"vatAmount\": 5.99,\n    \"vatAmount2\": 5.99,\n    \"vatAmount3\": 5.99,\n    \"vatAmountApplied\": 5.99,\n    \"vatAmountApplied2\": 5.99,\n    \"vatAmountApplied3\": 5.99,\n    \"vatAmountAppliedRemainder\": 5.99,\n    \"vatAmountAppliedRemainder2\": 5.99,\n    \"vatAmountAppliedRemainder3\": 5.99,\n    \"vatAmountEntered\": 5.99,\n    \"vatAmountEntered2\": 5.99,\n    \"vatAmountEntered3\": 5.99,\n    \"vatLocation\": \"Canada\",\n    \"vatTaxPercentage\": 5,\n    \"vatTaxPercentage2\": 5,\n    \"vatTaxPercentage3\": 5,\n    \"vatTaxPercentageReclaim\": 100,\n    \"vatTaxPercentageReclaim2\": 100,\n    \"vatTaxPercentageReclaim3\": 100,\n    \"voucherInvoice\": \"0000006010110241\"\n  },\n  {\n    \"allocations\": [\n      {\n        \"allocationId\": \"001109-600001_001109\",\n        \"allocationRefereceString\": \"1000-7302-FirmPaid\",\n        \"allocationReference\": {\n          \"allocationSeg1\": \"string\",\n          \"allocationSeg10\": \"string\",\n          \"allocationSeg11\": \"string\",\n          \"allocationSeg12\": \"string\",\n          \"allocationSeg13\": \"string\",\n          \"allocationSeg14\": \"string\",\n          \"allocationSeg15\": \"string\",\n          \"allocationSeg16\": \"string\",\n          \"allocationSeg2\": \"string\",\n          \"allocationSeg3\": \"string\",\n          \"allocationSeg4\": \"string\",\n          \"allocationSeg5\": \"string\",\n          \"allocationSeg6\": \"string\",\n          \"allocationSeg7\": \"string\",\n          \"allocationSeg8\": \"string\",\n          \"allocationSeg9\": \"string\"\n        },\n        \"amount\": 25,\n        \"amountSpentApproved\": 25,\n        \"clientName\": \"FIRM FUNCTIONS (CHICAGO)\",\n        \"clientNumber\": \"string\",\n        \"costCodeOverride\": \"string\",\n        \"description\": \"Athletics\",\n        \"entityField1\": \"string\",\n        \"entityField2\": \"string\",\n        \"entityField3\": \"string\",\n        \"glAccount\": \"string\",\n        \"isPersonal\": false,\n        \"matterOnSelect1\": \"string\",\n        \"matterOnSelect2\": \"string\",\n        \"number\": \"001109-600001\",\n        \"percent\": 50,\n        \"type\": \"string\",\n        \"udf1\": \"General\",\n        \"udf2\": \"PTBSM1\",\n        \"udf3\": \"RCM2\",\n        \"udf4\": \"string\",\n        \"vatAmount\": 4.33,\n        \"vatAmount2\": 4.33,\n        \"vatAmount3\": 4.33,\n        \"vatTaxCode\": \"HST\",\n        \"vatTaxCode2\": \"GST\",\n        \"vatTaxCode3\": \"PST\",\n        \"vatTaxPercentage\": 5,\n        \"vatTaxPercentage2\": 5,\n        \"vatTaxPercentage3\": 5\n      },\n      {\n        \"allocationId\": \"001109-600001_001109\",\n        \"allocationRefereceString\": \"1000-7302-FirmPaid\",\n        \"allocationReference\": {\n          \"allocationSeg1\": \"string\",\n          \"allocationSeg10\": \"string\",\n          \"allocationSeg11\": \"string\",\n          \"allocationSeg12\": \"string\",\n          \"allocationSeg13\": \"string\",\n          \"allocationSeg14\": \"string\",\n          \"allocationSeg15\": \"string\",\n          \"allocationSeg16\": \"string\",\n          \"allocationSeg2\": \"string\",\n          \"allocationSeg3\": \"string\",\n          \"allocationSeg4\": \"string\",\n          \"allocationSeg5\": \"string\",\n          \"allocationSeg6\": \"string\",\n          \"allocationSeg7\": \"string\",\n          \"allocationSeg8\": \"string\",\n          \"allocationSeg9\": \"string\"\n        },\n        \"amount\": 25,\n        \"amountSpentApproved\": 25,\n        \"clientName\": \"FIRM FUNCTIONS (CHICAGO)\",\n        \"clientNumber\": \"string\",\n        \"costCodeOverride\": \"string\",\n        \"description\": \"Athletics\",\n        \"entityField1\": \"string\",\n        \"entityField2\": \"string\",\n        \"entityField3\": \"string\",\n        \"glAccount\": \"string\",\n        \"isPersonal\": false,\n        \"matterOnSelect1\": \"string\",\n        \"matterOnSelect2\": \"string\",\n        \"number\": \"001109-600001\",\n        \"percent\": 50,\n        \"type\": \"string\",\n        \"udf1\": \"General\",\n        \"udf2\": \"PTBSM1\",\n        \"udf3\": \"RCM2\",\n        \"udf4\": \"string\",\n        \"vatAmount\": 4.33,\n        \"vatAmount2\": 4.33,\n        \"vatAmount3\": 4.33,\n        \"vatTaxCode\": \"HST\",\n        \"vatTaxCode2\": \"GST\",\n        \"vatTaxCode3\": \"PST\",\n        \"vatTaxPercentage\": 5,\n        \"vatTaxPercentage2\": 5,\n        \"vatTaxPercentage3\": 5\n      }\n    ],\n    \"amountApproved\": 0,\n    \"amountCustomer\": 0,\n    \"amountSpent\": 119.81,\n    \"amountSpentConverted\": 119.81,\n    \"amountSpentPersonal\": 0,\n    \"businessPurpose\": \"Conference\",\n    \"childLineItemIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"children\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ExpenseReportLineItemV3 detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ExpenseReportLineItemV3 detected>\"\n      }\n    ],\n    \"comments\": [\n      {\n        \"comment\": \"Submitted via Chrome River Application. Max 2000 characters\",\n        \"createDate\": \"2023-01-09 10:57:53+00:00\",\n        \"creatorName\": \"Jason Klein\"\n      },\n      {\n        \"comment\": \"Submitted via Chrome River Application. Max 2000 characters\",\n        \"createDate\": \"2023-01-09 10:57:53+00:00\",\n        \"creatorName\": \"Jason Klein\"\n      }\n    ],\n    \"complianceItems\": [\n      {\n        \"description\": \"Receipt must be attached > 10.00 USD\",\n        \"messageCode\": \"string\",\n        \"response\": \"Lost the receipt\",\n        \"status\": \"Validated\",\n        \"type\": 0\n      },\n      {\n        \"description\": \"Receipt must be attached > 10.00 USD\",\n        \"messageCode\": \"string\",\n        \"response\": \"Lost the receipt\",\n        \"status\": \"Validated\",\n        \"type\": 0\n      }\n    ],\n    \"createDate\": \"2017-04-22T09:58:21.547Z\",\n    \"currencyCustomer\": \"USD\",\n    \"currencySpent\": \"USD\",\n    \"currencySpentApproved\": \"USD\",\n    \"currencySpentConverted\": \"string\",\n    \"currencySpentPersonal\": \"USD\",\n    \"currentApprover\": [\n      {\n        \"assignedDate\": \"2026-04-16T12:53:08.562Z\",\n        \"emailAddress\": \"larry.kemp@crane.com\",\n        \"firstName\": \"Larry\",\n        \"lastName\": \"Kemp\",\n        \"personUniqueId\": \"lkemp\",\n        \"title\": \"Sr. Manager\"\n      },\n      {\n        \"assignedDate\": \"1951-01-24T12:21:47.135Z\",\n        \"emailAddress\": \"larry.kemp@crane.com\",\n        \"firstName\": \"Larry\",\n        \"lastName\": \"Kemp\",\n        \"personUniqueId\": \"lkemp\",\n        \"title\": \"Sr. Manager\"\n      }\n    ],\n    \"description\": \"Flight to St. Louis\",\n    \"expenseItemType\": \"Breakfast\",\n    \"expenseItemTypeDisplayName\": \"Meal - Breakfast\",\n    \"expenseItemTypeIcon\": \"coffee.png\",\n    \"expenseTransactions\": {\n      \"amountEditable\": false,\n      \"amountOriginal\": 100,\n      \"amountSpent\": 100,\n      \"childrenMergedTransactions\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/ExpenseTransaction detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/ExpenseTransaction detected>\"\n        }\n      ],\n      \"createDate\": \"1993-12-13T04:06:57.128Z\",\n      \"currencyCodeOriginal\": \"USD\",\n      \"currencyCodeSpent\": \"USD\",\n      \"currencyEditable\": false,\n      \"dateEditable\": false,\n      \"expenseTypePredictions\": [\n        {\n          \"confidence\": 4076.815211284309,\n          \"expenseReportItemTypeId\": 486,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"confidence\": 6521.228671805965,\n          \"expenseReportItemTypeId\": 6457,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"feedTransactionUniqueID\": \"5q6CFwAKlPRZoQT0PbbD-39454187904441-1\",\n      \"merchant\": \"Amazon.com Services LLC\",\n      \"merchantUda\": \"Amazon.com Services LLC\",\n      \"numImages\": 1,\n      \"primaryTransactionDate\": \"2021-12-31T10:39:52.618Z\",\n      \"transactionId\": 874\n    },\n    \"exportDate\": \"1959-04-17T08:34:29.397Z\",\n    \"exportStatus\": \"Exported\",\n    \"feed\": {\n      \"code\": \"CreditCardAmex\",\n      \"financialInstitution\": \"Amex\",\n      \"isCreditCard\": true,\n      \"name\": \"Amex Credit Card Feed\",\n      \"typeName\": \"Credit Card\"\n    },\n    \"firmPaid\": true,\n    \"guests\": [\n      {\n        \"amount\": 11.98,\n        \"company\": \"CFA Consultants\",\n        \"firstName\": \"Jennifer\",\n        \"guestType\": \"InternalGuest\",\n        \"lastName\": \"Garth\",\n        \"percentage\": 10,\n        \"title\": \"Legal Consultant\"\n      },\n      {\n        \"amount\": 11.98,\n        \"company\": \"CFA Consultants\",\n        \"firstName\": \"Jennifer\",\n        \"guestType\": \"InternalGuest\",\n        \"lastName\": \"Garth\",\n        \"percentage\": 10,\n        \"title\": \"Legal Consultant\"\n      }\n    ],\n    \"hasReceipt\": true,\n    \"hasTaxReceipt\": true,\n    \"imagesUrl\": \"file:///receipts/receipt2.pdf\",\n    \"lineItemId\": \"b0dd069a-ce1a-45bf-b9dd-48cac24735ff\",\n    \"lineItemStatus\": \"Pending Approval\",\n    \"lineNumber\": 1,\n    \"lineNumber2\": 1964,\n    \"merchant\": \"string\",\n    \"mileageDetails\": {\n      \"carPlanModifierGroup\": \"Passengers_CA\",\n      \"carPlanName\": \"US Personal Car\",\n      \"carPlanTierName\": \"< 1000 KM\",\n      \"mapImageURL\": \"string\",\n      \"rate\": 50,\n      \"trips\": [\n        {\n          \"address\": \"500 North Wilshire Blvd.\",\n          \"amount\": 115.53,\n          \"calculatedMiles\": 15,\n          \"category\": \"Business- Travel\",\n          \"deductionAmount\": 15,\n          \"deductionDistance\": 15,\n          \"distanceUnit\": \"miles\",\n          \"latitude\": 30.29048912,\n          \"longitude\": 93.2894802,\n          \"miles\": 15,\n          \"personalTrip\": false,\n          \"roundTrip\": false,\n          \"tripStep\": 1\n        },\n        {\n          \"address\": \"500 North Wilshire Blvd.\",\n          \"amount\": 115.53,\n          \"calculatedMiles\": 15,\n          \"category\": \"Business- Travel\",\n          \"deductionAmount\": 15,\n          \"deductionDistance\": 15,\n          \"distanceUnit\": \"miles\",\n          \"latitude\": 30.29048912,\n          \"longitude\": 93.2894802,\n          \"miles\": 15,\n          \"personalTrip\": false,\n          \"roundTrip\": false,\n          \"tripStep\": 1\n        }\n      ]\n    },\n    \"paLineItemType\": {\n      \"externalRef\": \"string\",\n      \"id\": 1398,\n      \"name\": \"Airfare\",\n      \"type\": \"LineItem\"\n    },\n    \"parent\": false,\n    \"parentId\": \"string\",\n    \"perDiemLineItem\": {\n      \"additionalDeductionAmount\": 0,\n      \"address\": \"5700 Olympic Blvd\",\n      \"allowableAmount\": 4635.549495320371,\n      \"alocholAmount\": 2421.313149751595,\n      \"amountPerDiem\": 150,\n      \"baseRate\": 8476.437893012808,\n      \"breakfastAmountIMR\": 11,\n      \"breakfastDeductionAmount\": 0,\n      \"city\": \"Los Angeles\",\n      \"country\": \"United States\",\n      \"county\": \"Los Angeles County\",\n      \"currencyCode\": \"USD\",\n      \"dinnerAmountIMR\": 22,\n      \"dinnerDeductionAmount\": 0,\n      \"endDate\": \"1976-05-21T15:45:20.871Z\",\n      \"foodAmount\": 9385.772195497168,\n      \"foodOverage\": 6760.538114651371,\n      \"incidentalDeductionAmount\": 0,\n      \"isArriveNextDay\": false,\n      \"isArrivePreviousDay\": false,\n      \"isBreakfastDeducted\": false,\n      \"isDinnerDeducted\": false,\n      \"isDiscardedDay\": false,\n      \"isFullTravelDay\": false,\n      \"isLodgingDeducted\": false,\n      \"isLunchDeducted\": false,\n      \"isOvernightStay\": false,\n      \"isTravelDayDeducted\": true,\n      \"latitude\": 193.29283,\n      \"lodgingDeductionAmount\": 0,\n      \"longitude\": 30.5445022,\n      \"lunchAmountIMR\": 23,\n      \"lunchDeductionAmount\": 0,\n      \"mealType\": \"Dinner\",\n      \"numberOfAttendees\": 5277,\n      \"otherCity\": \"San Diego\",\n      \"perDiemDayPosition\": \"SNGL\",\n      \"rate\": {\n        \"amountMaximumPerDiem\": 371.0337860400037,\n        \"city\": \"string\"\n      },\n      \"rooms\": 1,\n      \"startDate\": \"1961-01-04T01:50:59.024Z\",\n      \"state\": \"CA\",\n      \"taxTip\": 608.2839663778473,\n      \"totalAlcoholAmount\": 6500.208630436719,\n      \"totalFoodAmount\": 7257.865609759135\n    },\n    \"personal\": false,\n    \"previousApprover\": [\n      {\n        \"assignedDate\": \"1979-02-26T07:54:31.542Z\",\n        \"completedDate\": \"1984-11-12T11:31:30.926Z\",\n        \"emailAddress\": \"larry.kemp@crane.com\",\n        \"firstName\": \"Larry\",\n        \"lastName\": \"Kemp\",\n        \"personUniqueId\": \"lkemp\",\n        \"statusApproved\": \"NO_ACTION_VACATION\",\n        \"stepNumber\": 9912,\n        \"title\": \"Sr. Manager\"\n      },\n      {\n        \"assignedDate\": \"1997-06-07T19:52:18.685Z\",\n        \"completedDate\": \"1951-07-08T10:39:41.101Z\",\n        \"emailAddress\": \"larry.kemp@crane.com\",\n        \"firstName\": \"Larry\",\n        \"lastName\": \"Kemp\",\n        \"personUniqueId\": \"lkemp\",\n        \"statusApproved\": \"APPROVED_FOR_PAYMENT\",\n        \"stepNumber\": 1154,\n        \"title\": \"Sr. Manager\"\n      }\n    ],\n    \"transactionDate\": \"1969-10-20T09:24:58.262Z\",\n    \"udas\": [\n      {\n        \"booleanValue\": false,\n        \"currencyValue\": 100,\n        \"dateValue\": \"2022-07-24T15:13:09.770Z\",\n        \"entityValue\": {\n          \"code\": \"string\",\n          \"extraData1\": \"Main\",\n          \"extraData2\": \"Office\",\n          \"extraData3\": \"string\",\n          \"extraData4\": \"string\",\n          \"extraData5\": \"0000\",\n          \"name\": \"Los Angeles\"\n        },\n        \"entityValueInt\": 90,\n        \"numberValue\": 100,\n        \"stringValue\": \"1000 North Sunset Road\",\n        \"udaDataType\": \"booleanValue\",\n        \"udaName\": \"string\"\n      },\n      {\n        \"booleanValue\": true,\n        \"currencyValue\": 100,\n        \"dateValue\": \"1995-07-19T20:23:51.892Z\",\n        \"entityValue\": {\n          \"code\": \"string\",\n          \"extraData1\": \"Main\",\n          \"extraData2\": \"Office\",\n          \"extraData3\": \"string\",\n          \"extraData4\": \"string\",\n          \"extraData5\": \"0000\",\n          \"name\": \"Los Angeles\"\n        },\n        \"entityValueInt\": 90,\n        \"numberValue\": 100,\n        \"stringValue\": \"1000 North Sunset Road\",\n        \"udaDataType\": \"booleanValue\",\n        \"udaName\": \"string\"\n      }\n    ],\n    \"updateDate\": \"1992-12-06T19:01:32.985Z\",\n    \"vatAmount\": 5.99,\n    \"vatAmount2\": 5.99,\n    \"vatAmount3\": 5.99,\n    \"vatAmountApplied\": 5.99,\n    \"vatAmountApplied2\": 5.99,\n    \"vatAmountApplied3\": 5.99,\n    \"vatAmountAppliedRemainder\": 5.99,\n    \"vatAmountAppliedRemainder2\": 5.99,\n    \"vatAmountAppliedRemainder3\": 5.99,\n    \"vatAmountEntered\": 5.99,\n    \"vatAmountEntered2\": 5.99,\n    \"vatAmountEntered3\": 5.99,\n    \"vatLocation\": \"Canada\",\n    \"vatTaxPercentage\": 5,\n    \"vatTaxPercentage2\": 5,\n    \"vatTaxPercentage3\": 5,\n    \"vatTaxPercentageReclaim\": 100,\n    \"vatTaxPercentageReclaim2\": 100,\n    \"vatTaxPercentageReclaim3\": 100,\n    \"voucherInvoice\": \"0000006010110241\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6bab30e0-1954-4821-9d45-d343a410f8a1",
+    "name": "Api Documentation Accounts expense-report-line-item-controller API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

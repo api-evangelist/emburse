@@ -1,0 +1,894 @@
+{
+  "item": [
+    {
+      "id": "bcfee579-434f-49f5-ac35-5fd8d8a65d73",
+      "name": "person-controller-v3",
+      "description": {
+        "content": "Person Controller v3",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d775678-33c0-4799-8650-6eb8c5d088d5",
+          "name": "Search/get persons",
+          "request": {
+            "name": "Search/get persons",
+            "description": {
+              "content": "This web service provides ability to search/get persons by Name and Email.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "firstName",
+                  "value": "<string>",
+                  "description": "First Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastName",
+                  "value": "<string>",
+                  "description": "Last Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "emailAddress",
+                  "value": "<string>",
+                  "description": "Email address"
+                },
+                {
+                  "disabled": false,
+                  "key": "personUniqueId",
+                  "value": "<string>",
+                  "description": "Person Unique Identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "vendorCode1",
+                  "value": "<string>",
+                  "description": "Vendor Code1"
+                },
+                {
+                  "disabled": false,
+                  "key": "vendorCode2",
+                  "value": "<string>",
+                  "description": "Vendor Code2"
+                },
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Statuses"
+                },
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Statuses"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa7cee59-d62d-4336-8f00-04bd64023262",
+              "name": "Person was retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "emailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "personUniqueId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  },\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b86198b-be12-4f8f-8093-670ccf4dc842",
+              "name": "Processing or Data Issue - See errorMessage in response body for details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "emailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "personUniqueId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  },\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e46069bf-63a7-42c7-b3be-cf027ffa1b6c",
+              "name": "Customer Code is not authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "emailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "personUniqueId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  },\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c92ddddd-de84-44c4-a08b-49d09fa2e4ff",
+              "name": "All the parameters are empty",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "emailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "personUniqueId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  },\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "704b364f-c4d1-4da0-a36b-7637442b7a84",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "emailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "personUniqueId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  },\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"string\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31ac0047-152d-4c5c-aa94-b1e17fa605ce",
+          "name": "Create/update persons",
+          "request": {
+            "name": "Create/update persons",
+            "description": {
+              "content": "This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS. This endpoint tokenizes all PII data before sending the request to Chrome River.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fbabf41e-b035-4b27-895f-8704b18ff7eb",
+              "name": "All persons were processed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c826b5d-fbe4-437a-bbfe-5f6df0565ccf",
+              "name": "Response consists of successes and failures.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Multi-Status (WebDAV) (RFC 4918)",
+              "code": 207,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "982035c4-9a6d-4a3b-abfb-7bc7d2a87a4c",
+              "name": "Processing or Data Issue - See errorMessage in response body for details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d36d534c-3463-4328-b665-55b778a2c6ff",
+              "name": "All persons were not processed due to errors.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3f504b3-e587-44ce-9e3c-ea3f10397706",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a14ff180-8032-4dd9-a2d5-863b1addab60",
+    "name": "Api Documentation Accounts person-controller-v3 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

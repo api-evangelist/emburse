@@ -1,0 +1,649 @@
+{
+  "item": [
+    {
+      "id": "88e9247f-c4fd-4d4e-bc69-e4e2d893cf29",
+      "name": "person-controller-v2",
+      "description": {
+        "content": "Person Controller v2",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "155a8ffb-9963-4350-bd94-96518177b539",
+          "name": "Search/get persons",
+          "request": {
+            "name": "Search/get persons",
+            "description": {
+              "content": "This web service provides ability to search/get persons.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "personUniqueId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "primaryEmailAddress",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "includePersonUdas",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b3583a91-03d6-48d0-9557-12f62b70320c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "personUniqueId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "primaryEmailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includePersonUdas",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"defaultMosaic\": \"Primary\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"personUniqueId\": \"jdoe1\",\n  \"primaryCurrency\": \"USD\",\n  \"primaryEmailAddress\": \"john.doe@company.com\",\n  \"status\": \"Pending\",\n  \"username\": \"jdoe\",\n  \"personResourceId\": \"J066anNm\",\n  \"locale\": \"en\",\n  \"reportsToPersonUniqueId\": \"fsmith\",\n  \"title\": \"Sr. Manager\",\n  \"vendorCode1\": \"35171-001\",\n  \"vendorCode2\": \"35171-001\",\n  \"dateFormat\": \"MM/DD/YYYY\",\n  \"numberFormat\": \"###,###.00\",\n  \"vatLocation\": \"US\",\n  \"adminAccess\": false,\n  \"copyingItems\": true,\n  \"superDelegate\": true,\n  \"analyticsModules\": \"M01\",\n  \"analyticsUserType\": \"U01\",\n  \"analyticsView\": \"V01\",\n  \"alternateEmailAddresses\": [\n    \"string\",\n    \"string\"\n  ],\n  \"alternateCurrencies\": [\n    {\n      \"code\": \"USD\",\n      \"type\": \"ALT\"\n    },\n    {\n      \"code\": \"USD\",\n      \"type\": \"ALT\"\n    }\n  ],\n  \"personEntities\": [\n    {\n      \"entityCode\": \"string\",\n      \"entityTypeCode\": \"DEPT\",\n      \"roleName\": \"APReview\",\n      \"entityTypeName\": \"Department\",\n      \"entityName\": \"Administrative\"\n    },\n    {\n      \"entityCode\": \"string\",\n      \"entityTypeCode\": \"DEPT\",\n      \"roleName\": \"APReview\",\n      \"entityTypeName\": \"Department\",\n      \"entityName\": \"Administrative\"\n    }\n  ],\n  \"udas\": [\n    {\n      \"name\": \"StartDate\",\n      \"value\": \"2017-10-03 00:00:00\"\n    },\n    {\n      \"name\": \"StartDate\",\n      \"value\": \"2017-10-03 00:00:00\"\n    }\n  ],\n  \"interactionUserId\": \"JDOE\",\n  \"interactionAccountName\": \"JDOE\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36edda65-b599-4739-91ea-20e23386b520",
+          "name": "Create/update persons",
+          "request": {
+            "name": "Create/update persons",
+            "description": {
+              "content": "This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"defaultMosaic\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"personUniqueId\": \"<string>\",\n    \"primaryCurrency\": \"<string>\",\n    \"primaryEmailAddress\": \"<string>\",\n    \"status\": \"<string>\",\n    \"username\": \"<string>\",\n    \"personResourceId\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"reportsToPersonUniqueId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"vendorCode1\": \"<string>\",\n    \"vendorCode2\": \"<string>\",\n    \"dateFormat\": \"<string>\",\n    \"numberFormat\": \"<string>\",\n    \"vatLocation\": \"<string>\",\n    \"adminAccess\": \"<boolean>\",\n    \"copyingItems\": \"<boolean>\",\n    \"superDelegate\": \"<boolean>\",\n    \"analyticsModules\": \"<string>\",\n    \"analyticsUserType\": \"<string>\",\n    \"analyticsView\": \"<string>\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"interactionUserId\": \"<string>\",\n    \"interactionAccountName\": \"<string>\"\n  },\n  {\n    \"defaultMosaic\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"personUniqueId\": \"<string>\",\n    \"primaryCurrency\": \"<string>\",\n    \"primaryEmailAddress\": \"<string>\",\n    \"status\": \"<string>\",\n    \"username\": \"<string>\",\n    \"personResourceId\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"reportsToPersonUniqueId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"vendorCode1\": \"<string>\",\n    \"vendorCode2\": \"<string>\",\n    \"dateFormat\": \"<string>\",\n    \"numberFormat\": \"<string>\",\n    \"vatLocation\": \"<string>\",\n    \"adminAccess\": \"<boolean>\",\n    \"copyingItems\": \"<boolean>\",\n    \"superDelegate\": \"<boolean>\",\n    \"analyticsModules\": \"<string>\",\n    \"analyticsUserType\": \"<string>\",\n    \"analyticsView\": \"<string>\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"interactionUserId\": \"<string>\",\n    \"interactionAccountName\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "123b9731-5536-433d-a924-1458855ee01d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  },\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d81e621-9f12-41f1-90a9-c01140834be0",
+          "name": "Sanitizes a Person's PII (personally identifiable information. This includes first name, last name, email address, title, vendor 1 (employee number), and username. Your implementation must be configured to use this option. Please submit a case to request access if necessary",
+          "request": {
+            "name": "Sanitizes a Person's PII (personally identifiable information. This includes first name, last name, email address, title, vendor 1 (employee number), and username. Your implementation must be configured to use this option. Please submit a case to request access if necessary",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "persons",
+                ":personUniqueId",
+                "sanitize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "chain-id",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f1cba341-d4aa-4ec1-852d-0c42b6ff70a2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "persons",
+                    ":personUniqueId",
+                    "sanitize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "chain-id",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c1ab4e3-1d1f-4173-8e8c-b9a2e9d141a6",
+          "name": "Let a person subscribe/unsubscribe to notifications",
+          "request": {
+            "name": "Let a person subscribe/unsubscribe to notifications",
+            "description": {
+              "content": "This web service allows an external application to modify notification preferences.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "persons",
+                ":person-unique-id",
+                "subscriptions",
+                ":subscription-type"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "person-unique-id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscription-type",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"<string>\",\n  \"key_1\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "136c5b21-08cc-4417-84ed-e622fdafa413",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "persons",
+                    ":person-unique-id",
+                    "subscriptions",
+                    ":subscription-type"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person-unique-id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscription-type",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<string>\",\n  \"key_1\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aae87e5c-4913-46a2-8776-82c913d4e6ea",
+          "name": "Retrieve a person subscriptions",
+          "request": {
+            "name": "Retrieve a person subscriptions",
+            "description": {
+              "content": "This web service allows an external application to view a person notification preferences.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "persons",
+                ":person-unique-id",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "person-unique-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46badeec-f137-48c9-9a25-c0e0e72efe9d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "persons",
+                    ":person-unique-id",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person-unique-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f18c72f5-032e-4f35-b3f3-60bedbb98159",
+    "name": "Api Documentation Accounts person-controller-v2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

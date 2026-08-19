@@ -1,0 +1,327 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts Entity Type API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entity Type",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets list of Entity Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/entity-types",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch a list of Entity Types.  Only returns 100 max results of active entity types."
+        },
+        {
+          "info": {
+            "name": "Create an Entity Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/entity-types",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create an Entity Type. \n\nDoes not support the 'languages'. Use POST /v1/entity-types/{entityTypeCode}/languages instead. \n\nThis endpoint does not act as an upsert. It will fail for existing entities, unless the entity already is inactive. If the entity is inactive, it'll reactivate the entity."
+        },
+        {
+          "info": {
+            "name": "Get Entity Type by Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/entity-types/:code",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "path",
+                "description": "Entity Type code"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch an Entity Type by its Code. Only returns active entities."
+        },
+        {
+          "info": {
+            "name": "Put Entity Type by Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/v1/entity-types/:code",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "path",
+                "description": "Entity Type code"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to replace an Entity Type by its Code. \n\nDoes not support the 'languages'. Use PUT /v1/entity-types/{entityTypeCode}/languages/{languageCode} instead."
+        },
+        {
+          "info": {
+            "name": "Delete an entity-type",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/v1/entity-types/:entityTypeCode",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "entityTypeCode",
+                "value": "",
+                "type": "path",
+                "description": "EntityType code."
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to delete an Entity Type by entity-code"
+        },
+        {
+          "info": {
+            "name": "Gets list of language translations for the EntityType",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/entity-types/:entityTypeCode/languages",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "entityTypeCode",
+                "value": "",
+                "type": "path",
+                "description": "Entity Type code"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get a list of localized names for the set of languages under the EntityType."
+        },
+        {
+          "info": {
+            "name": "Add a language to an EntityType",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/entity-types/:entityTypeCode/languages",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "entityTypeCode",
+                "value": "",
+                "type": "path",
+                "description": "Entity Type code"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to add a localized name to an EntityType. \n\nThis endpoint is not an upsert. Languages that aleady exist cannot be modified except through PUT /entity-types/{entityTypeCode}/languages/{languageCode}"
+        },
+        {
+          "info": {
+            "name": "Modify a language to EntityType",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/v1/entity-types/:entityTypeCode/languages/:languageCode",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "entityTypeCode",
+                "value": "",
+                "type": "path",
+                "description": "Entity Type code"
+              },
+              {
+                "name": "languageCode",
+                "value": "",
+                "type": "path",
+                "description": "Entity Type langauge code"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to alter existing localized name to an EntityType"
+        },
+        {
+          "info": {
+            "name": "Delete a language fromEntityType",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/v1/entity-types/:entityTypeCode/languages/:languageCode",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "entityTypeCode",
+                "value": "",
+                "type": "path",
+                "description": "Entity Type code"
+              },
+              {
+                "name": "languageCode",
+                "value": "",
+                "type": "path",
+                "description": "Language code"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to delete a localized name from an EntityType"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

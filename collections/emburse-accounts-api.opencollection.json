@@ -1,0 +1,218 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get_accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/accounts",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The initial index from which to return the results."
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_accounts_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/accounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_accounts_by_account_pk_statement_lines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/accounts/:account_pk/statement-lines",
+            "params": [
+              {
+                "name": "account_pk",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The initial index from which to return the results."
+              },
+              {
+                "name": "number",
+                "value": "",
+                "type": "query",
+                "description": "number"
+              },
+              {
+                "name": "number__lt",
+                "value": "",
+                "type": "query",
+                "description": "number__lt"
+              },
+              {
+                "name": "number__gt",
+                "value": "",
+                "type": "query",
+                "description": "number__gt"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query",
+                "description": "start date"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "end date"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_accounts_by_account_pk_statement_lines_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/accounts/:account_pk/statement-lines/:id",
+            "params": [
+              {
+                "name": "account_pk",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "number",
+                "value": "",
+                "type": "query",
+                "description": "number"
+              },
+              {
+                "name": "number__lt",
+                "value": "",
+                "type": "query",
+                "description": "number__lt"
+              },
+              {
+                "name": "number__gt",
+                "value": "",
+                "type": "query",
+                "description": "number__gt"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query",
+                "description": "start date"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "end date"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

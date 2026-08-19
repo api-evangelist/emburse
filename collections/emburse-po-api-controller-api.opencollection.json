@@ -1,0 +1,337 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts po-api-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "po-api-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create PO",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/po-api",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create a PO"
+        },
+        {
+          "info": {
+            "name": "Create or update a PO",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/po-api/create-or-update",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create or update a PO"
+        },
+        {
+          "info": {
+            "name": "Delete PO",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://service.chromeriver.com/po-api/delete",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to delete a PO"
+        },
+        {
+          "info": {
+            "name": "Create Item Catalogs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/po-api/item/catalog/create-or-update",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows creating and updating multiple PO Item Catalogs in one call (up to 5000 items at a time). We determine ItemCatalog uniqueness from ItemNumber, VendorUniqueId, and CustomerCode."
+        },
+        {
+          "info": {
+            "name": "Search PO by po numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/po-api/poNumber/search",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "hasOpenQty",
+                "value": "",
+                "type": "query",
+                "description": "hasOpenQty"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to search for a list of POs by list of po numbers, in json array format"
+        },
+        {
+          "info": {
+            "name": "Get PO by po number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/po-api/poNumber/:poNumber",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "List of po dependencies to include in response object"
+              },
+              {
+                "name": "poNumber",
+                "value": "",
+                "type": "path",
+                "description": "PO number"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch a PO by po number"
+        },
+        {
+          "info": {
+            "name": "Get PO by poReqId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/po-api/poReqId/:poReqId",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "include",
+                "value": "",
+                "type": "query",
+                "description": "List of po dependencies to include in response object"
+              },
+              {
+                "name": "poReqId",
+                "value": "",
+                "type": "path",
+                "description": "poReqId"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch a PO by poReqId"
+        },
+        {
+          "info": {
+            "name": "Search PO",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/po-api/requestNumber/search",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to search for a list of POs"
+        },
+        {
+          "info": {
+            "name": "Get PO by request number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/po-api/requestNumber/:requestNumber",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "requestNumber",
+                "value": "",
+                "type": "path",
+                "description": "PO request number"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to fetch a PO by request number"
+        },
+        {
+          "info": {
+            "name": "Delete PO",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/po-api/:poNumber",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "poNumber",
+                "value": "",
+                "type": "path",
+                "description": "PO number"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to delete a PO"
+        },
+        {
+          "info": {
+            "name": "Update PO",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://service.chromeriver.com/po-api/:requestNumber",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "requestNumber",
+                "value": "",
+                "type": "path",
+                "description": "Request number"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to patch a PO"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1431 @@
+{
+  "item": [
+    {
+      "id": "f3a7e069-3dda-47a2-86e5-f92d142cd99d",
+      "name": "po-api-controller",
+      "description": {
+        "content": "Operations in PO APIs",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dc0c401a-00f3-4141-8b1b-9ac50d7a0013",
+          "name": "Create PO",
+          "request": {
+            "name": "Create PO",
+            "description": {
+              "content": "This web service allows an external application to create a PO",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"poCurrencyCode\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"cancelDate\": \"<dateTime>\",\n  \"createDate\": \"<dateTime>\",\n  \"creatorUniqueId\": \"<string>\",\n  \"customerAddresses\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"deliveryDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"lines\": [\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"<string>\"\n        },\n        {\n          \"note\": \"<string>\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxAmount\": \"<number>\",\n          \"taxCode\": \"<string>\",\n          \"taxRate\": \"<number>\"\n        },\n        {\n          \"taxAmount\": \"<number>\",\n          \"taxCode\": \"<string>\",\n          \"taxRate\": \"<number>\"\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    },\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"<string>\"\n        },\n        {\n          \"note\": \"<string>\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxAmount\": \"<number>\",\n          \"taxCode\": \"<string>\",\n          \"taxRate\": \"<number>\"\n        },\n        {\n          \"taxAmount\": \"<number>\",\n          \"taxCode\": \"<string>\",\n          \"taxRate\": \"<number>\"\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    }\n  ],\n  \"memo\": \"<string>\",\n  \"notes\": [\n    {\n      \"note\": \"<string>\"\n    },\n    {\n      \"note\": \"<string>\"\n    }\n  ],\n  \"plannedDeliveryCost\": \"<number>\",\n  \"poAmount\": \"<number>\",\n  \"poCurrencyCodeScale\": \"<integer>\",\n  \"poDate\": \"<dateTime>\",\n  \"poExchangeRate\": \"<number>\",\n  \"poReqId\": \"<string>\",\n  \"poUniqueId\": \"<string>\",\n  \"promiseDate\": \"<dateTime>\",\n  \"requesterUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"submitDate\": \"<dateTime>\",\n  \"termConditionText\": \"<string>\",\n  \"udas\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"updateDate\": \"<dateTime>\",\n  \"vendorAddressUniqueId\": \"<string>\",\n  \"vendorUniqueId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2da02839-a26c-4352-a712-a2812b2b25a8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"poCurrencyCode\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"cancelDate\": \"<dateTime>\",\n  \"createDate\": \"<dateTime>\",\n  \"creatorUniqueId\": \"<string>\",\n  \"customerAddresses\": [\n    {\n      \"name\": \"customerAddress1\",\n      \"value\": \"1234\"\n    },\n    {\n      \"name\": \"customerAddress2\",\n      \"value\": \"5678\"\n    },\n    {\n      \"name\": \"customerAddress3\",\n      \"value\": \"9012\"\n    }\n  ],\n  \"deliveryDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"lines\": [\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    },\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    }\n  ],\n  \"memo\": \"<string>\",\n  \"notes\": [\n    {\n      \"note\": \"API Testing Note1\"\n    },\n    {\n      \"note\": \"API Testing Note2\"\n    }\n  ],\n  \"plannedDeliveryCost\": \"<number>\",\n  \"poAmount\": \"<number>\",\n  \"poCurrencyCodeScale\": \"<integer>\",\n  \"poDate\": \"<dateTime>\",\n  \"poExchangeRate\": \"<number>\",\n  \"poReqId\": \"<string>\",\n  \"poUniqueId\": \"<string>\",\n  \"promiseDate\": \"<dateTime>\",\n  \"requesterUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"submitDate\": \"<dateTime>\",\n  \"termConditionText\": \"<string>\",\n  \"udas\": [\n    {\n      \"name\": \"<udaName>\",\n      \"value\": \"123\"\n    }\n  ],\n  \"updateDate\": \"<dateTime>\",\n  \"vendorAddressUniqueId\": \"<string>\",\n  \"vendorUniqueId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"poCurrencyCode\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"cancelDate\": \"<dateTime>\",\n  \"createDate\": \"<dateTime>\",\n  \"creatorUniqueId\": \"<string>\",\n  \"customerAddresses\": [\n    {\n      \"name\": \"customerAddress1\",\n      \"value\": \"1234\"\n    },\n    {\n      \"name\": \"customerAddress2\",\n      \"value\": \"5678\"\n    },\n    {\n      \"name\": \"customerAddress3\",\n      \"value\": \"9012\"\n    }\n  ],\n  \"deliveryDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"lines\": [\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    },\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    }\n  ],\n  \"memo\": \"<string>\",\n  \"notes\": [\n    {\n      \"note\": \"API Testing Note1\"\n    },\n    {\n      \"note\": \"API Testing Note2\"\n    }\n  ],\n  \"plannedDeliveryCost\": \"<number>\",\n  \"poAmount\": \"<number>\",\n  \"poCurrencyCodeScale\": \"<integer>\",\n  \"poDate\": \"<dateTime>\",\n  \"poExchangeRate\": \"<number>\",\n  \"poReqId\": \"<string>\",\n  \"poUniqueId\": \"<string>\",\n  \"promiseDate\": \"<dateTime>\",\n  \"requesterUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"submitDate\": \"<dateTime>\",\n  \"termConditionText\": \"<string>\",\n  \"udas\": [\n    {\n      \"name\": \"<udaName>\",\n      \"value\": \"123\"\n    }\n  ],\n  \"updateDate\": \"<dateTime>\",\n  \"vendorAddressUniqueId\": \"<string>\",\n  \"vendorUniqueId\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "980df1e9-b926-4e17-999b-21dbae0fd92d",
+          "name": "Create or update a PO",
+          "request": {
+            "name": "Create or update a PO",
+            "description": {
+              "content": "This web service allows an external application to create or update a PO",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                "create-or-update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7567225a-e794-4bbf-9b05-5402cfa963d8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "create-or-update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"poCurrencyCode\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"cancelDate\": \"<dateTime>\",\n  \"createDate\": \"<dateTime>\",\n  \"creatorUniqueId\": \"<string>\",\n  \"customerAddresses\": [\n    {\n      \"name\": \"customerAddress1\",\n      \"value\": \"1234\"\n    },\n    {\n      \"name\": \"customerAddress2\",\n      \"value\": \"5678\"\n    },\n    {\n      \"name\": \"customerAddress3\",\n      \"value\": \"9012\"\n    }\n  ],\n  \"deliveryDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"lines\": [\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    },\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    }\n  ],\n  \"memo\": \"<string>\",\n  \"notes\": [\n    {\n      \"note\": \"API Testing Note1\"\n    },\n    {\n      \"note\": \"API Testing Note2\"\n    }\n  ],\n  \"plannedDeliveryCost\": \"<number>\",\n  \"poAmount\": \"<number>\",\n  \"poCurrencyCodeScale\": \"<integer>\",\n  \"poDate\": \"<dateTime>\",\n  \"poExchangeRate\": \"<number>\",\n  \"poReqId\": \"<string>\",\n  \"poUniqueId\": \"<string>\",\n  \"promiseDate\": \"<dateTime>\",\n  \"requesterUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"submitDate\": \"<dateTime>\",\n  \"termConditionText\": \"<string>\",\n  \"udas\": [\n    {\n      \"name\": \"<udaName>\",\n      \"value\": \"123\"\n    }\n  ],\n  \"updateDate\": \"<dateTime>\",\n  \"vendorAddressUniqueId\": \"<string>\",\n  \"vendorUniqueId\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a10afbca-4456-4b9b-bc9b-b3221693b57b",
+          "name": "Delete PO",
+          "request": {
+            "name": "Delete PO",
+            "description": {
+              "content": "This web service allows an external application to delete a PO",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4012f87e-f0ff-4ddf-b647-6ba03ebe8551",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff05c85d-738b-45b0-acf1-e674679b24b2",
+          "name": "Create Item Catalogs",
+          "request": {
+            "name": "Create Item Catalogs",
+            "description": {
+              "content": "This web service allows creating and updating multiple PO Item Catalogs in one call (up to 5000 items at a time). We determine ItemCatalog uniqueness from ItemNumber, VendorUniqueId, and CustomerCode.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                "item",
+                "catalog",
+                "create-or-update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"currencyCode\": \"<string>\",\n    \"expenseTypeName\": \"<string>\",\n    \"isActive\": \"<boolean>\",\n    \"itemCategory\": \"<string>\",\n    \"itemName\": \"<string>\",\n    \"itemNumber\": \"<string>\",\n    \"itemUm\": \"<string>\",\n    \"itemUnitPrice\": \"<number>\",\n    \"vendorItemNumber\": \"<string>\",\n    \"vendorUniqueId\": \"<string>\",\n    \"itemDesc\": \"<string>\",\n    \"manufacturerItemNumber\": \"<string>\",\n    \"manufacturerName\": \"<string>\"\n  },\n  {\n    \"currencyCode\": \"<string>\",\n    \"expenseTypeName\": \"<string>\",\n    \"isActive\": \"<boolean>\",\n    \"itemCategory\": \"<string>\",\n    \"itemName\": \"<string>\",\n    \"itemNumber\": \"<string>\",\n    \"itemUm\": \"<string>\",\n    \"itemUnitPrice\": \"<number>\",\n    \"vendorItemNumber\": \"<string>\",\n    \"vendorUniqueId\": \"<string>\",\n    \"itemDesc\": \"<string>\",\n    \"manufacturerItemNumber\": \"<string>\",\n    \"manufacturerName\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a669626c-8bcb-4512-a812-3431fda5cffb",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "item",
+                    "catalog",
+                    "create-or-update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"currencyCode\": \"USD\",\n    \"expenseTypeName\": \"Entity Type Name\",\n    \"isActive\": true,\n    \"itemCategory\": \"Office Supplies\",\n    \"itemName\": \"Stapler\",\n    \"itemNumber\": \"<string>\",\n    \"itemUm\": \"EA\",\n    \"itemUnitPrice\": 10,\n    \"vendorItemNumber\": \"001ABCD1234\",\n    \"vendorUniqueId\": \"Test_Unique_Vendor_ID\",\n    \"itemDesc\": \"Test Item Description\",\n    \"manufacturerItemNumber\": \"ABCD123456\",\n    \"manufacturerName\": \"Test Mfr\"\n  },\n  {\n    \"currencyCode\": \"USD\",\n    \"expenseTypeName\": \"Entity Type Name\",\n    \"isActive\": true,\n    \"itemCategory\": \"Office Supplies\",\n    \"itemName\": \"Stapler\",\n    \"itemNumber\": \"<string>\",\n    \"itemUm\": \"EA\",\n    \"itemUnitPrice\": 10,\n    \"vendorItemNumber\": \"001ABCD1234\",\n    \"vendorUniqueId\": \"Test_Unique_Vendor_ID\",\n    \"itemDesc\": \"Test Item Description\",\n    \"manufacturerItemNumber\": \"ABCD123456\",\n    \"manufacturerName\": \"Test Mfr\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "68e6a4ce-a226-4380-afd9-815a02522154",
+              "name": "Customer Code or api key is not authorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "item",
+                    "catalog",
+                    "create-or-update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"currencyCode\": \"USD\",\n    \"expenseTypeName\": \"Entity Type Name\",\n    \"isActive\": true,\n    \"itemCategory\": \"Office Supplies\",\n    \"itemName\": \"Stapler\",\n    \"itemNumber\": \"<string>\",\n    \"itemUm\": \"EA\",\n    \"itemUnitPrice\": 10,\n    \"vendorItemNumber\": \"001ABCD1234\",\n    \"vendorUniqueId\": \"Test_Unique_Vendor_ID\",\n    \"itemDesc\": \"Test Item Description\",\n    \"manufacturerItemNumber\": \"ABCD123456\",\n    \"manufacturerName\": \"Test Mfr\"\n  },\n  {\n    \"currencyCode\": \"USD\",\n    \"expenseTypeName\": \"Entity Type Name\",\n    \"isActive\": true,\n    \"itemCategory\": \"Office Supplies\",\n    \"itemName\": \"Stapler\",\n    \"itemNumber\": \"<string>\",\n    \"itemUm\": \"EA\",\n    \"itemUnitPrice\": 10,\n    \"vendorItemNumber\": \"001ABCD1234\",\n    \"vendorUniqueId\": \"Test_Unique_Vendor_ID\",\n    \"itemDesc\": \"Test Item Description\",\n    \"manufacturerItemNumber\": \"ABCD123456\",\n    \"manufacturerName\": \"Test Mfr\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "31a2ec89-f16f-4487-b031-5f482c248fcc",
+              "name": "Unprocessable Entity error: \"Vendor not found for VendorUniqueId: ***\"\nUnprocessable Entity error: \"ExpenseTypeName not found for ItemName: ***\"\nUnprocessable Entity error: \"ItemName is a required field!\"\nUnprocessable Entity error: \"ItemUm is required field for ItemName: ***\"\nUnprocessable Entity error: \"CurrencyCode is required field for ItemName: ***\"\nUnprocessable Entity error: \"ItemUnitPrice is required field for ItemName: ***\"\nUnprocessable Entity error: \"ItemNumber is required field for ItemName: ***\"\nUnprocessable Entity error: \"VendorId or VendorUniqueId is required for ItemName: ***\"\nUnprocessable Entity error: \"ExpenseTypeId or ExpenseTypeName is required for ItemName: ***\"",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "item",
+                    "catalog",
+                    "create-or-update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"currencyCode\": \"USD\",\n    \"expenseTypeName\": \"Entity Type Name\",\n    \"isActive\": true,\n    \"itemCategory\": \"Office Supplies\",\n    \"itemName\": \"Stapler\",\n    \"itemNumber\": \"<string>\",\n    \"itemUm\": \"EA\",\n    \"itemUnitPrice\": 10,\n    \"vendorItemNumber\": \"001ABCD1234\",\n    \"vendorUniqueId\": \"Test_Unique_Vendor_ID\",\n    \"itemDesc\": \"Test Item Description\",\n    \"manufacturerItemNumber\": \"ABCD123456\",\n    \"manufacturerName\": \"Test Mfr\"\n  },\n  {\n    \"currencyCode\": \"USD\",\n    \"expenseTypeName\": \"Entity Type Name\",\n    \"isActive\": true,\n    \"itemCategory\": \"Office Supplies\",\n    \"itemName\": \"Stapler\",\n    \"itemNumber\": \"<string>\",\n    \"itemUm\": \"EA\",\n    \"itemUnitPrice\": 10,\n    \"vendorItemNumber\": \"001ABCD1234\",\n    \"vendorUniqueId\": \"Test_Unique_Vendor_ID\",\n    \"itemDesc\": \"Test Item Description\",\n    \"manufacturerItemNumber\": \"ABCD123456\",\n    \"manufacturerName\": \"Test Mfr\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69313652-5eae-4aeb-9fa5-e65da184f8d4",
+          "name": "Search PO by po numbers",
+          "request": {
+            "name": "Search PO by po numbers",
+            "description": {
+              "content": "This web service allows an external application to search for a list of POs by list of po numbers, in json array format",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                "poNumber",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "hasOpenQty",
+                  "value": "false",
+                  "description": "hasOpenQty"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "554448d2-469e-47c9-9d96-218e2182e52f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "poNumber",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "hasOpenQty",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"poCurrencyCode\": \"<string>\",\n    \"poNumber\": \"<string>\",\n    \"cancelDate\": \"<dateTime>\",\n    \"createDate\": \"<dateTime>\",\n    \"creatorUniqueId\": \"<string>\",\n    \"customerAddresses\": [\n      {\n        \"name\": \"customerAddress1\",\n        \"value\": \"1234\"\n      },\n      {\n        \"name\": \"customerAddress2\",\n        \"value\": \"5678\"\n      },\n      {\n        \"name\": \"customerAddress3\",\n        \"value\": \"9012\"\n      }\n    ],\n    \"deliveryDate\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"lines\": [\n      {\n        \"lineItemTypeName\": \"<string>\",\n        \"adjustedAmount\": \"<number>\",\n        \"adjustedQuantity\": \"<number>\",\n        \"amount\": \"<number>\",\n        \"cancelDate\": \"<dateTime>\",\n        \"costCode\": \"<string>\",\n        \"createDate\": \"<dateTime>\",\n        \"customerAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"deliveryDate\": \"<dateTime>\",\n        \"description\": \"<string>\",\n        \"extLineItemReference\": \"<string>\",\n        \"itemDesc\": \"<string>\",\n        \"itemId\": \"<integer>\",\n        \"itemQty\": \"<number>\",\n        \"itemUm\": \"<string>\",\n        \"itemUnitPrice\": \"<number>\",\n        \"ledgerNumber\": \"<string>\",\n        \"matterNumber\": \"<string>\",\n        \"matterOnSelects\": [\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS1\"\n          },\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS2\"\n          }\n        ],\n        \"notes\": [\n          {\n            \"note\": \"API Testing Note1\"\n          },\n          {\n            \"note\": \"API Testing Note2\"\n          }\n        ],\n        \"openAmount\": \"<number>\",\n        \"openQty\": \"<number>\",\n        \"personUniqueId\": \"<string>\",\n        \"promiseDate\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"termConditionText\": \"<string>\",\n        \"udas\": [\n          {\n            \"name\": \"<udaName>\",\n            \"value\": \"123\"\n          }\n        ],\n        \"updateDate\": \"<dateTime>\",\n        \"vats\": [\n          {\n            \"taxCode\": \"09RZ\",\n            \"taxRate\": 20,\n            \"taxAmount\": 15\n          }\n        ],\n        \"vendorItemId\": \"<string>\"\n      },\n      {\n        \"lineItemTypeName\": \"<string>\",\n        \"adjustedAmount\": \"<number>\",\n        \"adjustedQuantity\": \"<number>\",\n        \"amount\": \"<number>\",\n        \"cancelDate\": \"<dateTime>\",\n        \"costCode\": \"<string>\",\n        \"createDate\": \"<dateTime>\",\n        \"customerAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"deliveryDate\": \"<dateTime>\",\n        \"description\": \"<string>\",\n        \"extLineItemReference\": \"<string>\",\n        \"itemDesc\": \"<string>\",\n        \"itemId\": \"<integer>\",\n        \"itemQty\": \"<number>\",\n        \"itemUm\": \"<string>\",\n        \"itemUnitPrice\": \"<number>\",\n        \"ledgerNumber\": \"<string>\",\n        \"matterNumber\": \"<string>\",\n        \"matterOnSelects\": [\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS1\"\n          },\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS2\"\n          }\n        ],\n        \"notes\": [\n          {\n            \"note\": \"API Testing Note1\"\n          },\n          {\n            \"note\": \"API Testing Note2\"\n          }\n        ],\n        \"openAmount\": \"<number>\",\n        \"openQty\": \"<number>\",\n        \"personUniqueId\": \"<string>\",\n        \"promiseDate\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"termConditionText\": \"<string>\",\n        \"udas\": [\n          {\n            \"name\": \"<udaName>\",\n            \"value\": \"123\"\n          }\n        ],\n        \"updateDate\": \"<dateTime>\",\n        \"vats\": [\n          {\n            \"taxCode\": \"09RZ\",\n            \"taxRate\": 20,\n            \"taxAmount\": 15\n          }\n        ],\n        \"vendorItemId\": \"<string>\"\n      }\n    ],\n    \"memo\": \"<string>\",\n    \"notes\": [\n      {\n        \"note\": \"API Testing Note1\"\n      },\n      {\n        \"note\": \"API Testing Note2\"\n      }\n    ],\n    \"plannedDeliveryCost\": \"<number>\",\n    \"poAmount\": \"<number>\",\n    \"poCurrencyCodeScale\": \"<integer>\",\n    \"poDate\": \"<dateTime>\",\n    \"poExchangeRate\": \"<number>\",\n    \"poReqId\": \"<string>\",\n    \"poUniqueId\": \"<string>\",\n    \"promiseDate\": \"<dateTime>\",\n    \"requesterUniqueId\": \"<string>\",\n    \"status\": \"<string>\",\n    \"submitDate\": \"<dateTime>\",\n    \"termConditionText\": \"<string>\",\n    \"udas\": [\n      {\n        \"name\": \"<udaName>\",\n        \"value\": \"123\"\n      }\n    ],\n    \"updateDate\": \"<dateTime>\",\n    \"vendorAddressUniqueId\": \"<string>\",\n    \"vendorUniqueId\": \"<string>\"\n  },\n  {\n    \"poCurrencyCode\": \"<string>\",\n    \"poNumber\": \"<string>\",\n    \"cancelDate\": \"<dateTime>\",\n    \"createDate\": \"<dateTime>\",\n    \"creatorUniqueId\": \"<string>\",\n    \"customerAddresses\": [\n      {\n        \"name\": \"customerAddress1\",\n        \"value\": \"1234\"\n      },\n      {\n        \"name\": \"customerAddress2\",\n        \"value\": \"5678\"\n      },\n      {\n        \"name\": \"customerAddress3\",\n        \"value\": \"9012\"\n      }\n    ],\n    \"deliveryDate\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"lines\": [\n      {\n        \"lineItemTypeName\": \"<string>\",\n        \"adjustedAmount\": \"<number>\",\n        \"adjustedQuantity\": \"<number>\",\n        \"amount\": \"<number>\",\n        \"cancelDate\": \"<dateTime>\",\n        \"costCode\": \"<string>\",\n        \"createDate\": \"<dateTime>\",\n        \"customerAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"deliveryDate\": \"<dateTime>\",\n        \"description\": \"<string>\",\n        \"extLineItemReference\": \"<string>\",\n        \"itemDesc\": \"<string>\",\n        \"itemId\": \"<integer>\",\n        \"itemQty\": \"<number>\",\n        \"itemUm\": \"<string>\",\n        \"itemUnitPrice\": \"<number>\",\n        \"ledgerNumber\": \"<string>\",\n        \"matterNumber\": \"<string>\",\n        \"matterOnSelects\": [\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS1\"\n          },\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS2\"\n          }\n        ],\n        \"notes\": [\n          {\n            \"note\": \"API Testing Note1\"\n          },\n          {\n            \"note\": \"API Testing Note2\"\n          }\n        ],\n        \"openAmount\": \"<number>\",\n        \"openQty\": \"<number>\",\n        \"personUniqueId\": \"<string>\",\n        \"promiseDate\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"termConditionText\": \"<string>\",\n        \"udas\": [\n          {\n            \"name\": \"<udaName>\",\n            \"value\": \"123\"\n          }\n        ],\n        \"updateDate\": \"<dateTime>\",\n        \"vats\": [\n          {\n            \"taxCode\": \"09RZ\",\n            \"taxRate\": 20,\n            \"taxAmount\": 15\n          }\n        ],\n        \"vendorItemId\": \"<string>\"\n      },\n      {\n        \"lineItemTypeName\": \"<string>\",\n        \"adjustedAmount\": \"<number>\",\n        \"adjustedQuantity\": \"<number>\",\n        \"amount\": \"<number>\",\n        \"cancelDate\": \"<dateTime>\",\n        \"costCode\": \"<string>\",\n        \"createDate\": \"<dateTime>\",\n        \"customerAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"deliveryDate\": \"<dateTime>\",\n        \"description\": \"<string>\",\n        \"extLineItemReference\": \"<string>\",\n        \"itemDesc\": \"<string>\",\n        \"itemId\": \"<integer>\",\n        \"itemQty\": \"<number>\",\n        \"itemUm\": \"<string>\",\n        \"itemUnitPrice\": \"<number>\",\n        \"ledgerNumber\": \"<string>\",\n        \"matterNumber\": \"<string>\",\n        \"matterOnSelects\": [\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS1\"\n          },\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS2\"\n          }\n        ],\n        \"notes\": [\n          {\n            \"note\": \"API Testing Note1\"\n          },\n          {\n            \"note\": \"API Testing Note2\"\n          }\n        ],\n        \"openAmount\": \"<number>\",\n        \"openQty\": \"<number>\",\n        \"personUniqueId\": \"<string>\",\n        \"promiseDate\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"termConditionText\": \"<string>\",\n        \"udas\": [\n          {\n            \"name\": \"<udaName>\",\n            \"value\": \"123\"\n          }\n        ],\n        \"updateDate\": \"<dateTime>\",\n        \"vats\": [\n          {\n            \"taxCode\": \"09RZ\",\n            \"taxRate\": 20,\n            \"taxAmount\": 15\n          }\n        ],\n        \"vendorItemId\": \"<string>\"\n      }\n    ],\n    \"memo\": \"<string>\",\n    \"notes\": [\n      {\n        \"note\": \"API Testing Note1\"\n      },\n      {\n        \"note\": \"API Testing Note2\"\n      }\n    ],\n    \"plannedDeliveryCost\": \"<number>\",\n    \"poAmount\": \"<number>\",\n    \"poCurrencyCodeScale\": \"<integer>\",\n    \"poDate\": \"<dateTime>\",\n    \"poExchangeRate\": \"<number>\",\n    \"poReqId\": \"<string>\",\n    \"poUniqueId\": \"<string>\",\n    \"promiseDate\": \"<dateTime>\",\n    \"requesterUniqueId\": \"<string>\",\n    \"status\": \"<string>\",\n    \"submitDate\": \"<dateTime>\",\n    \"termConditionText\": \"<string>\",\n    \"udas\": [\n      {\n        \"name\": \"<udaName>\",\n        \"value\": \"123\"\n      }\n    ],\n    \"updateDate\": \"<dateTime>\",\n    \"vendorAddressUniqueId\": \"<string>\",\n    \"vendorUniqueId\": \"<string>\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f17677cd-bd57-48cf-afae-0cd6ee8034a7",
+          "name": "Get PO by po number",
+          "request": {
+            "name": "Get PO by po number",
+            "description": {
+              "content": "This web service allows an external application to fetch a PO by po number",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                "poNumber",
+                ":poNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "line.vats",
+                  "description": "List of po dependencies to include in response object"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "poNumber",
+                  "description": "(Required) PO number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dda702c4-2bfd-452a-b91f-232311237c32",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "poNumber",
+                    ":poNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "include",
+                      "value": "lines"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "poNumber",
+                      "description": "(Required) PO number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"poCurrencyCode\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"cancelDate\": \"<dateTime>\",\n  \"createDate\": \"<dateTime>\",\n  \"creatorUniqueId\": \"<string>\",\n  \"customerAddresses\": [\n    {\n      \"name\": \"customerAddress1\",\n      \"value\": \"1234\"\n    },\n    {\n      \"name\": \"customerAddress2\",\n      \"value\": \"5678\"\n    },\n    {\n      \"name\": \"customerAddress3\",\n      \"value\": \"9012\"\n    }\n  ],\n  \"deliveryDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"lines\": [\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    },\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    }\n  ],\n  \"memo\": \"<string>\",\n  \"notes\": [\n    {\n      \"note\": \"API Testing Note1\"\n    },\n    {\n      \"note\": \"API Testing Note2\"\n    }\n  ],\n  \"plannedDeliveryCost\": \"<number>\",\n  \"poAmount\": \"<number>\",\n  \"poCurrencyCodeScale\": \"<integer>\",\n  \"poDate\": \"<dateTime>\",\n  \"poExchangeRate\": \"<number>\",\n  \"poReqId\": \"<string>\",\n  \"poUniqueId\": \"<string>\",\n  \"promiseDate\": \"<dateTime>\",\n  \"requesterUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"submitDate\": \"<dateTime>\",\n  \"termConditionText\": \"<string>\",\n  \"udas\": [\n    {\n      \"name\": \"<udaName>\",\n      \"value\": \"123\"\n    }\n  ],\n  \"updateDate\": \"<dateTime>\",\n  \"vendorAddressUniqueId\": \"<string>\",\n  \"vendorUniqueId\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5bcfa7fb-6d35-4b04-a005-6d62dfbaad0d",
+          "name": "Get PO by poReqId",
+          "request": {
+            "name": "Get PO by poReqId",
+            "description": {
+              "content": "This web service allows an external application to fetch a PO by poReqId",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                "poReqId",
+                ":poReqId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "line.vats",
+                  "description": "List of po dependencies to include in response object"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "poReqId",
+                  "description": "(Required) poReqId"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7c1452c9-b1fe-41cd-9deb-6d76dc06915f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "poReqId",
+                    ":poReqId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "include",
+                      "value": "lines"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "poReqId",
+                      "description": "(Required) poReqId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"poCurrencyCode\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"cancelDate\": \"<dateTime>\",\n  \"createDate\": \"<dateTime>\",\n  \"creatorUniqueId\": \"<string>\",\n  \"customerAddresses\": [\n    {\n      \"name\": \"customerAddress1\",\n      \"value\": \"1234\"\n    },\n    {\n      \"name\": \"customerAddress2\",\n      \"value\": \"5678\"\n    },\n    {\n      \"name\": \"customerAddress3\",\n      \"value\": \"9012\"\n    }\n  ],\n  \"deliveryDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"lines\": [\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    },\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    }\n  ],\n  \"memo\": \"<string>\",\n  \"notes\": [\n    {\n      \"note\": \"API Testing Note1\"\n    },\n    {\n      \"note\": \"API Testing Note2\"\n    }\n  ],\n  \"plannedDeliveryCost\": \"<number>\",\n  \"poAmount\": \"<number>\",\n  \"poCurrencyCodeScale\": \"<integer>\",\n  \"poDate\": \"<dateTime>\",\n  \"poExchangeRate\": \"<number>\",\n  \"poReqId\": \"<string>\",\n  \"poUniqueId\": \"<string>\",\n  \"promiseDate\": \"<dateTime>\",\n  \"requesterUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"submitDate\": \"<dateTime>\",\n  \"termConditionText\": \"<string>\",\n  \"udas\": [\n    {\n      \"name\": \"<udaName>\",\n      \"value\": \"123\"\n    }\n  ],\n  \"updateDate\": \"<dateTime>\",\n  \"vendorAddressUniqueId\": \"<string>\",\n  \"vendorUniqueId\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f473acd7-bddb-4bd7-bc2f-1d87b543f395",
+          "name": "Search PO",
+          "request": {
+            "name": "Search PO",
+            "description": {
+              "content": "This web service allows an external application to search for a list of POs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                "requestNumber",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestNumber\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ec6de0b3-3e6f-41ac-84a1-2330cc6d5e9e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "requestNumber",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requestNumber\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"poCurrencyCode\": \"<string>\",\n    \"poNumber\": \"<string>\",\n    \"cancelDate\": \"<dateTime>\",\n    \"createDate\": \"<dateTime>\",\n    \"creatorUniqueId\": \"<string>\",\n    \"customerAddresses\": [\n      {\n        \"name\": \"customerAddress1\",\n        \"value\": \"1234\"\n      },\n      {\n        \"name\": \"customerAddress2\",\n        \"value\": \"5678\"\n      },\n      {\n        \"name\": \"customerAddress3\",\n        \"value\": \"9012\"\n      }\n    ],\n    \"deliveryDate\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"lines\": [\n      {\n        \"lineItemTypeName\": \"<string>\",\n        \"adjustedAmount\": \"<number>\",\n        \"adjustedQuantity\": \"<number>\",\n        \"amount\": \"<number>\",\n        \"cancelDate\": \"<dateTime>\",\n        \"costCode\": \"<string>\",\n        \"createDate\": \"<dateTime>\",\n        \"customerAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"deliveryDate\": \"<dateTime>\",\n        \"description\": \"<string>\",\n        \"extLineItemReference\": \"<string>\",\n        \"itemDesc\": \"<string>\",\n        \"itemId\": \"<integer>\",\n        \"itemQty\": \"<number>\",\n        \"itemUm\": \"<string>\",\n        \"itemUnitPrice\": \"<number>\",\n        \"ledgerNumber\": \"<string>\",\n        \"matterNumber\": \"<string>\",\n        \"matterOnSelects\": [\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS1\"\n          },\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS2\"\n          }\n        ],\n        \"notes\": [\n          {\n            \"note\": \"API Testing Note1\"\n          },\n          {\n            \"note\": \"API Testing Note2\"\n          }\n        ],\n        \"openAmount\": \"<number>\",\n        \"openQty\": \"<number>\",\n        \"personUniqueId\": \"<string>\",\n        \"promiseDate\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"termConditionText\": \"<string>\",\n        \"udas\": [\n          {\n            \"name\": \"<udaName>\",\n            \"value\": \"123\"\n          }\n        ],\n        \"updateDate\": \"<dateTime>\",\n        \"vats\": [\n          {\n            \"taxCode\": \"09RZ\",\n            \"taxRate\": 20,\n            \"taxAmount\": 15\n          }\n        ],\n        \"vendorItemId\": \"<string>\"\n      },\n      {\n        \"lineItemTypeName\": \"<string>\",\n        \"adjustedAmount\": \"<number>\",\n        \"adjustedQuantity\": \"<number>\",\n        \"amount\": \"<number>\",\n        \"cancelDate\": \"<dateTime>\",\n        \"costCode\": \"<string>\",\n        \"createDate\": \"<dateTime>\",\n        \"customerAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"deliveryDate\": \"<dateTime>\",\n        \"description\": \"<string>\",\n        \"extLineItemReference\": \"<string>\",\n        \"itemDesc\": \"<string>\",\n        \"itemId\": \"<integer>\",\n        \"itemQty\": \"<number>\",\n        \"itemUm\": \"<string>\",\n        \"itemUnitPrice\": \"<number>\",\n        \"ledgerNumber\": \"<string>\",\n        \"matterNumber\": \"<string>\",\n        \"matterOnSelects\": [\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS1\"\n          },\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS2\"\n          }\n        ],\n        \"notes\": [\n          {\n            \"note\": \"API Testing Note1\"\n          },\n          {\n            \"note\": \"API Testing Note2\"\n          }\n        ],\n        \"openAmount\": \"<number>\",\n        \"openQty\": \"<number>\",\n        \"personUniqueId\": \"<string>\",\n        \"promiseDate\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"termConditionText\": \"<string>\",\n        \"udas\": [\n          {\n            \"name\": \"<udaName>\",\n            \"value\": \"123\"\n          }\n        ],\n        \"updateDate\": \"<dateTime>\",\n        \"vats\": [\n          {\n            \"taxCode\": \"09RZ\",\n            \"taxRate\": 20,\n            \"taxAmount\": 15\n          }\n        ],\n        \"vendorItemId\": \"<string>\"\n      }\n    ],\n    \"memo\": \"<string>\",\n    \"notes\": [\n      {\n        \"note\": \"API Testing Note1\"\n      },\n      {\n        \"note\": \"API Testing Note2\"\n      }\n    ],\n    \"plannedDeliveryCost\": \"<number>\",\n    \"poAmount\": \"<number>\",\n    \"poCurrencyCodeScale\": \"<integer>\",\n    \"poDate\": \"<dateTime>\",\n    \"poExchangeRate\": \"<number>\",\n    \"poReqId\": \"<string>\",\n    \"poUniqueId\": \"<string>\",\n    \"promiseDate\": \"<dateTime>\",\n    \"requesterUniqueId\": \"<string>\",\n    \"status\": \"<string>\",\n    \"submitDate\": \"<dateTime>\",\n    \"termConditionText\": \"<string>\",\n    \"udas\": [\n      {\n        \"name\": \"<udaName>\",\n        \"value\": \"123\"\n      }\n    ],\n    \"updateDate\": \"<dateTime>\",\n    \"vendorAddressUniqueId\": \"<string>\",\n    \"vendorUniqueId\": \"<string>\"\n  },\n  {\n    \"poCurrencyCode\": \"<string>\",\n    \"poNumber\": \"<string>\",\n    \"cancelDate\": \"<dateTime>\",\n    \"createDate\": \"<dateTime>\",\n    \"creatorUniqueId\": \"<string>\",\n    \"customerAddresses\": [\n      {\n        \"name\": \"customerAddress1\",\n        \"value\": \"1234\"\n      },\n      {\n        \"name\": \"customerAddress2\",\n        \"value\": \"5678\"\n      },\n      {\n        \"name\": \"customerAddress3\",\n        \"value\": \"9012\"\n      }\n    ],\n    \"deliveryDate\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"lines\": [\n      {\n        \"lineItemTypeName\": \"<string>\",\n        \"adjustedAmount\": \"<number>\",\n        \"adjustedQuantity\": \"<number>\",\n        \"amount\": \"<number>\",\n        \"cancelDate\": \"<dateTime>\",\n        \"costCode\": \"<string>\",\n        \"createDate\": \"<dateTime>\",\n        \"customerAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"deliveryDate\": \"<dateTime>\",\n        \"description\": \"<string>\",\n        \"extLineItemReference\": \"<string>\",\n        \"itemDesc\": \"<string>\",\n        \"itemId\": \"<integer>\",\n        \"itemQty\": \"<number>\",\n        \"itemUm\": \"<string>\",\n        \"itemUnitPrice\": \"<number>\",\n        \"ledgerNumber\": \"<string>\",\n        \"matterNumber\": \"<string>\",\n        \"matterOnSelects\": [\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS1\"\n          },\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS2\"\n          }\n        ],\n        \"notes\": [\n          {\n            \"note\": \"API Testing Note1\"\n          },\n          {\n            \"note\": \"API Testing Note2\"\n          }\n        ],\n        \"openAmount\": \"<number>\",\n        \"openQty\": \"<number>\",\n        \"personUniqueId\": \"<string>\",\n        \"promiseDate\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"termConditionText\": \"<string>\",\n        \"udas\": [\n          {\n            \"name\": \"<udaName>\",\n            \"value\": \"123\"\n          }\n        ],\n        \"updateDate\": \"<dateTime>\",\n        \"vats\": [\n          {\n            \"taxCode\": \"09RZ\",\n            \"taxRate\": 20,\n            \"taxAmount\": 15\n          }\n        ],\n        \"vendorItemId\": \"<string>\"\n      },\n      {\n        \"lineItemTypeName\": \"<string>\",\n        \"adjustedAmount\": \"<number>\",\n        \"adjustedQuantity\": \"<number>\",\n        \"amount\": \"<number>\",\n        \"cancelDate\": \"<dateTime>\",\n        \"costCode\": \"<string>\",\n        \"createDate\": \"<dateTime>\",\n        \"customerAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"deliveryDate\": \"<dateTime>\",\n        \"description\": \"<string>\",\n        \"extLineItemReference\": \"<string>\",\n        \"itemDesc\": \"<string>\",\n        \"itemId\": \"<integer>\",\n        \"itemQty\": \"<number>\",\n        \"itemUm\": \"<string>\",\n        \"itemUnitPrice\": \"<number>\",\n        \"ledgerNumber\": \"<string>\",\n        \"matterNumber\": \"<string>\",\n        \"matterOnSelects\": [\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS1\"\n          },\n          {\n            \"value\": \"<EntityTypeCode>\",\n            \"name\": \"<EntityCode>\",\n            \"type\": \"MOS2\"\n          }\n        ],\n        \"notes\": [\n          {\n            \"note\": \"API Testing Note1\"\n          },\n          {\n            \"note\": \"API Testing Note2\"\n          }\n        ],\n        \"openAmount\": \"<number>\",\n        \"openQty\": \"<number>\",\n        \"personUniqueId\": \"<string>\",\n        \"promiseDate\": \"<dateTime>\",\n        \"status\": \"<string>\",\n        \"termConditionText\": \"<string>\",\n        \"udas\": [\n          {\n            \"name\": \"<udaName>\",\n            \"value\": \"123\"\n          }\n        ],\n        \"updateDate\": \"<dateTime>\",\n        \"vats\": [\n          {\n            \"taxCode\": \"09RZ\",\n            \"taxRate\": 20,\n            \"taxAmount\": 15\n          }\n        ],\n        \"vendorItemId\": \"<string>\"\n      }\n    ],\n    \"memo\": \"<string>\",\n    \"notes\": [\n      {\n        \"note\": \"API Testing Note1\"\n      },\n      {\n        \"note\": \"API Testing Note2\"\n      }\n    ],\n    \"plannedDeliveryCost\": \"<number>\",\n    \"poAmount\": \"<number>\",\n    \"poCurrencyCodeScale\": \"<integer>\",\n    \"poDate\": \"<dateTime>\",\n    \"poExchangeRate\": \"<number>\",\n    \"poReqId\": \"<string>\",\n    \"poUniqueId\": \"<string>\",\n    \"promiseDate\": \"<dateTime>\",\n    \"requesterUniqueId\": \"<string>\",\n    \"status\": \"<string>\",\n    \"submitDate\": \"<dateTime>\",\n    \"termConditionText\": \"<string>\",\n    \"udas\": [\n      {\n        \"name\": \"<udaName>\",\n        \"value\": \"123\"\n      }\n    ],\n    \"updateDate\": \"<dateTime>\",\n    \"vendorAddressUniqueId\": \"<string>\",\n    \"vendorUniqueId\": \"<string>\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e160a362-83cd-4c79-99df-5e18ddcd6090",
+          "name": "Get PO by request number",
+          "request": {
+            "name": "Get PO by request number",
+            "description": {
+              "content": "This web service allows an external application to fetch a PO by request number",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                "requestNumber",
+                ":requestNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "requestNumber",
+                  "description": "(Required) PO request number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b567e76c-ea8a-4f6c-b4e7-a9203ed5d4e3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    "requestNumber",
+                    ":requestNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "requestNumber",
+                      "description": "(Required) PO request number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"poCurrencyCode\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"cancelDate\": \"<dateTime>\",\n  \"createDate\": \"<dateTime>\",\n  \"creatorUniqueId\": \"<string>\",\n  \"customerAddresses\": [\n    {\n      \"name\": \"customerAddress1\",\n      \"value\": \"1234\"\n    },\n    {\n      \"name\": \"customerAddress2\",\n      \"value\": \"5678\"\n    },\n    {\n      \"name\": \"customerAddress3\",\n      \"value\": \"9012\"\n    }\n  ],\n  \"deliveryDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"lines\": [\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    },\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    }\n  ],\n  \"memo\": \"<string>\",\n  \"notes\": [\n    {\n      \"note\": \"API Testing Note1\"\n    },\n    {\n      \"note\": \"API Testing Note2\"\n    }\n  ],\n  \"plannedDeliveryCost\": \"<number>\",\n  \"poAmount\": \"<number>\",\n  \"poCurrencyCodeScale\": \"<integer>\",\n  \"poDate\": \"<dateTime>\",\n  \"poExchangeRate\": \"<number>\",\n  \"poReqId\": \"<string>\",\n  \"poUniqueId\": \"<string>\",\n  \"promiseDate\": \"<dateTime>\",\n  \"requesterUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"submitDate\": \"<dateTime>\",\n  \"termConditionText\": \"<string>\",\n  \"udas\": [\n    {\n      \"name\": \"<udaName>\",\n      \"value\": \"123\"\n    }\n  ],\n  \"updateDate\": \"<dateTime>\",\n  \"vendorAddressUniqueId\": \"<string>\",\n  \"vendorUniqueId\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d2b7677-5baf-4eca-acf4-07957640af35",
+          "name": "Delete PO",
+          "request": {
+            "name": "Delete PO",
+            "description": {
+              "content": "This web service allows an external application to delete a PO",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                ":poNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "poNumber",
+                  "description": "(Required) PO number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6bfe6a44-0445-4aed-92d4-e79ffaa9ac46",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    ":poNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "poNumber",
+                      "description": "(Required) PO number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5681f426-bdeb-4b5e-b503-59ed9520f662",
+          "name": "Update PO",
+          "request": {
+            "name": "Update PO",
+            "description": {
+              "content": "This web service allows an external application to patch a PO",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "po-api",
+                ":requestNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "requestNumber",
+                  "description": "(Required) Request number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication ",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"<object>\",\n  \"key_1\": \"<object>\",\n  \"key_2\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c0725eff-4746-431b-8215-7c9c8d14a7a0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po-api",
+                    ":requestNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "requestNumber",
+                      "description": "(Required) Request number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication ",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"poCurrencyCode\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"cancelDate\": \"<dateTime>\",\n  \"createDate\": \"<dateTime>\",\n  \"creatorUniqueId\": \"<string>\",\n  \"customerAddresses\": [\n    {\n      \"name\": \"customerAddress1\",\n      \"value\": \"1234\"\n    },\n    {\n      \"name\": \"customerAddress2\",\n      \"value\": \"5678\"\n    },\n    {\n      \"name\": \"customerAddress3\",\n      \"value\": \"9012\"\n    }\n  ],\n  \"deliveryDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"lines\": [\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    },\n    {\n      \"lineItemTypeName\": \"<string>\",\n      \"adjustedAmount\": \"<number>\",\n      \"adjustedQuantity\": \"<number>\",\n      \"amount\": \"<number>\",\n      \"cancelDate\": \"<dateTime>\",\n      \"costCode\": \"<string>\",\n      \"createDate\": \"<dateTime>\",\n      \"customerAddresses\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"deliveryDate\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"extLineItemReference\": \"<string>\",\n      \"itemDesc\": \"<string>\",\n      \"itemId\": \"<integer>\",\n      \"itemQty\": \"<number>\",\n      \"itemUm\": \"<string>\",\n      \"itemUnitPrice\": \"<number>\",\n      \"ledgerNumber\": \"<string>\",\n      \"matterNumber\": \"<string>\",\n      \"matterOnSelects\": [\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS1\"\n        },\n        {\n          \"value\": \"<EntityTypeCode>\",\n          \"name\": \"<EntityCode>\",\n          \"type\": \"MOS2\"\n        }\n      ],\n      \"notes\": [\n        {\n          \"note\": \"API Testing Note1\"\n        },\n        {\n          \"note\": \"API Testing Note2\"\n        }\n      ],\n      \"openAmount\": \"<number>\",\n      \"openQty\": \"<number>\",\n      \"personUniqueId\": \"<string>\",\n      \"promiseDate\": \"<dateTime>\",\n      \"status\": \"<string>\",\n      \"termConditionText\": \"<string>\",\n      \"udas\": [\n        {\n          \"name\": \"<udaName>\",\n          \"value\": \"123\"\n        }\n      ],\n      \"updateDate\": \"<dateTime>\",\n      \"vats\": [\n        {\n          \"taxCode\": \"09RZ\",\n          \"taxRate\": 20,\n          \"taxAmount\": 15\n        }\n      ],\n      \"vendorItemId\": \"<string>\"\n    }\n  ],\n  \"memo\": \"<string>\",\n  \"notes\": [\n    {\n      \"note\": \"API Testing Note1\"\n    },\n    {\n      \"note\": \"API Testing Note2\"\n    }\n  ],\n  \"plannedDeliveryCost\": \"<number>\",\n  \"poAmount\": \"<number>\",\n  \"poCurrencyCodeScale\": \"<integer>\",\n  \"poDate\": \"<dateTime>\",\n  \"poExchangeRate\": \"<number>\",\n  \"poReqId\": \"<string>\",\n  \"poUniqueId\": \"<string>\",\n  \"promiseDate\": \"<dateTime>\",\n  \"requesterUniqueId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"submitDate\": \"<dateTime>\",\n  \"termConditionText\": \"<string>\",\n  \"udas\": [\n    {\n      \"name\": \"<udaName>\",\n      \"value\": \"123\"\n    }\n  ],\n  \"updateDate\": \"<dateTime>\",\n  \"vendorAddressUniqueId\": \"<string>\",\n  \"vendorUniqueId\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cf50e3e4-2bfe-407a-b8a4-3d570411cdfb",
+    "name": "Api Documentation Accounts po-api-controller API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

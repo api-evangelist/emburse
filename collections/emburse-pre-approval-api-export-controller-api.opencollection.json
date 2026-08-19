@@ -1,0 +1,158 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts pre-approval-api-export-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "pre-approval-api-export-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Begin PreApproval Export for a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/preapproval-exports",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to begin a PreApproval Export by Customer"
+        },
+        {
+          "info": {
+            "name": "Complete PreApproval Export for a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/preapproval-exports/:exportId/close-export-request",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "file-name",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "exportId",
+                "value": "",
+                "type": "path",
+                "description": "Export ID to be completed"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to complete a PreApproval Export by Export Id"
+        },
+        {
+          "info": {
+            "name": "Get Next Available PreApproval Export ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/preapproval-exports/export-request",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "integrationType",
+                "value": "",
+                "type": "query",
+                "description": "The integration type of the PreApproval Export"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to request the next available PreApproval export ID available for export"
+        },
+        {
+          "info": {
+            "name": "Get PreApproval Data for Export",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/preapproval-exports/:exportId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "exportId",
+                "value": "",
+                "type": "path",
+                "description": "Export ID to be completed"
+              },
+              {
+                "name": "page-size",
+                "value": "",
+                "type": "query",
+                "description": "Used to get the number of PreApprovals per page. Defaults to all PreApprovals"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page on which to start viewing. Defaults to the first page"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to retrieve PreApproval Export Data by Export Id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

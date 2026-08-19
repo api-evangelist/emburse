@@ -1,0 +1,3063 @@
+{
+  "item": [
+    {
+      "id": "fdbe97ff-7658-4dbb-b536-507e1df330d2",
+      "name": "expense-image-api",
+      "description": {
+        "content": "Retrieve Expense Report Receipts / Images",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c54dd635-e3c9-4d79-9289-945eb57fb4fd",
+          "name": "Get voucher invoices for a given date range.",
+          "request": {
+            "name": "Get voucher invoices for a given date range.",
+            "description": {
+              "content": "Get voucher invoices for a given date range. Returns an xml file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getVoucherInvoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fromDate",
+                  "value": "",
+                  "description": "(Required) Beginning of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDate",
+                  "value": "",
+                  "description": "(Required) End of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ae294a3-7c62-4306-a9fa-4da085e13ae9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getVoucherInvoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDate",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "837bc4ac-ff4f-4418-8858-9a384cb5bb43",
+              "name": "Bad date input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getVoucherInvoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDate",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "Unparseable date. Date formats are MM/dd/yyyy or MM/dd/yyyy hh:mm:ss",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "33078647-7b56-4859-8fa4-f0c5e3c83193",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getVoucherInvoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDate",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "264715d4-71a1-4636-9f9c-c1782f37b2f3",
+          "name": "Get voucher invoices for a given date range.",
+          "request": {
+            "name": "Get voucher invoices for a given date range.",
+            "description": {
+              "content": "Get voucher invoices for a given date range. Returns an xml file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getVoucherInvoicesForXML"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fromDateforXml",
+                  "value": "",
+                  "description": "(Required) Beginning of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDateforXml",
+                  "value": "",
+                  "description": "(Required) End of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "12633812-d3ed-49d1-afb5-cf5870049f5f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getVoucherInvoicesForXML"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDateforXml",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    },
+                    {
+                      "key": "toDateforXml",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "16d2e890-513c-4004-94c3-857f141b7c07",
+              "name": "Bad date input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getVoucherInvoicesForXML"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDateforXml",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    },
+                    {
+                      "key": "toDateforXml",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "Unparseable date. Date formats are MM/dd/yyyy or MM/dd/yyyy hh:mm:ss",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cf4edf0a-ca42-4d14-a340-fc8201229a79",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getVoucherInvoicesForXML"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDateforXml",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    },
+                    {
+                      "key": "toDateforXml",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "265b10dc-66b9-4aa5-94ba-1778e63f8ed1",
+          "name": "Get voucher invoices for a given date range.",
+          "request": {
+            "name": "Get voucher invoices for a given date range.",
+            "description": {
+              "content": "Get voucher invoices for a given date range. Returns an xml file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getVoucherInvoicesForOFD"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fromDateForOfd",
+                  "value": "",
+                  "description": "(Required) Beginning of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDateForOfd",
+                  "value": "",
+                  "description": "(Required) End of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c178ef6-c04d-4ffc-b28c-31150af57ba2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getVoucherInvoicesForOFD"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDateForOfd",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    },
+                    {
+                      "key": "toDateForOfd",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "20a9d476-e5f3-41f6-804e-f2b16187e409",
+              "name": "Bad date input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getVoucherInvoicesForOFD"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDateForOfd",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    },
+                    {
+                      "key": "toDateForOfd",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "Unparseable date. Date formats are MM/dd/yyyy or MM/dd/yyyy hh:mm:ss",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "16afa445-02d0-4639-ba24-426d1d4b95e6",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getVoucherInvoicesForOFD"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDateForOfd",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    },
+                    {
+                      "key": "toDateForOfd",
+                      "value": "08/01/2017 or 08/01/2017 23:22:21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed5a3c3f-3037-4ebf-9f06-461e748972e8",
+          "name": "Extract PDF of receipts associated to an Expense Report",
+          "request": {
+            "name": "Extract PDF of receipts associated to an Expense Report",
+            "description": {
+              "content": "This method returns a PDF file of all the images associated with an Expense Report or with the line items within the report.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getReceipts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "voucherInvoice",
+                  "value": "<string>",
+                  "description": "Voucher invoice number."
+                },
+                {
+                  "disabled": false,
+                  "key": "reportID",
+                  "value": "<string>",
+                  "description": "The Report ID is a 12-digit number generated by Chrome River that begins with 0100. Be sure to omit the dashes."
+                },
+                {
+                  "disabled": false,
+                  "key": "getMileageDetails",
+                  "value": "false",
+                  "description": "If selected, PDF will include mileage details, including map and distance, if expense was created using Maps"
+                },
+                {
+                  "disabled": false,
+                  "key": "getImage",
+                  "value": "true",
+                  "description": "If selected, PDF will include receipt images attached to the report"
+                },
+                {
+                  "disabled": false,
+                  "key": "getPDFReport",
+                  "value": "false",
+                  "description": "If selected, the original PDF is retrieved first, if available."
+                },
+                {
+                  "disabled": false,
+                  "key": "getPDFReportWithNotes",
+                  "value": "false",
+                  "description": "If selected, the original PDF will include approval notes"
+                },
+                {
+                  "disabled": false,
+                  "key": "imageFirst",
+                  "value": "true",
+                  "description": "If selected, the images will be retrieved before any PDFs"
+                },
+                {
+                  "disabled": false,
+                  "key": "failOnImageFetchError",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95a7fe05-02e6-45ff-a377-ee57718d64f7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceipts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoice",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "getMileageDetails",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    },
+                    {
+                      "key": "failOnImageFetchError",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "523890f4-769f-4975-a244-6bca1758aff0",
+              "name": "Bad input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceipts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoice",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "getMileageDetails",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    },
+                    {
+                      "key": "failOnImageFetchError",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "getImage and getPDFReport cannot be false both",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c583b10a-9b84-434e-8f1a-0819479216bc",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceipts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoice",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "getMileageDetails",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    },
+                    {
+                      "key": "failOnImageFetchError",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7745d861-b46d-40ae-9420-f32d021fdb68",
+          "name": "Extract PDF of receipts associated to an Expense Report with a CoverPage",
+          "request": {
+            "name": "Extract PDF of receipts associated to an Expense Report with a CoverPage",
+            "description": {
+              "content": "This method returns a PDF file of all the images associated with an Expense Report and includes a CoverPage.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getReceiptsWithCoverPage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "voucherInvoice",
+                  "value": "<string>",
+                  "description": "Voucher invoice number."
+                },
+                {
+                  "disabled": false,
+                  "key": "reportID",
+                  "value": "<string>",
+                  "description": "The Report ID is a 12-digit number generated by Chrome River that begins with 0100. Be sure to omit the dashes."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c0e93555-7203-48d7-9c30-499abf28bfec",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceiptsWithCoverPage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoice",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportID",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0b01ad0b-d82c-48a6-b727-c7ebfcbe67c8",
+              "name": "Bad input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceiptsWithCoverPage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoice",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportID",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "getImage and getPDFReport cannot be false both",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8d4de46c-28be-4d8d-9354-0ee032363960",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceiptsWithCoverPage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoice",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportID",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b2c63cf-3d2f-4320-a51f-91ab478a5be2",
+          "name": "Get voucher invoice by its number.",
+          "request": {
+            "name": "Get voucher invoice by its number.",
+            "description": {
+              "content": "Get voucher invoice by its number. Returns zip archive with xml file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getReceiptsForXml"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "voucherInvoiceForXml",
+                  "value": "<string>",
+                  "description": "(Required) Voucher invoice number."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6f182e7-0e8e-41f3-a916-8875947395d0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceiptsForXml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoiceForXml",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5d87bb8f-78a7-488a-9f6f-60915a52d19c",
+              "name": "Bad input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceiptsForXml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoiceForXml",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "VoucherInvoice is required and should contain only digits",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5493769a-2b1b-466a-99be-7ff0da4cf6aa",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceiptsForXml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoiceForXml",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f037bd56-d0a5-4f39-9250-6e46fa13afaa",
+          "name": "Get OFD receipts associated to a VoucherInvoice Number.",
+          "request": {
+            "name": "Get OFD receipts associated to a VoucherInvoice Number.",
+            "description": {
+              "content": "Get receipt images for a voucher invoice number. Returns zip archive with receipt image files.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getReceiptsForOFD"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "voucherInvoice",
+                  "value": "<string>",
+                  "description": "(Required) Voucher invoice number."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9332ec31-ddb2-43c0-b768-7ea66ace9cb9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceiptsForOFD"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoice",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1479f6da-65a2-48f6-9d94-6396a7b5baf0",
+              "name": "Bad input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceiptsForOFD"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoice",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "VoucherInvoice is required and should contain only digits",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c8e2e837-a59e-4f02-bb63-663a22c295c4",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getReceiptsForOFD"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoice",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "baf86d62-7029-4ccd-b420-b01cad173eab",
+          "name": "Get list of line item voucher invoices",
+          "request": {
+            "name": "Get list of line item voucher invoices",
+            "description": {
+              "content": "This method returns a listing of line item voucher invoices based on a given Voucher Invoice.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getLineItemVoucherInvoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineItemVoucherInvoice",
+                  "value": "<string>",
+                  "description": "(Required) Voucher invoice number. "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "730b8633-b6f3-4ad4-bd79-c36fc2a5826d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemVoucherInvoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineItemVoucherInvoice",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "1d246ed5-5d7a-4918-93ed-0b9c17905c85",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemVoucherInvoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineItemVoucherInvoice",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b6e9ac99-23d4-4c03-933e-498918eb4a33",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemVoucherInvoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineItemVoucherInvoice",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ae5042b-0074-428f-b31c-f9b35694e978",
+          "name": "Extract PDF of receipts for a line item voucher invoice",
+          "request": {
+            "name": "Extract PDF of receipts for a line item voucher invoice",
+            "description": {
+              "content": "This method returns a Line Item Receipts PDF based on the given Line Item Voucher Invoice. This will also work for returning all remaining images that are not linked to any Line Item.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getLineItemReceipts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "voucherInvoiceForReceipt",
+                  "value": "<string>",
+                  "description": "(Required) Voucher invoice number that was returned from the getLineItemVoucherInvoices method. Line Item Voucher Invoice format: \\<VoucherInvoice\\> + \"_\" + \\<LineNumber\\> + \\<ChildLineNumber\\>"
+                },
+                {
+                  "disabled": false,
+                  "key": "getImage",
+                  "value": "true",
+                  "description": "If selected, PDF will include receipt images attached to the report"
+                },
+                {
+                  "disabled": false,
+                  "key": "getPDFReport",
+                  "value": "false",
+                  "description": "If selected, the original PDF is retrieved first, if available."
+                },
+                {
+                  "disabled": false,
+                  "key": "getPDFReportWithNotes",
+                  "value": "false",
+                  "description": "If selected, the original PDF will include approval notes"
+                },
+                {
+                  "disabled": false,
+                  "key": "imageFirst",
+                  "value": "true",
+                  "description": "If selected, the images will be retrieved before any PDFs"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dcf59e70-1e77-4d87-9e4c-2edff3f92bd5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemReceipts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoiceForReceipt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c675d8ef-beae-4d1d-b3d8-75ce812f9c20",
+              "name": "Bad input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemReceipts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoiceForReceipt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "getImage and getPDFReport cannot be false both",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "49c853ce-e9cd-4006-af35-6df58a4eff05",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemReceipts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoiceForReceipt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9fb305b-6eba-473e-bed3-153372995ca4",
+          "name": "Extract PDF of receipts for a line item voucher invoice",
+          "request": {
+            "name": "Extract PDF of receipts for a line item voucher invoice",
+            "description": {
+              "content": "This method returns a Line Item Receipts PDF based on the given Line Item Voucher Invoice. This will also work for returning all remaining images that are not linked to any Line Item.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getLineItemReceiptsWithMileageDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "voucherInvoiceForReceipt",
+                  "value": "<string>",
+                  "description": "(Required) Voucher invoice number that was returned from the getLineItemVoucherInvoices method. Line Item Voucher Invoice format: \\<VoucherInvoice\\> + \"_\" + \\<LineNumber\\> + \\<ChildLineNumber\\>"
+                },
+                {
+                  "disabled": false,
+                  "key": "getImage",
+                  "value": "true",
+                  "description": "If selected, PDF will include receipt images attached to the report"
+                },
+                {
+                  "disabled": false,
+                  "key": "getPDFReport",
+                  "value": "false",
+                  "description": "If selected, the original PDF is retrieved first, if available."
+                },
+                {
+                  "disabled": false,
+                  "key": "getPDFReportWithNotes",
+                  "value": "false",
+                  "description": "If selected, the original PDF will include approval notes"
+                },
+                {
+                  "disabled": false,
+                  "key": "imageFirst",
+                  "value": "true",
+                  "description": "If selected, the images will be retrieved before any PDFs"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "33c0ac62-c17a-4298-9673-b47c305b4df6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemReceiptsWithMileageDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoiceForReceipt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9ebc5aff-93ec-4bbe-a696-313ad1325b03",
+              "name": "Bad input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemReceiptsWithMileageDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoiceForReceipt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "getImage and getPDFReport cannot be false both",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f2e33166-7326-4fbc-aadb-934bc23069c9",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemReceiptsWithMileageDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucherInvoiceForReceipt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "getImage",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12452e54-e532-4c6f-9561-da19ac694856",
+          "name": "Extract PDF of receipts for a line item",
+          "request": {
+            "name": "Extract PDF of receipts for a line item",
+            "description": {
+              "content": "This method returns a Line Item Receipts PDF based on the given Line Item ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "expense-image-api",
+                "getLineItemReceiptsFromLineItemId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expenseReportLineItemId",
+                  "value": "",
+                  "description": "(Required) expenseReportLineItemId"
+                },
+                {
+                  "disabled": false,
+                  "key": "getPDFReport",
+                  "value": "false",
+                  "description": "If selected, the original PDF is retrieved first, if available."
+                },
+                {
+                  "disabled": false,
+                  "key": "getPDFReportWithNotes",
+                  "value": "false",
+                  "description": "If selected, the original PDF will include approval notes"
+                },
+                {
+                  "disabled": false,
+                  "key": "imageFirst",
+                  "value": "true",
+                  "description": "If selected, the images will be retrieved before any PDFs"
+                },
+                {
+                  "disabled": false,
+                  "key": "getMileageCoverPage",
+                  "value": "false",
+                  "description": "If selected, the mileage cover page will be included if the item type of the line item is of type mileage."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Reference used to track the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98deb493-7ccd-4f10-a2fe-1fbb809b34cb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemReceiptsFromLineItemId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expenseReportLineItemId",
+                      "value": "01670304-083d-4c6e-9c76-a5716987de7a"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getMileageCoverPage",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "733f0ecd-e14f-4151-90bc-ef2292c4e000",
+              "name": "Bad input.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemReceiptsFromLineItemId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expenseReportLineItemId",
+                      "value": "01670304-083d-4c6e-9c76-a5716987de7a"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getMileageCoverPage",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "expenseReportLineItemId is empty",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eb6ecdc9-18b4-463e-8058-b354286926b3",
+              "name": "This feature is not activated for customer = %d. Please contact Support@Chromeriver.com",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "expense-image-api",
+                    "getLineItemReceiptsFromLineItemId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expenseReportLineItemId",
+                      "value": "01670304-083d-4c6e-9c76-a5716987de7a"
+                    },
+                    {
+                      "key": "getPDFReport",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getPDFReportWithNotes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "imageFirst",
+                      "value": "true"
+                    },
+                    {
+                      "key": "getMileageCoverPage",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Reference used to track the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bfc43f20-51bc-4203-a25a-9712632b6d3c",
+    "name": "Api Documentation Accounts expense-image-api API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

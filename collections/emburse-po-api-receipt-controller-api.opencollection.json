@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts po-api-receipt-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "po-api-receipt-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create PO receipt",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/po-api/receipts",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create a PO receipt"
+        },
+        {
+          "info": {
+            "name": "Create or update a PO receipt",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/po-api/receipts/create-or-update",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create or update a PO receipt"
+        },
+        {
+          "info": {
+            "name": "Update PO receipt",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://service.chromeriver.com/po-api/receipts/:receiptNumber",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "receiptNumber",
+                "value": "",
+                "type": "path",
+                "description": "Receipt number"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to update a PO receipt"
+        },
+        {
+          "info": {
+            "name": "Delete PO receipt",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/po-api/receipts/:receiptNumber",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "receiptNumber",
+                "value": "",
+                "type": "path",
+                "description": "Receipt number"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to delete a PO receipt"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

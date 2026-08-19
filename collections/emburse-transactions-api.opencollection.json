@@ -1,0 +1,315 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts Transactions API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get_transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/transactions",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The initial index from which to return the results."
+              },
+              {
+                "name": "card",
+                "value": "",
+                "type": "query",
+                "description": "card"
+              },
+              {
+                "name": "member",
+                "value": "",
+                "type": "query",
+                "description": "member"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "category"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query",
+                "description": "department"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "location"
+              },
+              {
+                "name": "label",
+                "value": "",
+                "type": "query",
+                "description": "label"
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "before"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "after"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "exclude_declines",
+                "value": "",
+                "type": "query",
+                "description": "exclude_declines"
+              },
+              {
+                "name": "exclude_verifications",
+                "value": "",
+                "type": "query",
+                "description": "exclude_verifications"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Order results by field. Prefix with - for descending order."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_transactions_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/transactions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "card",
+                "value": "",
+                "type": "query",
+                "description": "card"
+              },
+              {
+                "name": "member",
+                "value": "",
+                "type": "query",
+                "description": "member"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "category"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query",
+                "description": "department"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "location"
+              },
+              {
+                "name": "label",
+                "value": "",
+                "type": "query",
+                "description": "label"
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "before"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "after"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "exclude_declines",
+                "value": "",
+                "type": "query",
+                "description": "exclude_declines"
+              },
+              {
+                "name": "exclude_verifications",
+                "value": "",
+                "type": "query",
+                "description": "exclude_verifications"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Order results by field. Prefix with - for descending order."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_transactions_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/transactions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "card",
+                "value": "",
+                "type": "query",
+                "description": "card"
+              },
+              {
+                "name": "member",
+                "value": "",
+                "type": "query",
+                "description": "member"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "category"
+              },
+              {
+                "name": "department",
+                "value": "",
+                "type": "query",
+                "description": "department"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "location"
+              },
+              {
+                "name": "label",
+                "value": "",
+                "type": "query",
+                "description": "label"
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "before"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "after"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "exclude_declines",
+                "value": "",
+                "type": "query",
+                "description": "exclude_declines"
+              },
+              {
+                "name": "exclude_verifications",
+                "value": "",
+                "type": "query",
+                "description": "exclude_verifications"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Order results by field. Prefix with - for descending order."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Always perform a partial update."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

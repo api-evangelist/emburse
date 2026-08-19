@@ -1,0 +1,208 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts Locations API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get_locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/locations",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The initial index from which to return the results."
+              },
+              {
+                "name": "is_archived",
+                "value": "",
+                "type": "query",
+                "description": "is_archived"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/locations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "get_locations_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/locations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "is_archived",
+                "value": "",
+                "type": "query",
+                "description": "is_archived"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_locations_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/locations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "is_archived",
+                "value": "",
+                "type": "query",
+                "description": "is_archived"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Always perform a partial update."
+        },
+        {
+          "info": {
+            "name": "delete_locations_by_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://service.chromeriver.com/locations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "is_archived",
+                "value": "",
+                "type": "query",
+                "description": "is_archived"
+              },
+              {
+                "name": "created_before",
+                "value": "",
+                "type": "query",
+                "description": "created_before"
+              },
+              {
+                "name": "created_after",
+                "value": "",
+                "type": "query",
+                "description": "created_after"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

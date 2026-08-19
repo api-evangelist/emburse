@@ -1,0 +1,1733 @@
+{
+  "item": [
+    {
+      "id": "3ba318ca-5cc7-4d83-9b25-dc3213c78a11",
+      "name": "allocation-api-controller-v-3",
+      "description": {
+        "content": "V3 endpoints include better support and error handling for allocation user defined attributes (UDA).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "850855c8-0922-434c-a720-5f89823d3992",
+          "name": "Get list of allocations",
+          "request": {
+            "name": "Get list of allocations",
+            "description": {
+              "content": "This web service allows an external application to get list of allocation details",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "allocations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allocation-number",
+                  "value": "<string>",
+                  "description": "Unique allocation number"
+                },
+                {
+                  "disabled": false,
+                  "key": "client-number",
+                  "value": "<string>",
+                  "description": "Unique Client number"
+                },
+                {
+                  "disabled": false,
+                  "key": "closed",
+                  "value": "<boolean>",
+                  "description": "Allocation is closed"
+                },
+                {
+                  "disabled": false,
+                  "key": "deleted",
+                  "value": "<boolean>",
+                  "description": "Allocation is deleted"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Starting page number for getting parts of results"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Size of page for getting parts of results"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e850c34-8e8a-4b0b-9b03-251d78c79f2a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allocation-number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client-number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "closed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"allocationEntities\": [\n      {\n        \"name\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"allocationName\": \"AUTOAPPROVE (BY)\",\n    \"allocationNumber\": \"1000-001\",\n    \"clientName\": \"Autoapprove\",\n    \"clientNumber\": \"cn1000\",\n    \"closedDate\": \"2017-10-18 18:46:19+00:00\",\n    \"currency\": \"USD\",\n    \"extraLineItemData1LegalValues\": \"00,10,20,30,40\",\n    \"filterTerms1\": [\n      \"string\",\n      \"string\"\n    ],\n    \"filterTerms2\": [\n      \"string\",\n      \"string\"\n    ],\n    \"glAccount\": \"test GL\",\n    \"locale\": \"en\",\n    \"onSelect1EntityTypeCode\": \"string\",\n    \"onSelect2EntityTypeCode\": \"DEP\",\n    \"parentClientNumber\": \"cn1000\",\n    \"routeIndependent\": true,\n    \"startDate\": \"2017-10-18 18:46:19+00:00\",\n    \"type\": \"B\",\n    \"udaPersons\": [\n      {\n        \"name\": \"string\",\n        \"personUniqueId\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"personUniqueId\": \"string\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"value\": \"string\"\n      }\n    ]\n  },\n  {\n    \"allocationEntities\": [\n      {\n        \"name\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"value\": \"string\"\n      }\n    ],\n    \"allocationName\": \"AUTOAPPROVE (BY)\",\n    \"allocationNumber\": \"1000-001\",\n    \"clientName\": \"Autoapprove\",\n    \"clientNumber\": \"cn1000\",\n    \"closedDate\": \"2017-10-18 18:46:19+00:00\",\n    \"currency\": \"USD\",\n    \"extraLineItemData1LegalValues\": \"00,10,20,30,40\",\n    \"filterTerms1\": [\n      \"string\",\n      \"string\"\n    ],\n    \"filterTerms2\": [\n      \"string\",\n      \"string\"\n    ],\n    \"glAccount\": \"test GL\",\n    \"locale\": \"en\",\n    \"onSelect1EntityTypeCode\": \"string\",\n    \"onSelect2EntityTypeCode\": \"DEP\",\n    \"parentClientNumber\": \"cn1000\",\n    \"routeIndependent\": true,\n    \"startDate\": \"2017-10-18 18:46:19+00:00\",\n    \"type\": \"B\",\n    \"udaPersons\": [\n      {\n        \"name\": \"string\",\n        \"personUniqueId\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"personUniqueId\": \"string\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"value\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c7c3518-495c-495f-ada7-3230444be3c0",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allocation-number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client-number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "closed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "64e0b4b6-5ce4-4ee8-a440-dbb6af3a6380",
+              "name": "Customer Code is not authorized.  Cannot get allocation details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allocation-number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client-number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "closed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "49f20d29-d712-4326-b584-3d00fb2eec26",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allocation-number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client-number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "closed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c006a73-8c58-43d9-ad5a-4e25ac9a5db4",
+          "name": "Create/update list of allocations",
+          "request": {
+            "name": "Create/update list of allocations",
+            "description": {
+              "content": "This web service allows an external application to create/update list of allocations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "allocations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"allocationEntities\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"allocationName\": \"<string>\",\n    \"allocationNumber\": \"<string>\",\n    \"clientName\": \"<string>\",\n    \"clientNumber\": \"<string>\",\n    \"closedDate\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"extraLineItemData1LegalValues\": \"<string>\",\n    \"filterTerms1\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"filterTerms2\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"glAccount\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"onSelect1EntityTypeCode\": \"<string>\",\n    \"onSelect2EntityTypeCode\": \"<string>\",\n    \"parentClientNumber\": \"<string>\",\n    \"routeIndependent\": \"<boolean>\",\n    \"startDate\": \"<string>\",\n    \"type\": \"<string>\",\n    \"udaPersons\": [\n      {\n        \"name\": \"<string>\",\n        \"personUniqueId\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"personUniqueId\": \"<string>\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"allocationEntities\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"allocationName\": \"<string>\",\n    \"allocationNumber\": \"<string>\",\n    \"clientName\": \"<string>\",\n    \"clientNumber\": \"<string>\",\n    \"closedDate\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"extraLineItemData1LegalValues\": \"<string>\",\n    \"filterTerms1\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"filterTerms2\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"glAccount\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"onSelect1EntityTypeCode\": \"<string>\",\n    \"onSelect2EntityTypeCode\": \"<string>\",\n    \"parentClientNumber\": \"<string>\",\n    \"routeIndependent\": \"<boolean>\",\n    \"startDate\": \"<string>\",\n    \"type\": \"<string>\",\n    \"udaPersons\": [\n      {\n        \"name\": \"<string>\",\n        \"personUniqueId\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"personUniqueId\": \"<string>\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fe4f90bb-ad9c-428f-80a9-5ae03af01140",
+              "name": "Allocations are created/updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"allocationId\": \"1000-001_cn1000\",\n    \"errorMessage\": \"Invalid entity1 specified.\",\n    \"result\": \"SUCCESS\"\n  },\n  {\n    \"allocationId\": \"1000-001_cn1000\",\n    \"errorMessage\": \"Invalid entity1 specified.\",\n    \"result\": \"SUCCESS\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82d73e39-4f45-43ff-b5ac-4b50c6c62f35",
+              "name": "Some of the allocations are created/updated successfully and the remaining allocations are skipped due to error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Multi-Status (WebDAV) (RFC 4918)",
+              "code": 207,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"allocationId\": \"1000-001_cn1000\",\n    \"errorMessage\": \"Invalid entity1 specified.\",\n    \"result\": \"SUCCESS\"\n  },\n  {\n    \"allocationId\": \"1000-001_cn1000\",\n    \"errorMessage\": \"Invalid entity1 specified.\",\n    \"result\": \"SUCCESS\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1595383-bef5-4a50-9a85-806a3502af4a",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2be97503-e83c-45f2-bf2f-25fc55d6dbfc",
+              "name": "Customer Code is not authorized.  Cannot create/update allocations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d409b752-f223-4b73-9f91-5e4be10ab551",
+              "name": "Allocations are skipped due to error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"allocationId\": \"1000-001_cn1000\",\n    \"errorMessage\": \"Invalid entity1 specified.\",\n    \"result\": \"SUCCESS\"\n  },\n  {\n    \"allocationId\": \"1000-001_cn1000\",\n    \"errorMessage\": \"Invalid entity1 specified.\",\n    \"result\": \"SUCCESS\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffcb0674-a2d0-4bf6-aaf4-857fe9d5d3ab",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b09be64d-e295-4ffd-a62b-8d5e2ef2a715",
+          "name": "Create matter on select",
+          "request": {
+            "name": "Create matter on select",
+            "description": {
+              "content": "This web service allows an external application to create a matter on select.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "allocations",
+                "entity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entityTypeCode\": \"<string>\",\n  \"matterUniqueID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "87fb14be-e08e-4469-8fb7-e753fdaefd18",
+              "name": "Matter On Select Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "entity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "954ab39f-2fa2-4c0e-a9a7-3cd09c6539e5",
+              "name": "Matter Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "entity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d500e2a7-d56d-4d4e-b659-6b6639393830",
+              "name": "Matter On Select Already Exists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "entity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd261dfa-d54a-4d48-b52c-57e8655768b5",
+          "name": "Update matter on select",
+          "request": {
+            "name": "Update matter on select",
+            "description": {
+              "content": "This web service allows an external application to update a matter on select.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "allocations",
+                "entity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entityTypeCode\": \"<string>\",\n  \"matterUniqueID\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4a4cdf95-9af1-4a04-8cbc-15e8b11bb0f6",
+              "name": "Matter On Select Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "entity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4dd2e8b2-c56c-438d-93a7-372b386e3e1f",
+              "name": "Matter Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "entity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4746c6a9-0f6d-4acc-b9da-cc30de9b0ce8",
+          "name": "Update matter filter",
+          "request": {
+            "name": "Update matter filter",
+            "description": {
+              "content": "This web service allows an external application to update a matter filter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "allocations",
+                "matterFilter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"matterUniqueID\": \"<string>\",\n  \"search1\": \"<string>\",\n  \"search2\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6d9d0e00-8247-4812-a20b-43d2ff1b1f9a",
+              "name": "Matter Filter Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "matterFilter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"matterUniqueID\": \"<string>\",\n  \"search1\": \"<string>\",\n  \"search2\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"action\": \"delete\",\n  \"allocationEntities\": [\n    {\n      \"code\": \"string\",\n      \"entityId\": 8496,\n      \"entityType\": {\n        \"code\": \"string\",\n        \"entityTypeId\": 4720,\n        \"name\": \"string\"\n      },\n      \"extraData1\": \"string\",\n      \"extraData2\": \"string\",\n      \"extraData3\": \"string\",\n      \"extraData4\": \"string\",\n      \"extraData5\": \"string\",\n      \"name\": \"string\",\n      \"order\": 2980\n    },\n    {\n      \"code\": \"string\",\n      \"entityId\": 4085,\n      \"entityType\": {\n        \"code\": \"string\",\n        \"entityTypeId\": 5108,\n        \"name\": \"string\"\n      },\n      \"extraData1\": \"string\",\n      \"extraData2\": \"string\",\n      \"extraData3\": \"string\",\n      \"extraData4\": \"string\",\n      \"extraData5\": \"string\",\n      \"name\": \"string\",\n      \"order\": 4565\n    }\n  ],\n  \"allocationId\": \"string\",\n  \"allocationName\": \"Bank-NYC-Sales\",\n  \"allocationNumber\": \"1000-20-50\",\n  \"clientName\": \"TCC CHARGE\",\n  \"clientNumber\": \"0001\",\n  \"closedDate\": \"2016-09-28 18:46:19:000\",\n  \"createSource\": \"string\",\n  \"currency\": \"USD\",\n  \"currencyCode\": \"string\",\n  \"customerId\": 8389,\n  \"entity1\": \"string\",\n  \"entity2\": \"string\",\n  \"entity3\": \"string\",\n  \"extraLineItemData1LegalValues\": \"string\",\n  \"filterTerms1\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"filterTerms2\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  ],\n  \"glAccount\": \"1000-20-50\",\n  \"isBillable\": true,\n  \"languageCode\": \"string\",\n  \"locale\": \"en\",\n  \"onSelect1EntityTypeCode\": \"string\",\n  \"onSelect2EntityTypeCode\": \"DEP\",\n  \"parentClientNumber\": \"string\",\n  \"project\": \"XYZ\",\n  \"routeIndependent\": true,\n  \"search1\": \"string\",\n  \"search2\": \"string\",\n  \"startDate\": \"2016-09-28 18:46:19:000\",\n  \"type\": \"GL\",\n  \"udaPersons\": [\n    {\n      \"name\": \"string\",\n      \"personId\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"personId\": \"string\"\n    }\n  ],\n  \"udas\": [\n    {\n      \"action\": \"upsert\",\n      \"dataType\": \"string\",\n      \"name\": \"string\",\n      \"udaName\": \"string\",\n      \"udaValue\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"action\": \"upsert\",\n      \"dataType\": \"string\",\n      \"name\": \"string\",\n      \"udaName\": \"string\",\n      \"udaValue\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"udf1\": \"string\",\n  \"udf1PersonUniqueID\": \"string\",\n  \"udf2\": \"string\",\n  \"udf2PersonUniqueID\": \"string\",\n  \"udf3\": \"string\",\n  \"udf3PersonUniqueID\": \"string\",\n  \"udf4\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ecf2744c-dda2-4c0d-98c7-cc230c12f81b",
+              "name": "Matter Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "matterFilter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"matterUniqueID\": \"<string>\",\n  \"search1\": \"<string>\",\n  \"search2\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "21a3fd68-4737-41ac-b5b5-cc2bf2f08353",
+          "name": "Search for list of allocations",
+          "request": {
+            "name": "Search for list of allocations",
+            "description": {
+              "content": "This web service allows an external application to search for list of allocation details",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v3",
+                "allocations",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageNum",
+                  "value": "<integer>",
+                  "description": "Starting record number for getting parts of results"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Size of page for getting parts of results"
+                },
+                {
+                  "disabled": false,
+                  "key": "searchTerm",
+                  "value": "<string>",
+                  "description": "Search string for allocation search"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9cd1ba0-dd32-44cd-bf1a-a2db0eca6e61",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "searchTerm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"allocations\": [\n    {\n      \"allocationId\": \"1000-001_0222\",\n      \"allocationName\": \"AUTOAPPROVE (BY)\",\n      \"allocationNumber\": \"1000-001\",\n      \"clientName\": \"Autoapprove\",\n      \"entityTypeId1\": 100500,\n      \"entityTypeId2\": 100500,\n      \"isRecent\": true\n    },\n    {\n      \"allocationId\": \"1000-001_0222\",\n      \"allocationName\": \"AUTOAPPROVE (BY)\",\n      \"allocationNumber\": \"1000-001\",\n      \"clientName\": \"Autoapprove\",\n      \"entityTypeId1\": 100500,\n      \"entityTypeId2\": 100500,\n      \"isRecent\": true\n    }\n  ],\n  \"meta\": {\n    \"pageNumber\": 1,\n    \"pageSize\": 10,\n    \"totalPages\": 1,\n    \"totalRecords\": 1\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "97f7493b-8797-46b7-aff0-b1a55afbec0e",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "searchTerm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ab78a2ba-f658-43ff-9905-ca6b825a1ae8",
+              "name": "Customer Code is not authorized.  Cannot get allocation details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "searchTerm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d08066bb-4181-49ff-8d12-863f479e243c",
+              "name": "No allocation exists for the Allocation Number and Client Number as requested. Please try again.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "searchTerm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f1dd3c0f-c28d-4838-8fd7-fcae7e2cfba8",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "allocations",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageNum",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "searchTerm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "73558253-99bf-446e-95cf-10ba2b1795a4",
+    "name": "Api Documentation Accounts allocation-api-controller-v-3 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts allocation-api-controller-v-3 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "allocation-api-controller-v-3",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get list of allocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v3/allocations",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "allocation-number",
+                "value": "",
+                "type": "query",
+                "description": "Unique allocation number"
+              },
+              {
+                "name": "client-number",
+                "value": "",
+                "type": "query",
+                "description": "Unique Client number"
+              },
+              {
+                "name": "closed",
+                "value": "",
+                "type": "query",
+                "description": "Allocation is closed"
+              },
+              {
+                "name": "deleted",
+                "value": "",
+                "type": "query",
+                "description": "Allocation is deleted"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Starting page number for getting parts of results"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Size of page for getting parts of results"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get list of allocation details"
+        },
+        {
+          "info": {
+            "name": "Create/update list of allocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v3/allocations",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create/update list of allocations."
+        },
+        {
+          "info": {
+            "name": "Create matter on select",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v3/allocations/entity",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create a matter on select."
+        },
+        {
+          "info": {
+            "name": "Update matter on select",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/v3/allocations/entity",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to update a matter on select."
+        },
+        {
+          "info": {
+            "name": "Update matter filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v3/allocations/matterFilter",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to update a matter filter."
+        },
+        {
+          "info": {
+            "name": "Search for list of allocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v3/allocations/search",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "pageNum",
+                "value": "",
+                "type": "query",
+                "description": "Starting record number for getting parts of results"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Size of page for getting parts of results"
+              },
+              {
+                "name": "searchTerm",
+                "value": "",
+                "type": "query",
+                "description": "Search string for allocation search"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to search for list of allocation details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

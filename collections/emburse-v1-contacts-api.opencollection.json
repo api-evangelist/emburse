@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts /v1/contacts API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "/v1/contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create external guests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/contacts",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows customers who have Customer Relationship Management (CRM) systems import contact information from their CRM into Chrome River to be used as a lookup for guests to add to line items."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts allocation-api-controller-v-2 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "allocation-api-controller-v-2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get list of allocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/allocations",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "allocation-number",
+                "value": "",
+                "type": "query",
+                "description": "Unique allocation number"
+              },
+              {
+                "name": "client-number",
+                "value": "",
+                "type": "query",
+                "description": "Unique Client number"
+              },
+              {
+                "name": "closed",
+                "value": "",
+                "type": "query",
+                "description": "Allocation is closed"
+              },
+              {
+                "name": "deleted",
+                "value": "",
+                "type": "query",
+                "description": "Allocation is deleted"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Starting page number for getting parts of results"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Size of page for getting parts of results"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get list of allocation details"
+        },
+        {
+          "info": {
+            "name": "Create/update list of allocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v2/allocations",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create/update list of allocations."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

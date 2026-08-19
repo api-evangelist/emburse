@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts expense-report-line-item-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "expense-report-line-item-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getLineItems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/expense-report-line-item-search",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "createDate",
+                "value": "2021-04-21",
+                "type": "query",
+                "description": "Filter by line item created this date (yyyy-MM-dd)"
+              },
+              {
+                "name": "expenseReportHeaderIds",
+                "value": "",
+                "type": "query",
+                "description": "Filter to only include line items that belong to a list of comma-separated list of expense report header IDs"
+              },
+              {
+                "name": "exportDate",
+                "value": "2021-04-21",
+                "type": "query",
+                "description": "Filter by line item exported this date (yyyy-MM-dd)"
+              },
+              {
+                "name": "hasComplianceItems",
+                "value": "",
+                "type": "query",
+                "description": "Filter by whether a line item has compliance items"
+              },
+              {
+                "name": "includeMergedTransactions",
+                "value": "",
+                "type": "query",
+                "description": "Return child transactions in the expenseTransaction data (for merge sets)"
+              },
+              {
+                "name": "isCreatedByAces",
+                "value": "",
+                "type": "query",
+                "description": "Filter by whether a line item was created by the ACES (Accelerated Expense Service)"
+              },
+              {
+                "name": "lineItemStatus",
+                "value": "Returned",
+                "type": "query",
+                "description": "Filter by line item status"
+              },
+              {
+                "name": "reportId",
+                "value": "DEV028700864",
+                "type": "query",
+                "description": "Filter by line item's header report ID"
+              },
+              {
+                "name": "submitDate",
+                "value": "2021-04-21",
+                "type": "query",
+                "description": "Filter by line item submitted this date (yyyy-MM-dd)"
+              }
+            ]
+          },
+          "docs": "getLineItems"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

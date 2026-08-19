@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts sap-person-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "sap-person-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create/update persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v4/sap-persons",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

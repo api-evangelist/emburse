@@ -1,0 +1,1444 @@
+{
+  "item": [
+    {
+      "id": "8b290672-14e8-460a-b805-ae50489267df",
+      "name": "pre-approval-api-controller-v-2",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fd9df37d-1bfa-45ee-88ed-4963fe8bd9f0",
+          "name": "Add note to a Pre-Approval Report",
+          "request": {
+            "name": "Add note to a Pre-Approval Report",
+            "description": {
+              "content": "This web service allows an external application to add a note to a Pre-Approval Report",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "preapproval-reports",
+                ":reportId",
+                "notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reportId",
+                  "description": "(Required) Report ID for pre-approval report"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique ID for the approver logged in making request",
+                "key": "logged-in-user-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"note\": \"<string>\",\n  \"createDate\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a16caad8-a31d-4032-b010-77258fadace8",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"note\": \"<string>\",\n  \"createDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"note\": \"<string>\",\n  \"createDate\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a68756e8-9b6c-4559-9218-6bfb8375f650",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"note\": \"<string>\",\n  \"createDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8d063c72-6a79-42dc-918f-e977dc8990bc",
+              "name": "Customer Code is not authorized. Cannot add comment to Pre-Approval Report.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"note\": \"<string>\",\n  \"createDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e676e00-8dee-4a29-9f2a-244922ba9358",
+              "name": "Logged in user does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"note\": \"<string>\",\n  \"createDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ccf18dfb-57b4-4546-a935-0572cf2f867a",
+              "name": "Pre-Approval Report does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"note\": \"<string>\",\n  \"createDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa2132fd-145f-4a50-a841-30a37b203e3a",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId",
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"note\": \"<string>\",\n  \"createDate\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc6ced6a-91fa-438e-a1f4-792e87999a56",
+          "name": "Get pre-approval report",
+          "request": {
+            "name": "Get pre-approval report",
+            "description": {
+              "content": "This web service allows an external application to retrieve pre-approval report by ReportId",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "preapproval-reports",
+                ":reportId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reportId",
+                  "description": "(Required) Identifier for the pre-approval report."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a738b9d9-2763-475d-8a66-9b23c7900f08",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Identifier for the pre-approval report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"paHeaderId\": \"string\",\n  \"reportId\": \"string\",\n  \"reportTotalAmount\": 4269.204668673891,\n  \"payMeInCurrency\": \"string\",\n  \"currency\": \"string\",\n  \"reportApprovalAmount\": 9170.920945405333,\n  \"reportApprovalAmountCurrency\": \"string\",\n  \"startDate\": \"1974-07-01T23:05:51.647Z\",\n  \"endDate\": \"1987-04-17T21:59:40.464Z\",\n  \"reportName\": \"string\",\n  \"reportStatus\": \"string\",\n  \"businessPurpose\": \"string\",\n  \"submitDate\": \"2024-11-23T07:46:47.654Z\",\n  \"createDate\": \"1995-08-31T04:51:48.416Z\",\n  \"updateDate\": \"2022-09-11T01:59:53.533Z\",\n  \"numImages\": 1639,\n  \"reportOwner\": {\n    \"createDate\": \"1996-12-13T22:04:09.912Z\",\n    \"currencyCode1\": \"string\",\n    \"currencyMask\": \"string\",\n    \"customerId\": 6256,\n    \"customerUniqueId\": \"string\",\n    \"dateFormatMask\": \"string\",\n    \"emailAddress\": \"string\",\n    \"emailFormat\": \"string\",\n    \"expenseBarID\": 3592,\n    \"firstName\": \"string\",\n    \"isCopyingItems\": true,\n    \"isFirmReporting\": true,\n    \"isSuperDelegate\": false,\n    \"languageId\": 1327,\n    \"lastName\": \"string\",\n    \"personStatusId\": \"4\",\n    \"updateDate\": \"1984-04-10T12:52:27.864Z\",\n    \"useOnline\": false,\n    \"username\": \"string\",\n    \"personId\": 5751,\n    \"alternateEmails\": [\n      {\n        \"emailAddress\": \"string\",\n        \"id\": 6083,\n        \"customerId\": 2459,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"sequence\": 8062,\n        \"updateDate\": \"1978-05-06T16:54:40.171Z\",\n        \"createDate\": \"1960-08-31T07:23:59.877Z\",\n        \"validated\": false\n      },\n      {\n        \"emailAddress\": \"string\",\n        \"id\": 1882,\n        \"customerId\": 3587,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"sequence\": 9926,\n        \"updateDate\": \"1951-06-24T05:02:24.345Z\",\n        \"createDate\": \"2012-03-06T05:31:25.960Z\",\n        \"validated\": false\n      }\n    ],\n    \"reportsToPersonId\": 7283,\n    \"title\": \"string\",\n    \"carPlanId\": 6991,\n    \"carPlanTierId\": 4442,\n    \"vendor1\": \"string\",\n    \"currencyCode2\": \"string\",\n    \"vendor2\": \"string\",\n    \"country_Alpha2\": \"string\",\n    \"interactionUserID\": \"string\",\n    \"interactionAccountName\": \"string\",\n    \"alternateCurrencyCodes\": \"string\",\n    \"isModifiable\": false,\n    \"analyticsUserType\": \"U03\",\n    \"analyticsModules\": \"M01\",\n    \"analyticsView\": \"V09\",\n    \"isAdmin\": false,\n    \"phoneNumber\": \"string\",\n    \"personalDistanceDefault\": 5941.741239266304,\n    \"personalDistanceCostDefault\": 8117.810503841266,\n    \"createSource\": \"string\",\n    \"personLoggedInID\": 1744,\n    \"personDelegateID\": 2368,\n    \"personUDAs\": [\n      {\n        \"createDate\": \"1990-08-27T09:48:40.703Z\",\n        \"customerID\": 7801,\n        \"updateDate\": \"2015-06-16T17:09:06.638Z\",\n        \"userDefinedAttributeID\": 5908,\n        \"personUdaID\": 6893,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"stringValue\": \"string\",\n        \"booleanValue\": false,\n        \"entityValue\": 5498,\n        \"dateValue\": \"1952-02-18T06:51:35.153Z\",\n        \"currencyValue\": 8326.520979377929,\n        \"numberValue\": 1023.7815382776295,\n        \"isDeleted\": false,\n        \"udaName\": \"string\",\n        \"udaValue\": \"string\"\n      },\n      {\n        \"createDate\": \"1970-02-15T08:27:47.734Z\",\n        \"customerID\": 1297,\n        \"updateDate\": \"1997-01-26T00:32:14.748Z\",\n        \"userDefinedAttributeID\": 6530,\n        \"personUdaID\": 8825,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"stringValue\": \"string\",\n        \"booleanValue\": true,\n        \"entityValue\": 3383,\n        \"dateValue\": \"2000-07-15T13:53:44.595Z\",\n        \"currencyValue\": 7218.7755446153615,\n        \"numberValue\": 9936.60299148709,\n        \"isDeleted\": true,\n        \"udaName\": \"string\",\n        \"udaValue\": \"string\"\n      }\n    ],\n    \"personProfile\": {\n      \"personProfileId\": 9735,\n      \"customerId\": 1873,\n      \"person\": {\n        \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n      },\n      \"profileData\": \"string\",\n      \"createDate\": \"1960-12-15T19:58:24.740Z\",\n      \"updateDate\": \"1975-07-13T06:51:54.667Z\"\n    },\n    \"statusDirectPay\": \"NONE\",\n    \"personResourceId\": \"string\",\n    \"personEntities\": [\n      {\n        \"id\": 6240,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"customerId\": 8211,\n        \"entityId\": 2872,\n        \"entityName\": \"string\",\n        \"entityCode\": \"string\",\n        \"entityStatus\": true,\n        \"entityTypeId\": 4757,\n        \"entityTypeName\": \"string\",\n        \"entityTypeCode\": \"string\",\n        \"entityTypeIsUsedInRules\": true,\n        \"entityTypeDesc\": \"string\",\n        \"entityTypeStatus\": false,\n        \"roleId\": 8193,\n        \"roleName\": \"string\",\n        \"roleIsUsedInRules\": true,\n        \"roleDescription\": \"string\",\n        \"active\": false,\n        \"createDate\": \"1977-03-12T09:41:54.664Z\",\n        \"updateDate\": \"1972-02-09T11:39:19.654Z\",\n        \"fromDate\": \"2021-05-27T16:37:11.276Z\",\n        \"toDate\": \"1971-10-17T23:22:17.402Z\",\n        \"dateReplaced\": \"1994-03-25T15:10:10.235Z\",\n        \"source\": \"string\",\n        \"personId\": 687,\n        \"entityExtraData1\": \"string\",\n        \"entityExtraData2\": \"string\",\n        \"entityExtraData3\": \"string\",\n        \"entityExtraData4\": \"string\",\n        \"entityExtraData5\": \"string\",\n        \"entitySortOrder\": \"string\",\n        \"localizedEntityName\": \"string\",\n        \"localizedEntityTypeName\": \"string\",\n        \"localizedRoleName\": \"string\"\n      },\n      {\n        \"id\": 3998,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"customerId\": 1890,\n        \"entityId\": 7195,\n        \"entityName\": \"string\",\n        \"entityCode\": \"string\",\n        \"entityStatus\": true,\n        \"entityTypeId\": 9211,\n        \"entityTypeName\": \"string\",\n        \"entityTypeCode\": \"string\",\n        \"entityTypeIsUsedInRules\": false,\n        \"entityTypeDesc\": \"string\",\n        \"entityTypeStatus\": true,\n        \"roleId\": 3438,\n        \"roleName\": \"string\",\n        \"roleIsUsedInRules\": true,\n        \"roleDescription\": \"string\",\n        \"active\": true,\n        \"createDate\": \"1966-05-03T13:55:44.819Z\",\n        \"updateDate\": \"1987-08-01T08:15:00.659Z\",\n        \"fromDate\": \"2009-01-07T06:27:07.978Z\",\n        \"toDate\": \"2024-03-12T17:09:33.595Z\",\n        \"dateReplaced\": \"1984-03-16T07:07:33.545Z\",\n        \"source\": \"string\",\n        \"personId\": 5274,\n        \"entityExtraData1\": \"string\",\n        \"entityExtraData2\": \"string\",\n        \"entityExtraData3\": \"string\",\n        \"entityExtraData4\": \"string\",\n        \"entityExtraData5\": \"string\",\n        \"entitySortOrder\": \"string\",\n        \"localizedEntityName\": \"string\",\n        \"localizedEntityTypeName\": \"string\",\n        \"localizedRoleName\": \"string\"\n      }\n    ],\n    \"reportsToPerson\": {\n      \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n    },\n    \"reportsToPersonName\": \"string\",\n    \"password\": \"string\",\n    \"password5702\": \"string\",\n    \"company\": \"string\",\n    \"companyId\": \"string\",\n    \"defaultApplication\": \"1\",\n    \"mobileDeviceLogin\": false,\n    \"loginMethod\": \"CHROME_SSO\",\n    \"currentLandingApps\": [\n      \"2\",\n      \"2\"\n    ],\n    \"loginLocale\": \"string\",\n    \"mongoConf\": \"string\",\n    \"enableAnalytics\": false,\n    \"crSsoPasswordOriginal\": \"string\",\n    \"encryptedPassword\": \"string\",\n    \"encryptedUsername\": \"string\",\n    \"encryptedCompanyId\": \"string\",\n    \"locationCodeForVat\": \"string\",\n    \"saveOnSelectExpenseTypeNames\": \"string\",\n    \"locationCodeForPerDiem\": \"string\",\n    \"locationCodeForPAPerDiem\": \"string\",\n    \"alternateEmailAddress1\": \"string\",\n    \"alternateEmailAddress2\": \"string\",\n    \"alternateEmailAddress3\": \"string\",\n    \"expenseBarCode\": \"string\",\n    \"distanceUnit\": \"string\",\n    \"crmNumber\": \"string\",\n    \"npi\": 4325,\n    \"providerBusinessMailingAddressCityName\": \"string\",\n    \"providerBusinessMailingAddressStateName\": \"string\",\n    \"specialty\": \"string\",\n    \"healthCareProviderId\": 7598,\n    \"enablePlatinumLinkInsideApp\": true,\n    \"motdType\": \"string\",\n    \"enableGetDeparted\": false,\n    \"enableInvoiceMgmtGrid\": false,\n    \"invoiceBarType\": \"string\",\n    \"invoiceOCRConfidenceThreshold\": 1678.0674703333864,\n    \"poBarType\": \"string\",\n    \"esPersonSearchMap\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    },\n    \"esPersonSearchQuery\": \"string\",\n    \"esPersonSearchQueryExclusion\": \"string\",\n    \"companyWideFeedIds\": [\n      5611,\n      5026\n    ],\n    \"enableMatterOnSelectES\": false,\n    \"enableBulkAdd\": false,\n    \"displayAmexRealtimeNotifications\": true,\n    \"usBankRealTimeNotificationsEnabled\": true,\n    \"emburseRealTimeNotificationsEnabled\": true,\n    \"displayAdminConsole\": false,\n    \"isUIAdmin\": true,\n    \"isSuperAdmin\": true,\n    \"displayReconciliation\": true,\n    \"displayReAssignButton\": false,\n    \"displayReAssignButtonHeaderOnly\": true,\n    \"hideApproverReturnOnLineItem\": false,\n    \"hideApproverAdjustOnLineItem\": true,\n    \"usingXmlUploadButton\": false,\n    \"usingEastEuroPerDiem\": false,\n    \"usingSalesforce\": false,\n    \"displayImportFromPaCheckbox\": false,\n    \"displayImportPerDiemMileageFromPaCheckbox\": true,\n    \"defaultCheckedPaCheckbox\": false,\n    \"paPerDiemTimePickerEnabled\": false,\n    \"showFxRateSelectorInWizard\": false,\n    \"hideOwnerTotalPayMeAmount\": false,\n    \"languageLocale\": \"string\",\n    \"enableTravelBooking\": false,\n    \"enableMultipleApprovalDelegates\": true,\n    \"travelBookingURL\": \"string\",\n    \"openTravelBookingInNewTab\": true,\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"disableRecall\": false,\n    \"disableGoogleMapsRouteChanges\": true,\n    \"enableExpirePA\": true,\n    \"useExpense\": true,\n    \"enableExpenseManagement\": true,\n    \"usingCrmAllocationAccountOnly\": true,\n    \"useProsper\": true,\n    \"delegateBankAccountEnabled\": true,\n    \"sessionTimeoutInMinutes\": 2062,\n    \"enableProfileCardPrivateComments\": false,\n    \"enableNegativePerDiemAmount\": false,\n    \"enableInterActionContactSearch\": true,\n    \"membershipAccountEnabled\": true,\n    \"enableCopyingPA\": false,\n    \"isVatApprover\": true,\n    \"isRiskApprover\": true,\n    \"personalCreditCardEnabled\": false,\n    \"personalChargesEnabled\": true,\n    \"hideStatementPaidValues\": false,\n    \"perDiemConfigurationType\": \"string\",\n    \"hideLogoutOption\": true,\n    \"enableLineItemBulkEditAllocation\": true,\n    \"showRoutingRuleDescription\": true,\n    \"permissions\": [\n      {\n        \"resourceCode\": \"string\",\n        \"actionCode\": \"string\"\n      },\n      {\n        \"resourceCode\": \"string\",\n        \"actionCode\": \"string\"\n      }\n    ],\n    \"fullName\": \"string\",\n    \"udf1\": \"string\",\n    \"udf2\": \"string\",\n    \"udf3\": \"string\",\n    \"germanPerDiemUser\": true,\n    \"configurationEnabled\": false,\n    \"usingPreApproval\": false,\n    \"usingInvoice\": true,\n    \"bankAccountEnabled\": true,\n    \"usingCarPlan\": true,\n    \"perDiemTimePickerEnabled\": false,\n    \"usingPAExpenseMappingForApply\": true,\n    \"dnd\": false,\n    \"decryptedPhoneNumber\": \"string\",\n    \"emailPreference\": \"HTML\",\n    \"isInvoiceApprovalPreviewOnly\": true,\n    \"isInvoicePriorPreviewOnly\": true,\n    \"isInvoiceManagementPreviewOnly\": true,\n    \"isBulkSubmitEnabled\": false,\n    \"isRecallInvoiceEnabled\": true,\n    \"isInvoiceSubmitToOcrEnabled\": true,\n    \"isInvoiceCreditCardEnabled\": true,\n    \"isInvoiceChargeTypeEnabled\": true,\n    \"isInvoiceDefaultLineItemTaxCodeDisabled\": true,\n    \"isInvoiceOCREnabled\": false,\n    \"isInvoiceGLFilterEnabled\": true,\n    \"isInvoiceConvertTemplatesDisabled\": false,\n    \"isUsingPo\": false,\n    \"isPoManagementGridEnabled\": true,\n    \"isPoApprovalPreviewOnly\": true,\n    \"isPoPriorPreviewOnly\": false,\n    \"isPoManagementPreviewOnly\": false,\n    \"isPoBulkSubmitEnabled\": true,\n    \"isPoRecallEnabled\": false,\n    \"isPoSubmitToOcrEnabled\": false,\n    \"isPoReceivingScreenEnabled\": false\n  },\n  \"reportOwnerId\": \"string\",\n  \"reportCreator\": {\n    \"createDate\": \"2008-08-07T05:58:42.057Z\",\n    \"currencyCode1\": \"string\",\n    \"currencyMask\": \"string\",\n    \"customerId\": 274,\n    \"customerUniqueId\": \"string\",\n    \"dateFormatMask\": \"string\",\n    \"emailAddress\": \"string\",\n    \"emailFormat\": \"string\",\n    \"expenseBarID\": 4476,\n    \"firstName\": \"string\",\n    \"isCopyingItems\": true,\n    \"isFirmReporting\": true,\n    \"isSuperDelegate\": false,\n    \"languageId\": 1336,\n    \"lastName\": \"string\",\n    \"personStatusId\": \"2\",\n    \"updateDate\": \"1986-11-12T17:36:33.671Z\",\n    \"useOnline\": true,\n    \"username\": \"string\",\n    \"personId\": 7533,\n    \"alternateEmails\": [\n      {\n        \"emailAddress\": \"string\",\n        \"id\": 3454,\n        \"customerId\": 9110,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"sequence\": 448,\n        \"updateDate\": \"1974-04-23T01:33:53.451Z\",\n        \"createDate\": \"2006-02-21T17:57:48.613Z\",\n        \"validated\": true\n      },\n      {\n        \"emailAddress\": \"string\",\n        \"id\": 416,\n        \"customerId\": 9096,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"sequence\": 8323,\n        \"updateDate\": \"1969-05-02T18:40:01.589Z\",\n        \"createDate\": \"1998-01-21T08:32:06.696Z\",\n        \"validated\": false\n      }\n    ],\n    \"reportsToPersonId\": 9871,\n    \"title\": \"string\",\n    \"carPlanId\": 498,\n    \"carPlanTierId\": 4584,\n    \"vendor1\": \"string\",\n    \"currencyCode2\": \"string\",\n    \"vendor2\": \"string\",\n    \"country_Alpha2\": \"string\",\n    \"interactionUserID\": \"string\",\n    \"interactionAccountName\": \"string\",\n    \"alternateCurrencyCodes\": \"string\",\n    \"isModifiable\": false,\n    \"analyticsUserType\": \"U03\",\n    \"analyticsModules\": \"M03\",\n    \"analyticsView\": \"V08\",\n    \"isAdmin\": true,\n    \"phoneNumber\": \"string\",\n    \"personalDistanceDefault\": 5154.153359029458,\n    \"personalDistanceCostDefault\": 7162.461960583078,\n    \"createSource\": \"string\",\n    \"personLoggedInID\": 2135,\n    \"personDelegateID\": 147,\n    \"personUDAs\": [\n      {\n        \"createDate\": \"1960-09-25T15:10:09.510Z\",\n        \"customerID\": 1577,\n        \"updateDate\": \"2023-12-22T02:15:56.139Z\",\n        \"userDefinedAttributeID\": 7321,\n        \"personUdaID\": 7435,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"stringValue\": \"string\",\n        \"booleanValue\": false,\n        \"entityValue\": 1831,\n        \"dateValue\": \"1963-06-08T04:24:11.135Z\",\n        \"currencyValue\": 5546.173126609151,\n        \"numberValue\": 2282.2844488197393,\n        \"isDeleted\": true,\n        \"udaName\": \"string\",\n        \"udaValue\": \"string\"\n      },\n      {\n        \"createDate\": \"1953-03-20T00:57:04.171Z\",\n        \"customerID\": 9656,\n        \"updateDate\": \"1973-11-22T19:54:48.881Z\",\n        \"userDefinedAttributeID\": 9916,\n        \"personUdaID\": 639,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"stringValue\": \"string\",\n        \"booleanValue\": true,\n        \"entityValue\": 2976,\n        \"dateValue\": \"1954-11-28T04:31:39.114Z\",\n        \"currencyValue\": 6527.657419779148,\n        \"numberValue\": 3334.0827878839573,\n        \"isDeleted\": true,\n        \"udaName\": \"string\",\n        \"udaValue\": \"string\"\n      }\n    ],\n    \"personProfile\": {\n      \"personProfileId\": 3358,\n      \"customerId\": 8685,\n      \"person\": {\n        \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n      },\n      \"profileData\": \"string\",\n      \"createDate\": \"1969-04-23T21:06:32.510Z\",\n      \"updateDate\": \"1997-06-12T12:24:08.758Z\"\n    },\n    \"statusDirectPay\": \"NONE\",\n    \"personResourceId\": \"string\",\n    \"personEntities\": [\n      {\n        \"id\": 7202,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"customerId\": 2227,\n        \"entityId\": 1281,\n        \"entityName\": \"string\",\n        \"entityCode\": \"string\",\n        \"entityStatus\": true,\n        \"entityTypeId\": 3988,\n        \"entityTypeName\": \"string\",\n        \"entityTypeCode\": \"string\",\n        \"entityTypeIsUsedInRules\": false,\n        \"entityTypeDesc\": \"string\",\n        \"entityTypeStatus\": false,\n        \"roleId\": 8793,\n        \"roleName\": \"string\",\n        \"roleIsUsedInRules\": true,\n        \"roleDescription\": \"string\",\n        \"active\": true,\n        \"createDate\": \"2000-11-05T12:57:01.708Z\",\n        \"updateDate\": \"1975-09-20T05:48:50.353Z\",\n        \"fromDate\": \"2025-12-11T01:38:26.130Z\",\n        \"toDate\": \"1961-06-22T09:41:24.672Z\",\n        \"dateReplaced\": \"1985-03-13T09:32:10.954Z\",\n        \"source\": \"string\",\n        \"personId\": 4792,\n        \"entityExtraData1\": \"string\",\n        \"entityExtraData2\": \"string\",\n        \"entityExtraData3\": \"string\",\n        \"entityExtraData4\": \"string\",\n        \"entityExtraData5\": \"string\",\n        \"entitySortOrder\": \"string\",\n        \"localizedEntityName\": \"string\",\n        \"localizedEntityTypeName\": \"string\",\n        \"localizedRoleName\": \"string\"\n      },\n      {\n        \"id\": 8550,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"customerId\": 3923,\n        \"entityId\": 2159,\n        \"entityName\": \"string\",\n        \"entityCode\": \"string\",\n        \"entityStatus\": false,\n        \"entityTypeId\": 3872,\n        \"entityTypeName\": \"string\",\n        \"entityTypeCode\": \"string\",\n        \"entityTypeIsUsedInRules\": true,\n        \"entityTypeDesc\": \"string\",\n        \"entityTypeStatus\": true,\n        \"roleId\": 2611,\n        \"roleName\": \"string\",\n        \"roleIsUsedInRules\": false,\n        \"roleDescription\": \"string\",\n        \"active\": false,\n        \"createDate\": \"1953-01-16T17:15:36.871Z\",\n        \"updateDate\": \"1972-04-12T08:56:29.696Z\",\n        \"fromDate\": \"2016-03-08T23:58:07.428Z\",\n        \"toDate\": \"2015-03-02T08:21:04.129Z\",\n        \"dateReplaced\": \"2007-07-30T06:35:26.739Z\",\n        \"source\": \"string\",\n        \"personId\": 5712,\n        \"entityExtraData1\": \"string\",\n        \"entityExtraData2\": \"string\",\n        \"entityExtraData3\": \"string\",\n        \"entityExtraData4\": \"string\",\n        \"entityExtraData5\": \"string\",\n        \"entitySortOrder\": \"string\",\n        \"localizedEntityName\": \"string\",\n        \"localizedEntityTypeName\": \"string\",\n        \"localizedRoleName\": \"string\"\n      }\n    ],\n    \"reportsToPerson\": {\n      \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n    },\n    \"reportsToPersonName\": \"string\",\n    \"password\": \"string\",\n    \"password5702\": \"string\",\n    \"company\": \"string\",\n    \"companyId\": \"string\",\n    \"defaultApplication\": \"3\",\n    \"mobileDeviceLogin\": false,\n    \"loginMethod\": \"CHROME_SSO\",\n    \"currentLandingApps\": [\n      \"3\",\n      \"3\"\n    ],\n    \"loginLocale\": \"string\",\n    \"mongoConf\": \"string\",\n    \"enableAnalytics\": true,\n    \"crSsoPasswordOriginal\": \"string\",\n    \"encryptedPassword\": \"string\",\n    \"encryptedUsername\": \"string\",\n    \"encryptedCompanyId\": \"string\",\n    \"locationCodeForVat\": \"string\",\n    \"saveOnSelectExpenseTypeNames\": \"string\",\n    \"locationCodeForPerDiem\": \"string\",\n    \"locationCodeForPAPerDiem\": \"string\",\n    \"alternateEmailAddress1\": \"string\",\n    \"alternateEmailAddress2\": \"string\",\n    \"alternateEmailAddress3\": \"string\",\n    \"expenseBarCode\": \"string\",\n    \"distanceUnit\": \"string\",\n    \"crmNumber\": \"string\",\n    \"npi\": 2350,\n    \"providerBusinessMailingAddressCityName\": \"string\",\n    \"providerBusinessMailingAddressStateName\": \"string\",\n    \"specialty\": \"string\",\n    \"healthCareProviderId\": 1168,\n    \"enablePlatinumLinkInsideApp\": false,\n    \"motdType\": \"string\",\n    \"enableGetDeparted\": true,\n    \"enableInvoiceMgmtGrid\": false,\n    \"invoiceBarType\": \"string\",\n    \"invoiceOCRConfidenceThreshold\": 5723.426263683661,\n    \"poBarType\": \"string\",\n    \"esPersonSearchMap\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {},\n      \"key_4\": {}\n    },\n    \"esPersonSearchQuery\": \"string\",\n    \"esPersonSearchQueryExclusion\": \"string\",\n    \"companyWideFeedIds\": [\n      8561,\n      4535\n    ],\n    \"enableMatterOnSelectES\": true,\n    \"enableBulkAdd\": true,\n    \"displayAmexRealtimeNotifications\": true,\n    \"usBankRealTimeNotificationsEnabled\": true,\n    \"emburseRealTimeNotificationsEnabled\": true,\n    \"displayAdminConsole\": true,\n    \"isUIAdmin\": true,\n    \"isSuperAdmin\": true,\n    \"displayReconciliation\": false,\n    \"displayReAssignButton\": true,\n    \"displayReAssignButtonHeaderOnly\": true,\n    \"hideApproverReturnOnLineItem\": false,\n    \"hideApproverAdjustOnLineItem\": true,\n    \"usingXmlUploadButton\": false,\n    \"usingEastEuroPerDiem\": false,\n    \"usingSalesforce\": false,\n    \"displayImportFromPaCheckbox\": false,\n    \"displayImportPerDiemMileageFromPaCheckbox\": true,\n    \"defaultCheckedPaCheckbox\": false,\n    \"paPerDiemTimePickerEnabled\": false,\n    \"showFxRateSelectorInWizard\": true,\n    \"hideOwnerTotalPayMeAmount\": false,\n    \"languageLocale\": \"string\",\n    \"enableTravelBooking\": false,\n    \"enableMultipleApprovalDelegates\": true,\n    \"travelBookingURL\": \"string\",\n    \"openTravelBookingInNewTab\": true,\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"disableRecall\": false,\n    \"disableGoogleMapsRouteChanges\": true,\n    \"enableExpirePA\": false,\n    \"useExpense\": false,\n    \"enableExpenseManagement\": false,\n    \"usingCrmAllocationAccountOnly\": true,\n    \"useProsper\": true,\n    \"delegateBankAccountEnabled\": false,\n    \"sessionTimeoutInMinutes\": 8084,\n    \"enableProfileCardPrivateComments\": true,\n    \"enableNegativePerDiemAmount\": true,\n    \"enableInterActionContactSearch\": false,\n    \"membershipAccountEnabled\": true,\n    \"enableCopyingPA\": false,\n    \"isVatApprover\": false,\n    \"isRiskApprover\": true,\n    \"personalCreditCardEnabled\": true,\n    \"personalChargesEnabled\": false,\n    \"hideStatementPaidValues\": true,\n    \"perDiemConfigurationType\": \"string\",\n    \"hideLogoutOption\": true,\n    \"enableLineItemBulkEditAllocation\": true,\n    \"showRoutingRuleDescription\": true,\n    \"permissions\": [\n      {\n        \"resourceCode\": \"string\",\n        \"actionCode\": \"string\"\n      },\n      {\n        \"resourceCode\": \"string\",\n        \"actionCode\": \"string\"\n      }\n    ],\n    \"fullName\": \"string\",\n    \"udf1\": \"string\",\n    \"udf2\": \"string\",\n    \"udf3\": \"string\",\n    \"germanPerDiemUser\": false,\n    \"configurationEnabled\": false,\n    \"usingPreApproval\": true,\n    \"usingInvoice\": true,\n    \"bankAccountEnabled\": false,\n    \"usingCarPlan\": false,\n    \"perDiemTimePickerEnabled\": true,\n    \"usingPAExpenseMappingForApply\": false,\n    \"dnd\": false,\n    \"decryptedPhoneNumber\": \"string\",\n    \"emailPreference\": \"HTML\",\n    \"isInvoiceApprovalPreviewOnly\": true,\n    \"isInvoicePriorPreviewOnly\": false,\n    \"isInvoiceManagementPreviewOnly\": false,\n    \"isBulkSubmitEnabled\": true,\n    \"isRecallInvoiceEnabled\": true,\n    \"isInvoiceSubmitToOcrEnabled\": true,\n    \"isInvoiceCreditCardEnabled\": true,\n    \"isInvoiceChargeTypeEnabled\": true,\n    \"isInvoiceDefaultLineItemTaxCodeDisabled\": true,\n    \"isInvoiceOCREnabled\": true,\n    \"isInvoiceGLFilterEnabled\": true,\n    \"isInvoiceConvertTemplatesDisabled\": true,\n    \"isUsingPo\": false,\n    \"isPoManagementGridEnabled\": false,\n    \"isPoApprovalPreviewOnly\": true,\n    \"isPoPriorPreviewOnly\": true,\n    \"isPoManagementPreviewOnly\": false,\n    \"isPoBulkSubmitEnabled\": false,\n    \"isPoRecallEnabled\": true,\n    \"isPoSubmitToOcrEnabled\": false,\n    \"isPoReceivingScreenEnabled\": false\n  },\n  \"reportCreatorId\": \"string\",\n  \"amountSpentApproved\": 9318.053490805452,\n  \"amountCustomer\": 1616.8082677279483,\n  \"remainingAmount\": 867.3027785317867,\n  \"currencyCodeCustomer\": \"string\",\n  \"fromDate\": \"1993-03-08T11:17:41.455Z\",\n  \"toDate\": \"1995-11-03T07:13:57.364Z\",\n  \"manualExpirationDate\": \"1998-11-14T09:30:57.097Z\",\n  \"exchangeRateCustomer\": \"string\",\n  \"isAmountSpentApprovedSet\": true,\n  \"isApprovedAmountAdjusted\": false,\n  \"isActive\": false,\n  \"statusExport\": \"EXPF\",\n  \"allocations\": [\n    {\n      \"allocationId\": \"string\",\n      \"description\": \"string\",\n      \"clientNumberParent\": \"string\",\n      \"clientName\": \"string\",\n      \"clientNumber\": \"string\",\n      \"type\": \"string\",\n      \"allocationUDAs\": [\n        {\n          \"udaName\": \"string\",\n          \"udaValue\": \"string\"\n        },\n        {\n          \"udaName\": \"string\",\n          \"udaValue\": \"string\"\n        }\n      ],\n      \"udf1PersonCustomerUniqueId\": \"string\",\n      \"udf2PersonCustomerUniqueId\": \"string\",\n      \"udf3PersonCustomerUniqueId\": \"string\",\n      \"glaccount\": \"string\",\n      \"percent\": 8527.95840157626,\n      \"approvalAmount\": 3100.504704507556,\n      \"udf1\": \"string\",\n      \"udf2\": \"string\",\n      \"udf3\": \"string\",\n      \"udf4\": \"string\"\n    },\n    {\n      \"allocationId\": \"string\",\n      \"description\": \"string\",\n      \"clientNumberParent\": \"string\",\n      \"clientName\": \"string\",\n      \"clientNumber\": \"string\",\n      \"type\": \"string\",\n      \"allocationUDAs\": [\n        {\n          \"udaName\": \"string\",\n          \"udaValue\": \"string\"\n        },\n        {\n          \"udaName\": \"string\",\n          \"udaValue\": \"string\"\n        }\n      ],\n      \"udf1PersonCustomerUniqueId\": \"string\",\n      \"udf2PersonCustomerUniqueId\": \"string\",\n      \"udf3PersonCustomerUniqueId\": \"string\",\n      \"glaccount\": \"string\",\n      \"percent\": 7376.475154391155,\n      \"approvalAmount\": 8971.095284071638,\n      \"udf1\": \"string\",\n      \"udf2\": \"string\",\n      \"udf3\": \"string\",\n      \"udf4\": \"string\"\n    }\n  ],\n  \"preApprovalAllocations\": [\n    {\n      \"allocationId\": 9131,\n      \"description\": \"string\",\n      \"matterNumber\": \"string\",\n      \"clientName\": \"string\",\n      \"clientNumber\": \"string\",\n      \"clientDescription\": \"string\",\n      \"entityCode1\": 4615,\n      \"entityCode2\": 2982,\n      \"percentage\": 7193.161726445968,\n      \"amountSpentApproved\": 5476.0696230355,\n      \"amountSpentConverted\": 4792.354786654384,\n      \"currencyCode\": \"string\",\n      \"udf1\": \"string\",\n      \"udf2\": \"string\",\n      \"udf3\": \"string\",\n      \"udf4\": \"string\",\n      \"entityField1\": \"string\",\n      \"entityField2\": \"string\",\n      \"entityField3\": \"string\",\n      \"glAccount\": \"string\",\n      \"type\": \"string\",\n      \"extraLineItemData1LegalValues\": \"string\",\n      \"isDeleted\": false,\n      \"billable\": false\n    },\n    {\n      \"allocationId\": 8704,\n      \"description\": \"string\",\n      \"matterNumber\": \"string\",\n      \"clientName\": \"string\",\n      \"clientNumber\": \"string\",\n      \"clientDescription\": \"string\",\n      \"entityCode1\": 4043,\n      \"entityCode2\": 8354,\n      \"percentage\": 3833.734869078408,\n      \"amountSpentApproved\": 2321.9098876500834,\n      \"amountSpentConverted\": 7468.319822361489,\n      \"currencyCode\": \"string\",\n      \"udf1\": \"string\",\n      \"udf2\": \"string\",\n      \"udf3\": \"string\",\n      \"udf4\": \"string\",\n      \"entityField1\": \"string\",\n      \"entityField2\": \"string\",\n      \"entityField3\": \"string\",\n      \"glAccount\": \"string\",\n      \"type\": \"string\",\n      \"extraLineItemData1LegalValues\": \"string\",\n      \"isDeleted\": true,\n      \"billable\": false\n    }\n  ],\n  \"lineItems\": [\n    {\n      \"id\": \"string\",\n      \"approvalAmount\": 7105.262106410062,\n      \"typeName\": \"string\",\n      \"typeDisplayName\": \"string\",\n      \"amountSpent\": 2459.4205569620062,\n      \"description\": \"string\",\n      \"xmlUdfData\": [\n        {\n          \"userDefinedAttributeId\": 9583,\n          \"customerId\": 6966,\n          \"stringValue\": \"string\",\n          \"numberValue\": 3277.290162712577,\n          \"currencyValue\": 9112.866362540311,\n          \"entityValue\": {\n            \"active\": true,\n            \"code\": \"string\",\n            \"customerId\": 7280,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 8397,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 8236,\n            \"personDelegateID\": 2949,\n            \"updateDate\": \"1967-03-12T05:00:20.534Z\",\n            \"entityTypeID\": 1954,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": false\n          },\n          \"entityValueInt\": 7910,\n          \"dateValue\": \"1989-05-14T07:28:29.413Z\",\n          \"boolValue\": true,\n          \"udaDataType\": \"DateValue\",\n          \"xmlElement\": \"string\",\n          \"udaName\": \"string\",\n          \"personStandardScreenLabel\": \"string\"\n        },\n        {\n          \"userDefinedAttributeId\": 2211,\n          \"customerId\": 3341,\n          \"stringValue\": \"string\",\n          \"numberValue\": 5130.97735552394,\n          \"currencyValue\": 5189.028297204378,\n          \"entityValue\": {\n            \"active\": false,\n            \"code\": \"string\",\n            \"customerId\": 4510,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 5124,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 199,\n            \"personDelegateID\": 4809,\n            \"updateDate\": \"2012-12-25T16:31:19.095Z\",\n            \"entityTypeID\": 8306,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": true\n          },\n          \"entityValueInt\": 8567,\n          \"dateValue\": \"1970-01-07T18:12:39.354Z\",\n          \"boolValue\": false,\n          \"udaDataType\": \"NumberValue\",\n          \"xmlElement\": \"string\",\n          \"udaName\": \"string\",\n          \"personStandardScreenLabel\": \"string\"\n        }\n      ],\n      \"externalRef\": \"string\",\n      \"isPerDiem\": false,\n      \"lineItemTypeId\": 4468,\n      \"transactionDate\": \"1983-04-02T21:59:38.018Z\",\n      \"udas\": [\n        {\n          \"udaName\": \"string\",\n          \"id\": \"string\",\n          \"lineItemId\": \"string\",\n          \"userDefinedAttributeId\": 6287,\n          \"customerId\": 8496,\n          \"stringValue\": \"string\",\n          \"numberValue\": 5878.427583966258,\n          \"currencyValue\": 2690.882563770307,\n          \"entityValue\": {\n            \"active\": false,\n            \"code\": \"string\",\n            \"customerId\": 5592,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 1436,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 9985,\n            \"personDelegateID\": 7256,\n            \"updateDate\": \"1977-11-28T00:39:27.411Z\",\n            \"entityTypeID\": 5341,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": true\n          },\n          \"dateValue\": \"1986-02-22T04:26:24.858Z\",\n          \"booleanValue\": true,\n          \"udaDataType\": \"string\"\n        },\n        {\n          \"udaName\": \"string\",\n          \"id\": \"string\",\n          \"lineItemId\": \"string\",\n          \"userDefinedAttributeId\": 2356,\n          \"customerId\": 7529,\n          \"stringValue\": \"string\",\n          \"numberValue\": 6185.256508556215,\n          \"currencyValue\": 6629.83086340875,\n          \"entityValue\": {\n            \"active\": true,\n            \"code\": \"string\",\n            \"customerId\": 3011,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 9324,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 403,\n            \"personDelegateID\": 871,\n            \"updateDate\": \"1973-09-24T13:55:07.987Z\",\n            \"entityTypeID\": 259,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": false\n          },\n          \"dateValue\": \"1980-12-02T03:03:45.696Z\",\n          \"booleanValue\": false,\n          \"udaDataType\": \"string\"\n        }\n      ],\n      \"allocations\": [\n        {\n          \"allocationId\": 2177,\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 8290.27695238399,\n          \"percent\": 1407.0118245087115,\n          \"allocationReferenceString\": \"string\",\n          \"allocationReference\": {\n            \"paLineItemAllocationId\": \"string\",\n            \"allocationSeg1\": \"string\",\n            \"allocationSeg2\": \"string\",\n            \"allocationSeg3\": \"string\",\n            \"allocationSeg4\": \"string\",\n            \"allocationSeg5\": \"string\",\n            \"allocationSeg6\": \"string\",\n            \"allocationSeg7\": \"string\",\n            \"allocationSeg8\": \"string\",\n            \"allocationSeg9\": \"string\",\n            \"allocationSeg10\": \"string\",\n            \"allocationSeg11\": \"string\",\n            \"allocationSeg12\": \"string\",\n            \"allocationSeg13\": \"string\",\n            \"allocationSeg14\": \"string\",\n            \"allocationSeg15\": \"string\",\n            \"allocationSeg16\": \"string\"\n          }\n        },\n        {\n          \"allocationId\": 918,\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 6102.464048375158,\n          \"percent\": 4502.085794176087,\n          \"allocationReferenceString\": \"string\",\n          \"allocationReference\": {\n            \"paLineItemAllocationId\": \"string\",\n            \"allocationSeg1\": \"string\",\n            \"allocationSeg2\": \"string\",\n            \"allocationSeg3\": \"string\",\n            \"allocationSeg4\": \"string\",\n            \"allocationSeg5\": \"string\",\n            \"allocationSeg6\": \"string\",\n            \"allocationSeg7\": \"string\",\n            \"allocationSeg8\": \"string\",\n            \"allocationSeg9\": \"string\",\n            \"allocationSeg10\": \"string\",\n            \"allocationSeg11\": \"string\",\n            \"allocationSeg12\": \"string\",\n            \"allocationSeg13\": \"string\",\n            \"allocationSeg14\": \"string\",\n            \"allocationSeg15\": \"string\",\n            \"allocationSeg16\": \"string\"\n          }\n        }\n      ],\n      \"lineItemAllocations\": [\n        {\n          \"allocationId\": \"string\",\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 1913.19904017493,\n          \"percent\": 8320.990739307439\n        },\n        {\n          \"allocationId\": \"string\",\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 8487.731035820352,\n          \"percent\": 907.4390616511852\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"approvalAmount\": 9780.079996349006,\n      \"typeName\": \"string\",\n      \"typeDisplayName\": \"string\",\n      \"amountSpent\": 8154.774975680051,\n      \"description\": \"string\",\n      \"xmlUdfData\": [\n        {\n          \"userDefinedAttributeId\": 8262,\n          \"customerId\": 3939,\n          \"stringValue\": \"string\",\n          \"numberValue\": 4426.298332154584,\n          \"currencyValue\": 640.4094624739853,\n          \"entityValue\": {\n            \"active\": false,\n            \"code\": \"string\",\n            \"customerId\": 3566,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 7607,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 3360,\n            \"personDelegateID\": 2,\n            \"updateDate\": \"1969-07-29T00:40:42.197Z\",\n            \"entityTypeID\": 6064,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": true\n          },\n          \"entityValueInt\": 9189,\n          \"dateValue\": \"1985-01-16T07:01:23.899Z\",\n          \"boolValue\": true,\n          \"udaDataType\": \"CurrencyValue\",\n          \"xmlElement\": \"string\",\n          \"udaName\": \"string\",\n          \"personStandardScreenLabel\": \"string\"\n        },\n        {\n          \"userDefinedAttributeId\": 5606,\n          \"customerId\": 9173,\n          \"stringValue\": \"string\",\n          \"numberValue\": 2878.3328747777537,\n          \"currencyValue\": 7342.5892038861875,\n          \"entityValue\": {\n            \"active\": true,\n            \"code\": \"string\",\n            \"customerId\": 7743,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 17,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 8747,\n            \"personDelegateID\": 939,\n            \"updateDate\": \"1972-03-27T21:37:24.709Z\",\n            \"entityTypeID\": 4765,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": false\n          },\n          \"entityValueInt\": 7660,\n          \"dateValue\": \"1992-10-31T07:36:20.253Z\",\n          \"boolValue\": false,\n          \"udaDataType\": \"DateValue\",\n          \"xmlElement\": \"string\",\n          \"udaName\": \"string\",\n          \"personStandardScreenLabel\": \"string\"\n        }\n      ],\n      \"externalRef\": \"string\",\n      \"isPerDiem\": true,\n      \"lineItemTypeId\": 2155,\n      \"transactionDate\": \"2002-05-20T21:02:05.350Z\",\n      \"udas\": [\n        {\n          \"udaName\": \"string\",\n          \"id\": \"string\",\n          \"lineItemId\": \"string\",\n          \"userDefinedAttributeId\": 7140,\n          \"customerId\": 5719,\n          \"stringValue\": \"string\",\n          \"numberValue\": 9641.700282965396,\n          \"currencyValue\": 2516.796062653154,\n          \"entityValue\": {\n            \"active\": true,\n            \"code\": \"string\",\n            \"customerId\": 6662,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 4802,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 2146,\n            \"personDelegateID\": 8639,\n            \"updateDate\": \"1980-05-25T21:16:47.320Z\",\n            \"entityTypeID\": 5600,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": true\n          },\n          \"dateValue\": \"2019-03-24T00:26:40.744Z\",\n          \"booleanValue\": false,\n          \"udaDataType\": \"string\"\n        },\n        {\n          \"udaName\": \"string\",\n          \"id\": \"string\",\n          \"lineItemId\": \"string\",\n          \"userDefinedAttributeId\": 5376,\n          \"customerId\": 6686,\n          \"stringValue\": \"string\",\n          \"numberValue\": 5709.440361609672,\n          \"currencyValue\": 6227.457569758151,\n          \"entityValue\": {\n            \"active\": false,\n            \"code\": \"string\",\n            \"customerId\": 1178,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 5454,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 9743,\n            \"personDelegateID\": 5710,\n            \"updateDate\": \"1970-07-16T11:32:05.413Z\",\n            \"entityTypeID\": 4956,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": false\n          },\n          \"dateValue\": \"1977-09-27T17:05:00.313Z\",\n          \"booleanValue\": true,\n          \"udaDataType\": \"string\"\n        }\n      ],\n      \"allocations\": [\n        {\n          \"allocationId\": 7032,\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 7405.169721654554,\n          \"percent\": 8382.703799203191,\n          \"allocationReferenceString\": \"string\",\n          \"allocationReference\": {\n            \"paLineItemAllocationId\": \"string\",\n            \"allocationSeg1\": \"string\",\n            \"allocationSeg2\": \"string\",\n            \"allocationSeg3\": \"string\",\n            \"allocationSeg4\": \"string\",\n            \"allocationSeg5\": \"string\",\n            \"allocationSeg6\": \"string\",\n            \"allocationSeg7\": \"string\",\n            \"allocationSeg8\": \"string\",\n            \"allocationSeg9\": \"string\",\n            \"allocationSeg10\": \"string\",\n            \"allocationSeg11\": \"string\",\n            \"allocationSeg12\": \"string\",\n            \"allocationSeg13\": \"string\",\n            \"allocationSeg14\": \"string\",\n            \"allocationSeg15\": \"string\",\n            \"allocationSeg16\": \"string\"\n          }\n        },\n        {\n          \"allocationId\": 3275,\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 1003.1097535096667,\n          \"percent\": 3540.991806256788,\n          \"allocationReferenceString\": \"string\",\n          \"allocationReference\": {\n            \"paLineItemAllocationId\": \"string\",\n            \"allocationSeg1\": \"string\",\n            \"allocationSeg2\": \"string\",\n            \"allocationSeg3\": \"string\",\n            \"allocationSeg4\": \"string\",\n            \"allocationSeg5\": \"string\",\n            \"allocationSeg6\": \"string\",\n            \"allocationSeg7\": \"string\",\n            \"allocationSeg8\": \"string\",\n            \"allocationSeg9\": \"string\",\n            \"allocationSeg10\": \"string\",\n            \"allocationSeg11\": \"string\",\n            \"allocationSeg12\": \"string\",\n            \"allocationSeg13\": \"string\",\n            \"allocationSeg14\": \"string\",\n            \"allocationSeg15\": \"string\",\n            \"allocationSeg16\": \"string\"\n          }\n        }\n      ],\n      \"lineItemAllocations\": [\n        {\n          \"allocationId\": \"string\",\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 4377.426490344699,\n          \"percent\": 732.4162172196136\n        },\n        {\n          \"allocationId\": \"string\",\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 8959.061903684385,\n          \"percent\": 4404.587194482702\n        }\n      ]\n    }\n  ],\n  \"complianceItems\": [\n    {\n      \"description\": \"string\",\n      \"response\": \"string\"\n    },\n    {\n      \"description\": \"string\",\n      \"response\": \"string\"\n    }\n  ],\n  \"udas\": [\n    {\n      \"udaName\": \"string\",\n      \"stringValue\": \"string\",\n      \"numberValue\": 7469.860335911129,\n      \"currencyValue\": 2041.2456176641901,\n      \"entityValue\": {\n        \"active\": false,\n        \"code\": \"string\",\n        \"customerId\": 8293,\n        \"name\": \"string\",\n        \"sortOrder\": \"string\",\n        \"entityID\": 3020,\n        \"extraData1\": \"string\",\n        \"extraData2\": \"string\",\n        \"extraData3\": \"string\",\n        \"extraData4\": \"string\",\n        \"extraData5\": \"string\",\n        \"createSource\": \"string\",\n        \"personLoggedInID\": 24,\n        \"personDelegateID\": 9900,\n        \"updateDate\": \"2013-01-13T12:25:27.711Z\",\n        \"entityTypeID\": 8269,\n        \"entityTypeCode\": \"string\",\n        \"personEntities\": [\n          {\n            \"customerId\": \"string\",\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entityID\": 7745,\n            \"personDelegateId\": 6483,\n            \"personId\": 4101,\n            \"personLoggedInId\": 6237,\n            \"active\": true,\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          },\n          {\n            \"customerId\": \"string\",\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entityID\": 7165,\n            \"personDelegateId\": 3780,\n            \"personId\": 6454,\n            \"personLoggedInId\": 2379,\n            \"active\": true,\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          }\n        ],\n        \"entityLanguages\": [\n          {\n            \"createDate\": \"1968-01-07T00:24:22.875Z\",\n            \"customerId\": 7669,\n            \"entityId\": 8779,\n            \"languageId\": 6397,\n            \"name\": \"string\",\n            \"updateDate\": \"2005-10-09T06:23:35.432Z\",\n            \"entityLanguageId\": 1083,\n            \"locale\": \"string\",\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          },\n          {\n            \"createDate\": \"1976-12-08T09:05:53.940Z\",\n            \"customerId\": 6252,\n            \"entityId\": 9555,\n            \"languageId\": 840,\n            \"name\": \"string\",\n            \"updateDate\": \"1975-10-07T14:59:02.347Z\",\n            \"entityLanguageId\": 3205,\n            \"locale\": \"string\",\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          }\n        ],\n        \"dnd\": true\n      },\n      \"dateValue\": \"1973-08-03T20:44:28.686Z\",\n      \"booleanValue\": false,\n      \"udaDataType\": \"string\"\n    },\n    {\n      \"udaName\": \"string\",\n      \"stringValue\": \"string\",\n      \"numberValue\": 5836.686011922968,\n      \"currencyValue\": 543.9111888543014,\n      \"entityValue\": {\n        \"active\": false,\n        \"code\": \"string\",\n        \"customerId\": 2847,\n        \"name\": \"string\",\n        \"sortOrder\": \"string\",\n        \"entityID\": 3069,\n        \"extraData1\": \"string\",\n        \"extraData2\": \"string\",\n        \"extraData3\": \"string\",\n        \"extraData4\": \"string\",\n        \"extraData5\": \"string\",\n        \"createSource\": \"string\",\n        \"personLoggedInID\": 1668,\n        \"personDelegateID\": 2078,\n        \"updateDate\": \"1996-07-08T10:42:49.496Z\",\n        \"entityTypeID\": 4344,\n        \"entityTypeCode\": \"string\",\n        \"personEntities\": [\n          {\n            \"customerId\": \"string\",\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entityID\": 8965,\n            \"personDelegateId\": 5322,\n            \"personId\": 6510,\n            \"personLoggedInId\": 7446,\n            \"active\": true,\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          },\n          {\n            \"customerId\": \"string\",\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entityID\": 7173,\n            \"personDelegateId\": 4061,\n            \"personId\": 2046,\n            \"personLoggedInId\": 8009,\n            \"active\": false,\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          }\n        ],\n        \"entityLanguages\": [\n          {\n            \"createDate\": \"1951-10-20T01:59:05.210Z\",\n            \"customerId\": 4602,\n            \"entityId\": 9704,\n            \"languageId\": 8427,\n            \"name\": \"string\",\n            \"updateDate\": \"2000-10-03T13:03:52.365Z\",\n            \"entityLanguageId\": 4671,\n            \"locale\": \"string\",\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          },\n          {\n            \"createDate\": \"1961-10-14T14:19:24.606Z\",\n            \"customerId\": 9334,\n            \"entityId\": 9198,\n            \"languageId\": 8817,\n            \"name\": \"string\",\n            \"updateDate\": \"2012-12-29T15:53:20.277Z\",\n            \"entityLanguageId\": 5400,\n            \"locale\": \"string\",\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          }\n        ],\n        \"dnd\": true\n      },\n      \"dateValue\": \"1982-02-07T09:35:10.665Z\",\n      \"booleanValue\": false,\n      \"udaDataType\": \"string\"\n    }\n  ],\n  \"notes\": [\n    {\n      \"note\": \"<string>\",\n      \"createDate\": \"<dateTime>\"\n    },\n    {\n      \"note\": \"<string>\",\n      \"createDate\": \"<dateTime>\"\n    }\n  ],\n  \"images\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdf7f464-46d2-44bf-9374-f4bd78b2977b",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Identifier for the pre-approval report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "be1e51fb-25a6-4578-8de8-a565b43acef0",
+              "name": "Customer Code is not authorized. Cannot add comment to Pre-Approval Report.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Identifier for the pre-approval report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb0924e0-1817-44f8-bdf5-c62aaa9aaaf0",
+              "name": "Report with provided reportId does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Identifier for the pre-approval report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f7bfdff0-e67b-45b5-9469-a6a0f95620d6",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-reports",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Identifier for the pre-approval report."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04de6fab-b56b-4bbc-b6d0-74a16d8506bb",
+          "name": "Get pre-approval report details",
+          "request": {
+            "name": "Get pre-approval report details",
+            "description": {
+              "content": "This web service allows an external application to get the details of Pre-Approval Report",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "preapproval-report-approvals",
+                ":reportId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reportId",
+                  "description": "(Required) Report ID for pre-approval report"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Used for tracking the flow of the request",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique ID for the approver logged in making request",
+                "key": "logged-in-user-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) API key for Authentication",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Unique customer identifier provided by Chrome River",
+                "key": "customer-code",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94fe78d5-abf6-4b3d-8194-b2b6c9642c26",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-report-approvals",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"paHeaderId\": \"string\",\n  \"reportId\": \"string\",\n  \"reportTotalAmount\": 7117.045074919542,\n  \"payMeInCurrency\": \"string\",\n  \"currency\": \"string\",\n  \"reportApprovalAmount\": 2217.99886420282,\n  \"reportApprovalAmountCurrency\": \"string\",\n  \"startDate\": \"1964-06-03T10:44:59.405Z\",\n  \"endDate\": \"1973-03-20T07:18:50.208Z\",\n  \"reportName\": \"string\",\n  \"reportStatus\": \"string\",\n  \"businessPurpose\": \"string\",\n  \"submitDate\": \"1965-03-21T17:52:59.868Z\",\n  \"createDate\": \"1962-01-21T00:41:45.907Z\",\n  \"updateDate\": \"2026-04-07T00:31:20.564Z\",\n  \"numImages\": 2230,\n  \"reportOwner\": {\n    \"createDate\": \"2006-11-21T01:08:24.797Z\",\n    \"currencyCode1\": \"string\",\n    \"currencyMask\": \"string\",\n    \"customerId\": 8064,\n    \"customerUniqueId\": \"string\",\n    \"dateFormatMask\": \"string\",\n    \"emailAddress\": \"string\",\n    \"emailFormat\": \"string\",\n    \"expenseBarID\": 8672,\n    \"firstName\": \"string\",\n    \"isCopyingItems\": true,\n    \"isFirmReporting\": true,\n    \"isSuperDelegate\": false,\n    \"languageId\": 6587,\n    \"lastName\": \"string\",\n    \"personStatusId\": \"4\",\n    \"updateDate\": \"2018-07-11T17:15:16.811Z\",\n    \"useOnline\": false,\n    \"username\": \"string\",\n    \"personId\": 6053,\n    \"alternateEmails\": [\n      {\n        \"emailAddress\": \"string\",\n        \"id\": 1646,\n        \"customerId\": 8128,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"sequence\": 6297,\n        \"updateDate\": \"2023-07-04T16:34:56.584Z\",\n        \"createDate\": \"1950-12-17T18:51:57.224Z\",\n        \"validated\": true\n      },\n      {\n        \"emailAddress\": \"string\",\n        \"id\": 4736,\n        \"customerId\": 5764,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"sequence\": 4917,\n        \"updateDate\": \"1990-06-18T06:10:08.157Z\",\n        \"createDate\": \"1969-05-10T12:16:25.013Z\",\n        \"validated\": true\n      }\n    ],\n    \"reportsToPersonId\": 2855,\n    \"title\": \"string\",\n    \"carPlanId\": 3265,\n    \"carPlanTierId\": 6629,\n    \"vendor1\": \"string\",\n    \"currencyCode2\": \"string\",\n    \"vendor2\": \"string\",\n    \"country_Alpha2\": \"string\",\n    \"interactionUserID\": \"string\",\n    \"interactionAccountName\": \"string\",\n    \"alternateCurrencyCodes\": \"string\",\n    \"isModifiable\": false,\n    \"analyticsUserType\": \"U04\",\n    \"analyticsModules\": \"M03\",\n    \"analyticsView\": \"V05\",\n    \"isAdmin\": false,\n    \"phoneNumber\": \"string\",\n    \"personalDistanceDefault\": 5275.94197881894,\n    \"personalDistanceCostDefault\": 9896.50421578194,\n    \"createSource\": \"string\",\n    \"personLoggedInID\": 2613,\n    \"personDelegateID\": 8890,\n    \"personUDAs\": [\n      {\n        \"createDate\": \"2024-11-02T00:11:50.083Z\",\n        \"customerID\": 8462,\n        \"updateDate\": \"2006-12-22T23:40:38.347Z\",\n        \"userDefinedAttributeID\": 5150,\n        \"personUdaID\": 5537,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"stringValue\": \"string\",\n        \"booleanValue\": false,\n        \"entityValue\": 5364,\n        \"dateValue\": \"1971-11-15T21:18:55.316Z\",\n        \"currencyValue\": 4570.088057465995,\n        \"numberValue\": 5416.458060868342,\n        \"isDeleted\": false,\n        \"udaName\": \"string\",\n        \"udaValue\": \"string\"\n      },\n      {\n        \"createDate\": \"2008-11-27T23:40:51.295Z\",\n        \"customerID\": 5148,\n        \"updateDate\": \"1961-12-29T21:25:51.125Z\",\n        \"userDefinedAttributeID\": 1912,\n        \"personUdaID\": 6931,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"stringValue\": \"string\",\n        \"booleanValue\": true,\n        \"entityValue\": 7515,\n        \"dateValue\": \"2001-04-29T13:50:41.564Z\",\n        \"currencyValue\": 4953.469390009488,\n        \"numberValue\": 3453.98253028952,\n        \"isDeleted\": true,\n        \"udaName\": \"string\",\n        \"udaValue\": \"string\"\n      }\n    ],\n    \"personProfile\": {\n      \"personProfileId\": 8898,\n      \"customerId\": 5988,\n      \"person\": {\n        \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n      },\n      \"profileData\": \"string\",\n      \"createDate\": \"1959-03-09T05:19:39.598Z\",\n      \"updateDate\": \"1977-01-10T21:24:55.258Z\"\n    },\n    \"statusDirectPay\": \"ACT\",\n    \"personResourceId\": \"string\",\n    \"personEntities\": [\n      {\n        \"id\": 4610,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"customerId\": 6197,\n        \"entityId\": 639,\n        \"entityName\": \"string\",\n        \"entityCode\": \"string\",\n        \"entityStatus\": false,\n        \"entityTypeId\": 2522,\n        \"entityTypeName\": \"string\",\n        \"entityTypeCode\": \"string\",\n        \"entityTypeIsUsedInRules\": false,\n        \"entityTypeDesc\": \"string\",\n        \"entityTypeStatus\": true,\n        \"roleId\": 3303,\n        \"roleName\": \"string\",\n        \"roleIsUsedInRules\": false,\n        \"roleDescription\": \"string\",\n        \"active\": true,\n        \"createDate\": \"2024-02-04T16:31:22.446Z\",\n        \"updateDate\": \"2021-05-13T10:09:28.679Z\",\n        \"fromDate\": \"1970-07-02T07:12:50.585Z\",\n        \"toDate\": \"1997-07-10T05:17:51.434Z\",\n        \"dateReplaced\": \"1975-02-18T23:14:13.919Z\",\n        \"source\": \"string\",\n        \"personId\": 5632,\n        \"entityExtraData1\": \"string\",\n        \"entityExtraData2\": \"string\",\n        \"entityExtraData3\": \"string\",\n        \"entityExtraData4\": \"string\",\n        \"entityExtraData5\": \"string\",\n        \"entitySortOrder\": \"string\",\n        \"localizedEntityName\": \"string\",\n        \"localizedEntityTypeName\": \"string\",\n        \"localizedRoleName\": \"string\"\n      },\n      {\n        \"id\": 891,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"customerId\": 6731,\n        \"entityId\": 7402,\n        \"entityName\": \"string\",\n        \"entityCode\": \"string\",\n        \"entityStatus\": false,\n        \"entityTypeId\": 6923,\n        \"entityTypeName\": \"string\",\n        \"entityTypeCode\": \"string\",\n        \"entityTypeIsUsedInRules\": false,\n        \"entityTypeDesc\": \"string\",\n        \"entityTypeStatus\": true,\n        \"roleId\": 1111,\n        \"roleName\": \"string\",\n        \"roleIsUsedInRules\": false,\n        \"roleDescription\": \"string\",\n        \"active\": false,\n        \"createDate\": \"1998-11-25T08:58:21.275Z\",\n        \"updateDate\": \"1971-02-22T02:55:04.317Z\",\n        \"fromDate\": \"2000-03-17T00:28:03.269Z\",\n        \"toDate\": \"1961-05-04T15:32:46.850Z\",\n        \"dateReplaced\": \"1989-03-16T07:12:57.858Z\",\n        \"source\": \"string\",\n        \"personId\": 723,\n        \"entityExtraData1\": \"string\",\n        \"entityExtraData2\": \"string\",\n        \"entityExtraData3\": \"string\",\n        \"entityExtraData4\": \"string\",\n        \"entityExtraData5\": \"string\",\n        \"entitySortOrder\": \"string\",\n        \"localizedEntityName\": \"string\",\n        \"localizedEntityTypeName\": \"string\",\n        \"localizedRoleName\": \"string\"\n      }\n    ],\n    \"reportsToPerson\": {\n      \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n    },\n    \"reportsToPersonName\": \"string\",\n    \"password\": \"string\",\n    \"password5702\": \"string\",\n    \"company\": \"string\",\n    \"companyId\": \"string\",\n    \"defaultApplication\": \"3\",\n    \"mobileDeviceLogin\": true,\n    \"loginMethod\": \"CHROME_SSO\",\n    \"currentLandingApps\": [\n      \"2\",\n      \"1\"\n    ],\n    \"loginLocale\": \"string\",\n    \"mongoConf\": \"string\",\n    \"enableAnalytics\": false,\n    \"crSsoPasswordOriginal\": \"string\",\n    \"encryptedPassword\": \"string\",\n    \"encryptedUsername\": \"string\",\n    \"encryptedCompanyId\": \"string\",\n    \"locationCodeForVat\": \"string\",\n    \"saveOnSelectExpenseTypeNames\": \"string\",\n    \"locationCodeForPerDiem\": \"string\",\n    \"locationCodeForPAPerDiem\": \"string\",\n    \"alternateEmailAddress1\": \"string\",\n    \"alternateEmailAddress2\": \"string\",\n    \"alternateEmailAddress3\": \"string\",\n    \"expenseBarCode\": \"string\",\n    \"distanceUnit\": \"string\",\n    \"crmNumber\": \"string\",\n    \"npi\": 4240,\n    \"providerBusinessMailingAddressCityName\": \"string\",\n    \"providerBusinessMailingAddressStateName\": \"string\",\n    \"specialty\": \"string\",\n    \"healthCareProviderId\": 5353,\n    \"enablePlatinumLinkInsideApp\": true,\n    \"motdType\": \"string\",\n    \"enableGetDeparted\": false,\n    \"enableInvoiceMgmtGrid\": true,\n    \"invoiceBarType\": \"string\",\n    \"invoiceOCRConfidenceThreshold\": 9507.053821646616,\n    \"poBarType\": \"string\",\n    \"esPersonSearchMap\": {\n      \"key_0\": {}\n    },\n    \"esPersonSearchQuery\": \"string\",\n    \"esPersonSearchQueryExclusion\": \"string\",\n    \"companyWideFeedIds\": [\n      3807,\n      4086\n    ],\n    \"enableMatterOnSelectES\": false,\n    \"enableBulkAdd\": true,\n    \"displayAmexRealtimeNotifications\": true,\n    \"usBankRealTimeNotificationsEnabled\": false,\n    \"emburseRealTimeNotificationsEnabled\": true,\n    \"displayAdminConsole\": false,\n    \"isUIAdmin\": true,\n    \"isSuperAdmin\": false,\n    \"displayReconciliation\": false,\n    \"displayReAssignButton\": false,\n    \"displayReAssignButtonHeaderOnly\": false,\n    \"hideApproverReturnOnLineItem\": false,\n    \"hideApproverAdjustOnLineItem\": true,\n    \"usingXmlUploadButton\": false,\n    \"usingEastEuroPerDiem\": false,\n    \"usingSalesforce\": false,\n    \"displayImportFromPaCheckbox\": false,\n    \"displayImportPerDiemMileageFromPaCheckbox\": true,\n    \"defaultCheckedPaCheckbox\": true,\n    \"paPerDiemTimePickerEnabled\": true,\n    \"showFxRateSelectorInWizard\": false,\n    \"hideOwnerTotalPayMeAmount\": true,\n    \"languageLocale\": \"string\",\n    \"enableTravelBooking\": false,\n    \"enableMultipleApprovalDelegates\": true,\n    \"travelBookingURL\": \"string\",\n    \"openTravelBookingInNewTab\": false,\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"disableRecall\": false,\n    \"disableGoogleMapsRouteChanges\": false,\n    \"enableExpirePA\": true,\n    \"useExpense\": true,\n    \"enableExpenseManagement\": false,\n    \"usingCrmAllocationAccountOnly\": false,\n    \"useProsper\": false,\n    \"delegateBankAccountEnabled\": false,\n    \"sessionTimeoutInMinutes\": 3622,\n    \"enableProfileCardPrivateComments\": true,\n    \"enableNegativePerDiemAmount\": false,\n    \"enableInterActionContactSearch\": false,\n    \"membershipAccountEnabled\": false,\n    \"enableCopyingPA\": false,\n    \"isVatApprover\": true,\n    \"isRiskApprover\": false,\n    \"personalCreditCardEnabled\": true,\n    \"personalChargesEnabled\": true,\n    \"hideStatementPaidValues\": false,\n    \"perDiemConfigurationType\": \"string\",\n    \"hideLogoutOption\": false,\n    \"enableLineItemBulkEditAllocation\": false,\n    \"showRoutingRuleDescription\": false,\n    \"permissions\": [\n      {\n        \"resourceCode\": \"string\",\n        \"actionCode\": \"string\"\n      },\n      {\n        \"resourceCode\": \"string\",\n        \"actionCode\": \"string\"\n      }\n    ],\n    \"fullName\": \"string\",\n    \"udf1\": \"string\",\n    \"udf2\": \"string\",\n    \"udf3\": \"string\",\n    \"germanPerDiemUser\": true,\n    \"configurationEnabled\": true,\n    \"usingPreApproval\": true,\n    \"usingInvoice\": false,\n    \"bankAccountEnabled\": false,\n    \"usingCarPlan\": true,\n    \"perDiemTimePickerEnabled\": false,\n    \"usingPAExpenseMappingForApply\": true,\n    \"dnd\": true,\n    \"decryptedPhoneNumber\": \"string\",\n    \"emailPreference\": \"TEX1\",\n    \"isInvoiceApprovalPreviewOnly\": false,\n    \"isInvoicePriorPreviewOnly\": true,\n    \"isInvoiceManagementPreviewOnly\": true,\n    \"isBulkSubmitEnabled\": true,\n    \"isRecallInvoiceEnabled\": true,\n    \"isInvoiceSubmitToOcrEnabled\": false,\n    \"isInvoiceCreditCardEnabled\": false,\n    \"isInvoiceChargeTypeEnabled\": false,\n    \"isInvoiceDefaultLineItemTaxCodeDisabled\": false,\n    \"isInvoiceOCREnabled\": false,\n    \"isInvoiceGLFilterEnabled\": false,\n    \"isInvoiceConvertTemplatesDisabled\": true,\n    \"isUsingPo\": false,\n    \"isPoManagementGridEnabled\": true,\n    \"isPoApprovalPreviewOnly\": true,\n    \"isPoPriorPreviewOnly\": false,\n    \"isPoManagementPreviewOnly\": false,\n    \"isPoBulkSubmitEnabled\": true,\n    \"isPoRecallEnabled\": false,\n    \"isPoSubmitToOcrEnabled\": false,\n    \"isPoReceivingScreenEnabled\": true\n  },\n  \"reportOwnerId\": \"string\",\n  \"reportCreator\": {\n    \"createDate\": \"1960-06-05T20:21:17.938Z\",\n    \"currencyCode1\": \"string\",\n    \"currencyMask\": \"string\",\n    \"customerId\": 2357,\n    \"customerUniqueId\": \"string\",\n    \"dateFormatMask\": \"string\",\n    \"emailAddress\": \"string\",\n    \"emailFormat\": \"string\",\n    \"expenseBarID\": 7822,\n    \"firstName\": \"string\",\n    \"isCopyingItems\": true,\n    \"isFirmReporting\": true,\n    \"isSuperDelegate\": false,\n    \"languageId\": 5127,\n    \"lastName\": \"string\",\n    \"personStatusId\": \"1\",\n    \"updateDate\": \"1995-01-07T21:29:00.184Z\",\n    \"useOnline\": false,\n    \"username\": \"string\",\n    \"personId\": 3673,\n    \"alternateEmails\": [\n      {\n        \"emailAddress\": \"string\",\n        \"id\": 8876,\n        \"customerId\": 2384,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"sequence\": 6318,\n        \"updateDate\": \"1952-11-15T12:30:48.000Z\",\n        \"createDate\": \"1967-02-17T12:23:32.631Z\",\n        \"validated\": false\n      },\n      {\n        \"emailAddress\": \"string\",\n        \"id\": 1653,\n        \"customerId\": 6212,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"sequence\": 432,\n        \"updateDate\": \"1960-01-16T02:13:45.907Z\",\n        \"createDate\": \"1982-10-14T13:19:21.047Z\",\n        \"validated\": false\n      }\n    ],\n    \"reportsToPersonId\": 7895,\n    \"title\": \"string\",\n    \"carPlanId\": 8216,\n    \"carPlanTierId\": 5024,\n    \"vendor1\": \"string\",\n    \"currencyCode2\": \"string\",\n    \"vendor2\": \"string\",\n    \"country_Alpha2\": \"string\",\n    \"interactionUserID\": \"string\",\n    \"interactionAccountName\": \"string\",\n    \"alternateCurrencyCodes\": \"string\",\n    \"isModifiable\": true,\n    \"analyticsUserType\": \"NULL\",\n    \"analyticsModules\": \"M09\",\n    \"analyticsView\": \"V08\",\n    \"isAdmin\": true,\n    \"phoneNumber\": \"string\",\n    \"personalDistanceDefault\": 6667.144529370022,\n    \"personalDistanceCostDefault\": 9144.519389275536,\n    \"createSource\": \"string\",\n    \"personLoggedInID\": 1382,\n    \"personDelegateID\": 3510,\n    \"personUDAs\": [\n      {\n        \"createDate\": \"1992-02-28T22:53:47.198Z\",\n        \"customerID\": 2753,\n        \"updateDate\": \"1979-05-18T11:14:20.520Z\",\n        \"userDefinedAttributeID\": 9747,\n        \"personUdaID\": 734,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"stringValue\": \"string\",\n        \"booleanValue\": true,\n        \"entityValue\": 7518,\n        \"dateValue\": \"1965-12-18T02:04:03.996Z\",\n        \"currencyValue\": 5194.714848679985,\n        \"numberValue\": 7509.7454464888615,\n        \"isDeleted\": false,\n        \"udaName\": \"string\",\n        \"udaValue\": \"string\"\n      },\n      {\n        \"createDate\": \"1981-12-05T00:33:13.975Z\",\n        \"customerID\": 9494,\n        \"updateDate\": \"2016-02-17T23:41:17.717Z\",\n        \"userDefinedAttributeID\": 1888,\n        \"personUdaID\": 53,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"stringValue\": \"string\",\n        \"booleanValue\": false,\n        \"entityValue\": 1780,\n        \"dateValue\": \"1975-07-18T21:27:10.600Z\",\n        \"currencyValue\": 160.55872506846814,\n        \"numberValue\": 1753.1015221783252,\n        \"isDeleted\": true,\n        \"udaName\": \"string\",\n        \"udaValue\": \"string\"\n      }\n    ],\n    \"personProfile\": {\n      \"personProfileId\": 54,\n      \"customerId\": 8631,\n      \"person\": {\n        \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n      },\n      \"profileData\": \"string\",\n      \"createDate\": \"1995-06-17T09:51:05.181Z\",\n      \"updateDate\": \"1956-01-22T00:10:47.186Z\"\n    },\n    \"statusDirectPay\": \"NONE\",\n    \"personResourceId\": \"string\",\n    \"personEntities\": [\n      {\n        \"id\": 3009,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"customerId\": 9732,\n        \"entityId\": 2914,\n        \"entityName\": \"string\",\n        \"entityCode\": \"string\",\n        \"entityStatus\": false,\n        \"entityTypeId\": 3615,\n        \"entityTypeName\": \"string\",\n        \"entityTypeCode\": \"string\",\n        \"entityTypeIsUsedInRules\": true,\n        \"entityTypeDesc\": \"string\",\n        \"entityTypeStatus\": false,\n        \"roleId\": 7439,\n        \"roleName\": \"string\",\n        \"roleIsUsedInRules\": true,\n        \"roleDescription\": \"string\",\n        \"active\": false,\n        \"createDate\": \"2003-02-21T04:43:28.701Z\",\n        \"updateDate\": \"1958-04-28T05:40:24.635Z\",\n        \"fromDate\": \"2018-08-07T21:32:52.468Z\",\n        \"toDate\": \"2024-06-12T07:59:05.940Z\",\n        \"dateReplaced\": \"1967-12-07T17:21:38.712Z\",\n        \"source\": \"string\",\n        \"personId\": 230,\n        \"entityExtraData1\": \"string\",\n        \"entityExtraData2\": \"string\",\n        \"entityExtraData3\": \"string\",\n        \"entityExtraData4\": \"string\",\n        \"entityExtraData5\": \"string\",\n        \"entitySortOrder\": \"string\",\n        \"localizedEntityName\": \"string\",\n        \"localizedEntityTypeName\": \"string\",\n        \"localizedRoleName\": \"string\"\n      },\n      {\n        \"id\": 776,\n        \"person\": {\n          \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n        },\n        \"customerId\": 603,\n        \"entityId\": 137,\n        \"entityName\": \"string\",\n        \"entityCode\": \"string\",\n        \"entityStatus\": false,\n        \"entityTypeId\": 7372,\n        \"entityTypeName\": \"string\",\n        \"entityTypeCode\": \"string\",\n        \"entityTypeIsUsedInRules\": true,\n        \"entityTypeDesc\": \"string\",\n        \"entityTypeStatus\": false,\n        \"roleId\": 5456,\n        \"roleName\": \"string\",\n        \"roleIsUsedInRules\": true,\n        \"roleDescription\": \"string\",\n        \"active\": true,\n        \"createDate\": \"2002-06-08T12:20:58.813Z\",\n        \"updateDate\": \"1964-10-28T06:41:36.749Z\",\n        \"fromDate\": \"1965-01-13T12:51:13.760Z\",\n        \"toDate\": \"1960-03-22T21:39:32.742Z\",\n        \"dateReplaced\": \"2007-12-15T13:31:13.235Z\",\n        \"source\": \"string\",\n        \"personId\": 8931,\n        \"entityExtraData1\": \"string\",\n        \"entityExtraData2\": \"string\",\n        \"entityExtraData3\": \"string\",\n        \"entityExtraData4\": \"string\",\n        \"entityExtraData5\": \"string\",\n        \"entitySortOrder\": \"string\",\n        \"localizedEntityName\": \"string\",\n        \"localizedEntityTypeName\": \"string\",\n        \"localizedRoleName\": \"string\"\n      }\n    ],\n    \"reportsToPerson\": {\n      \"value\": \"<Circular reference to #/components/schemas/Person detected>\"\n    },\n    \"reportsToPersonName\": \"string\",\n    \"password\": \"string\",\n    \"password5702\": \"string\",\n    \"company\": \"string\",\n    \"companyId\": \"string\",\n    \"defaultApplication\": \"2\",\n    \"mobileDeviceLogin\": false,\n    \"loginMethod\": \"CHROME_DB\",\n    \"currentLandingApps\": [\n      \"2\",\n      \"2\"\n    ],\n    \"loginLocale\": \"string\",\n    \"mongoConf\": \"string\",\n    \"enableAnalytics\": false,\n    \"crSsoPasswordOriginal\": \"string\",\n    \"encryptedPassword\": \"string\",\n    \"encryptedUsername\": \"string\",\n    \"encryptedCompanyId\": \"string\",\n    \"locationCodeForVat\": \"string\",\n    \"saveOnSelectExpenseTypeNames\": \"string\",\n    \"locationCodeForPerDiem\": \"string\",\n    \"locationCodeForPAPerDiem\": \"string\",\n    \"alternateEmailAddress1\": \"string\",\n    \"alternateEmailAddress2\": \"string\",\n    \"alternateEmailAddress3\": \"string\",\n    \"expenseBarCode\": \"string\",\n    \"distanceUnit\": \"string\",\n    \"crmNumber\": \"string\",\n    \"npi\": 891,\n    \"providerBusinessMailingAddressCityName\": \"string\",\n    \"providerBusinessMailingAddressStateName\": \"string\",\n    \"specialty\": \"string\",\n    \"healthCareProviderId\": 7783,\n    \"enablePlatinumLinkInsideApp\": false,\n    \"motdType\": \"string\",\n    \"enableGetDeparted\": true,\n    \"enableInvoiceMgmtGrid\": false,\n    \"invoiceBarType\": \"string\",\n    \"invoiceOCRConfidenceThreshold\": 3045.959230596338,\n    \"poBarType\": \"string\",\n    \"esPersonSearchMap\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"esPersonSearchQuery\": \"string\",\n    \"esPersonSearchQueryExclusion\": \"string\",\n    \"companyWideFeedIds\": [\n      5116,\n      7883\n    ],\n    \"enableMatterOnSelectES\": true,\n    \"enableBulkAdd\": false,\n    \"displayAmexRealtimeNotifications\": true,\n    \"usBankRealTimeNotificationsEnabled\": false,\n    \"emburseRealTimeNotificationsEnabled\": true,\n    \"displayAdminConsole\": false,\n    \"isUIAdmin\": true,\n    \"isSuperAdmin\": false,\n    \"displayReconciliation\": true,\n    \"displayReAssignButton\": true,\n    \"displayReAssignButtonHeaderOnly\": false,\n    \"hideApproverReturnOnLineItem\": false,\n    \"hideApproverAdjustOnLineItem\": false,\n    \"usingXmlUploadButton\": false,\n    \"usingEastEuroPerDiem\": false,\n    \"usingSalesforce\": false,\n    \"displayImportFromPaCheckbox\": true,\n    \"displayImportPerDiemMileageFromPaCheckbox\": true,\n    \"defaultCheckedPaCheckbox\": true,\n    \"paPerDiemTimePickerEnabled\": false,\n    \"showFxRateSelectorInWizard\": false,\n    \"hideOwnerTotalPayMeAmount\": false,\n    \"languageLocale\": \"string\",\n    \"enableTravelBooking\": true,\n    \"enableMultipleApprovalDelegates\": true,\n    \"travelBookingURL\": \"string\",\n    \"openTravelBookingInNewTab\": true,\n    \"alternateEmailAddresses\": [\n      \"string\",\n      \"string\"\n    ],\n    \"disableRecall\": false,\n    \"disableGoogleMapsRouteChanges\": false,\n    \"enableExpirePA\": false,\n    \"useExpense\": false,\n    \"enableExpenseManagement\": false,\n    \"usingCrmAllocationAccountOnly\": false,\n    \"useProsper\": false,\n    \"delegateBankAccountEnabled\": false,\n    \"sessionTimeoutInMinutes\": 6919,\n    \"enableProfileCardPrivateComments\": true,\n    \"enableNegativePerDiemAmount\": true,\n    \"enableInterActionContactSearch\": true,\n    \"membershipAccountEnabled\": false,\n    \"enableCopyingPA\": true,\n    \"isVatApprover\": true,\n    \"isRiskApprover\": true,\n    \"personalCreditCardEnabled\": true,\n    \"personalChargesEnabled\": true,\n    \"hideStatementPaidValues\": true,\n    \"perDiemConfigurationType\": \"string\",\n    \"hideLogoutOption\": true,\n    \"enableLineItemBulkEditAllocation\": true,\n    \"showRoutingRuleDescription\": true,\n    \"permissions\": [\n      {\n        \"resourceCode\": \"string\",\n        \"actionCode\": \"string\"\n      },\n      {\n        \"resourceCode\": \"string\",\n        \"actionCode\": \"string\"\n      }\n    ],\n    \"fullName\": \"string\",\n    \"udf1\": \"string\",\n    \"udf2\": \"string\",\n    \"udf3\": \"string\",\n    \"germanPerDiemUser\": false,\n    \"configurationEnabled\": false,\n    \"usingPreApproval\": false,\n    \"usingInvoice\": false,\n    \"bankAccountEnabled\": true,\n    \"usingCarPlan\": true,\n    \"perDiemTimePickerEnabled\": true,\n    \"usingPAExpenseMappingForApply\": false,\n    \"dnd\": false,\n    \"decryptedPhoneNumber\": \"string\",\n    \"emailPreference\": \"TEX1\",\n    \"isInvoiceApprovalPreviewOnly\": true,\n    \"isInvoicePriorPreviewOnly\": true,\n    \"isInvoiceManagementPreviewOnly\": true,\n    \"isBulkSubmitEnabled\": false,\n    \"isRecallInvoiceEnabled\": false,\n    \"isInvoiceSubmitToOcrEnabled\": true,\n    \"isInvoiceCreditCardEnabled\": false,\n    \"isInvoiceChargeTypeEnabled\": true,\n    \"isInvoiceDefaultLineItemTaxCodeDisabled\": false,\n    \"isInvoiceOCREnabled\": true,\n    \"isInvoiceGLFilterEnabled\": true,\n    \"isInvoiceConvertTemplatesDisabled\": true,\n    \"isUsingPo\": true,\n    \"isPoManagementGridEnabled\": true,\n    \"isPoApprovalPreviewOnly\": true,\n    \"isPoPriorPreviewOnly\": false,\n    \"isPoManagementPreviewOnly\": true,\n    \"isPoBulkSubmitEnabled\": false,\n    \"isPoRecallEnabled\": true,\n    \"isPoSubmitToOcrEnabled\": false,\n    \"isPoReceivingScreenEnabled\": false\n  },\n  \"reportCreatorId\": \"string\",\n  \"amountSpentApproved\": 9055.370063604034,\n  \"amountCustomer\": 9757.82102113272,\n  \"remainingAmount\": 4758.247676249752,\n  \"currencyCodeCustomer\": \"string\",\n  \"fromDate\": \"1986-09-13T03:03:05.932Z\",\n  \"toDate\": \"1948-03-15T10:15:00.755Z\",\n  \"manualExpirationDate\": \"1992-11-18T13:26:30.758Z\",\n  \"exchangeRateCustomer\": \"string\",\n  \"isAmountSpentApprovedSet\": true,\n  \"isApprovedAmountAdjusted\": true,\n  \"isActive\": false,\n  \"statusExport\": \"EXPF\",\n  \"allocations\": [\n    {\n      \"allocationId\": \"string\",\n      \"description\": \"string\",\n      \"clientNumberParent\": \"string\",\n      \"clientName\": \"string\",\n      \"clientNumber\": \"string\",\n      \"type\": \"string\",\n      \"allocationUDAs\": [\n        {\n          \"udaName\": \"string\",\n          \"udaValue\": \"string\"\n        },\n        {\n          \"udaName\": \"string\",\n          \"udaValue\": \"string\"\n        }\n      ],\n      \"udf1PersonCustomerUniqueId\": \"string\",\n      \"udf2PersonCustomerUniqueId\": \"string\",\n      \"udf3PersonCustomerUniqueId\": \"string\",\n      \"glaccount\": \"string\",\n      \"percent\": 1299.0015574249157,\n      \"approvalAmount\": 1851.6856805465277,\n      \"udf1\": \"string\",\n      \"udf2\": \"string\",\n      \"udf3\": \"string\",\n      \"udf4\": \"string\"\n    },\n    {\n      \"allocationId\": \"string\",\n      \"description\": \"string\",\n      \"clientNumberParent\": \"string\",\n      \"clientName\": \"string\",\n      \"clientNumber\": \"string\",\n      \"type\": \"string\",\n      \"allocationUDAs\": [\n        {\n          \"udaName\": \"string\",\n          \"udaValue\": \"string\"\n        },\n        {\n          \"udaName\": \"string\",\n          \"udaValue\": \"string\"\n        }\n      ],\n      \"udf1PersonCustomerUniqueId\": \"string\",\n      \"udf2PersonCustomerUniqueId\": \"string\",\n      \"udf3PersonCustomerUniqueId\": \"string\",\n      \"glaccount\": \"string\",\n      \"percent\": 8132.825952790496,\n      \"approvalAmount\": 2523.3075418717376,\n      \"udf1\": \"string\",\n      \"udf2\": \"string\",\n      \"udf3\": \"string\",\n      \"udf4\": \"string\"\n    }\n  ],\n  \"preApprovalAllocations\": [\n    {\n      \"allocationId\": 1781,\n      \"description\": \"string\",\n      \"matterNumber\": \"string\",\n      \"clientName\": \"string\",\n      \"clientNumber\": \"string\",\n      \"clientDescription\": \"string\",\n      \"entityCode1\": 7466,\n      \"entityCode2\": 2467,\n      \"percentage\": 5868.128000231182,\n      \"amountSpentApproved\": 8473.49205779987,\n      \"amountSpentConverted\": 7608.974502652363,\n      \"currencyCode\": \"string\",\n      \"udf1\": \"string\",\n      \"udf2\": \"string\",\n      \"udf3\": \"string\",\n      \"udf4\": \"string\",\n      \"entityField1\": \"string\",\n      \"entityField2\": \"string\",\n      \"entityField3\": \"string\",\n      \"glAccount\": \"string\",\n      \"type\": \"string\",\n      \"extraLineItemData1LegalValues\": \"string\",\n      \"isDeleted\": false,\n      \"billable\": false\n    },\n    {\n      \"allocationId\": 8559,\n      \"description\": \"string\",\n      \"matterNumber\": \"string\",\n      \"clientName\": \"string\",\n      \"clientNumber\": \"string\",\n      \"clientDescription\": \"string\",\n      \"entityCode1\": 1222,\n      \"entityCode2\": 3008,\n      \"percentage\": 3057.9313140941344,\n      \"amountSpentApproved\": 7680.771380033836,\n      \"amountSpentConverted\": 1104.5413758931522,\n      \"currencyCode\": \"string\",\n      \"udf1\": \"string\",\n      \"udf2\": \"string\",\n      \"udf3\": \"string\",\n      \"udf4\": \"string\",\n      \"entityField1\": \"string\",\n      \"entityField2\": \"string\",\n      \"entityField3\": \"string\",\n      \"glAccount\": \"string\",\n      \"type\": \"string\",\n      \"extraLineItemData1LegalValues\": \"string\",\n      \"isDeleted\": true,\n      \"billable\": true\n    }\n  ],\n  \"lineItems\": [\n    {\n      \"id\": \"string\",\n      \"approvalAmount\": 9567.255202368493,\n      \"typeName\": \"string\",\n      \"typeDisplayName\": \"string\",\n      \"amountSpent\": 6225.573293943565,\n      \"description\": \"string\",\n      \"xmlUdfData\": [\n        {\n          \"userDefinedAttributeId\": 2629,\n          \"customerId\": 9070,\n          \"stringValue\": \"string\",\n          \"numberValue\": 3572.44831842356,\n          \"currencyValue\": 4860.379316876432,\n          \"entityValue\": {\n            \"active\": false,\n            \"code\": \"string\",\n            \"customerId\": 8972,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 9913,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 7233,\n            \"personDelegateID\": 5662,\n            \"updateDate\": \"1997-11-15T01:48:43.337Z\",\n            \"entityTypeID\": 8147,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": true\n          },\n          \"entityValueInt\": 4495,\n          \"dateValue\": \"2007-08-16T19:43:30.369Z\",\n          \"boolValue\": true,\n          \"udaDataType\": \"CurrencyValue\",\n          \"xmlElement\": \"string\",\n          \"udaName\": \"string\",\n          \"personStandardScreenLabel\": \"string\"\n        },\n        {\n          \"userDefinedAttributeId\": 3911,\n          \"customerId\": 6505,\n          \"stringValue\": \"string\",\n          \"numberValue\": 9382.249447422308,\n          \"currencyValue\": 8481.11157843428,\n          \"entityValue\": {\n            \"active\": true,\n            \"code\": \"string\",\n            \"customerId\": 237,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 9486,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 73,\n            \"personDelegateID\": 8536,\n            \"updateDate\": \"1983-02-23T21:12:27.553Z\",\n            \"entityTypeID\": 1561,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": false\n          },\n          \"entityValueInt\": 679,\n          \"dateValue\": \"1998-07-14T17:38:13.251Z\",\n          \"boolValue\": false,\n          \"udaDataType\": \"DateValue\",\n          \"xmlElement\": \"string\",\n          \"udaName\": \"string\",\n          \"personStandardScreenLabel\": \"string\"\n        }\n      ],\n      \"externalRef\": \"string\",\n      \"isPerDiem\": true,\n      \"lineItemTypeId\": 7725,\n      \"transactionDate\": \"2021-08-27T05:45:23.550Z\",\n      \"udas\": [\n        {\n          \"udaName\": \"string\",\n          \"id\": \"string\",\n          \"lineItemId\": \"string\",\n          \"userDefinedAttributeId\": 1900,\n          \"customerId\": 981,\n          \"stringValue\": \"string\",\n          \"numberValue\": 8861.227084704728,\n          \"currencyValue\": 7858.533544770592,\n          \"entityValue\": {\n            \"active\": false,\n            \"code\": \"string\",\n            \"customerId\": 5714,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 10,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 5991,\n            \"personDelegateID\": 7986,\n            \"updateDate\": \"1985-09-25T16:36:44.053Z\",\n            \"entityTypeID\": 9358,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": true\n          },\n          \"dateValue\": \"1958-07-24T01:36:52.638Z\",\n          \"booleanValue\": false,\n          \"udaDataType\": \"string\"\n        },\n        {\n          \"udaName\": \"string\",\n          \"id\": \"string\",\n          \"lineItemId\": \"string\",\n          \"userDefinedAttributeId\": 5780,\n          \"customerId\": 4537,\n          \"stringValue\": \"string\",\n          \"numberValue\": 9028.69197666789,\n          \"currencyValue\": 1471.206957582092,\n          \"entityValue\": {\n            \"active\": false,\n            \"code\": \"string\",\n            \"customerId\": 7305,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 5234,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 2259,\n            \"personDelegateID\": 9378,\n            \"updateDate\": \"2001-01-13T08:34:20.859Z\",\n            \"entityTypeID\": 6322,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": true\n          },\n          \"dateValue\": \"1967-01-01T20:33:24.943Z\",\n          \"booleanValue\": true,\n          \"udaDataType\": \"string\"\n        }\n      ],\n      \"allocations\": [\n        {\n          \"allocationId\": 7153,\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 625.8181501817039,\n          \"percent\": 4160.360471322466,\n          \"allocationReferenceString\": \"string\",\n          \"allocationReference\": {\n            \"paLineItemAllocationId\": \"string\",\n            \"allocationSeg1\": \"string\",\n            \"allocationSeg2\": \"string\",\n            \"allocationSeg3\": \"string\",\n            \"allocationSeg4\": \"string\",\n            \"allocationSeg5\": \"string\",\n            \"allocationSeg6\": \"string\",\n            \"allocationSeg7\": \"string\",\n            \"allocationSeg8\": \"string\",\n            \"allocationSeg9\": \"string\",\n            \"allocationSeg10\": \"string\",\n            \"allocationSeg11\": \"string\",\n            \"allocationSeg12\": \"string\",\n            \"allocationSeg13\": \"string\",\n            \"allocationSeg14\": \"string\",\n            \"allocationSeg15\": \"string\",\n            \"allocationSeg16\": \"string\"\n          }\n        },\n        {\n          \"allocationId\": 5093,\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 9277.559471826566,\n          \"percent\": 5357.339896250181,\n          \"allocationReferenceString\": \"string\",\n          \"allocationReference\": {\n            \"paLineItemAllocationId\": \"string\",\n            \"allocationSeg1\": \"string\",\n            \"allocationSeg2\": \"string\",\n            \"allocationSeg3\": \"string\",\n            \"allocationSeg4\": \"string\",\n            \"allocationSeg5\": \"string\",\n            \"allocationSeg6\": \"string\",\n            \"allocationSeg7\": \"string\",\n            \"allocationSeg8\": \"string\",\n            \"allocationSeg9\": \"string\",\n            \"allocationSeg10\": \"string\",\n            \"allocationSeg11\": \"string\",\n            \"allocationSeg12\": \"string\",\n            \"allocationSeg13\": \"string\",\n            \"allocationSeg14\": \"string\",\n            \"allocationSeg15\": \"string\",\n            \"allocationSeg16\": \"string\"\n          }\n        }\n      ],\n      \"lineItemAllocations\": [\n        {\n          \"allocationId\": \"string\",\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 2022.5010032854996,\n          \"percent\": 7514.47203607455\n        },\n        {\n          \"allocationId\": \"string\",\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 5472.748139251425,\n          \"percent\": 3953.184630566322\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"approvalAmount\": 9815.802071292439,\n      \"typeName\": \"string\",\n      \"typeDisplayName\": \"string\",\n      \"amountSpent\": 208.96773748900532,\n      \"description\": \"string\",\n      \"xmlUdfData\": [\n        {\n          \"userDefinedAttributeId\": 2258,\n          \"customerId\": 6218,\n          \"stringValue\": \"string\",\n          \"numberValue\": 8133.629752997762,\n          \"currencyValue\": 17.487831636273654,\n          \"entityValue\": {\n            \"active\": true,\n            \"code\": \"string\",\n            \"customerId\": 3640,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 7526,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 8316,\n            \"personDelegateID\": 3469,\n            \"updateDate\": \"2025-10-31T09:13:57.367Z\",\n            \"entityTypeID\": 9679,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": false\n          },\n          \"entityValueInt\": 1299,\n          \"dateValue\": \"2008-02-03T11:21:50.690Z\",\n          \"boolValue\": false,\n          \"udaDataType\": \"NumberValue\",\n          \"xmlElement\": \"string\",\n          \"udaName\": \"string\",\n          \"personStandardScreenLabel\": \"string\"\n        },\n        {\n          \"userDefinedAttributeId\": 7283,\n          \"customerId\": 7298,\n          \"stringValue\": \"string\",\n          \"numberValue\": 4209.293798517232,\n          \"currencyValue\": 9475.572507086612,\n          \"entityValue\": {\n            \"active\": true,\n            \"code\": \"string\",\n            \"customerId\": 7665,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 418,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 6068,\n            \"personDelegateID\": 9929,\n            \"updateDate\": \"1951-08-02T18:28:44.846Z\",\n            \"entityTypeID\": 6948,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": true\n          },\n          \"entityValueInt\": 8139,\n          \"dateValue\": \"1985-07-15T05:44:07.660Z\",\n          \"boolValue\": true,\n          \"udaDataType\": \"DateValue\",\n          \"xmlElement\": \"string\",\n          \"udaName\": \"string\",\n          \"personStandardScreenLabel\": \"string\"\n        }\n      ],\n      \"externalRef\": \"string\",\n      \"isPerDiem\": false,\n      \"lineItemTypeId\": 7300,\n      \"transactionDate\": \"1973-09-18T05:42:38.722Z\",\n      \"udas\": [\n        {\n          \"udaName\": \"string\",\n          \"id\": \"string\",\n          \"lineItemId\": \"string\",\n          \"userDefinedAttributeId\": 107,\n          \"customerId\": 2059,\n          \"stringValue\": \"string\",\n          \"numberValue\": 5842.926844686468,\n          \"currencyValue\": 6685.377076607758,\n          \"entityValue\": {\n            \"active\": false,\n            \"code\": \"string\",\n            \"customerId\": 9045,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 6770,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 526,\n            \"personDelegateID\": 1464,\n            \"updateDate\": \"1953-12-22T05:14:21.052Z\",\n            \"entityTypeID\": 532,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": false\n          },\n          \"dateValue\": \"1956-07-01T05:29:22.576Z\",\n          \"booleanValue\": false,\n          \"udaDataType\": \"string\"\n        },\n        {\n          \"udaName\": \"string\",\n          \"id\": \"string\",\n          \"lineItemId\": \"string\",\n          \"userDefinedAttributeId\": 848,\n          \"customerId\": 8943,\n          \"stringValue\": \"string\",\n          \"numberValue\": 1436.3284239755292,\n          \"currencyValue\": 7214.975190306111,\n          \"entityValue\": {\n            \"active\": false,\n            \"code\": \"string\",\n            \"customerId\": 9640,\n            \"name\": \"string\",\n            \"sortOrder\": \"string\",\n            \"entityID\": 6634,\n            \"extraData1\": \"string\",\n            \"extraData2\": \"string\",\n            \"extraData3\": \"string\",\n            \"extraData4\": \"string\",\n            \"extraData5\": \"string\",\n            \"createSource\": \"string\",\n            \"personLoggedInID\": 9794,\n            \"personDelegateID\": 3644,\n            \"updateDate\": \"1975-10-18T22:38:15.332Z\",\n            \"entityTypeID\": 1236,\n            \"entityTypeCode\": \"string\",\n            \"personEntities\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"entityLanguages\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dnd\": true\n          },\n          \"dateValue\": \"1977-10-24T17:38:58.365Z\",\n          \"booleanValue\": false,\n          \"udaDataType\": \"string\"\n        }\n      ],\n      \"allocations\": [\n        {\n          \"allocationId\": 1706,\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 1438.8973088804557,\n          \"percent\": 8267.555069881664,\n          \"allocationReferenceString\": \"string\",\n          \"allocationReference\": {\n            \"paLineItemAllocationId\": \"string\",\n            \"allocationSeg1\": \"string\",\n            \"allocationSeg2\": \"string\",\n            \"allocationSeg3\": \"string\",\n            \"allocationSeg4\": \"string\",\n            \"allocationSeg5\": \"string\",\n            \"allocationSeg6\": \"string\",\n            \"allocationSeg7\": \"string\",\n            \"allocationSeg8\": \"string\",\n            \"allocationSeg9\": \"string\",\n            \"allocationSeg10\": \"string\",\n            \"allocationSeg11\": \"string\",\n            \"allocationSeg12\": \"string\",\n            \"allocationSeg13\": \"string\",\n            \"allocationSeg14\": \"string\",\n            \"allocationSeg15\": \"string\",\n            \"allocationSeg16\": \"string\"\n          }\n        },\n        {\n          \"allocationId\": 191,\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 4975.719630323897,\n          \"percent\": 6063.941138662391,\n          \"allocationReferenceString\": \"string\",\n          \"allocationReference\": {\n            \"paLineItemAllocationId\": \"string\",\n            \"allocationSeg1\": \"string\",\n            \"allocationSeg2\": \"string\",\n            \"allocationSeg3\": \"string\",\n            \"allocationSeg4\": \"string\",\n            \"allocationSeg5\": \"string\",\n            \"allocationSeg6\": \"string\",\n            \"allocationSeg7\": \"string\",\n            \"allocationSeg8\": \"string\",\n            \"allocationSeg9\": \"string\",\n            \"allocationSeg10\": \"string\",\n            \"allocationSeg11\": \"string\",\n            \"allocationSeg12\": \"string\",\n            \"allocationSeg13\": \"string\",\n            \"allocationSeg14\": \"string\",\n            \"allocationSeg15\": \"string\",\n            \"allocationSeg16\": \"string\"\n          }\n        }\n      ],\n      \"lineItemAllocations\": [\n        {\n          \"allocationId\": \"string\",\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 2765.5877934721175,\n          \"percent\": 7408.036115861169\n        },\n        {\n          \"allocationId\": \"string\",\n          \"costCodeOverride\": \"string\",\n          \"amountSpent\": 5823.205025571005,\n          \"percent\": 9764.239805875111\n        }\n      ]\n    }\n  ],\n  \"complianceItems\": [\n    {\n      \"description\": \"string\",\n      \"response\": \"string\"\n    },\n    {\n      \"description\": \"string\",\n      \"response\": \"string\"\n    }\n  ],\n  \"udas\": [\n    {\n      \"udaName\": \"string\",\n      \"stringValue\": \"string\",\n      \"numberValue\": 6054.402518598759,\n      \"currencyValue\": 8001.382254395314,\n      \"entityValue\": {\n        \"active\": true,\n        \"code\": \"string\",\n        \"customerId\": 8614,\n        \"name\": \"string\",\n        \"sortOrder\": \"string\",\n        \"entityID\": 8687,\n        \"extraData1\": \"string\",\n        \"extraData2\": \"string\",\n        \"extraData3\": \"string\",\n        \"extraData4\": \"string\",\n        \"extraData5\": \"string\",\n        \"createSource\": \"string\",\n        \"personLoggedInID\": 2493,\n        \"personDelegateID\": 41,\n        \"updateDate\": \"2012-05-19T02:13:35.595Z\",\n        \"entityTypeID\": 7367,\n        \"entityTypeCode\": \"string\",\n        \"personEntities\": [\n          {\n            \"customerId\": \"string\",\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entityID\": 3446,\n            \"personDelegateId\": 5836,\n            \"personId\": 1309,\n            \"personLoggedInId\": 2430,\n            \"active\": true,\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          },\n          {\n            \"customerId\": \"string\",\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entityID\": 1414,\n            \"personDelegateId\": 103,\n            \"personId\": 2322,\n            \"personLoggedInId\": 4879,\n            \"active\": false,\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          }\n        ],\n        \"entityLanguages\": [\n          {\n            \"createDate\": \"2015-11-18T20:15:28.862Z\",\n            \"customerId\": 9351,\n            \"entityId\": 1061,\n            \"languageId\": 7658,\n            \"name\": \"string\",\n            \"updateDate\": \"1950-11-21T04:13:43.034Z\",\n            \"entityLanguageId\": 4440,\n            \"locale\": \"string\",\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          },\n          {\n            \"createDate\": \"1960-07-17T09:04:31.027Z\",\n            \"customerId\": 3659,\n            \"entityId\": 8325,\n            \"languageId\": 9536,\n            \"name\": \"string\",\n            \"updateDate\": \"1973-07-31T01:57:54.600Z\",\n            \"entityLanguageId\": 7638,\n            \"locale\": \"string\",\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          }\n        ],\n        \"dnd\": false\n      },\n      \"dateValue\": \"1950-03-31T17:10:22.800Z\",\n      \"booleanValue\": false,\n      \"udaDataType\": \"string\"\n    },\n    {\n      \"udaName\": \"string\",\n      \"stringValue\": \"string\",\n      \"numberValue\": 8586.335301092708,\n      \"currencyValue\": 9193.984661416764,\n      \"entityValue\": {\n        \"active\": true,\n        \"code\": \"string\",\n        \"customerId\": 5867,\n        \"name\": \"string\",\n        \"sortOrder\": \"string\",\n        \"entityID\": 6014,\n        \"extraData1\": \"string\",\n        \"extraData2\": \"string\",\n        \"extraData3\": \"string\",\n        \"extraData4\": \"string\",\n        \"extraData5\": \"string\",\n        \"createSource\": \"string\",\n        \"personLoggedInID\": 677,\n        \"personDelegateID\": 1675,\n        \"updateDate\": \"1948-08-22T09:57:08.608Z\",\n        \"entityTypeID\": 6705,\n        \"entityTypeCode\": \"string\",\n        \"personEntities\": [\n          {\n            \"customerId\": \"string\",\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entityID\": 8245,\n            \"personDelegateId\": 4624,\n            \"personId\": 4126,\n            \"personLoggedInId\": 5967,\n            \"active\": false,\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          },\n          {\n            \"customerId\": \"string\",\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entityID\": 3666,\n            \"personDelegateId\": 8916,\n            \"personId\": 2319,\n            \"personLoggedInId\": 744,\n            \"active\": true,\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          }\n        ],\n        \"entityLanguages\": [\n          {\n            \"createDate\": \"1950-06-12T03:52:22.338Z\",\n            \"customerId\": 7765,\n            \"entityId\": 2376,\n            \"languageId\": 7026,\n            \"name\": \"string\",\n            \"updateDate\": \"1963-04-23T07:42:56.123Z\",\n            \"entityLanguageId\": 2667,\n            \"locale\": \"string\",\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          },\n          {\n            \"createDate\": \"1964-03-14T22:21:30.070Z\",\n            \"customerId\": 2211,\n            \"entityId\": 4999,\n            \"languageId\": 7614,\n            \"name\": \"string\",\n            \"updateDate\": \"1989-12-12T14:27:52.347Z\",\n            \"entityLanguageId\": 4405,\n            \"locale\": \"string\",\n            \"entity\": {\n              \"value\": \"<Circular reference to #/components/schemas/Entity detected>\"\n            }\n          }\n        ],\n        \"dnd\": false\n      },\n      \"dateValue\": \"1974-07-15T07:02:09.922Z\",\n      \"booleanValue\": false,\n      \"udaDataType\": \"string\"\n    }\n  ],\n  \"notes\": [\n    {\n      \"note\": \"<string>\",\n      \"createDate\": \"<dateTime>\"\n    },\n    {\n      \"note\": \"<string>\",\n      \"createDate\": \"<dateTime>\"\n    }\n  ],\n  \"images\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb69f8ca-8f45-4d5f-b1c8-8e3e77270822",
+              "name": "Customer Code is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-report-approvals",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c927519-b2e3-4570-92ae-ab06c1c0d027",
+              "name": "Customer Code is not authorized. Cannot get details of Pre-Approval Report.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-report-approvals",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47e53ca3-72ef-40d8-9bc6-e48820d04e93",
+              "name": "Logged in user is not allowed to view details Pre-Approval Report or Logged in user does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-report-approvals",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bf71a58a-f692-4cca-94f4-270d3c881330",
+              "name": "Pre-Approval Report does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-report-approvals",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f449a64f-89c6-4af6-af56-bb1621e580d7",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preapproval-report-approvals",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) Report ID for pre-approval report"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Used for tracking the flow of the request",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique ID for the approver logged in making request",
+                    "key": "logged-in-user-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for Authentication",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Unique customer identifier provided by Chrome River",
+                    "key": "customer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a529de56-e2b5-45d5-825c-7fc43b3717fa",
+    "name": "Api Documentation Accounts pre-approval-api-controller-v-2 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

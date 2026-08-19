@@ -1,0 +1,2129 @@
+{
+  "item": [
+    {
+      "id": "a67a0ae8-deac-437d-8ea7-161db27a4da9",
+      "name": "person-controller-v4",
+      "description": {
+        "content": "Person Web Services",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3ef08f65-0b99-4465-a9e3-130e47ff068d",
+          "name": "Get Person Relationship Attributes by Identifier",
+          "request": {
+            "name": "Get Person Relationship Attributes by Identifier",
+            "description": {
+              "content": "This web service allows the ability to find a person relational entity by its identifier",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":personUniqueId",
+                "person-entities",
+                ":person-entity-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personUniqueId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "person-entity-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "05ac7d02-fb8d-4e87-a014-d2134f00f838",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":personUniqueId",
+                    "person-entities",
+                    ":person-entity-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personUniqueId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "person-entity-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d879ddb5-1fbe-4276-be30-c3b842c2f39a",
+          "name": "Modify Person Relationship Attributes by Identifier",
+          "request": {
+            "name": "Modify Person Relationship Attributes by Identifier",
+            "description": {
+              "content": "This web service allows the ability to alter a person relational entity by its identifier",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":personUniqueId",
+                "person-entities",
+                ":person-entity-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personUniqueId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "person-entity-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entityCode\": \"<string>\",\n  \"entityTypeCode\": \"<string>\",\n  \"roleName\": \"<string>\",\n  \"entityTypeName\": \"<string>\",\n  \"entityName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "403538b9-b90a-4cb7-b750-38843dae6ec8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":personUniqueId",
+                    "person-entities",
+                    ":person-entity-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personUniqueId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "person-entity-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entityCode\": \"<string>\",\n  \"entityTypeCode\": \"DEPT\",\n  \"roleName\": \"APReview\",\n  \"entityTypeName\": \"Department\",\n  \"entityName\": \"Administrative\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "971dc2a0-4bcf-4505-bbdc-9f467aed5153",
+          "name": "Delete Person Relationship Attributes by Identifier",
+          "request": {
+            "name": "Delete Person Relationship Attributes by Identifier",
+            "description": {
+              "content": "This web service allows the ability to delete a person relational entity by its identifier",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":personUniqueId",
+                "person-entities",
+                ":person-entity-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personUniqueId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "person-entity-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "821139de-969b-4409-ae27-d4fa4fa9361d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":personUniqueId",
+                    "person-entities",
+                    ":person-entity-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personUniqueId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "person-entity-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c5eee50-243d-4cb1-897e-98955a9179eb",
+          "name": "Get Persons",
+          "request": {
+            "name": "Get Persons",
+            "description": {
+              "content": "This web service allows the ability to get a list persons based on filter queries. Note: this endpoint does not include personEntities in the response body.  If needed, please see /v4/persons/{personUniqueId}/person-entities. The default batch number is 20",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "firstName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "emailAddress",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vendorCode1",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vendorCode2",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cafb463b-58b5-4e61-8780-f49944a296a8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "firstName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "emailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendorCode2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23882342-26c6-412c-8dd3-ed08d1106d7f",
+          "name": "Create a Person",
+          "request": {
+            "name": "Create a Person",
+            "description": {
+              "content": "This web service provides the ability to create a Person.  This is the only POST method that properly upserts data. (v2 and v3 POST both do not fully function as an upsert as they overwrite data as NULL if it is not sent in the payload.)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"defaultMosaic\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"personUniqueId\": \"<string>\",\n  \"primaryCurrency\": \"<string>\",\n  \"primaryEmailAddress\": \"<string>\",\n  \"status\": \"<string>\",\n  \"username\": \"<string>\",\n  \"personResourceId\": \"<string>\",\n  \"locale\": \"<string>\",\n  \"reportsToPersonUniqueId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"vendorCode1\": \"<string>\",\n  \"vendorCode2\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"numberFormat\": \"<string>\",\n  \"vatLocation\": \"<string>\",\n  \"adminAccess\": \"<boolean>\",\n  \"copyingItems\": \"<boolean>\",\n  \"superDelegate\": \"<boolean>\",\n  \"analyticsModules\": \"<string>\",\n  \"analyticsUserType\": \"<string>\",\n  \"analyticsView\": \"<string>\",\n  \"alternateEmailAddresses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"alternateCurrencies\": [\n    {\n      \"code\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"code\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"personEntities\": [\n    {\n      \"entityCode\": \"<string>\",\n      \"entityTypeCode\": \"<string>\",\n      \"roleName\": \"<string>\",\n      \"entityTypeName\": \"<string>\",\n      \"entityName\": \"<string>\"\n    },\n    {\n      \"entityCode\": \"<string>\",\n      \"entityTypeCode\": \"<string>\",\n      \"roleName\": \"<string>\",\n      \"entityTypeName\": \"<string>\",\n      \"entityName\": \"<string>\"\n    }\n  ],\n  \"udas\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"interactionUserId\": \"<string>\",\n  \"interactionAccountName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d57fd089-5c66-496e-8e65-4ba2e5d073cf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"defaultMosaic\": \"Primary\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"personUniqueId\": \"jdoe1\",\n  \"primaryCurrency\": \"USD\",\n  \"primaryEmailAddress\": \"john.doe@company.com\",\n  \"status\": \"Pending\",\n  \"username\": \"jdoe\",\n  \"personResourceId\": \"J066anNm\",\n  \"locale\": \"en\",\n  \"reportsToPersonUniqueId\": \"fsmith\",\n  \"title\": \"Sr. Manager\",\n  \"vendorCode1\": \"35171-001\",\n  \"vendorCode2\": \"35171-001\",\n  \"dateFormat\": \"MM/DD/YYYY\",\n  \"numberFormat\": \"###,###.00\",\n  \"vatLocation\": \"US\",\n  \"adminAccess\": false,\n  \"copyingItems\": true,\n  \"superDelegate\": true,\n  \"analyticsModules\": \"M01\",\n  \"analyticsUserType\": \"U01\",\n  \"analyticsView\": \"V01\",\n  \"alternateEmailAddresses\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"alternateCurrencies\": [\n    {\n      \"code\": \"USD\",\n      \"type\": \"ALT\"\n    },\n    {\n      \"code\": \"USD\",\n      \"type\": \"ALT\"\n    }\n  ],\n  \"personEntities\": [\n    {\n      \"entityCode\": \"<string>\",\n      \"entityTypeCode\": \"DEPT\",\n      \"roleName\": \"APReview\",\n      \"entityTypeName\": \"Department\",\n      \"entityName\": \"Administrative\"\n    },\n    {\n      \"entityCode\": \"<string>\",\n      \"entityTypeCode\": \"DEPT\",\n      \"roleName\": \"APReview\",\n      \"entityTypeName\": \"Department\",\n      \"entityName\": \"Administrative\"\n    }\n  ],\n  \"udas\": [\n    {\n      \"name\": \"StartDate\",\n      \"value\": \"2017-10-03 00:00:00\"\n    },\n    {\n      \"name\": \"StartDate\",\n      \"value\": \"2017-10-03 00:00:00\"\n    }\n  ],\n  \"interactionUserId\": \"JDOE\",\n  \"interactionAccountName\": \"JDOE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "187795d0-a75b-4b41-9f61-27d8d7613919",
+          "name": "Add Person Delegate",
+          "request": {
+            "name": "Add Person Delegate",
+            "description": {
+              "content": "This web service allows the ability to add a person delegate",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":toPersonUniqueId",
+                "assists",
+                ":fromPersonUniqueId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "toPersonUniqueId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fromPersonUniqueId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a267103-860c-4bc9-b9b3-c25738963ba5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":toPersonUniqueId",
+                    "assists",
+                    ":fromPersonUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "toPersonUniqueId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fromPersonUniqueId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "687f61d2-c275-496a-a9cc-fd81aa7d51ed",
+          "name": "Delete Person Delegate",
+          "request": {
+            "name": "Delete Person Delegate",
+            "description": {
+              "content": "This web service allows the ability to delete a person delegate",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":toPersonUniqueId",
+                "assists",
+                ":fromPersonUniqueId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "toPersonUniqueId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fromPersonUniqueId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2bcc5e01-05c9-4feb-b111-40743516ede7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":toPersonUniqueId",
+                    "assists",
+                    ":fromPersonUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "toPersonUniqueId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fromPersonUniqueId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "727cf437-c540-41c1-b513-f11623090f4b",
+          "name": "Fetch Person's User Defined Attributes",
+          "request": {
+            "name": "Fetch Person's User Defined Attributes",
+            "description": {
+              "content": "This web service allows users to retrieve a person's user defined attributes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":personUniqueId",
+                "udas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personUniqueId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "87ce77b4-8c7a-49cc-aa01-2f4be0c3e915",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":personUniqueId",
+                    "udas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personUniqueId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3fc485b0-f4d2-4e9c-b2e8-e0df7bf4a519",
+          "name": "Creates Person's User Defined Attribute",
+          "request": {
+            "name": "Creates Person's User Defined Attribute",
+            "description": {
+              "content": "This web service allows the ability to create user defined attributes for a person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":personUniqueId",
+                "udas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personUniqueId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9b839558-a8a2-4038-b4a8-41aff5ce1754",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":personUniqueId",
+                    "udas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personUniqueId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"StartDate\",\n  \"value\": \"2017-10-03 00:00:00\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6df5f5dd-051c-4833-8410-f0fc01aeabed",
+          "name": "Get Person Relationship Attributes",
+          "request": {
+            "name": "Get Person Relationship Attributes",
+            "description": {
+              "content": "This web service allows the ability to find all person relational entities",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":personUniqueId",
+                "person-entities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personUniqueId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f7b53bb8-a96b-4cec-89a7-5b31132436de",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":personUniqueId",
+                    "person-entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personUniqueId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a43d7a2d-5ca6-4d66-aba5-7af3ee4e63de",
+          "name": "Create a Person-to-Entity association",
+          "request": {
+            "name": "Create a Person-to-Entity association",
+            "description": {
+              "content": "Links the specified Person and a single Entity",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":personUniqueId",
+                "person-entities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personUniqueId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entityCode\": \"<string>\",\n  \"entityTypeCode\": \"<string>\",\n  \"roleName\": \"<string>\",\n  \"entityTypeName\": \"<string>\",\n  \"entityName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "670a0617-ea09-47fc-a9af-2e3e34db7bac",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":personUniqueId",
+                    "person-entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personUniqueId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entityCode\": \"<string>\",\n  \"entityTypeCode\": \"DEPT\",\n  \"roleName\": \"APReview\",\n  \"entityTypeName\": \"Department\",\n  \"entityName\": \"Administrative\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "221bdb20-ad80-427a-bfc0-2dfa5ea87fc5",
+          "name": "Reprocess depersonalization for a person",
+          "request": {
+            "name": "Reprocess depersonalization for a person",
+            "description": {
+              "content": "This web service allows the ability to reprocess depersonalization for a person",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                "reprocess-depersonalization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"defaultMosaic\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"personUniqueId\": \"<string>\",\n    \"primaryCurrency\": \"<string>\",\n    \"primaryEmailAddress\": \"<string>\",\n    \"status\": \"<string>\",\n    \"username\": \"<string>\",\n    \"personResourceId\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"reportsToPersonUniqueId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"vendorCode1\": \"<string>\",\n    \"vendorCode2\": \"<string>\",\n    \"dateFormat\": \"<string>\",\n    \"numberFormat\": \"<string>\",\n    \"vatLocation\": \"<string>\",\n    \"adminAccess\": \"<boolean>\",\n    \"copyingItems\": \"<boolean>\",\n    \"superDelegate\": \"<boolean>\",\n    \"analyticsModules\": \"<string>\",\n    \"analyticsUserType\": \"<string>\",\n    \"analyticsView\": \"<string>\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"interactionUserId\": \"<string>\",\n    \"interactionAccountName\": \"<string>\"\n  },\n  {\n    \"defaultMosaic\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"personUniqueId\": \"<string>\",\n    \"primaryCurrency\": \"<string>\",\n    \"primaryEmailAddress\": \"<string>\",\n    \"status\": \"<string>\",\n    \"username\": \"<string>\",\n    \"personResourceId\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"reportsToPersonUniqueId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"vendorCode1\": \"<string>\",\n    \"vendorCode2\": \"<string>\",\n    \"dateFormat\": \"<string>\",\n    \"numberFormat\": \"<string>\",\n    \"vatLocation\": \"<string>\",\n    \"adminAccess\": \"<boolean>\",\n    \"copyingItems\": \"<boolean>\",\n    \"superDelegate\": \"<boolean>\",\n    \"analyticsModules\": \"<string>\",\n    \"analyticsUserType\": \"<string>\",\n    \"analyticsView\": \"<string>\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"interactionUserId\": \"<string>\",\n    \"interactionAccountName\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "502c3c09-47aa-4209-acc3-a6e597f80080",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    "reprocess-depersonalization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  },\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8cbec764-c6e8-4ece-b221-ceef723a5fce",
+          "name": "Create/update persons",
+          "request": {
+            "name": "Create/update persons",
+            "description": {
+              "content": "This web service provides the ability to create/update persons.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"defaultMosaic\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"personUniqueId\": \"<string>\",\n    \"primaryCurrency\": \"<string>\",\n    \"primaryEmailAddress\": \"<string>\",\n    \"status\": \"<string>\",\n    \"username\": \"<string>\",\n    \"personResourceId\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"reportsToPersonUniqueId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"vendorCode1\": \"<string>\",\n    \"vendorCode2\": \"<string>\",\n    \"dateFormat\": \"<string>\",\n    \"numberFormat\": \"<string>\",\n    \"vatLocation\": \"<string>\",\n    \"adminAccess\": \"<boolean>\",\n    \"copyingItems\": \"<boolean>\",\n    \"superDelegate\": \"<boolean>\",\n    \"analyticsModules\": \"<string>\",\n    \"analyticsUserType\": \"<string>\",\n    \"analyticsView\": \"<string>\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"interactionUserId\": \"<string>\",\n    \"interactionAccountName\": \"<string>\"\n  },\n  {\n    \"defaultMosaic\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"personUniqueId\": \"<string>\",\n    \"primaryCurrency\": \"<string>\",\n    \"primaryEmailAddress\": \"<string>\",\n    \"status\": \"<string>\",\n    \"username\": \"<string>\",\n    \"personResourceId\": \"<string>\",\n    \"locale\": \"<string>\",\n    \"reportsToPersonUniqueId\": \"<string>\",\n    \"title\": \"<string>\",\n    \"vendorCode1\": \"<string>\",\n    \"vendorCode2\": \"<string>\",\n    \"dateFormat\": \"<string>\",\n    \"numberFormat\": \"<string>\",\n    \"vatLocation\": \"<string>\",\n    \"adminAccess\": \"<boolean>\",\n    \"copyingItems\": \"<boolean>\",\n    \"superDelegate\": \"<boolean>\",\n    \"analyticsModules\": \"<string>\",\n    \"analyticsUserType\": \"<string>\",\n    \"analyticsView\": \"<string>\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"code\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"<string>\",\n        \"roleName\": \"<string>\",\n        \"entityTypeName\": \"<string>\",\n        \"entityName\": \"<string>\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"interactionUserId\": \"<string>\",\n    \"interactionAccountName\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1251e8eb-570b-449f-a86c-9cdfec4e535b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  },\n  {\n    \"defaultMosaic\": \"Primary\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"personUniqueId\": \"jdoe1\",\n    \"primaryCurrency\": \"USD\",\n    \"primaryEmailAddress\": \"john.doe@company.com\",\n    \"status\": \"Pending\",\n    \"username\": \"jdoe\",\n    \"personResourceId\": \"J066anNm\",\n    \"locale\": \"en\",\n    \"reportsToPersonUniqueId\": \"fsmith\",\n    \"title\": \"Sr. Manager\",\n    \"vendorCode1\": \"35171-001\",\n    \"vendorCode2\": \"35171-001\",\n    \"dateFormat\": \"MM/DD/YYYY\",\n    \"numberFormat\": \"###,###.00\",\n    \"vatLocation\": \"US\",\n    \"adminAccess\": false,\n    \"copyingItems\": true,\n    \"superDelegate\": true,\n    \"analyticsModules\": \"M01\",\n    \"analyticsUserType\": \"U01\",\n    \"analyticsView\": \"V01\",\n    \"alternateEmailAddresses\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"alternateCurrencies\": [\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      },\n      {\n        \"code\": \"USD\",\n        \"type\": \"ALT\"\n      }\n    ],\n    \"personEntities\": [\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      },\n      {\n        \"entityCode\": \"<string>\",\n        \"entityTypeCode\": \"DEPT\",\n        \"roleName\": \"APReview\",\n        \"entityTypeName\": \"Department\",\n        \"entityName\": \"Administrative\"\n      }\n    ],\n    \"udas\": [\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      },\n      {\n        \"name\": \"StartDate\",\n        \"value\": \"2017-10-03 00:00:00\"\n      }\n    ],\n    \"interactionUserId\": \"JDOE\",\n    \"interactionAccountName\": \"JDOE\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  },\n  {\n    \"personUniqueId\": \"jdoe\",\n    \"result\": \"FAIL\",\n    \"errorMessage\": \"firstName may not be empty\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7fea88a5-27ed-4c88-89af-17c6ae8cc127",
+          "name": "Get Person",
+          "request": {
+            "name": "Get Person",
+            "description": {
+              "content": "This web service allows the ability to get a person by its unique identifier. Note: this endpoint does not include personEntities in the response body.  If needed, please see /v4/persons/{personUniqueId}/person-entities",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":personUniqueId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personUniqueId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffd0dc51-2ea7-470d-b423-7b8f11932170",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":personUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personUniqueId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c7d9dff-245c-46a6-937d-432748f81036",
+          "name": "PATCH a Person",
+          "request": {
+            "name": "PATCH a Person",
+            "description": {
+              "content": "This web service provides the ability to patch just certain fields. To remove the value, pass a null value for that property",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                ":personUniqueId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "personUniqueId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": {},\n  \"key_1\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4aa4d74f-ed0f-4868-b8d1-0dded33ba740",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    ":personUniqueId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "personUniqueId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7229f4c-0e73-42aa-8b87-2895711cfedb",
+          "name": "Search for Persons",
+          "request": {
+            "name": "Search for Persons",
+            "description": {
+              "content": "This web service allows the ability to get a list persons based on search term",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v4",
+                "persons",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "searchTerm",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "100"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "chain-id",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "185f4fe7-366e-4b0e-afe0-a3d49b536408",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v4",
+                    "persons",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "searchTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "100"
+                    },
+                    {
+                      "key": "page",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "chain-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "721893e5-0764-4786-b9b1-235451f4baad",
+    "name": "Api Documentation Accounts person-controller-v4 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

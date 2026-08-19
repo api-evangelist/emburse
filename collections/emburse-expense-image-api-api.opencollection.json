@@ -1,0 +1,518 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts expense-image-api API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "expense-image-api",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get voucher invoices for a given date range.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getVoucherInvoices",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fromDate",
+                "value": "08/01/2017 or 08/01/2017 23:22:21",
+                "type": "query",
+                "description": "Beginning of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+              },
+              {
+                "name": "toDate",
+                "value": "08/01/2017 or 08/01/2017 23:22:21",
+                "type": "query",
+                "description": "End of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+              }
+            ]
+          },
+          "docs": "Get voucher invoices for a given date range. Returns an xml file."
+        },
+        {
+          "info": {
+            "name": "Get voucher invoices for a given date range.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getVoucherInvoicesForXML",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fromDateforXml",
+                "value": "08/01/2017 or 08/01/2017 23:22:21",
+                "type": "query",
+                "description": "Beginning of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+              },
+              {
+                "name": "toDateforXml",
+                "value": "08/01/2017 or 08/01/2017 23:22:21",
+                "type": "query",
+                "description": "End of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+              }
+            ]
+          },
+          "docs": "Get voucher invoices for a given date range. Returns an xml file."
+        },
+        {
+          "info": {
+            "name": "Get voucher invoices for a given date range.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getVoucherInvoicesForOFD",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fromDateForOfd",
+                "value": "08/01/2017 or 08/01/2017 23:22:21",
+                "type": "query",
+                "description": "Beginning of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+              },
+              {
+                "name": "toDateForOfd",
+                "value": "08/01/2017 or 08/01/2017 23:22:21",
+                "type": "query",
+                "description": "End of the date range. Date format can be MM/dd/yyyy or MM/dd/yyyy hh:mm:ss"
+              }
+            ]
+          },
+          "docs": "Get voucher invoices for a given date range. Returns an xml file."
+        },
+        {
+          "info": {
+            "name": "Extract PDF of receipts associated to an Expense Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getReceipts",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "voucherInvoice",
+                "value": "860631509020301",
+                "type": "query",
+                "description": "Voucher invoice number."
+              },
+              {
+                "name": "reportID",
+                "value": "10012345678",
+                "type": "query",
+                "description": "The Report ID is a 12-digit number generated by Chrome River that begins with 0100. Be sure to omit the dashes."
+              },
+              {
+                "name": "getMileageDetails",
+                "value": "",
+                "type": "query",
+                "description": "If selected, PDF will include mileage details, including map and distance, if expense was created using Maps"
+              },
+              {
+                "name": "getImage",
+                "value": "",
+                "type": "query",
+                "description": "If selected, PDF will include receipt images attached to the report"
+              },
+              {
+                "name": "getPDFReport",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the original PDF is retrieved first, if available."
+              },
+              {
+                "name": "getPDFReportWithNotes",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the original PDF will include approval notes"
+              },
+              {
+                "name": "imageFirst",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the images will be retrieved before any PDFs"
+              },
+              {
+                "name": "failOnImageFetchError",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This method returns a PDF file of all the images associated with an Expense Report or with the line items within the report."
+        },
+        {
+          "info": {
+            "name": "Extract PDF of receipts associated to an Expense Report with a CoverPage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getReceiptsWithCoverPage",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "voucherInvoice",
+                "value": "860631509020301",
+                "type": "query",
+                "description": "Voucher invoice number."
+              },
+              {
+                "name": "reportID",
+                "value": "10012345678",
+                "type": "query",
+                "description": "The Report ID is a 12-digit number generated by Chrome River that begins with 0100. Be sure to omit the dashes."
+              }
+            ]
+          },
+          "docs": "This method returns a PDF file of all the images associated with an Expense Report and includes a CoverPage."
+        },
+        {
+          "info": {
+            "name": "Get voucher invoice by its number.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getReceiptsForXml",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "voucherInvoiceForXml",
+                "value": "3411655208121105",
+                "type": "query",
+                "description": "Voucher invoice number."
+              }
+            ]
+          },
+          "docs": "Get voucher invoice by its number. Returns zip archive with xml file."
+        },
+        {
+          "info": {
+            "name": "Get OFD receipts associated to a VoucherInvoice Number.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getReceiptsForOFD",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "voucherInvoice",
+                "value": "3411655208121105",
+                "type": "query",
+                "description": "Voucher invoice number."
+              }
+            ]
+          },
+          "docs": "Get receipt images for a voucher invoice number. Returns zip archive with receipt image files."
+        },
+        {
+          "info": {
+            "name": "Get list of line item voucher invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getLineItemVoucherInvoices",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "lineItemVoucherInvoice",
+                "value": "860631509020301",
+                "type": "query",
+                "description": "Voucher invoice number. "
+              }
+            ]
+          },
+          "docs": "This method returns a listing of line item voucher invoices based on a given Voucher Invoice."
+        },
+        {
+          "info": {
+            "name": "Extract PDF of receipts for a line item voucher invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getLineItemReceipts",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "voucherInvoiceForReceipt",
+                "value": "0860631509020301_00020000",
+                "type": "query",
+                "description": "Voucher invoice number that was returned from the getLineItemVoucherInvoices method. Line Item Voucher Invoice format: \\<VoucherInvoice\\> + \"_\" + \\<LineNumber\\> + \\<ChildLineNumber\\>"
+              },
+              {
+                "name": "getImage",
+                "value": "",
+                "type": "query",
+                "description": "If selected, PDF will include receipt images attached to the report"
+              },
+              {
+                "name": "getPDFReport",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the original PDF is retrieved first, if available."
+              },
+              {
+                "name": "getPDFReportWithNotes",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the original PDF will include approval notes"
+              },
+              {
+                "name": "imageFirst",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the images will be retrieved before any PDFs"
+              }
+            ]
+          },
+          "docs": "This method returns a Line Item Receipts PDF based on the given Line Item Voucher Invoice. This will also work for returning all remaining images that are not linked to any Line Item."
+        },
+        {
+          "info": {
+            "name": "Extract PDF of receipts for a line item voucher invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getLineItemReceiptsWithMileageDetails",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "voucherInvoiceForReceipt",
+                "value": "0860631509020301_00020000",
+                "type": "query",
+                "description": "Voucher invoice number that was returned from the getLineItemVoucherInvoices method. Line Item Voucher Invoice format: \\<VoucherInvoice\\> + \"_\" + \\<LineNumber\\> + \\<ChildLineNumber\\>"
+              },
+              {
+                "name": "getImage",
+                "value": "",
+                "type": "query",
+                "description": "If selected, PDF will include receipt images attached to the report"
+              },
+              {
+                "name": "getPDFReport",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the original PDF is retrieved first, if available."
+              },
+              {
+                "name": "getPDFReportWithNotes",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the original PDF will include approval notes"
+              },
+              {
+                "name": "imageFirst",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the images will be retrieved before any PDFs"
+              }
+            ]
+          },
+          "docs": "This method returns a Line Item Receipts PDF based on the given Line Item Voucher Invoice. This will also work for returning all remaining images that are not linked to any Line Item."
+        },
+        {
+          "info": {
+            "name": "Extract PDF of receipts for a line item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/expense-image-api/getLineItemReceiptsFromLineItemId",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "expenseReportLineItemId",
+                "value": "01670304-083d-4c6e-9c76-a5716987de7a",
+                "type": "query",
+                "description": "expenseReportLineItemId"
+              },
+              {
+                "name": "getPDFReport",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the original PDF is retrieved first, if available."
+              },
+              {
+                "name": "getPDFReportWithNotes",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the original PDF will include approval notes"
+              },
+              {
+                "name": "imageFirst",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the images will be retrieved before any PDFs"
+              },
+              {
+                "name": "getMileageCoverPage",
+                "value": "",
+                "type": "query",
+                "description": "If selected, the mileage cover page will be included if the item type of the line item is of type mileage."
+              }
+            ]
+          },
+          "docs": "This method returns a Line Item Receipts PDF based on the given Line Item ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

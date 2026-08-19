@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts pre-approval-api-controller-v-2 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "pre-approval-api-controller-v-2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add note to a Pre-Approval Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v2/preapproval-reports/:reportId/notes",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for pre-approval report"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to add a note to a Pre-Approval Report"
+        },
+        {
+          "info": {
+            "name": "Get pre-approval report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/preapproval-reports/:reportId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier for the pre-approval report."
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to retrieve pre-approval report by ReportId"
+        },
+        {
+          "info": {
+            "name": "Get pre-approval report details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/preapproval-report-approvals/:reportId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "logged-in-user-id",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for pre-approval report"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get the details of Pre-Approval Report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,367 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts invoice-api-external-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "invoice-api-external-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns invoices by InvoiceFilter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/v1/invoice-api/invoices",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Date filtering expects RFC3339 / ISO-8601 timestamps (UTC recommended).\nPreferred examples:\n  - 2022-12-01T00:00:00Z\n  - 2022-12-01T00:00:00+00:00\nLegacy format currently accepted for backward compatibility (discouraged):\n  - 2022-12-01T00:00:00+0000"
+        },
+        {
+          "info": {
+            "name": "Returns images/invoice-report in pdf file format.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/invoice-api/invoices/images/pdf",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "getImage",
+                "value": "",
+                "type": "query",
+                "description": "Flag to fetch images attached to the invoice."
+              },
+              {
+                "name": "getPDFReport",
+                "value": "",
+                "type": "query",
+                "description": "Flag to fetch and attach invoice pdf report."
+              },
+              {
+                "name": "imageFirst",
+                "value": "",
+                "type": "query",
+                "description": "Flag to put images first and invoice pdf report at the end of the pdf file, vice versa."
+              },
+              {
+                "name": "invoiceId",
+                "value": "",
+                "type": "query",
+                "description": "Invoice Id to get images."
+              }
+            ]
+          },
+          "docs": "Returns images/invoice-report in pdf file format."
+        },
+        {
+          "info": {
+            "name": "Get invoice payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://service.chromeriver.com/v1/invoice-api/invoices/payments",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get invoice payment"
+        },
+        {
+          "info": {
+            "name": "Post SDI invoice xml",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/invoice-api/invoices/sdi/xml",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Post SDI invoice xml"
+        },
+        {
+          "info": {
+            "name": "Approve Specified Invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/invoice-api/invoices/:invoiceId/approve",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "approverPersonUniqueId",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifier of a person"
+              },
+              {
+                "name": "invoiceId",
+                "value": "",
+                "type": "path",
+                "description": "Invoice Id to approve"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Approve Specified Invoice"
+        },
+        {
+          "info": {
+            "name": "Assign Specified Invoice To Person Or Entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/invoice-api/invoices/:invoiceId/assign",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "approverPersonUniqueId",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifier of a person"
+              },
+              {
+                "name": "invoiceId",
+                "value": "",
+                "type": "path",
+                "description": "Invoice Id to assign"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Assign Specified Invoice To Person Or Entity"
+        },
+        {
+          "info": {
+            "name": "Get images uploaded for OCR",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/invoice-api/invoices/:invoiceId/ocr/images",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "invoiceId",
+                "value": "",
+                "type": "path",
+                "description": "Invoice Id to retrieve"
+              }
+            ]
+          },
+          "docs": "Get images uploaded for OCR"
+        },
+        {
+          "info": {
+            "name": "Post paid invoice data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/invoice-api/invoices/:invoiceId/payment",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "checkDupePayments",
+                "value": "false",
+                "type": "query",
+                "description": "Flag that will enable a check for duplicate payments. Add dupe check fields in the payload. If flag is not present, it will default to false"
+              },
+              {
+                "name": "invoiceId",
+                "value": "",
+                "type": "path",
+                "description": "Invoice Id to update status"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Post paid invoice data"
+        },
+        {
+          "info": {
+            "name": "Return Specified Invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v1/invoice-api/invoices/:invoiceId/return",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "approverPersonUniqueId",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifier of a person"
+              },
+              {
+                "name": "invoiceId",
+                "value": "",
+                "type": "path",
+                "description": "Invoice Id to return"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Return Specified Invoice"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

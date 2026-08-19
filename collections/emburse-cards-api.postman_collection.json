@@ -1,0 +1,3429 @@
+{
+  "item": [
+    {
+      "id": "74a634c3-18b9-4c8b-9cc6-a99cdaadaa94",
+      "name": "Cards",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a35c4709-d12b-41e4-9e44-fe5cc37ba796",
+          "name": "get cards",
+          "request": {
+            "name": "get cards",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The initial index from which to return the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "assigned_to",
+                  "value": "<string>",
+                  "description": "assigned_to"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "category"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>",
+                  "description": "department"
+                },
+                {
+                  "disabled": false,
+                  "key": "label",
+                  "value": "<string>",
+                  "description": "label"
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "location"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "Filter by card state. Accepts a comma-separated list of states. Valid values: active, unactivated, suspended, terminated."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "description"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b95a897a-6c31-41c7-9094-558ba5878cc1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 123,\n  \"results\": [\n    {\n      \"description\": \"string\",\n      \"is_virtual\": true,\n      \"last_four\": \"5603\",\n      \"allowance\": {\n        \"balance\": 109784600027681.2,\n        \"id\": \"35906d29-3253-12b3-7b42-26870e4c6c58\",\n        \"url\": \"string\",\n        \"interval\": \"string\",\n        \"amount\": 66888035719526.32,\n        \"transaction_limit\": 77982650004181.44,\n        \"daily_limit\": 71599206597833.27,\n        \"single_use\": false,\n        \"start_time\": \"1968-07-22T02:08:49.905Z\",\n        \"end_time\": \"1976-03-23T22:02:16.704Z\",\n        \"scope\": [\n          614558213729549300,\n          7668438897769695000\n        ]\n      },\n      \"expiration\": \"2001-06-26\",\n      \"created_at\": \"1974-01-13T23:19:20.509Z\",\n      \"id\": \"08037537-07f0-4f0b-9704-a91b13a9562e\",\n      \"url\": \"string\",\n      \"name\": \"string\",\n      \"state\": \"string\",\n      \"suspension_reason\": \"string\",\n      \"assigned_to\": {\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"id\": \"46943586-7a83-f6a4-3a20-25a98cd59344\",\n        \"url\": \"string\",\n        \"email\": \"string\",\n        \"code\": \"].r\"\n      },\n      \"category\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"3e3175b4-3ec6-4b2a-d1b1-8fd74be30aeb\",\n        \"code\": \"a\",\n        \"is_archived\": true,\n        \"created_at\": \"1975-01-08T07:50:20.713Z\",\n        \"url\": \"string\"\n      },\n      \"department\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"248f85cc-d830-c5d5-4e23-39bea619ccdb\",\n        \"code\": \"y.6]q\",\n        \"is_archived\": false,\n        \"created_at\": \"1962-10-19T07:12:41.009Z\",\n        \"url\": \"string\"\n      },\n      \"location\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"7704ab87-9528-27af-bce5-672efd497a17\",\n        \"code\": \"mbh6h9\",\n        \"is_archived\": false,\n        \"created_at\": \"2022-04-10T04:50:49.151Z\",\n        \"url\": \"string\"\n      },\n      \"label\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"b8429ea5-55a2-83e3-94f1-5536da7eaee7\",\n        \"code\": \"G-Cp.9\",\n        \"is_archived\": false,\n        \"created_at\": \"1993-06-13T21:50:44.148Z\",\n        \"url\": \"string\"\n      },\n      \"billing_name\": \"string\",\n      \"billing_address\": \"string\",\n      \"shipping_address\": \"string\",\n      \"shipping\": {\n        \"address\": {\n          \"address_1\": \"string\",\n          \"postal_code\": \"string\",\n          \"country\": \"string\",\n          \"attn\": \"string\",\n          \"address_2\": \"string\",\n          \"city\": \"string\",\n          \"state\": \"string\"\n        },\n        \"carrier\": \"fedex\",\n        \"eta\": \"1949-12-14T03:26:15.023Z\",\n        \"name\": \"string\",\n        \"order_size\": \"individual\",\n        \"phone_number\": \"string\",\n        \"require_signature\": false,\n        \"service\": \"express\",\n        \"status\": \"canceled\",\n        \"tracking_number\": \"string\",\n        \"tracking_url\": \"string\"\n      },\n      \"network\": \"string\"\n    },\n    {\n      \"description\": \"string\",\n      \"is_virtual\": false,\n      \"last_four\": \"4972\",\n      \"allowance\": {\n        \"balance\": 23602435083759.88,\n        \"id\": \"339b25fd-6817-0a10-3db6-ebd8c0ae42fd\",\n        \"url\": \"string\",\n        \"interval\": \"string\",\n        \"amount\": 89304914362688.66,\n        \"transaction_limit\": 53601132732176.08,\n        \"daily_limit\": 42996018671608.75,\n        \"single_use\": false,\n        \"start_time\": \"1948-09-28T01:41:12.527Z\",\n        \"end_time\": \"1972-07-13T16:02:34.988Z\",\n        \"scope\": [\n          234434287895823360,\n          1529796345160350700\n        ]\n      },\n      \"expiration\": \"2019-09-23\",\n      \"created_at\": \"2025-11-08T05:11:42.754Z\",\n      \"id\": \"5da2361b-3f16-784d-0e55-0c1145c49a9e\",\n      \"url\": \"string\",\n      \"name\": \"string\",\n      \"state\": \"string\",\n      \"suspension_reason\": \"string\",\n      \"assigned_to\": {\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"id\": \"9465b26e-9c12-0b73-0251-38d25158ae2d\",\n        \"url\": \"string\",\n        \"email\": \"string\",\n        \"code\": \"E2W\"\n      },\n      \"category\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"c4e4895a-50b3-b58c-21be-9428d52390d7\",\n        \"code\": \"njK\",\n        \"is_archived\": true,\n        \"created_at\": \"2023-04-14T15:18:04.046Z\",\n        \"url\": \"string\"\n      },\n      \"department\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"b7e3307f-ce08-81ae-efa7-ea2675a6e1c5\",\n        \"code\": \"TA\",\n        \"is_archived\": false,\n        \"created_at\": \"1953-08-27T18:00:32.827Z\",\n        \"url\": \"string\"\n      },\n      \"location\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"2d11b2bb-fb53-ba95-b069-49e2fa7be1fe\",\n        \"code\": \"6Se-1jetL\\\\R\",\n        \"is_archived\": false,\n        \"created_at\": \"1991-01-14T06:29:04.906Z\",\n        \"url\": \"string\"\n      },\n      \"label\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"309b5a18-ffe1-3b03-82d3-b1d9f09eee4b\",\n        \"code\": \"0vl6\",\n        \"is_archived\": false,\n        \"created_at\": \"1974-02-27T16:44:42.427Z\",\n        \"url\": \"string\"\n      },\n      \"billing_name\": \"string\",\n      \"billing_address\": \"string\",\n      \"shipping_address\": \"string\",\n      \"shipping\": {\n        \"address\": {\n          \"address_1\": \"string\",\n          \"postal_code\": \"string\",\n          \"country\": \"string\",\n          \"attn\": \"string\",\n          \"address_2\": \"string\",\n          \"city\": \"string\",\n          \"state\": \"string\"\n        },\n        \"carrier\": \"fedex\",\n        \"eta\": \"1975-12-22T21:57:10.118Z\",\n        \"name\": \"string\",\n        \"order_size\": \"individual\",\n        \"phone_number\": \"string\",\n        \"require_signature\": true,\n        \"service\": \"priority\",\n        \"status\": \"returned\",\n        \"tracking_number\": \"string\",\n        \"tracking_url\": \"string\"\n      },\n      \"network\": \"string\"\n    }\n  ],\n  \"next\": \"http://api.example.org/accounts/?offset=400&limit=100\",\n  \"previous\": \"http://api.example.org/accounts/?offset=200&limit=100\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d3080213-8c06-4e64-a596-64f73b564a53",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2d7ad81e-ea35-4a54-8ac4-65f30a38e976",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "49b4c926-7318-4162-863a-08209562bbca",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e6b3b531-55fa-4681-a4b9-ec9ad76c65d3",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "995ff3fc-7bb1-4538-b566-ba324f564eed",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "73282498-62d7-40fe-a788-6a5a5e52a468",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d1821229-6dea-4e3d-bcf3-3053052a943b",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d08df225-dc33-480d-96bf-91ccb4998951",
+          "name": "post cards",
+          "request": {
+            "name": "post cards",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a6047b52-d66f-45a7-b8bc-9e77be092d74",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"id\": \"cd1794a5-c6c3-63e4-e58f-622b56eba55d\",\n    \"url\": \"string\",\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"balance\": 9034507037.51\n  },\n  \"id\": \"aa73f355-e0e3-66cf-f084-2dfb21f8a714\",\n  \"url\": \"string\",\n  \"name\": \"string\",\n  \"last_four\": \"2298\",\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"X`nv_Ouhi\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"S^Iz\",\n    \"parent\": {},\n    \"is_archived\": true,\n    \"created_at\": \"2018-12-08T00:00:31.947Z\",\n    \"url\": \"string\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"VWbRB\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"2011-06-16T01:58:16.925Z\",\n    \"url\": \"string\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"EZ5p59FVkk\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"2000-02-11T17:13:33.702Z\",\n    \"url\": \"string\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"bb8[j1\",\n    \"parent\": {},\n    \"is_archived\": true,\n    \"created_at\": \"1993-04-14T12:13:24.715Z\",\n    \"url\": \"string\"\n  },\n  \"expiration\": \"1968-07-24\",\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"carrier\": \"royal_mail\",\n    \"eta\": \"1997-05-07T11:20:43.645Z\",\n    \"name\": \"string\",\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\",\n    \"status\": \"delivered\",\n    \"tracking_number\": \"string\",\n    \"tracking_url\": \"string\"\n  },\n  \"created_at\": \"1965-06-10T16:26:29.619Z\",\n  \"network\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ccce9703-a2f2-4d8a-8b63-dc0515b17d0c",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "22f036a1-eedc-4e61-8699-8d9291b713a2",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76f561da-07b3-4e7f-934d-56c5c3dc8d93",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bf2730fa-c056-4f08-8fdc-68b4522c8a75",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "55418c0d-9bc3-4550-afed-68360939821e",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f2c1b2c6-7ead-4509-ba64-2bb436cdcfe7",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c42a0b0d-59c3-43a8-9d2e-370685726157",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b55a572f-956d-47f5-86e7-816eef355bc8",
+          "name": "get cards by id",
+          "request": {
+            "name": "get cards by id",
+            "description": {
+              "content": "APICardPAN model requires \"has_pan_access\" privileges.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cards",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7945ff01-3813-45ea-8b68-8fdb5241428a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pan\": \"string\",\n  \"cvv\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5dd269d3-3edb-4b07-b29e-5d9da83f4ae1",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0d72c027-b6d9-4113-9bc4-c75bf907be4d",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "06c6fc44-98b7-4a3b-857f-f78fcfecd18a",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "48511b63-d07d-4fb2-adf2-93a73a43df33",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c73c1b24-ccbd-4441-9f91-75722950b217",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0af21ff7-276a-4843-89d8-30894a5f2cfe",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b104dd39-f25e-417f-bb32-a8cc90a433dc",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27a9a8df-f7dc-45e5-9f4d-9ab8c3fd0b02",
+          "name": "put cards by id",
+          "request": {
+            "name": "put cards by id",
+            "description": {
+              "content": "Always perform a partial update.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cards",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "assigned_to",
+                  "value": "<string>",
+                  "description": "assigned_to"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "category"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>",
+                  "description": "department"
+                },
+                {
+                  "disabled": false,
+                  "key": "label",
+                  "value": "<string>",
+                  "description": "label"
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "location"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "Filter by card state. Accepts a comma-separated list of states. Valid values: active, unactivated, suspended, terminated."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "description"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "919d16d6-f5e9-43a2-bcc8-f95e98e6425b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"id\": \"cd1794a5-c6c3-63e4-e58f-622b56eba55d\",\n    \"url\": \"string\",\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"balance\": 9034507037.51\n  },\n  \"id\": \"aa73f355-e0e3-66cf-f084-2dfb21f8a714\",\n  \"url\": \"string\",\n  \"name\": \"string\",\n  \"last_four\": \"2298\",\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"X`nv_Ouhi\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"S^Iz\",\n    \"parent\": {},\n    \"is_archived\": true,\n    \"created_at\": \"2018-12-08T00:00:31.947Z\",\n    \"url\": \"string\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"VWbRB\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"2011-06-16T01:58:16.925Z\",\n    \"url\": \"string\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"EZ5p59FVkk\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"2000-02-11T17:13:33.702Z\",\n    \"url\": \"string\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"bb8[j1\",\n    \"parent\": {},\n    \"is_archived\": true,\n    \"created_at\": \"1993-04-14T12:13:24.715Z\",\n    \"url\": \"string\"\n  },\n  \"expiration\": \"1968-07-24\",\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"carrier\": \"royal_mail\",\n    \"eta\": \"1997-05-07T11:20:43.645Z\",\n    \"name\": \"string\",\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\",\n    \"status\": \"delivered\",\n    \"tracking_number\": \"string\",\n    \"tracking_url\": \"string\"\n  },\n  \"created_at\": \"1965-06-10T16:26:29.619Z\",\n  \"network\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd0a68d6-91d0-4afa-94cf-6d697431a429",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "47671da9-f23f-4927-90a5-9505cf7a5d5e",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "32cefeab-12c3-4d60-8a33-0bd02f85f712",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "01b5f808-b237-4517-95d6-b069575dc8e0",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "03e7e68a-f6ef-4ee8-991f-e3fc374d3003",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9dbc3413-2777-4e3c-9601-babf40119172",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2289630b-ad66-46f7-a9e1-440d14a51712",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"is_virtual\": \"<boolean>\",\n  \"allowance\": {\n    \"interval\": \"<string>\",\n    \"amount\": \"<number>\",\n    \"transaction_limit\": \"<number>\",\n    \"daily_limit\": \"<number>\",\n    \"single_use\": \"<boolean>\",\n    \"start_time\": \"<dateTime>\",\n    \"end_time\": \"<dateTime>\",\n    \"scope\": [\n      \"<long>\",\n      \"<long>\"\n    ]\n  },\n  \"product\": {\n    \"id\": \"<uuid>\"\n  },\n  \"state\": \"<string>\",\n  \"suspension_reason\": \"<string>\",\n  \"assigned_to\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"billing_name\": \"<string>\",\n  \"billing_address\": \"<string>\",\n  \"shipping_address\": \"<string>\",\n  \"shipping\": {\n    \"address\": {\n      \"address_1\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"country\": \"<string>\",\n      \"attn\": \"<string>\",\n      \"address_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"order_size\": \"<string>\",\n    \"phone_number\": \"<string>\",\n    \"require_signature\": \"<boolean>\",\n    \"service\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77ceacaf-f893-4e83-9ee4-8b50f5a84c0a",
+          "name": "delete cards by id",
+          "request": {
+            "name": "delete cards by id",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cards",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "assigned_to",
+                  "value": "<string>",
+                  "description": "assigned_to"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "category"
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>",
+                  "description": "department"
+                },
+                {
+                  "disabled": false,
+                  "key": "label",
+                  "value": "<string>",
+                  "description": "label"
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "location"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "Filter by card state. Accepts a comma-separated list of states. Valid values: active, unactivated, suspended, terminated."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "description"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b4a311ae-6468-41cd-9e4f-514436a42fa0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "219d809c-f27d-41f0-b2ff-d3014534be68",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "71b54c9c-76aa-4873-9773-b219b9058b8d",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c19291fd-93a2-44b4-8992-a13726f44023",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e6d038c4-669d-4f6d-a3bd-e6a70eaa0068",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d36193b-51ab-4f34-ae6d-bb902f342cdf",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "068fbbc9-d178-4ccd-ab74-b8c1a6125ef6",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "49c0f483-d161-444f-84d7-2be2a68a92ec",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "assigned_to",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "label",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "active,suspended"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "423915d6-ba06-4367-b56e-60a04320ab2d",
+          "name": "get cards by id pan",
+          "request": {
+            "name": "get cards by id pan",
+            "description": {
+              "content": "APICardPAN model requires \"has_pan_access\" privileges.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cards",
+                ":id",
+                "pan"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "defaf64b-866f-4e5d-85d8-9b7dd4a48e09",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id",
+                    "pan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pan\": \"string\",\n  \"cvv\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4cff6ec2-ecbd-4d44-abdf-893d7d0cfedf",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id",
+                    "pan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d62fd199-39f8-4df7-a133-45967039e728",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id",
+                    "pan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "42a73312-91ce-4711-996a-d168e31b3d78",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id",
+                    "pan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b0cee1bd-8dde-4458-9284-dddd3927123c",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id",
+                    "pan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "557c2c27-3081-4781-adbb-b87b04dcc55a",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id",
+                    "pan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4f513957-98dc-4bb1-9c85-62145186d37d",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id",
+                    "pan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2fffa262-e575-4e21-abc0-9be6073db03b",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cards",
+                    ":id",
+                    "pan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8287df68-c9c3-4b77-88bc-8eb8b6299375",
+    "name": "Api Documentation Accounts Cards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

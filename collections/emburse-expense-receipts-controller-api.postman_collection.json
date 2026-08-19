@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "47b68682-5825-4f00-ab28-79e407afc728",
+      "name": "expense-receipts-controller",
+      "description": {
+        "content": "Retrieve expense receipt PDF",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ec5a7468-43a2-4e48-a616-06ac4c4d715f",
+          "name": "Retrieve an expense receipt PDF",
+          "request": {
+            "name": "Retrieve an expense receipt PDF",
+            "description": {
+              "content": "This web service allows an external application to fetch a receipt PDF.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "expense-receipts",
+                ":reportId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reportId",
+                  "description": "(Required) reportId"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) customer-id",
+                "key": "customer-id",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) person-id",
+                "key": "person-id",
+                "value": "<integer>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29441e0d-8528-447b-b926-e6eb5433bd4c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "expense-receipts",
+                    ":reportId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reportId",
+                      "description": "(Required) reportId"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) customer-id",
+                    "key": "customer-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) person-id",
+                    "key": "person-id",
+                    "value": "<integer>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3968346c-6f21-467c-9e50-97db27c559f4",
+    "name": "Api Documentation Accounts expense-receipts-controller API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

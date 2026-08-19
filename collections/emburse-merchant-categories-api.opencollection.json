@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts Merchant Categories API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Merchant Categories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get_merchant_categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/merchant-categories"
+          },
+          "docs": "List accepted merchant categories - internal endpoint for Cards Gateway\nFor groups we add a stringified display of mcc included"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

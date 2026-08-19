@@ -1,0 +1,3257 @@
+{
+  "item": [
+    {
+      "id": "ae80f979-aa4a-424f-b1b4-913abfe98fba",
+      "name": "Requisitions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "306a3abf-cb1d-4391-9bb5-a16c065948b0",
+          "name": "get requisitions",
+          "request": {
+            "name": "get requisitions",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "requisitions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The initial index from which to return the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "card",
+                  "value": "<string>",
+                  "description": "card"
+                },
+                {
+                  "disabled": false,
+                  "key": "ends_before",
+                  "value": "<string>",
+                  "description": "ends_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "has_balance",
+                  "value": "<string>",
+                  "description": "has_balance"
+                },
+                {
+                  "disabled": false,
+                  "key": "member",
+                  "value": "<string>",
+                  "description": "member"
+                },
+                {
+                  "disabled": false,
+                  "key": "starts_after",
+                  "value": "<string>",
+                  "description": "starts_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "status"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2c2c864-55b4-4575-89ad-f165412ba699",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 123,\n  \"results\": [\n    {\n      \"amount\": 58795127577640.664,\n      \"approved_at\": \"1955-01-08T19:01:05.327Z\",\n      \"balance\": 196657146864124.94,\n      \"created_at\": \"1981-10-17T15:09:25.149Z\",\n      \"description\": \"string\",\n      \"member\": {\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"id\": \"ce2285c1-71f8-f0d1-76aa-f38f1b2826be\",\n        \"url\": \"string\",\n        \"email\": \"string\",\n        \"code\": \"LipdTUqg5.\"\n      },\n      \"card\": {\n        \"description\": \"string\",\n        \"last_four\": \"9252\",\n        \"id\": \"d90074a5-2ec4-ba06-6f26-620dc00dbc6e\",\n        \"url\": \"string\",\n        \"state\": \"string\"\n      },\n      \"category\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"f93baf24-42a7-4d79-9b1d-b43547df4723\",\n        \"code\": \"vDe\",\n        \"is_archived\": false,\n        \"created_at\": \"1960-09-12T07:32:53.059Z\",\n        \"url\": \"string\"\n      },\n      \"days_of_week\": [\n        2,\n        1\n      ],\n      \"department\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"d76332b0-8101-703b-fa8f-fffb6b97e6a0\",\n        \"code\": \"V5_cHjs4\",\n        \"is_archived\": false,\n        \"created_at\": \"1996-08-27T16:11:33.558Z\",\n        \"url\": \"string\"\n      },\n      \"end_hour\": 19,\n      \"end_time\": \"1975-12-05T23:40:52.293Z\",\n      \"id\": \"f4758446-c9d0-12a7-0588-1ef7adcb4ba4\",\n      \"interval\": \"string\",\n      \"label\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"e4eeaddd-48b6-1bcf-93f1-188566e63d83\",\n        \"code\": \"1i\\\\M[\",\n        \"is_archived\": true,\n        \"created_at\": \"2024-03-08T04:53:46.478Z\",\n        \"url\": \"string\"\n      },\n      \"location\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"acff600a-7b43-b7ea-9e9a-dcf9de30ff30\",\n        \"code\": \"hmgO\",\n        \"is_archived\": true,\n        \"created_at\": \"1948-10-11T05:52:36.179Z\",\n        \"url\": \"string\"\n      },\n      \"note\": \"string\",\n      \"reviewed_by\": {\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"id\": \"652d3d37-ae33-2298-a624-0de781b3fe17\",\n        \"url\": \"string\",\n        \"email\": \"string\",\n        \"code\": \".-S.b-IWzZ\"\n      },\n      \"scope\": [\n        8572731269364824000,\n        7101610974952096000\n      ],\n      \"start_hour\": 20,\n      \"start_time\": \"2003-05-26T12:12:03.405Z\",\n      \"status\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"amount\": 25635241644612.46,\n      \"approved_at\": \"1952-09-21T07:14:06.820Z\",\n      \"balance\": 106218154072786.12,\n      \"created_at\": \"1955-03-16T18:54:58.603Z\",\n      \"description\": \"string\",\n      \"member\": {\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"id\": \"58d43d69-3c9c-20f5-de6d-071971479038\",\n        \"url\": \"string\",\n        \"email\": \"string\",\n        \"code\": \"hUR6hA\"\n      },\n      \"card\": {\n        \"description\": \"string\",\n        \"last_four\": \"1672\",\n        \"id\": \"f888a387-4111-36c8-8b3c-7362165eb6ee\",\n        \"url\": \"string\",\n        \"state\": \"string\"\n      },\n      \"category\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"43fb8eb9-4686-76ac-872d-48a458a60f80\",\n        \"code\": \"S\",\n        \"is_archived\": false,\n        \"created_at\": \"2004-11-14T12:06:38.233Z\",\n        \"url\": \"string\"\n      },\n      \"days_of_week\": [\n        1,\n        1\n      ],\n      \"department\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"dc5a628b-4b63-5e75-98bd-0bfeee8a4084\",\n        \"code\": \"^lEHGIvLh\",\n        \"is_archived\": false,\n        \"created_at\": \"2022-04-30T22:56:38.398Z\",\n        \"url\": \"string\"\n      },\n      \"end_hour\": 14,\n      \"end_time\": \"1987-03-04T13:33:59.617Z\",\n      \"id\": \"3f960784-a535-a671-e10a-3b7a55c0611c\",\n      \"interval\": \"string\",\n      \"label\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"60c43841-2b6c-903e-42d1-fa891dfe9f35\",\n        \"code\": \"KeXmmoMqE\",\n        \"is_archived\": false,\n        \"created_at\": \"1997-05-01T01:07:07.679Z\",\n        \"url\": \"string\"\n      },\n      \"location\": {\n        \"name\": \"string\",\n        \"parent\": {},\n        \"id\": \"b2911bc4-3b65-10bc-a1a6-b7a147e91d89\",\n        \"code\": \"`l\",\n        \"is_archived\": true,\n        \"created_at\": \"2003-07-14T06:10:59.904Z\",\n        \"url\": \"string\"\n      },\n      \"note\": \"string\",\n      \"reviewed_by\": {\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"id\": \"1e78005a-dffd-5f7f-3161-b1046efd8a67\",\n        \"url\": \"string\",\n        \"email\": \"string\",\n        \"code\": \"S38f9F7BI\"\n      },\n      \"scope\": [\n        4891063946591527000,\n        7962423391731624000\n      ],\n      \"start_hour\": 9,\n      \"start_time\": \"2009-12-03T14:53:06.437Z\",\n      \"status\": \"string\",\n      \"url\": \"string\"\n    }\n  ],\n  \"next\": \"http://api.example.org/accounts/?offset=400&limit=100\",\n  \"previous\": \"http://api.example.org/accounts/?offset=200&limit=100\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43332d80-62a0-4734-9e3b-4f4d6303a111",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fd39acc2-ba4c-4f5e-beb4-e79837b813bd",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "02406c76-2c8d-4c78-b89a-364fcfa4036c",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dfbecb39-d893-43de-b213-1daaf5975f49",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0dbb45c3-1e12-4172-8f1f-ce2125769cd2",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5cefb567-f735-460f-a8b0-39de4415c3f0",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "188ab918-846e-41a8-bc3c-4b6102c76720",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "82556240-ae30-44ea-90fe-c0c1fc7c223c",
+          "name": "post requisitions",
+          "request": {
+            "name": "post requisitions",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "requisitions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "901ec8d8-9138-4b49-b2cb-952c26741edc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"WGMjFijE\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  \"approved_at\": \"1981-03-17T20:52:16.869Z\",\n  \"balance\": 37775311477094.86,\n  \"card\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"state\": \"string\",\n    \"description\": \"string\",\n    \"last_four\": \"2689\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \".PF2BC5y0L\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"1968-01-14T10:00:11.711Z\",\n    \"url\": \"string\"\n  },\n  \"created_at\": \"1955-01-24T12:53:04.539Z\",\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"[Ghf\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"1998-11-20T23:52:22.129Z\",\n    \"url\": \"string\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"id\": \"ddd61e0f-8fb1-68dd-c5f9-512e88276594\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"VQ2eQ\",\n    \"parent\": {},\n    \"is_archived\": true,\n    \"created_at\": \"1974-08-20T16:46:50.619Z\",\n    \"url\": \"string\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"jc2CB\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"2020-06-02T20:51:11.754Z\",\n    \"url\": \"string\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"EUBVw3fx\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f8eefbe-3536-4119-b2e6-25d7b3d6ab5b",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0c0e647e-23a1-43ed-b879-dece35c1384b",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "72e56fb2-5525-45fb-937a-9cffc38c2643",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a19f772-e2d4-4314-88c3-e09a4ecbff26",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "56d63952-d53c-4b93-b7b9-b0f9d8e2edea",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5291bd2f-374c-4452-9bcb-da9c0535d390",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0dbc10ec-8945-47fd-b935-5408cb535187",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef2bfd47-716c-4849-807a-f4f452f0c8fd",
+          "name": "get requisitions by id",
+          "request": {
+            "name": "get requisitions by id",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "requisitions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "card",
+                  "value": "<string>",
+                  "description": "card"
+                },
+                {
+                  "disabled": false,
+                  "key": "ends_before",
+                  "value": "<string>",
+                  "description": "ends_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "has_balance",
+                  "value": "<string>",
+                  "description": "has_balance"
+                },
+                {
+                  "disabled": false,
+                  "key": "member",
+                  "value": "<string>",
+                  "description": "member"
+                },
+                {
+                  "disabled": false,
+                  "key": "starts_after",
+                  "value": "<string>",
+                  "description": "starts_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "status"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "862ef4cc-2f0d-4243-9191-d37a9cbc6563",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"WGMjFijE\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  \"approved_at\": \"1981-03-17T20:52:16.869Z\",\n  \"balance\": 37775311477094.86,\n  \"card\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"state\": \"string\",\n    \"description\": \"string\",\n    \"last_four\": \"2689\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \".PF2BC5y0L\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"1968-01-14T10:00:11.711Z\",\n    \"url\": \"string\"\n  },\n  \"created_at\": \"1955-01-24T12:53:04.539Z\",\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"[Ghf\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"1998-11-20T23:52:22.129Z\",\n    \"url\": \"string\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"id\": \"ddd61e0f-8fb1-68dd-c5f9-512e88276594\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"VQ2eQ\",\n    \"parent\": {},\n    \"is_archived\": true,\n    \"created_at\": \"1974-08-20T16:46:50.619Z\",\n    \"url\": \"string\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"jc2CB\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"2020-06-02T20:51:11.754Z\",\n    \"url\": \"string\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"EUBVw3fx\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6780b47-9f11-4f3a-9186-a2c2db1d1b01",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c3559e76-afab-4879-a856-a460549ae3e5",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "708a6a9d-b841-4817-9358-93fa99576753",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "01fedcad-eb42-4278-afc9-bd9082bdc719",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "66e6fd53-1d22-47a6-ac68-8a7c89e46fc9",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f4bc3ddb-da48-4afa-b2c5-b62b5d07a939",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "26198517-8458-4e42-b65d-f69f4d8f1d83",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08cef228-e44e-4064-a0ce-c9a685f79d18",
+          "name": "put requisitions by id",
+          "request": {
+            "name": "put requisitions by id",
+            "description": {
+              "content": "Always perform a partial update.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "requisitions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "card",
+                  "value": "<string>",
+                  "description": "card"
+                },
+                {
+                  "disabled": false,
+                  "key": "ends_before",
+                  "value": "<string>",
+                  "description": "ends_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "has_balance",
+                  "value": "<string>",
+                  "description": "has_balance"
+                },
+                {
+                  "disabled": false,
+                  "key": "member",
+                  "value": "<string>",
+                  "description": "member"
+                },
+                {
+                  "disabled": false,
+                  "key": "starts_after",
+                  "value": "<string>",
+                  "description": "starts_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "status"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "211f44ce-45b6-446f-bc52-13722bd848a5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"WGMjFijE\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  \"approved_at\": \"1981-03-17T20:52:16.869Z\",\n  \"balance\": 37775311477094.86,\n  \"card\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"state\": \"string\",\n    \"description\": \"string\",\n    \"last_four\": \"2689\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \".PF2BC5y0L\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"1968-01-14T10:00:11.711Z\",\n    \"url\": \"string\"\n  },\n  \"created_at\": \"1955-01-24T12:53:04.539Z\",\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"[Ghf\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"1998-11-20T23:52:22.129Z\",\n    \"url\": \"string\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"id\": \"ddd61e0f-8fb1-68dd-c5f9-512e88276594\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"VQ2eQ\",\n    \"parent\": {},\n    \"is_archived\": true,\n    \"created_at\": \"1974-08-20T16:46:50.619Z\",\n    \"url\": \"string\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"string\",\n    \"code\": \"jc2CB\",\n    \"parent\": {},\n    \"is_archived\": false,\n    \"created_at\": \"2020-06-02T20:51:11.754Z\",\n    \"url\": \"string\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\",\n    \"url\": \"string\",\n    \"email\": \"string\",\n    \"code\": \"EUBVw3fx\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"url\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ec4137c4-9253-4752-a2c2-071959e0953b",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "edaea228-c803-4a31-baf9-c404a6625077",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "075e59f6-406c-437c-9772-aa4ecb8fb7d1",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "33e2fa3a-f89b-4095-90fa-bc56aa7ca8c9",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a169195e-14b9-4390-8628-9d48d5c5512f",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c7e9d13-9ffe-4847-97dd-2d4885d7c9a1",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "200f9d15-e337-4dd8-ad56-91cd087ad782",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"member\": {\n    \"id\": \"<uuid>\"\n  },\n  \"card\": {\n    \"id\": \"<uuid>\"\n  },\n  \"category\": {\n    \"id\": \"<uuid>\"\n  },\n  \"days_of_week\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"department\": {\n    \"id\": \"<uuid>\"\n  },\n  \"end_hour\": \"<integer>\",\n  \"end_time\": \"<dateTime>\",\n  \"interval\": \"<string>\",\n  \"label\": {\n    \"id\": \"<uuid>\"\n  },\n  \"location\": {\n    \"id\": \"<uuid>\"\n  },\n  \"note\": \"<string>\",\n  \"reviewed_by\": {\n    \"id\": \"<uuid>\"\n  },\n  \"scope\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"start_hour\": \"<integer>\",\n  \"start_time\": \"<dateTime>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b02a9104-701a-43fb-af74-84e704c14bc5",
+          "name": "delete requisitions by id",
+          "request": {
+            "name": "delete requisitions by id",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "requisitions",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "card",
+                  "value": "<string>",
+                  "description": "card"
+                },
+                {
+                  "disabled": false,
+                  "key": "ends_before",
+                  "value": "<string>",
+                  "description": "ends_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "has_balance",
+                  "value": "<string>",
+                  "description": "has_balance"
+                },
+                {
+                  "disabled": false,
+                  "key": "member",
+                  "value": "<string>",
+                  "description": "member"
+                },
+                {
+                  "disabled": false,
+                  "key": "starts_after",
+                  "value": "<string>",
+                  "description": "starts_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "status"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_before",
+                  "value": "<string>",
+                  "description": "created_before"
+                },
+                {
+                  "disabled": false,
+                  "key": "created_after",
+                  "value": "<string>",
+                  "description": "created_after"
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "751ecbc1-c9ed-48fa-aaf0-45ed857059c2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "edbcf0ad-9886-4a9b-82e8-0c15877c221a",
+              "name": "Bad Request - Invalid arguments or malformed request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1ce15134-1eba-4584-82da-41a6ad880779",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ac64ea0e-7877-4ff4-bfbc-0c3c069d142a",
+              "name": "Forbidden - Insufficient permissions for this operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7c244a83-2870-4a8b-8964-358dce5599d3",
+              "name": "Not Found - Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "df680678-622f-4a11-925b-f3dadc23ca17",
+              "name": "Conflict - Request conflicts with existing data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8877cb38-0caf-42ec-b890-167d6e4614ff",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3890ff39-c697-4b9f-9a01-205af3f980b0",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requisitions",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "card",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ends_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "has_balance",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "member",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starts_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.chromeriver.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f65c4026-3353-4085-8e5b-76c0cf995a1a",
+    "name": "Api Documentation Accounts Requisitions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Api Documentation",
+      "type": "text/plain"
+    }
+  }
+}

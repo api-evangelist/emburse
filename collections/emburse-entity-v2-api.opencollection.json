@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts Entity (V2) API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entity (V2)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get List of Entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/entities",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "entityCode",
+                "value": "",
+                "type": "query",
+                "description": "Entity code."
+              },
+              {
+                "name": "entityTypeCode",
+                "value": "",
+                "type": "query",
+                "description": "Entity type code."
+              },
+              {
+                "name": "isActive",
+                "value": "",
+                "type": "query",
+                "description": "Active flag. Defaults to (true)."
+              },
+              {
+                "name": "page",
+                "value": "0",
+                "type": "query",
+                "description": "Page number. Defaults to (0)."
+              },
+              {
+                "name": "pageSize",
+                "value": "0",
+                "type": "query",
+                "description": "Page size. Defaults to (0)."
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get a list of active entities. This endpoint allows for filtering by entityCode, entityTypeCode or status."
+        },
+        {
+          "info": {
+            "name": "Search for Entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/entities/search",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "entityTypeId",
+                "value": "",
+                "type": "query",
+                "description": "Entity type Id"
+              },
+              {
+                "name": "languageId",
+                "value": "",
+                "type": "query",
+                "description": "The language id used to localize the entity type"
+              },
+              {
+                "name": "page",
+                "value": "0",
+                "type": "query",
+                "description": "Page number. Defaults to (0)."
+              },
+              {
+                "name": "pageSize",
+                "value": "0",
+                "type": "query",
+                "description": "Page size. Defaults to (0)."
+              },
+              {
+                "name": "searchTerm",
+                "value": "",
+                "type": "query",
+                "description": "search term"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to search for entities. This endpoint allows search by search term and entityTypeId."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

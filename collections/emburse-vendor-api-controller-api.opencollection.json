@@ -1,0 +1,171 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts vendor-api-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "vendor-api-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create vendor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/vendor-api/",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create vendor in Chrome River"
+        },
+        {
+          "info": {
+            "name": "Create or Update vendor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/vendor-api/create-or-update",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to create or update vendor in chromeriver"
+        },
+        {
+          "info": {
+            "name": "Get vendor",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/vendor-api/:vendorUniqueId",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "includeVendorAddress",
+                "value": "",
+                "type": "query",
+                "description": "Include Vendor Address in response"
+              },
+              {
+                "name": "vendorUniqueId",
+                "value": "",
+                "type": "path",
+                "description": "Unique vendor identifier"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get vendor information"
+        },
+        {
+          "info": {
+            "name": "Update vendor",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://service.chromeriver.com/vendor-api/:vendorUniqueId",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "vendorUniqueId",
+                "value": "",
+                "type": "path",
+                "description": "vendorUniqueId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to update vendor in Chrome River"
+        },
+        {
+          "info": {
+            "name": "Get vendor address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/vendor-api/:vendorUniqueId/addresses/:vendorAddressUniqueId",
+            "headers": [
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "vendorAddressUniqueId",
+                "value": "",
+                "type": "path",
+                "description": "Unique vendor address identifier"
+              },
+              {
+                "name": "vendorUniqueId",
+                "value": "",
+                "type": "path",
+                "description": "Unique vendor identifier"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get vendor address information"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

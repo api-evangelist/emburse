@@ -1,0 +1,333 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts expense-approval-controller-v2 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "expense-approval-controller-v2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get list of reports for approval",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/expense-report-approvals",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "email-address",
+                "value": ""
+              },
+              {
+                "name": "person-unique-id",
+                "value": ""
+              },
+              {
+                "name": "username",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get a list of expense reports awaiting approval by a user"
+        },
+        {
+          "info": {
+            "name": "Get count of reports for approval",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/expense-report-approvals/count",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "email-address",
+                "value": ""
+              },
+              {
+                "name": "person-unique-id",
+                "value": ""
+              },
+              {
+                "name": "username",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "This web service returns a count of expense reports awaiting approval by a user."
+        },
+        {
+          "info": {
+            "name": "Get expense report details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/expense-report-approvals/:reportId",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "email-address",
+                "value": ""
+              },
+              {
+                "name": "person-unique-id",
+                "value": ""
+              },
+              {
+                "name": "username",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for report"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to get the details of an expense report"
+        },
+        {
+          "info": {
+            "name": "Approve an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v2/expense-reports/:reportId/approve",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "email-address",
+                "value": ""
+              },
+              {
+                "name": "person-unique-id",
+                "value": ""
+              },
+              {
+                "name": "username",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for report"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to approve a specified expense report"
+        },
+        {
+          "info": {
+            "name": "Reassign an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v2/expense-reports/:reportId/reassign",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "email-address",
+                "value": ""
+              },
+              {
+                "name": "person-unique-id",
+                "value": ""
+              },
+              {
+                "name": "username",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for report"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to reassign a specified expense report to another approver for review"
+        },
+        {
+          "info": {
+            "name": "Return an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v2/expense-reports/:reportId/return",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "email-address",
+                "value": ""
+              },
+              {
+                "name": "person-unique-id",
+                "value": ""
+              },
+              {
+                "name": "username",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for report"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to return a specified expense report to the expense owner"
+        },
+        {
+          "info": {
+            "name": "Submit an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v2/expense-reports/:reportId/submit",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "email-address",
+                "value": ""
+              },
+              {
+                "name": "person-unique-id",
+                "value": ""
+              },
+              {
+                "name": "username",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "reportId",
+                "value": "",
+                "type": "path",
+                "description": "Report ID for report"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to submit a specified expense report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

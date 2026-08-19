@@ -1,0 +1,172 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts person-controller-v2 API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "person-controller-v2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search/get persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/persons",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "personUniqueId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "primaryEmailAddress",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includePersonUdas",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This web service provides ability to search/get persons."
+        },
+        {
+          "info": {
+            "name": "Create/update persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v2/persons",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS."
+        },
+        {
+          "info": {
+            "name": "Sanitizes a Person's PII (personally identifiable information. This includes first name, last name, email address, title, vendor 1 (employee number), and username. Your implementation must be configured to use this option. Please submit a case to request access if necessary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v2/persons/:personUniqueId/sanitize",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Sanitizes a Person's PII (personally identifiable information. This includes first name, last name, email address, title, vendor 1 (employee number), and username. Your implementation must be configured to use this option. Please submit a case to request access if necessary"
+        },
+        {
+          "info": {
+            "name": "Let a person subscribe/unsubscribe to notifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.chromeriver.com/v2/persons/:person-unique-id/subscriptions/:subscription-type",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "person-unique-id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "subscription-type",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This web service allows an external application to modify notification preferences."
+        },
+        {
+          "info": {
+            "name": "Retrieve a person subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v2/persons/:person-unique-id/subscriptions",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "person-unique-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This web service allows an external application to view a person notification preferences."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

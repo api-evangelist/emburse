@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Api Documentation Accounts returned-payments-controller API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "returned-payments-controller",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get list of expense report ids with returned payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.chromeriver.com/v1/returned-payment-expense-reports/lite",
+            "headers": [
+              {
+                "name": "chain-id",
+                "value": ""
+              },
+              {
+                "name": "customer-code",
+                "value": ""
+              },
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query",
+                "description": "Date checking back to for returned payments. Timezone UTC. Format: yyyy-MM-dd HH:mm:ss:SSS"
+              }
+            ]
+          },
+          "docs": "Expense report ids are associated with payment group beneficiaries that have been returned since fromDate for given customer. Returns empty list if none found."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
