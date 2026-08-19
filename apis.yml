@@ -18,7 +18,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/emburse.pn
 url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/apis.yml
 created: 2026-06-12
 modified: 2026-06-12
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 description: >
   Emburse is an expense management and accounts payable automation platform
   serving over 4 million finance leaders and business travelers worldwide.
