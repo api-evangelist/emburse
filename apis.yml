@@ -41,6 +41,16 @@ tags:
   - Reimbursement
   - Invoice Processing
   - Finance
+  - Fintech
+tags_raw:
+  - Expense Management
+  - AP Automation
+  - Corporate Cards
+  - Virtual Cards
+  - Receipt Capture
+  - Reimbursement
+  - Invoice Processing
+  - Finance
   - FinTech
 apis:
 - name: Emburse Professional API
@@ -78,6 +88,8 @@ apis:
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -459,6 +471,8 @@ apis:
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
+  - Authentication
+  tags_raw:
   - Oauth
   properties:
   - type: OpenAPI
@@ -687,6 +701,8 @@ apis:
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
@@ -700,7 +716,8 @@ apis:
   description: The /v1/contacts API from Emburse — 1 operation(s) for /v1/contacts.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
-  tags:
+  tags: []
+  tags_raw:
   - /v1/contacts
   properties:
   - type: OpenAPI
