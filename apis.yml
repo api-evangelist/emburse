@@ -753,6 +753,9 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 common:
+  - type: CapabilityMap
+    url: capabilities/emburse-capability-edges.yml
+    name: Emburse Business Capability Map
   - type: AgenticAccess
     url: agentic-access/emburse-agentic-access.yml
   - type: VulnerabilityDisclosure

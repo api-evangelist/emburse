@@ -1,15 +1,11 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  description: Api Documentation
-  version: '1.0'
-  title: Api Documentation Accounts person-controller-v2 API
-  termsOfService: urn:tos
-  contact: {}
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0
+  title: Hades Person Controller V2 API
+  version: v1
+  description: Person Controller v2
 servers:
-- url: https://service.chromeriver.com
+- url: http://hades.pool
+  description: Generated server url
 tags:
 - name: person-controller-v2
   description: Person Controller v2
@@ -198,23 +194,38 @@ paths:
                 type: object
 components:
   schemas:
-    AlternateCurrency:
+    Response:
       type: object
       properties:
-        type:
+        personUniqueId:
           type: string
-          description: Currency type
+          description: Unique identifier for a person
+          example: jdoe
+        result:
+          type: string
+          description: Result of operation
           enum:
-          - ALT
-          - OTHER
-          example: ALT
-        code:
+          - SUCCESS
+          - FAIL
+          example: FAIL
+        errorMessage:
           type: string
-          description: Currency code in ISO-4217
-          example: USD
+          description: Error message provided for a FAIL result
+          example: firstName may not be empty
+    PersonUdaView:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'Customer defined field name (Note: UDF1/UDF2/UDF3 are reserved names which are used for population of UDF fields) '
+          example: StartDate
+        value:
+          type: string
+          description: Customer defined field value
+          example: 2017-10-03 00:00:00
       required:
-      - code
-      - type
+      - name
+      - value
     PersonEntityView:
       type: object
       properties:
@@ -242,6 +253,23 @@ components:
       - entityCode
       - entityTypeCode
       - roleName
+    AlternateCurrency:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Currency type
+          enum:
+          - ALT
+          - OTHER
+          example: ALT
+        code:
+          type: string
+          description: Currency code in ISO-4217
+          example: USD
+      required:
+      - code
+      - type
     PersonView:
       type: object
       properties:
@@ -459,35 +487,3 @@ components:
       - primaryEmailAddress
       - status
       - username
-    Response:
-      type: object
-      properties:
-        personUniqueId:
-          type: string
-          description: Unique identifier for a person
-          example: jdoe
-        result:
-          type: string
-          description: Result of operation
-          enum:
-          - SUCCESS
-          - FAIL
-          example: FAIL
-        errorMessage:
-          type: string
-          description: Error message provided for a FAIL result
-          example: firstName may not be empty
-    PersonUdaView:
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'Customer defined field name (Note: UDF1/UDF2/UDF3 are reserved names which are used for population of UDF fields) '
-          example: StartDate
-        value:
-          type: string
-          description: Customer defined field value
-          example: 2017-10-03 00:00:00
-      required:
-      - name
-      - value

@@ -1,13 +1,14 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  description: Api Documentation
-  version: '1.0'
-  title: Api Documentation Accounts invoice-api-external-controller API
-  termsOfService: urn:tos
-  contact: {}
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0
+  description: API Documentation
+  version: v1
+  title: Documentation Invoice API External Controller API
+  termsOfService: https://www.chromeriver.com/company/security
+  contact:
+    name: Chrome River Technologies
+    url: https://www.chromeriver.com/contact
+    email: info@chromeriver.com
+  license: {}
 servers:
 - url: https://service.chromeriver.com
 tags:
@@ -487,6 +488,109 @@ paths:
       deprecated: false
 components:
   schemas:
+    InvoicePaymentOutput:
+      type: object
+      required:
+      - amount
+      - amountDiscount
+      - currencyCode
+      - invoiceId
+      - paidDate
+      properties:
+        amount:
+          type: number
+          example: 1000
+          description: Payment Amount for the Invoice
+        amountDiscount:
+          type: number
+          example: 1000
+          description: Payment Amount Discount for the Invoice
+        bankNumber:
+          type: string
+          example: 25
+          description: Bank Account Number. 36 character limit
+        checkMailedDate:
+          type: string
+          format: date-time
+          description: 'Check Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        checkNumber:
+          type: string
+          example: 47029
+          description: Check Number. 36 character limit
+        currencyCode:
+          type: string
+          example: USD
+          description: Currency in which Paid Invoice is created. These codes are standard three character values (e.g., USD, GBP, JPY, HKD, etc).
+        invoiceId:
+          type: string
+          example: test
+          description: Invoice Number of Paid Invoice. 36 characters limit
+        paidDate:
+          type: string
+          format: date-time
+          description: 'Invoice Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        paymentMethod:
+          type: string
+          example: ACH
+          description: PaymentMethod, Examples value are "ACH", "CHECK", "CC"
+          enum:
+          - ACH
+          - CHECK
+          - CC
+      title: InvoicePaymentOutput
+    InvoiceSubmitOptionsExternal:
+      type: object
+      required:
+      - approvalMethod
+      - invoiceId
+      - routingType
+      - submitSource
+      properties:
+        additionalPersonUniqueId:
+          type: string
+          description: Person Unique ID for an Additional Reviewer
+        approvalMethod:
+          type: string
+          example: EMAI
+          description: 'Types of Approval Methods: Email(EMAI), Dashboard(DASH), Mobile(MOBL), AutoApprove(AUTO), Mercury(MERC), None(NONE)'
+          enum:
+          - EMAI
+          - DASH
+          - MOBL
+          - AUTO
+          - MERC
+          - NONE
+        invoiceId:
+          type: string
+          example: test
+          description: Invoice Number - 36 characters limit
+        notes:
+          type: string
+          example: Example Comment For My Invoice
+          description: Comment that will be added to InvoiceHeader upon successful request
+        routingType:
+          type: string
+          example: ENTY
+          description: 'Types of Routing: Entity(ENTY), Normal(ROUT), Owner(OWNR), Person(PERS), Other(RETA), Creator(RETC), Recall(RECL)'
+          enum:
+          - ENTY
+          - ROUT
+          - OWNR
+          - PERS
+          - RETA
+          - RETC
+          - RECL
+        submitSource:
+          type: string
+          example: INVS
+          description: 'Types of Submit Source: Invoice Submit (INVS), Approval Submit (APPS), Invoice Management Submit(IMGT), Bulk Submit (BLKS), NONE(NONE)'
+          enum:
+          - INVS
+          - APPS
+          - IMGT
+          - BLKS
+          - NONE
+      title: InvoiceSubmitOptionsExternal
     InvoicePaymentExternal:
       type: object
       required:
@@ -572,6 +676,61 @@ components:
           type: string
           description: Transaction Number. 36 character limit
       title: InvoicePaymentExternal
+    InvoiceError:
+      type: object
+      properties:
+        chain-id:
+          type: string
+        code:
+          type: string
+        detail:
+          type: string
+        id:
+          type: string
+        message:
+          type: string
+        meta:
+          type: object
+        session-id:
+          type: string
+        status:
+          type: string
+        title:
+          type: string
+      title: InvoiceError
+    InvoiceHeaderSDI:
+      type: object
+      properties:
+        amountSpent:
+          type: number
+        currencyCodeSpent:
+          type: string
+        headerStatus:
+          type: string
+        invoiceDate:
+          type: string
+          format: date-time
+        invoiceId:
+          type: string
+        invoiceNumber:
+          type: string
+      title: InvoiceHeaderSDI
+    InvoicePaymentFilter:
+      type: object
+      properties:
+        invoiceId:
+          type: string
+          example: test
+          description: Filter Invoice Number of Paid Invoice. 36 characters limit
+        paidDateFrom:
+          type: string
+          format: date-time
+          description: 'Filter Invoice Payment Completion Date From Bottom, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        paidDateTo:
+          type: string
+          format: date-time
+          description: 'Filter Invoice Payment Completion Date To Top, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+      title: InvoicePaymentFilter
     InvoiceAssignOptionsExternal:
       type: object
       required:
@@ -640,124 +799,6 @@ components:
           - BLKS
           - NONE
       title: InvoiceAssignOptionsExternal
-    InvoicePaymentFilter:
-      type: object
-      properties:
-        invoiceId:
-          type: string
-          example: test
-          description: Filter Invoice Number of Paid Invoice. 36 characters limit
-        paidDateFrom:
-          type: string
-          format: date-time
-          description: 'Filter Invoice Payment Completion Date From Bottom, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        paidDateTo:
-          type: string
-          format: date-time
-          description: 'Filter Invoice Payment Completion Date To Top, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-      title: InvoicePaymentFilter
-    InvoiceSubmitOptionsExternal:
-      type: object
-      required:
-      - approvalMethod
-      - invoiceId
-      - routingType
-      - submitSource
-      properties:
-        additionalPersonUniqueId:
-          type: string
-          description: Person Unique ID for an Additional Reviewer
-        approvalMethod:
-          type: string
-          example: EMAI
-          description: 'Types of Approval Methods: Email(EMAI), Dashboard(DASH), Mobile(MOBL), AutoApprove(AUTO), Mercury(MERC), None(NONE)'
-          enum:
-          - EMAI
-          - DASH
-          - MOBL
-          - AUTO
-          - MERC
-          - NONE
-        invoiceId:
-          type: string
-          example: test
-          description: Invoice Number - 36 characters limit
-        notes:
-          type: string
-          example: Example Comment For My Invoice
-          description: Comment that will be added to InvoiceHeader upon successful request
-        routingType:
-          type: string
-          example: ENTY
-          description: 'Types of Routing: Entity(ENTY), Normal(ROUT), Owner(OWNR), Person(PERS), Other(RETA), Creator(RETC), Recall(RECL)'
-          enum:
-          - ENTY
-          - ROUT
-          - OWNR
-          - PERS
-          - RETA
-          - RETC
-          - RECL
-        submitSource:
-          type: string
-          example: INVS
-          description: 'Types of Submit Source: Invoice Submit (INVS), Approval Submit (APPS), Invoice Management Submit(IMGT), Bulk Submit (BLKS), NONE(NONE)'
-          enum:
-          - INVS
-          - APPS
-          - IMGT
-          - BLKS
-          - NONE
-      title: InvoiceSubmitOptionsExternal
-    InvoiceSDIResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/InvoiceHeaderSDI'
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/InvoiceError'
-      title: InvoiceSDIResponse
-    InvoiceError:
-      type: object
-      properties:
-        chain-id:
-          type: string
-        code:
-          type: string
-        detail:
-          type: string
-        id:
-          type: string
-        message:
-          type: string
-        meta:
-          type: object
-        session-id:
-          type: string
-        status:
-          type: string
-        title:
-          type: string
-      title: InvoiceError
-    InvoiceHeaderSDI:
-      type: object
-      properties:
-        amountSpent:
-          type: number
-        currencyCodeSpent:
-          type: string
-        headerStatus:
-          type: string
-        invoiceDate:
-          type: string
-          format: date-time
-        invoiceId:
-          type: string
-        invoiceNumber:
-          type: string
-      title: InvoiceHeaderSDI
     InvoicePaymentCustomer:
       type: object
       required:
@@ -822,56 +863,31 @@ components:
           - CHECK
           - CC
       title: InvoicePaymentCustomer
-    InvoicePaymentOutput:
+    InvoiceFilter:
       type: object
       required:
-      - amount
-      - amountDiscount
-      - currencyCode
-      - invoiceId
-      - paidDate
+      - fromDate
+      - toDate
       properties:
-        amount:
-          type: number
-          example: 1000
-          description: Payment Amount for the Invoice
-        amountDiscount:
-          type: number
-          example: 1000
-          description: Payment Amount Discount for the Invoice
-        bankNumber:
+        fromDate:
           type: string
-          example: 25
-          description: Bank Account Number. 36 character limit
-        checkMailedDate:
+          example: 2025-12-01 00:01:00+00:00
+          description: Initial dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
+        toDate:
           type: string
-          format: date-time
-          description: 'Check Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        checkNumber:
-          type: string
-          example: 47029
-          description: Check Number. 36 character limit
-        currencyCode:
-          type: string
-          example: USD
-          description: Currency in which Paid Invoice is created. These codes are standard three character values (e.g., USD, GBP, JPY, HKD, etc).
-        invoiceId:
-          type: string
-          example: test
-          description: Invoice Number of Paid Invoice. 36 characters limit
-        paidDate:
-          type: string
-          format: date-time
-          description: 'Invoice Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        paymentMethod:
-          type: string
-          example: ACH
-          description: PaymentMethod, Examples value are "ACH", "CHECK", "CC"
-          enum:
-          - ACH
-          - CHECK
-          - CC
-      title: InvoicePaymentOutput
+          example: 2025-12-02 00:00:00+00:00
+          description: Final dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
+      title: InvoiceFilter
+    InvoiceSDIResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/InvoiceHeaderSDI'
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/InvoiceError'
+      title: InvoiceSDIResponse
     Invoice:
       type: object
       required:
@@ -897,21 +913,6 @@ components:
           type: string
           description: Vendor unique Id
       title: Invoice
-    InvoiceFilter:
-      type: object
-      required:
-      - fromDate
-      - toDate
-      properties:
-        fromDate:
-          type: string
-          example: 2025-12-01 00:01:00+00:00
-          description: Initial dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
-        toDate:
-          type: string
-          example: 2025-12-02 00:00:00+00:00
-          description: Final dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
-      title: InvoiceFilter
   requestBodies:
     InvoiceSubmitOptionsExternal:
       content:

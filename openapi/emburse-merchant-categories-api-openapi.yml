@@ -1,15 +1,15 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  description: Api Documentation
-  version: '1.0'
-  title: Api Documentation Accounts Merchant Categories API
-  termsOfService: urn:tos
-  contact: {}
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0
+  title: Emburse Cards Merchant Categories API
+  version: 1.0.0
+  description: Emburse Cards API enables the creation and management of virtual and physical spending cards at scale for custom business solutions and third-party integrations.
 servers:
-- url: https://service.chromeriver.com
+- url: https://api.emburse.com/v1
+  description: Production API
+- url: https://api.emburse-qa.com/v1
+  description: QA API
+security:
+- BearerAuth: []
 tags:
 - name: Merchant Categories
 paths:
@@ -38,3 +38,9 @@ paths:
           description: Unauthorized - Invalid or missing authentication token.
       tags:
       - Merchant Categories
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 'OAuth2 access token. Include in Authorization header: `Authorization: Bearer YOUR_ACCESS_TOKEN`'

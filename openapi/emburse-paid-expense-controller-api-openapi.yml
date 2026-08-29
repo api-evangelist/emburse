@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: Api Documentation
   version: '1.0'
-  title: Api Documentation Accounts paid-expense-controller API
+  title: Documentation Paid Expense Controller API
   termsOfService: urn:tos
   contact: {}
   license:
@@ -112,51 +112,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    PaidExpense:
-      type: object
-      properties:
-        amount:
-          type: number
-          example: 15.25
-          description: Voucher amount value.
-        authorized:
-          type: integer
-          format: int32
-          example: 1 or 0 or -1
-          description: Identifies if direct-pay items need to be authorized before they are submitted for payment
-        bankID:
-          type: string
-          example: 362
-          description: Voucher paid bank account.
-        checkNumber:
-          type: string
-          example: 1049
-          description: Voucher paid check number
-        currencyCode:
-          type: string
-          example: USD
-          description: 'Currency code of the Amount Spent value. Format: ISO 4217 code (alpha).'
-        customerLastCreateDate:
-          type: string
-          format: date-time
-          example: 2009-06-25 20:25:57:000
-          description: If the field is used, we store the most recent customerLastCreateDate from the previous call. When we process the next call with a date equal to or prior to the date we stored will not be processed. This allows you to send the same record multiple times without having Chrome River process it multiple times.
-        eventDriven:
-          type: boolean
-        paidDate:
-          type: string
-          format: date-time
-          example: 2016-09-28 18:46:19:000
-          description: 'Date of Voucher Payment. Format: PaidDateMask. Defaults to the date the record was loaded into Chrome River if empty.'
-        paymentType:
-          type: string
-          example: REIM
-          description: Payment type, either "FIRM" for firm paid item or "REIM" for reimbursement.
-        voucherInvoice:
-          type: string
-          example: '0000000000000000'
-          description: Voucher Invoice identifier of the expense that Chrome River sends in the export files.
-      title: PaidExpense
     PaidExpenseV2:
       type: object
       properties:
@@ -206,3 +161,48 @@ components:
           example: DEV000000003
           description: Report ID of the report of the line item
       title: PaidExpenseV2
+    PaidExpense:
+      type: object
+      properties:
+        amount:
+          type: number
+          example: 15.25
+          description: Voucher amount value.
+        authorized:
+          type: integer
+          format: int32
+          example: 1 or 0 or -1
+          description: Identifies if direct-pay items need to be authorized before they are submitted for payment
+        bankID:
+          type: string
+          example: 362
+          description: Voucher paid bank account.
+        checkNumber:
+          type: string
+          example: 1049
+          description: Voucher paid check number
+        currencyCode:
+          type: string
+          example: USD
+          description: 'Currency code of the Amount Spent value. Format: ISO 4217 code (alpha).'
+        customerLastCreateDate:
+          type: string
+          format: date-time
+          example: 2009-06-25 20:25:57:000
+          description: If the field is used, we store the most recent customerLastCreateDate from the previous call. When we process the next call with a date equal to or prior to the date we stored will not be processed. This allows you to send the same record multiple times without having Chrome River process it multiple times.
+        eventDriven:
+          type: boolean
+        paidDate:
+          type: string
+          format: date-time
+          example: 2016-09-28 18:46:19:000
+          description: 'Date of Voucher Payment. Format: PaidDateMask. Defaults to the date the record was loaded into Chrome River if empty.'
+        paymentType:
+          type: string
+          example: REIM
+          description: Payment type, either "FIRM" for firm paid item or "REIM" for reimbursement.
+        voucherInvoice:
+          type: string
+          example: '0000000000000000'
+          description: Voucher Invoice identifier of the expense that Chrome River sends in the export files.
+      title: PaidExpense

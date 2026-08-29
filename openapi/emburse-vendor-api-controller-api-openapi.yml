@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: Api Documentation
   version: '1.0'
-  title: Api Documentation Accounts vendor-api-controller API
+  title: Documentation Vendor API Controller API
   termsOfService: urn:tos
   contact: {}
   license:
@@ -240,54 +240,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    VendorData:
-      type: object
-      required:
-      - number
-      - vendorName
-      - vendorRequestDate
-      - vendorUniqueId
-      properties:
-        number:
-          type: string
-          description: Vendor number
-        status:
-          type: string
-          description: Vendor status. If not provided the default value will be 'ACT'. Values can be 'ACT' (ACTIVE) and 'INAC' (INACTIVE)
-        type:
-          type: string
-          description: ' Type of Vendor. If not provided the default value will be ''DFLT''. Values can be ''DFLT'' (DEFAULT) and ''TEMP'' (TEMPORAL)'
-        udf1:
-          type: string
-          description: User-Defined Field 1
-        udf2:
-          type: string
-          description: User-Defined Field 2
-        udf3:
-          type: string
-          description: User-Defined Field 3
-        udf4:
-          type: string
-          description: User-Defined Field 4
-        udf5:
-          type: string
-          description: User-Defined Field 5
-        vendorAddresses:
-          type: array
-          description: Addresses associated with the vendor
-          items:
-            $ref: '#/components/schemas/VendorAddressData'
-        vendorName:
-          type: string
-          description: Vendor name
-        vendorRequestDate:
-          type: string
-          format: date-time
-          description: 'Vendor Request Date. Accepted date format: ''yyyy-MM-dd''T''HH:mm:ss.SSSZ'' '
-        vendorUniqueId:
-          type: string
-          description: Customer unique vendor identifier
-      title: VendorData
     VendorAddressData:
       type: object
       required:
@@ -403,3 +355,51 @@ components:
           type: string
           description: Zip code where vendor is located
       title: VendorAddressData
+    VendorData:
+      type: object
+      required:
+      - number
+      - vendorName
+      - vendorRequestDate
+      - vendorUniqueId
+      properties:
+        number:
+          type: string
+          description: Vendor number
+        status:
+          type: string
+          description: Vendor status. If not provided the default value will be 'ACT'. Values can be 'ACT' (ACTIVE) and 'INAC' (INACTIVE)
+        type:
+          type: string
+          description: ' Type of Vendor. If not provided the default value will be ''DFLT''. Values can be ''DFLT'' (DEFAULT) and ''TEMP'' (TEMPORAL)'
+        udf1:
+          type: string
+          description: User-Defined Field 1
+        udf2:
+          type: string
+          description: User-Defined Field 2
+        udf3:
+          type: string
+          description: User-Defined Field 3
+        udf4:
+          type: string
+          description: User-Defined Field 4
+        udf5:
+          type: string
+          description: User-Defined Field 5
+        vendorAddresses:
+          type: array
+          description: Addresses associated with the vendor
+          items:
+            $ref: '#/components/schemas/VendorAddressData'
+        vendorName:
+          type: string
+          description: Vendor name
+        vendorRequestDate:
+          type: string
+          format: date-time
+          description: 'Vendor Request Date. Accepted date format: ''yyyy-MM-dd''T''HH:mm:ss.SSSZ'' '
+        vendorUniqueId:
+          type: string
+          description: Customer unique vendor identifier
+      title: VendorData

@@ -1,15 +1,15 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  description: Api Documentation
-  version: '1.0'
-  title: Api Documentation Accounts Members API
-  termsOfService: urn:tos
-  contact: {}
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0
+  title: Emburse Cards Members API
+  version: 1.0.0
+  description: Emburse Cards API enables the creation and management of virtual and physical spending cards at scale for custom business solutions and third-party integrations.
 servers:
-- url: https://service.chromeriver.com
+- url: https://api.emburse.com/v1
+  description: Production API
+- url: https://api.emburse-qa.com/v1
+  description: QA API
+security:
+- BearerAuth: []
 tags:
 - name: Members
 paths:
@@ -74,13 +74,15 @@ paths:
                     type: integer
                     example: 123
                   next:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                     format: uri
                     example: http://api.example.org/accounts/?offset=400&limit=100
                   previous:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                     format: uri
                     example: http://api.example.org/accounts/?offset=200&limit=100
                   results:
@@ -388,8 +390,9 @@ components:
         role:
           type: string
         code:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           pattern: ^[0-9A-z\.\-]+$
           minLength: 1
           maxLength: 36
@@ -400,8 +403,9 @@ components:
         is_active:
           type: boolean
         phone_number:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         requires_terms_agreement:
           type: string
           readOnly: true
@@ -410,3 +414,8 @@ components:
       - first_name
       - last_name
       - created_at
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 'OAuth2 access token. Include in Authorization header: `Authorization: Bearer YOUR_ACCESS_TOKEN`'

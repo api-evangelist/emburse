@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: Api Documentation
   version: '1.0'
-  title: Api Documentation Accounts Entity Type API
+  title: Documentation Entity Type API
   termsOfService: urn:tos
   contact: {}
   license:
@@ -452,33 +452,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    EntityTypeModel:
-      type: object
-      required:
-      - code
-      - description
-      - name
-      properties:
-        code:
-          type: string
-          example: DEPT
-        name:
-          type: string
-          example: Department
-        description:
-          type: string
-          example: List of departments
-        loadOnLogin:
-          type: boolean
-          description: Flag to cache Entity Type during login process.
-        sortType:
-          type: string
-          description: Sort type for list of Entities for Entity Type
-          enum:
-          - NAME
-          - CODE
-          - SORT_ORDER
-      title: EntityTypeModel
     EntityType:
       type: object
       required:
@@ -527,6 +500,33 @@ components:
           type: string
           description: The name of the EntityType in specified language
       title: EntityTypeLanguage
+    EntityTypeModel:
+      type: object
+      required:
+      - code
+      - description
+      - name
+      properties:
+        code:
+          type: string
+          example: DEPT
+        name:
+          type: string
+          example: Department
+        description:
+          type: string
+          example: List of departments
+        loadOnLogin:
+          type: boolean
+          description: Flag to cache Entity Type during login process.
+        sortType:
+          type: string
+          description: Sort type for list of Entities for Entity Type
+          enum:
+          - NAME
+          - CODE
+          - SORT_ORDER
+      title: EntityTypeModel
   requestBodies:
     EntityTypeLanguage:
       content:

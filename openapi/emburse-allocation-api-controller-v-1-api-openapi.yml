@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: Api Documentation
   version: '1.0'
-  title: Api Documentation Accounts allocation-api-controller-v-1 API
+  title: Documentation Allocation API Controller V 1 API
   termsOfService: urn:tos
   contact: {}
   license:
@@ -240,32 +240,25 @@ paths:
       deprecated: false
 components:
   schemas:
-    EntityTO:
+    MatterUDATO:
       type: object
       properties:
-        code:
+        action:
           type: string
-        entityId:
-          type: integer
-          format: int32
-        entityType:
-          $ref: '#/components/schemas/EntityTypeTO'
-        extraData1:
-          type: string
-        extraData2:
-          type: string
-        extraData3:
-          type: string
-        extraData4:
-          type: string
-        extraData5:
+          enum:
+          - upsert
+          - delete
+        dataType:
           type: string
         name:
           type: string
-        order:
-          type: integer
-          format: int32
-      title: EntityTO
+        udaName:
+          type: string
+        udaValue:
+          type: string
+        value:
+          type: string
+      title: MatterUDATO
     MatterTO:
       type: object
       properties:
@@ -412,30 +405,32 @@ components:
         name:
           type: string
       title: EntityTypeTO
-    Map_string_string_:
-      type: object
-      title: Map«string,string»
-      additionalProperties:
-        type: string
-    MatterUDATO:
+    EntityTO:
       type: object
       properties:
-        action:
+        code:
           type: string
-          enum:
-          - upsert
-          - delete
-        dataType:
+        entityId:
+          type: integer
+          format: int32
+        entityType:
+          $ref: '#/components/schemas/EntityTypeTO'
+        extraData1:
+          type: string
+        extraData2:
+          type: string
+        extraData3:
+          type: string
+        extraData4:
+          type: string
+        extraData5:
           type: string
         name:
           type: string
-        udaName:
-          type: string
-        udaValue:
-          type: string
-        value:
-          type: string
-      title: MatterUDATO
+        order:
+          type: integer
+          format: int32
+      title: EntityTO
     PersonTO:
       type: object
       properties:
@@ -444,6 +439,11 @@ components:
         personId:
           type: string
       title: PersonTO
+    Map_string_string_:
+      type: object
+      title: Map«string,string»
+      additionalProperties:
+        type: string
   requestBodies:
     MatterTO:
       content:

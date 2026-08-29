@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: Api Documentation
   version: '1.0'
-  title: Api Documentation Accounts allocation-api-controller-v-2 API
+  title: Documentation Allocation API Controller V 2 API
   termsOfService: urn:tos
   contact: {}
   license:
@@ -160,41 +160,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    UDAPerson:
-      type: object
-      properties:
-        name:
-          type: string
-        personUniqueId:
-          type: string
-      title: UDAPerson
-    ApiResponse:
-      type: object
-      properties:
-        allocationId:
-          type: string
-          example: 1000-001_cn1000
-          description: Unique identifier for the allocation.
-        errorMessage:
-          type: string
-          example: Invalid entity1 specified.
-          description: Error message for the failed allocation.
-        result:
-          type: string
-          example: SUCCESS
-          description: Status of the allocation.
-          enum:
-          - SUCCESS
-          - FAIL
-      title: ApiResponse
-    AllocationEntity:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-      title: AllocationEntity
     AllocationView:
       type: object
       properties:
@@ -284,6 +249,14 @@ components:
           items:
             $ref: '#/components/schemas/AllocationUDA'
       title: AllocationView
+    AllocationEntity:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      title: AllocationEntity
     AllocationUDA:
       type: object
       properties:
@@ -292,6 +265,33 @@ components:
         value:
           type: string
       title: AllocationUDA
+    UDAPerson:
+      type: object
+      properties:
+        name:
+          type: string
+        personUniqueId:
+          type: string
+      title: UDAPerson
+    ApiResponse:
+      type: object
+      properties:
+        allocationId:
+          type: string
+          example: 1000-001_cn1000
+          description: Unique identifier for the allocation.
+        errorMessage:
+          type: string
+          example: Invalid entity1 specified.
+          description: Error message for the failed allocation.
+        result:
+          type: string
+          example: SUCCESS
+          description: Status of the allocation.
+          enum:
+          - SUCCESS
+          - FAIL
+      title: ApiResponse
   requestBodies:
     AllocationViewArray:
       content:
