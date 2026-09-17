@@ -65,10 +65,9 @@ tags_raw:
 - FinTech
 apis:
 - name: Emburse Professional API
-  description: 'REST API for Emburse Professional (formerly Certify) supporting push/pull of users, departments,
-    categories, expense reports, expense lines, receipt data, and invoices. Base URL is https://api.certify.com/v1/.
-
-    '
+  description: >
+    REST API for Emburse Professional (formerly Certify) supporting push/pull of users, departments, categories,
+    expense reports, expense lines, receipt data, and invoices. Base URL is https://api.certify.com/v1/.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://help.certify.com/hc/en-us/articles/15460725432077-API-Overview
   baseURL: https://api.certify.com/v1/
@@ -81,10 +80,9 @@ apis:
   - type: Documentation
     url: https://pro.emburse.app/APIDoc.aspx
 - name: Emburse Spend API
-  description: 'Modern REST API for Emburse Spend (formerly Abacus) using OAuth 2.0 authentication and
-    JSON for expense and card management. Available to Partners and customers on the Plus plan or higher.
-
-    '
+  description: >
+    Modern REST API for Emburse Spend (formerly Abacus) using OAuth 2.0 authentication and JSON for expense
+    and card management. Available to Partners and customers on the Plus plan or higher.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://help.spend.emburse.com/hc/en-us/articles/4424782291341-Emburse-Spend-API
   baseURL: https://api.emburse.com/
@@ -113,7 +111,8 @@ apis:
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-allocation-api-controller-v-1-api
   name: Emburse allocation-api-controller-v-1 API
-  description: The allocation-api-controller-v-1 API from Emburse — 1 operation(s) for allocation-api-controller-v-1.
+  description: >-
+    The allocation-api-controller-v-1 API from Emburse — 1 operation(s) for allocation-api-controller-v-1.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
@@ -127,7 +126,8 @@ apis:
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-allocation-api-controller-v-2-api
   name: Emburse allocation-api-controller-v-2 API
-  description: The allocation-api-controller-v-2 API from Emburse — 1 operation(s) for allocation-api-controller-v-2.
+  description: >-
+    The allocation-api-controller-v-2 API from Emburse — 1 operation(s) for allocation-api-controller-v-2.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
@@ -141,8 +141,8 @@ apis:
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-allocation-api-controller-v-3-api
   name: Emburse allocation-api-controller-v-3 API
-  description: V3 endpoints include better support and error handling for allocation user defined attributes
-    (UDA).
+  description: >-
+    V3 endpoints include better support and error handling for allocation user defined attributes (UDA).
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
@@ -476,22 +476,6 @@ apis:
     url: https://cards.emburse.com/api/v1/docs/
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
-- aid: emburse:emburse-oauth-api
-  name: Emburse Oauth API
-  description: The Oauth API from Emburse — 3 operation(s) for oauth.
-  humanURL: https://www.emburse.com/api-docs
-  baseURL: https://api.emburse.com/v1/
-  tags:
-  - Authentication
-  tags_raw:
-  - Oauth
-  properties:
-  - type: OpenAPI
-    url: openapi/emburse-oauth-api-openapi.yml
-  - type: Documentation
-    url: https://cards.emburse.com/api/v1/docs/
-  - type: Documentation
-    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-paid-expense-controller-api
   name: Emburse paid-expense-controller API
   description: Post payments
@@ -578,7 +562,8 @@ apis:
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-pre-approval-api-controller-api
   name: Emburse pre-approval-api-controller API
-  description: The pre-approval-api-controller API from Emburse — 9 operation(s) for pre-approval-api-controller.
+  description: >-
+    The pre-approval-api-controller API from Emburse — 9 operation(s) for pre-approval-api-controller.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
@@ -592,7 +577,8 @@ apis:
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-pre-approval-api-controller-v-2-api
   name: Emburse pre-approval-api-controller-v-2 API
-  description: The pre-approval-api-controller-v-2 API from Emburse — 3 operation(s) for pre-approval-api-controller-v-2.
+  description: >-
+    The pre-approval-api-controller-v-2 API from Emburse — 3 operation(s) for pre-approval-api-controller-v-2.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
@@ -606,7 +592,8 @@ apis:
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-pre-approval-api-export-controller-api
   name: Emburse pre-approval-api-export-controller API
-  description: The pre-approval-api-export-controller API from Emburse — 4 operation(s) for pre-approval-api-export-controller.
+  description: >-
+    The pre-approval-api-export-controller API from Emburse — 4 operation(s) for pre-approval-api-export-controller.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
@@ -620,7 +607,8 @@ apis:
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-pre-approval-import-controller-api
   name: Emburse pre-approval-import-controller API
-  description: The pre-approval-import-controller API from Emburse — 1 operation(s) for pre-approval-import-controller.
+  description: >-
+    The pre-approval-import-controller API from Emburse — 1 operation(s) for pre-approval-import-controller.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
@@ -743,6 +731,20 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/emburse-vendor-api-controller-api-openapi.yml
+  - type: Documentation
+    url: https://cards.emburse.com/api/v1/docs/
+  - type: Documentation
+    url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
+- aid: emburse:emburse-oauth-api
+  name: Emburse OAUTH API
+  description: The Oauth API from Emburse — 3 operation(s) for oauth.
+  humanURL: https://help.certify.com/hc/en-us/articles/15460725432077-API-Overview
+  baseURL: https://api.certify.com/v1/
+  tags:
+  - Oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/emburse-oauth-api-openapi.yml
   - type: Documentation
     url: https://cards.emburse.com/api/v1/docs/
   - type: Documentation
