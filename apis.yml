@@ -88,6 +88,10 @@ apis:
   baseURL: https://api.emburse.com/
   tags:
   - Spend Management
+  - Expenses
+  - Cards
+  tags_raw:
+  - Spend Management
   - Expense
   - Cards
   properties:
@@ -440,6 +444,8 @@ apis:
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
@@ -741,6 +747,8 @@ apis:
   humanURL: https://help.certify.com/hc/en-us/articles/15460725432077-API-Overview
   baseURL: https://api.certify.com/v1/
   tags:
+  - Authentication
+  tags_raw:
   - Oauth
   properties:
   - type: OpenAPI
