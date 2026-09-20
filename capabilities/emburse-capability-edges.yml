@@ -1,0 +1,42 @@
+slug: emburse
+provider: Emburse
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: po-api-controller
+  spec_file: emburse-po-api-controller-api-openapi.yml
+  capability_id: BC-500.30
+  capability_id_l1: BC-500
+  capability_name: Purchase Order Management
+  confidence: 0.9
+  evidence: '"Create PO", "Create or update a PO", "Get PO by po number", schema PoLineItemExternal'
+  reason: Explicit purchase order create/update/search/delete lifecycle with PO line items and item catalogs
+    — purchase order management.
+- tag: invoice-api-external-controller
+  spec_file: emburse-invoice-api-external-controller-api-openapi.yml
+  capability_id: BC-200.20
+  capability_id_l1: BC-200
+  capability_name: Accounts Payable Management
+  confidence: 0.85
+  evidence: '"Approve Specified Invoice", "Post paid invoice data", "Get invoice payment", schema InvoicePaymentExternal'
+  reason: Operations receive, OCR, approve, return and record payment of supplier invoices — invoice processing
+    and payment, i.e. accounts payable operations, consistent with the vendor's AP automation product.
+- tag: po-api-receipt-controller
+  spec_file: emburse-po-api-receipt-controller-api-openapi.yml
+  capability_id: BC-500.40
+  capability_id_l1: BC-500
+  capability_name: Procure-to-Pay Operations Management
+  confidence: 0.75
+  evidence: '"Create PO receipt", "Create or update a PO receipt", schema PoReceiptLineExternal'
+  reason: Goods/service receipting against purchase orders is a procure-to-pay operational step (receipts),
+    supporting three-way match downstream.
