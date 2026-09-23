@@ -19,8 +19,18 @@ paths:
     put:
       tags:
       - invoice-api-external-controller
-      summary: Returns invoices by InvoiceFilter.
-      description: "Date filtering expects RFC3339 / ISO-8601 timestamps (UTC recommended).\nPreferred examples:\n  - 2022-12-01T00:00:00Z\n  - 2022-12-01T00:00:00+00:00\nLegacy format currently accepted for backward compatibility (discouraged):\n  - 2022-12-01T00:00:00+0000"
+      summary: Returns invoices by InvoiceFilter
+      description: 'Date filtering expects RFC3339 / ISO-8601 timestamps (UTC recommended).
+
+        Preferred examples:
+
+        - 2022-12-01T00:00:00Z
+
+        - 2022-12-01T00:00:00+00:00
+
+        Legacy format currently accepted for backward compatibility (discouraged):
+
+        - 2022-12-01T00:00:00+0000'
       operationId: getInvoicesUsingPUT
       parameters:
       - name: chain-id
@@ -62,7 +72,7 @@ paths:
     get:
       tags:
       - invoice-api-external-controller
-      summary: Returns images/invoice-report in pdf file format.
+      summary: Returns images/invoice-report in pdf file format
       operationId: getImagesInPdfUsingGET
       parameters:
       - name: chain-id
@@ -487,6 +497,14 @@ paths:
           description: Invoice has been deleted or no longer assigned for approval.
       deprecated: false
 components:
+  requestBodies:
+    InvoiceSubmitOptionsExternal:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InvoiceSubmitOptionsExternal'
+      description: ' '
+      required: true
   schemas:
     InvoicePaymentOutput:
       type: object
@@ -676,6 +694,22 @@ components:
           type: string
           description: Transaction Number. 36 character limit
       title: InvoicePaymentExternal
+    InvoicePaymentFilter:
+      type: object
+      properties:
+        invoiceId:
+          type: string
+          example: test
+          description: Filter Invoice Number of Paid Invoice. 36 characters limit
+        paidDateFrom:
+          type: string
+          format: date-time
+          description: 'Filter Invoice Payment Completion Date From Bottom, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        paidDateTo:
+          type: string
+          format: date-time
+          description: 'Filter Invoice Payment Completion Date To Top, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+      title: InvoicePaymentFilter
     InvoiceError:
       type: object
       properties:
@@ -698,107 +732,16 @@ components:
         title:
           type: string
       title: InvoiceError
-    InvoiceHeaderSDI:
+    InvoiceSDIResponse:
       type: object
       properties:
-        amountSpent:
-          type: number
-        currencyCodeSpent:
-          type: string
-        headerStatus:
-          type: string
-        invoiceDate:
-          type: string
-          format: date-time
-        invoiceId:
-          type: string
-        invoiceNumber:
-          type: string
-      title: InvoiceHeaderSDI
-    InvoicePaymentFilter:
-      type: object
-      properties:
-        invoiceId:
-          type: string
-          example: test
-          description: Filter Invoice Number of Paid Invoice. 36 characters limit
-        paidDateFrom:
-          type: string
-          format: date-time
-          description: 'Filter Invoice Payment Completion Date From Bottom, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        paidDateTo:
-          type: string
-          format: date-time
-          description: 'Filter Invoice Payment Completion Date To Top, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-      title: InvoicePaymentFilter
-    InvoiceAssignOptionsExternal:
-      type: object
-      required:
-      - approvalMethod
-      - entityCode
-      - entityTypeCode
-      - invoiceId
-      - roleName
-      - routingType
-      - submitSource
-      properties:
-        additionalPersonUniqueId:
-          type: string
-          description: Person Unique ID for an Additional Reviewer
-        approvalMethod:
-          type: string
-          example: EMAI
-          description: 'Types of Approval Methods: Email(EMAI), Dashboard(DASH), Mobile(MOBL), AutoApprove(AUTO), Mercury(MERC), None(NONE)'
-          enum:
-          - EMAI
-          - DASH
-          - MOBL
-          - AUTO
-          - MERC
-          - NONE
-        entityCode:
-          type: string
-          example: 100
-          description: The entity code for the person-entity relationship. Max 50 characters
-        entityTypeCode:
-          type: string
-          example: DEPT
-          description: The entity type code for the person-entity relationship. Max 50 characters
-        invoiceId:
-          type: string
-          example: test
-          description: Invoice Number - 36 characters limit
-        notes:
-          type: string
-          example: Example Comment For My Invoice
-          description: Comment that will be added to InvoiceHeader upon successful request
-        roleName:
-          type: string
-          example: APReview
-          description: The name of the role for the person-entity relationship. Max 50 characters
-        routingType:
-          type: string
-          example: ENTY
-          description: 'Types of Routing: Entity(ENTY), Normal(ROUT), Owner(OWNR), Person(PERS), Other(RETA), Creator(RETC), Recall(RECL)'
-          enum:
-          - ENTY
-          - ROUT
-          - OWNR
-          - PERS
-          - RETA
-          - RETC
-          - RECL
-        submitSource:
-          type: string
-          example: INVS
-          description: 'Types of Submit Source: Invoice Submit (INVS), Approval Submit (APPS), Invoice Management Submit(IMGT), Bulk Submit (BLKS), NONE(NONE)'
-          enum:
-          - INVS
-          - APPS
-          - IMGT
-          - BLKS
-          - NONE
-      title: InvoiceAssignOptionsExternal
+        data:
+          $ref: '#/components/schemas/InvoiceHeaderSDI'
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/InvoiceError'
+      title: InvoiceSDIResponse
     InvoicePaymentCustomer:
       type: object
       required:
@@ -878,16 +821,6 @@ components:
           example: 2025-12-02 00:00:00+00:00
           description: Final dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
       title: InvoiceFilter
-    InvoiceSDIResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/InvoiceHeaderSDI'
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/InvoiceError'
-      title: InvoiceSDIResponse
     Invoice:
       type: object
       required:
@@ -913,11 +846,88 @@ components:
           type: string
           description: Vendor unique Id
       title: Invoice
-  requestBodies:
-    InvoiceSubmitOptionsExternal:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/InvoiceSubmitOptionsExternal'
-      description: ' '
-      required: true
+    InvoiceHeaderSDI:
+      type: object
+      properties:
+        amountSpent:
+          type: number
+        currencyCodeSpent:
+          type: string
+        headerStatus:
+          type: string
+        invoiceDate:
+          type: string
+          format: date-time
+        invoiceId:
+          type: string
+        invoiceNumber:
+          type: string
+      title: InvoiceHeaderSDI
+    InvoiceAssignOptionsExternal:
+      type: object
+      required:
+      - approvalMethod
+      - entityCode
+      - entityTypeCode
+      - invoiceId
+      - roleName
+      - routingType
+      - submitSource
+      properties:
+        additionalPersonUniqueId:
+          type: string
+          description: Person Unique ID for an Additional Reviewer
+        approvalMethod:
+          type: string
+          example: EMAI
+          description: 'Types of Approval Methods: Email(EMAI), Dashboard(DASH), Mobile(MOBL), AutoApprove(AUTO), Mercury(MERC), None(NONE)'
+          enum:
+          - EMAI
+          - DASH
+          - MOBL
+          - AUTO
+          - MERC
+          - NONE
+        entityCode:
+          type: string
+          example: 100
+          description: The entity code for the person-entity relationship. Max 50 characters
+        entityTypeCode:
+          type: string
+          example: DEPT
+          description: The entity type code for the person-entity relationship. Max 50 characters
+        invoiceId:
+          type: string
+          example: test
+          description: Invoice Number - 36 characters limit
+        notes:
+          type: string
+          example: Example Comment For My Invoice
+          description: Comment that will be added to InvoiceHeader upon successful request
+        roleName:
+          type: string
+          example: APReview
+          description: The name of the role for the person-entity relationship. Max 50 characters
+        routingType:
+          type: string
+          example: ENTY
+          description: 'Types of Routing: Entity(ENTY), Normal(ROUT), Owner(OWNR), Person(PERS), Other(RETA), Creator(RETC), Recall(RECL)'
+          enum:
+          - ENTY
+          - ROUT
+          - OWNR
+          - PERS
+          - RETA
+          - RETC
+          - RECL
+        submitSource:
+          type: string
+          example: INVS
+          description: 'Types of Submit Source: Invoice Submit (INVS), Approval Submit (APPS), Invoice Management Submit(IMGT), Bulk Submit (BLKS), NONE(NONE)'
+          enum:
+          - INVS
+          - APPS
+          - IMGT
+          - BLKS
+          - NONE
+      title: InvoiceAssignOptionsExternal

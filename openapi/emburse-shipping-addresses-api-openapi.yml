@@ -94,6 +94,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shipping Addresses
+      summary: Get shipping addresses
+      x-summary-source: derived
     post:
       operationId: post_shipping_addresses
       description: ''
@@ -126,6 +128,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shipping Addresses
+      summary: Post shipping addresses
+      x-summary-source: derived
   /shipping-addresses/{id}:
     get:
       operationId: get_shipping_addresses_by_id
@@ -178,6 +182,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shipping Addresses
+      summary: Get shipping addresses by id
+      x-summary-source: derived
     put:
       operationId: put_shipping_addresses_by_id
       description: Always perform a partial update.
@@ -234,6 +240,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shipping Addresses
+      summary: Put shipping addresses by id
+      x-summary-source: derived
     delete:
       operationId: delete_shipping_addresses_by_id
       description: ''
@@ -281,6 +289,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shipping Addresses
+      summary: Delete shipping addresses by id
+      x-summary-source: derived
 components:
   schemas:
     APIShippingAddress:

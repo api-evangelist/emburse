@@ -100,6 +100,8 @@ paths:
           description: Internal Server Error
       tags:
       - Departments
+      summary: Get departments
+      x-summary-source: derived
     post:
       operationId: post_departments
       description: ''
@@ -132,6 +134,8 @@ paths:
           description: Internal Server Error
       tags:
       - Departments
+      summary: Post departments
+      x-summary-source: derived
   /departments/{id}:
     get:
       operationId: get_departments_by_id
@@ -190,6 +194,8 @@ paths:
           description: Internal Server Error
       tags:
       - Departments
+      summary: Get departments by id
+      x-summary-source: derived
     put:
       operationId: put_departments_by_id
       description: Always perform a partial update.
@@ -252,6 +258,8 @@ paths:
           description: Internal Server Error
       tags:
       - Departments
+      summary: Put departments by id
+      x-summary-source: derived
     delete:
       operationId: delete_departments_by_id
       description: ''
@@ -305,6 +313,8 @@ paths:
           description: Internal Server Error
       tags:
       - Departments
+      summary: Delete departments by id
+      x-summary-source: derived
 components:
   schemas:
     _Segment:

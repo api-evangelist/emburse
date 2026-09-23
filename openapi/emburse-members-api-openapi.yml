@@ -106,6 +106,8 @@ paths:
           description: Internal Server Error
       tags:
       - Members
+      summary: Get members
+      x-summary-source: derived
     post:
       operationId: post_members
       description: ''
@@ -138,6 +140,8 @@ paths:
           description: Internal Server Error
       tags:
       - Members
+      summary: Post members
+      x-summary-source: derived
   /members/{id}:
     get:
       operationId: get_members_by_id
@@ -202,6 +206,8 @@ paths:
           description: Internal Server Error
       tags:
       - Members
+      summary: Get members by id
+      x-summary-source: derived
     put:
       operationId: put_members_by_id
       description: Always perform a partial update.
@@ -270,6 +276,8 @@ paths:
           description: Internal Server Error
       tags:
       - Members
+      summary: Put members by id
+      x-summary-source: derived
     delete:
       operationId: delete_members_by_id
       description: ''
@@ -329,6 +337,8 @@ paths:
           description: Internal Server Error
       tags:
       - Members
+      summary: Delete members by id
+      x-summary-source: derived
   /members/{member_pk}/terms-of-service:
     post:
       operationId: post_members_by_member_pk_terms_of_service
@@ -366,6 +376,8 @@ paths:
           description: Internal Server Error
       tags:
       - Members
+      summary: Post members by member pk terms of service
+      x-summary-source: derived
 components:
   schemas:
     APIMember:

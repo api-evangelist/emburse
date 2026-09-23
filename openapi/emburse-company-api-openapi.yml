@@ -82,6 +82,8 @@ paths:
           description: Internal Server Error
       tags:
       - Company
+      summary: Get company
+      x-summary-source: derived
   /company/{id}:
     get:
       operationId: get_company_by_id
@@ -122,6 +124,8 @@ paths:
           description: Internal Server Error
       tags:
       - Company
+      summary: Get company by id
+      x-summary-source: derived
 components:
   schemas:
     APICompany:

@@ -160,6 +160,14 @@ paths:
       deprecated: false
 components:
   schemas:
+    AllocationUDA:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      title: AllocationUDA
     AllocationView:
       type: object
       properties:
@@ -249,30 +257,6 @@ components:
           items:
             $ref: '#/components/schemas/AllocationUDA'
       title: AllocationView
-    AllocationEntity:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-      title: AllocationEntity
-    AllocationUDA:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-      title: AllocationUDA
-    UDAPerson:
-      type: object
-      properties:
-        name:
-          type: string
-        personUniqueId:
-          type: string
-      title: UDAPerson
     ApiResponse:
       type: object
       properties:
@@ -292,6 +276,22 @@ components:
           - SUCCESS
           - FAIL
       title: ApiResponse
+    AllocationEntity:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      title: AllocationEntity
+    UDAPerson:
+      type: object
+      properties:
+        name:
+          type: string
+        personUniqueId:
+          type: string
+      title: UDAPerson
   requestBodies:
     AllocationViewArray:
       content:

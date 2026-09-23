@@ -100,6 +100,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shared Links
+      summary: Get shared links
+      x-summary-source: derived
     post:
       operationId: post_shared_links
       description: ''
@@ -132,6 +134,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shared Links
+      summary: Post shared links
+      x-summary-source: derived
   /shared-links/{id}:
     get:
       operationId: get_shared_links_by_id
@@ -190,6 +194,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shared Links
+      summary: Get shared links by id
+      x-summary-source: derived
     put:
       operationId: put_shared_links_by_id
       description: Always perform a partial update.
@@ -252,6 +258,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shared Links
+      summary: Put shared links by id
+      x-summary-source: derived
     delete:
       operationId: delete_shared_links_by_id
       description: ''
@@ -305,6 +313,8 @@ paths:
           description: Internal Server Error
       tags:
       - Shared Links
+      summary: Delete shared links by id
+      x-summary-source: derived
 components:
   schemas:
     APISharedLink:

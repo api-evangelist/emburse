@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: PreApproval API Documentation Pre Approval Import Controller API
+  title: PreApproval API Documentation Pre Approval Import…
   description: API for managing pre-approval reports and workflows
   contact:
     name: Chrome River Technologies

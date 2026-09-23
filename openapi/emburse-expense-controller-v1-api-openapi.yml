@@ -406,22 +406,14 @@ paths:
       deprecated: false
 components:
   schemas:
-    Comment:
+    PerDiemRate:
       type: object
       properties:
-        comment:
+        amountMaximumPerDiem:
+          type: number
+        city:
           type: string
-          example: Submitted via Chrome River Application. Max 2000 characters
-        createDate:
-          type: string
-          format: date-time
-          example: 2023-01-09 10:57:53+00:00
-          description: Date of comment creation.
-        creatorName:
-          type: string
-          example: Jason Klein
-          description: Name of comment author
-      title: Comment
+      title: PerDiemRate
     LineItemAllocation:
       type: object
       properties:
@@ -549,29 +541,174 @@ components:
           example: 5
           description: Rate of VAT tax
       title: LineItemAllocation
-    PaLineItemType:
+    PerDiemLineItem:
       type: object
       properties:
-        externalRef:
+        additionalDeductionAmount:
+          type: number
+          example: 0
+          description: Any additional amounts that need to be deducted not covered by the itemized line items
+        address:
           type: string
-          example: 4320
-          description: Reference to an external system's expense types. Max 50 characters
-        id:
+          example: 5700 Olympic Blvd
+          description: Address for expense. Max 400 characters
+        allowableAmount:
+          type: number
+        alocholAmount:
+          type: number
+        amountPerDiem:
+          type: number
+          example: 150
+          description: Amount of per diem expense
+        baseRate:
+          type: number
+        breakfastAmountIMR:
+          type: number
+          example: 11
+          description: Individual meal rate- breakfast
+        breakfastDeductionAmount:
+          type: number
+          example: 0
+          description: Amount of breakfast deduction
+        city:
+          type: string
+          example: Los Angeles
+          description: City of expense. Max 100 characters
+        country:
+          type: string
+          example: United States
+          description: Country of expense. Max 50 characters
+        county:
+          type: string
+          example: Los Angeles County
+          description: County of expense. Max 100 characters
+        currencyCode:
+          type: string
+          example: USD
+          description: Currency code of per diem line item. ISO-4217
+        dinnerAmountIMR:
+          type: number
+          example: 22
+          description: Individual meal rate- dinner
+        dinnerDeductionAmount:
+          type: number
+          example: 0
+          description: Amount of dinner deduction
+        endDate:
+          type: string
+          format: date-time
+          description: End date of per diem expense
+        foodAmount:
+          type: number
+        foodOverage:
+          type: number
+        incidentalDeductionAmount:
+          type: number
+          example: 0
+          description: The dollar amount of any incidental per diem allowance
+        isArriveNextDay:
+          type: boolean
+          example: false
+          description: Indicates whether traveller will arrive the following day
+        isArrivePreviousDay:
+          type: boolean
+          example: false
+          description: Indicates if person arrived previous day
+        isBreakfastDeducted:
+          type: boolean
+          example: false
+          description: Indicates if breakfast deduction is taken
+        isDinnerDeducted:
+          type: boolean
+          example: false
+          description: Indicates if dinner deduction is taken
+        isDiscardedDay:
+          type: boolean
+        isFullTravelDay:
+          type: boolean
+          example: false
+          description: Indicates whether travel is full day
+        isLodgingDeducted:
+          type: boolean
+          example: false
+          description: Indicates if lodging is deducted
+        isLunchDeducted:
+          type: boolean
+          example: false
+          description: Indicates if lunch deduction is taken
+        isOvernightStay:
+          type: boolean
+          example: false
+          description: Indicates if trip had an overnight stay
+        isTravelDayDeducted:
+          type: boolean
+          description: If the travel day deduction is taken, this field will be true
+        latitude:
+          type: number
+          format: double
+          example: 193.29283
+          description: Latitude of start position
+        lodgingDeductionAmount:
+          type: number
+          example: 0
+          description: Amount of lodging deduction
+        longitude:
+          type: number
+          format: double
+          example: 30.5445022
+          description: Longitude of start position
+        lunchAmountIMR:
+          type: number
+          example: 23
+          description: Individual meal rate- lunch
+        lunchDeductionAmount:
+          type: number
+          example: 0
+          description: Amount of lunch deduction
+        mealType:
+          type: string
+          example: Dinner
+          description: Meal type for meal expense. Max 15 characters
+        numberOfAttendees:
           type: integer
           format: int32
-          example: 1398
-          description: Internal ID of preapproval line item
-        name:
+          example: Dinner
+          description: Meal type for meal expense. Max 15 characters
+        otherCity:
           type: string
-          example: Airfare
-          description: Expense type of preapproval line item. Max 50 characters
-        type:
+          example: San Diego
+          description: Another city where travel took place if trip spans >1 city. Max 50 characters
+        perDiemDayPosition:
           type: string
-          example: LineItem
+          example: SNGL
+          description: Position of day in trip
           enum:
-          - LineItem
-          - Header
-      title: PaLineItemType
+          - FRST
+          - LAST
+          - NORM
+          - SNGL
+        rate:
+          $ref: '#/components/schemas/PerDiemRate'
+        rooms:
+          type: integer
+          format: int32
+          example: 1
+          description: Number of rooms for lodging expense
+        startDate:
+          type: string
+          format: date-time
+          description: Start date of per diem expense
+        state:
+          type: string
+          example: CA
+          description: State of expense. Max 50 characters
+        taxTip:
+          type: number
+        totalAlcoholAmount:
+          type: number
+        totalFoodAmount:
+          type: number
+      title: PerDiemLineItem
     UserDefinedAttribute:
       type: object
       properties:
@@ -616,55 +753,139 @@ components:
           type: string
           description: Name of user defined attribute. Max 60 characters
       title: UserDefinedAttribute
-    ExpenseReportHeaderCreateModel:
-      type: object
-      required:
-      - currencyCode
-      - reportName
-      properties:
-        currencyCode:
-          type: string
-          example: USD
-          description: Employee's PayMeInCurrency. ISO-4217
-        reportName:
-          type: string
-          example: Trip to New Orleans 6/6-6/9
-          description: Name of expense report. Max 45 characters
-        transactionGroupId:
-          type: integer
-          format: int32
-          example: 1
-          description: Field used to associate an Expense Transactions Group with the report.
-      title: ExpenseReportHeaderCreateModel
-    ExpenseHeaderNote:
+    Entity:
       type: object
       properties:
-        createDate:
+        code:
           type: string
-          format: date-time
-        createDateStr:
+          example: 100
+          description: Entity code. Max 50 characters
+        extraData1:
           type: string
-        creatorName:
+          example: Main
+          description: Extra data field. Max 1000 characters
+        extraData2:
           type: string
-        customerID:
+          example: Office
+          description: Extra data field. Max 1000 characters
+        extraData3:
+          type: string
+          example: 1000
+          description: Extra data field. Max 1000 characters
+        extraData4:
+          type: string
+          example: 900
+          description: Extra data field. Max 1000 characters
+        extraData5:
+          type: string
+          example: '0000'
+          description: Extra data field. Max 1000 characters
+        name:
+          type: string
+          example: Los Angeles
+          description: Name of entity. Max 100 characters
+      title: Entity
+    OpenExpenseReport:
+      type: object
+      properties:
+        dateOfLastChange:
+          type: string
+          example: 2022-10-13T10:29:32.000X
+          description: Date report was last updated
+        personUniqueId:
+          type: string
+          example: jsmith
+          description: Unique ID of report owner. Max 50 characters
+        reportId:
+          type: string
+          example: 010093028019
+          description: 12 digit report ID
+      title: OpenExpenseReport
+    LineItemAllocationReference:
+      type: object
+      properties:
+        allocationSeg1:
+          type: string
+          description: Allocation reference segment 1. Max 100 characters
+        allocationSeg10:
+          type: string
+          description: Allocation reference segment 10. Max 100 characters
+        allocationSeg11:
+          type: string
+          description: Allocation reference segment 11. Max 100 characters
+        allocationSeg12:
+          type: string
+          description: Allocation reference segment 12. Max 100 characters
+        allocationSeg13:
+          type: string
+          description: Allocation reference segment 13. Max 100 characters
+        allocationSeg14:
+          type: string
+          description: Allocation reference segment 14. Max 100 characters
+        allocationSeg15:
+          type: string
+          description: Allocation reference segment 15. Max 100 characters
+        allocationSeg16:
+          type: string
+          description: Allocation reference segment 16. Max 100 characters
+        allocationSeg2:
+          type: string
+          description: Allocation reference segment 2. Max 100 characters
+        allocationSeg3:
+          type: string
+          description: Allocation reference segment 3. Max 100 characters
+        allocationSeg4:
+          type: string
+          description: Allocation reference segment 4. Max 100 characters
+        allocationSeg5:
+          type: string
+          description: Allocation reference segment 5. Max 100 characters
+        allocationSeg6:
+          type: string
+          description: Allocation reference segment 6. Max 100 characters
+        allocationSeg7:
+          type: string
+          description: Allocation reference segment 7. Max 100 characters
+        allocationSeg8:
+          type: string
+          description: Allocation reference segment 8. Max 100 characters
+        allocationSeg9:
+          type: string
+          description: Allocation reference segment 9. Max 100 characters
+      title: LineItemAllocationReference
+    ComplianceItem:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Receipt must be attached > 10.00 USD
+          description: Description of compliance issue
+        messageCode:
+          type: string
+          example: 422
+          description: Compliance code that was issued. Max 10 characters
+        response:
+          type: string
+          example: Lost the receipt
+          description: Expense owner's response to compliance issue. Max 255 characters
+        status:
+          type: string
+          example: Validated
+          description: Compliance status
+          enum:
+          - New
+          - Violation
+          - Warning
+          - Validated
+          - NonValidated
+        type:
           type: integer
           format: int32
-        expenseReportHeaderID:
-          type: string
-        headerNoteID:
-          type: string
-        headerUpdateDate:
-          type: string
-          format: date-time
-        note:
-          type: string
-        personID:
-          type: integer
-          format: int32
-        submitDate:
-          type: string
-          format: date-time
-      title: ExpenseHeaderNote
+          example: 0
+          enum:
+          - 0
+          - 1
+      title: ComplianceItem
     Person:
       type: object
       properties:
@@ -700,6 +921,121 @@ components:
         uniquePersonId:
           type: string
       title: Person
+    ExpenseRoutingTrackingItem:
+      type: object
+      properties:
+        amountSpent:
+          type: number
+        amountSpentConverted:
+          type: number
+        approvalMethod:
+          type: string
+        approver:
+          type: string
+        assignedDate:
+          type: string
+          format: date-time
+        assignedTo:
+          type: array
+          items:
+            type: string
+        assignedToEntityCode:
+          type: string
+        assignedToPersonId:
+          type: integer
+          format: int32
+        assignedToRoleName:
+          type: string
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExpenseRoutingTrackingItem'
+        completedBy:
+          type: string
+        completedByPersonId:
+          type: integer
+          format: int32
+        completedByRoleName:
+          type: string
+        completedDate:
+          type: string
+          format: date-time
+        currencyCodeSpent:
+          type: string
+        currencyCodeSpentConverted:
+          type: string
+        displayStatus:
+          type: string
+        expenseReportItemTypeDisplayName:
+          type: string
+        expenseReportItemTypeName:
+          type: string
+        expenseReportLineItemId:
+          type: string
+        expenseReportLineItemStepId:
+          type: integer
+          format: int64
+        exportDate:
+          type: string
+          format: date-time
+        gateKeeper:
+          type: boolean
+        keepTogetherGroupNum:
+          type: integer
+          format: int32
+        lastRankFromRules:
+          type: integer
+          format: int32
+        lineNumber:
+          type: integer
+          format: int32
+        lineNumber2:
+          type: integer
+          format: int32
+        name:
+          type: string
+        parent:
+          type: boolean
+        parentId:
+          type: string
+        payMeInCurrencyCode:
+          type: string
+        previousApprovers:
+          type: string
+        reportId:
+          type: string
+        routingStatus:
+          type: string
+        ruleDescription:
+          type: string
+        ruleId:
+          type: string
+        statusApproved:
+          type: string
+        step:
+          type: integer
+          format: int32
+      title: ExpenseRoutingTrackingItem
+    BudgetDetail:
+      type: object
+      properties:
+        amount:
+          type: number
+        budgetId:
+          type: string
+        docLineItemId:
+          type: string
+        docType:
+          type: string
+        encumbered:
+          type: boolean
+        externalReference:
+          type: string
+        ruleCode:
+          type: string
+        type:
+          type: string
+      title: BudgetDetail
     ExpenseReportLineItemPersonGuest:
       type: object
       properties:
@@ -738,6 +1074,78 @@ components:
           example: Legal Consultant
           description: Title of guest. Max 255 characters
       title: ExpenseReportLineItemPersonGuest
+    PaLineItemType:
+      type: object
+      properties:
+        externalRef:
+          type: string
+          example: 4320
+          description: Reference to an external system's expense types. Max 50 characters
+        id:
+          type: integer
+          format: int32
+          example: 1398
+          description: Internal ID of preapproval line item
+        name:
+          type: string
+          example: Airfare
+          description: Expense type of preapproval line item. Max 50 characters
+        type:
+          type: string
+          example: LineItem
+          enum:
+          - LineItem
+          - Header
+      title: PaLineItemType
+    ExpenseHeaderNote:
+      type: object
+      properties:
+        createDate:
+          type: string
+          format: date-time
+        createDateStr:
+          type: string
+        creatorName:
+          type: string
+        customerID:
+          type: integer
+          format: int32
+        expenseReportHeaderID:
+          type: string
+        headerNoteID:
+          type: string
+        headerUpdateDate:
+          type: string
+          format: date-time
+        note:
+          type: string
+        personID:
+          type: integer
+          format: int32
+        submitDate:
+          type: string
+          format: date-time
+      title: ExpenseHeaderNote
+    ExpenseReportHeaderCreateModel:
+      type: object
+      required:
+      - currencyCode
+      - reportName
+      properties:
+        currencyCode:
+          type: string
+          example: USD
+          description: Employee's PayMeInCurrency. ISO-4217
+        reportName:
+          type: string
+          example: Trip to New Orleans 6/6-6/9
+          description: Name of expense report. Max 45 characters
+        transactionGroupId:
+          type: integer
+          format: int32
+          example: 1
+          description: Field used to associate an Expense Transactions Group with the report.
+      title: ExpenseReportHeaderCreateModel
     ExpenseReportLineItem:
       type: object
       properties:
@@ -977,26 +1385,30 @@ components:
           example: 100
           description: Rate of VAT refund for 3rd VAT tax code
       title: ExpenseReportLineItem
-    BudgetDetail:
+    PersonEntities:
       type: object
       properties:
-        amount:
-          type: number
-        budgetId:
+        entityCode:
           type: string
-        docLineItemId:
+          example: FIN
+          description: Entity code. Max 50 characters
+        entityName:
           type: string
-        docType:
+          example: Finance
+          description: Entity name. Max 100 characters
+        entityTypeCode:
           type: string
-        encumbered:
-          type: boolean
-        externalReference:
+          example: DEPT
+          description: Entity type code. Max 32 characters
+        entityTypeName:
           type: string
-        ruleCode:
+          example: Department
+          description: Entity type name. Max 50 characters
+        roleName:
           type: string
-        type:
-          type: string
-      title: BudgetDetail
+          example: Part Of
+          description: Role name for the person-entity relationship. Max 50 characters
+      title: PersonEntities
     ExpenseReport:
       type: object
       properties:
@@ -1111,431 +1523,19 @@ components:
           example: 2022-01-12 05:34:32:000
           description: Date expense report was last updated
       title: ExpenseReport
-    OpenExpenseReport:
+    Comment:
       type: object
       properties:
-        dateOfLastChange:
+        comment:
           type: string
-          example: 2022-10-13T10:29:32.000X
-          description: Date report was last updated
-        personUniqueId:
-          type: string
-          example: jsmith
-          description: Unique ID of report owner. Max 50 characters
-        reportId:
-          type: string
-          example: 010093028019
-          description: 12 digit report ID
-      title: OpenExpenseReport
-    LineItemAllocationReference:
-      type: object
-      properties:
-        allocationSeg1:
-          type: string
-          description: Allocation reference segment 1. Max 100 characters
-        allocationSeg10:
-          type: string
-          description: Allocation reference segment 10. Max 100 characters
-        allocationSeg11:
-          type: string
-          description: Allocation reference segment 11. Max 100 characters
-        allocationSeg12:
-          type: string
-          description: Allocation reference segment 12. Max 100 characters
-        allocationSeg13:
-          type: string
-          description: Allocation reference segment 13. Max 100 characters
-        allocationSeg14:
-          type: string
-          description: Allocation reference segment 14. Max 100 characters
-        allocationSeg15:
-          type: string
-          description: Allocation reference segment 15. Max 100 characters
-        allocationSeg16:
-          type: string
-          description: Allocation reference segment 16. Max 100 characters
-        allocationSeg2:
-          type: string
-          description: Allocation reference segment 2. Max 100 characters
-        allocationSeg3:
-          type: string
-          description: Allocation reference segment 3. Max 100 characters
-        allocationSeg4:
-          type: string
-          description: Allocation reference segment 4. Max 100 characters
-        allocationSeg5:
-          type: string
-          description: Allocation reference segment 5. Max 100 characters
-        allocationSeg6:
-          type: string
-          description: Allocation reference segment 6. Max 100 characters
-        allocationSeg7:
-          type: string
-          description: Allocation reference segment 7. Max 100 characters
-        allocationSeg8:
-          type: string
-          description: Allocation reference segment 8. Max 100 characters
-        allocationSeg9:
-          type: string
-          description: Allocation reference segment 9. Max 100 characters
-      title: LineItemAllocationReference
-    PersonEntities:
-      type: object
-      properties:
-        entityCode:
-          type: string
-          example: FIN
-          description: Entity code. Max 50 characters
-        entityName:
-          type: string
-          example: Finance
-          description: Entity name. Max 100 characters
-        entityTypeCode:
-          type: string
-          example: DEPT
-          description: Entity type code. Max 32 characters
-        entityTypeName:
-          type: string
-          example: Department
-          description: Entity type name. Max 50 characters
-        roleName:
-          type: string
-          example: Part Of
-          description: Role name for the person-entity relationship. Max 50 characters
-      title: PersonEntities
-    ComplianceItem:
-      type: object
-      properties:
-        description:
-          type: string
-          example: Receipt must be attached > 10.00 USD
-          description: Description of compliance issue
-        messageCode:
-          type: string
-          example: 422
-          description: Compliance code that was issued. Max 10 characters
-        response:
-          type: string
-          example: Lost the receipt
-          description: Expense owner's response to compliance issue. Max 255 characters
-        status:
-          type: string
-          example: Validated
-          description: Compliance status
-          enum:
-          - New
-          - Violation
-          - Warning
-          - Validated
-          - NonValidated
-        type:
-          type: integer
-          format: int32
-          example: 0
-          enum:
-          - 0
-          - 1
-      title: ComplianceItem
-    PerDiemLineItem:
-      type: object
-      properties:
-        additionalDeductionAmount:
-          type: number
-          example: 0
-          description: Any additional amounts that need to be deducted not covered by the itemized line items
-        address:
-          type: string
-          example: 5700 Olympic Blvd
-          description: Address for expense. Max 400 characters
-        allowableAmount:
-          type: number
-        alocholAmount:
-          type: number
-        amountPerDiem:
-          type: number
-          example: 150
-          description: Amount of per diem expense
-        baseRate:
-          type: number
-        breakfastAmountIMR:
-          type: number
-          example: 11
-          description: Individual meal rate- breakfast
-        breakfastDeductionAmount:
-          type: number
-          example: 0
-          description: Amount of breakfast deduction
-        city:
-          type: string
-          example: Los Angeles
-          description: City of expense. Max 100 characters
-        country:
-          type: string
-          example: United States
-          description: Country of expense. Max 50 characters
-        county:
-          type: string
-          example: Los Angeles County
-          description: County of expense. Max 100 characters
-        currencyCode:
-          type: string
-          example: USD
-          description: Currency code of per diem line item. ISO-4217
-        dinnerAmountIMR:
-          type: number
-          example: 22
-          description: Individual meal rate- dinner
-        dinnerDeductionAmount:
-          type: number
-          example: 0
-          description: Amount of dinner deduction
-        endDate:
+          example: Submitted via Chrome River Application. Max 2000 characters
+        createDate:
           type: string
           format: date-time
-          description: End date of per diem expense
-        foodAmount:
-          type: number
-        foodOverage:
-          type: number
-        incidentalDeductionAmount:
-          type: number
-          example: 0
-          description: The dollar amount of any incidental per diem allowance
-        isArriveNextDay:
-          type: boolean
-          example: false
-          description: Indicates whether traveller will arrive the following day
-        isArrivePreviousDay:
-          type: boolean
-          example: false
-          description: Indicates if person arrived previous day
-        isBreakfastDeducted:
-          type: boolean
-          example: false
-          description: Indicates if breakfast deduction is taken
-        isDinnerDeducted:
-          type: boolean
-          example: false
-          description: Indicates if dinner deduction is taken
-        isDiscardedDay:
-          type: boolean
-        isFullTravelDay:
-          type: boolean
-          example: false
-          description: Indicates whether travel is full day
-        isLodgingDeducted:
-          type: boolean
-          example: false
-          description: Indicates if lodging is deducted
-        isLunchDeducted:
-          type: boolean
-          example: false
-          description: Indicates if lunch deduction is taken
-        isOvernightStay:
-          type: boolean
-          example: false
-          description: Indicates if trip had an overnight stay
-        isTravelDayDeducted:
-          type: boolean
-          description: If the travel day deduction is taken, this field will be true
-        latitude:
-          type: number
-          format: double
-          example: 193.29283
-          description: Latitude of start position
-        lodgingDeductionAmount:
-          type: number
-          example: 0
-          description: Amount of lodging deduction
-        longitude:
-          type: number
-          format: double
-          example: 30.5445022
-          description: Longitude of start position
-        lunchAmountIMR:
-          type: number
-          example: 23
-          description: Individual meal rate- lunch
-        lunchDeductionAmount:
-          type: number
-          example: 0
-          description: Amount of lunch deduction
-        mealType:
+          example: 2023-01-09 10:57:53+00:00
+          description: Date of comment creation.
+        creatorName:
           type: string
-          example: Dinner
-          description: Meal type for meal expense. Max 15 characters
-        numberOfAttendees:
-          type: integer
-          format: int32
-          example: Dinner
-          description: Meal type for meal expense. Max 15 characters
-        otherCity:
-          type: string
-          example: San Diego
-          description: Another city where travel took place if trip spans >1 city. Max 50 characters
-        perDiemDayPosition:
-          type: string
-          example: SNGL
-          description: Position of day in trip
-          enum:
-          - FRST
-          - LAST
-          - NORM
-          - SNGL
-        rate:
-          $ref: '#/components/schemas/PerDiemRate'
-        rooms:
-          type: integer
-          format: int32
-          example: 1
-          description: Number of rooms for lodging expense
-        startDate:
-          type: string
-          format: date-time
-          description: Start date of per diem expense
-        state:
-          type: string
-          example: CA
-          description: State of expense. Max 50 characters
-        taxTip:
-          type: number
-        totalAlcoholAmount:
-          type: number
-        totalFoodAmount:
-          type: number
-      title: PerDiemLineItem
-    PerDiemRate:
-      type: object
-      properties:
-        amountMaximumPerDiem:
-          type: number
-        city:
-          type: string
-      title: PerDiemRate
-    Entity:
-      type: object
-      properties:
-        code:
-          type: string
-          example: 100
-          description: Entity code. Max 50 characters
-        extraData1:
-          type: string
-          example: Main
-          description: Extra data field. Max 1000 characters
-        extraData2:
-          type: string
-          example: Office
-          description: Extra data field. Max 1000 characters
-        extraData3:
-          type: string
-          example: 1000
-          description: Extra data field. Max 1000 characters
-        extraData4:
-          type: string
-          example: 900
-          description: Extra data field. Max 1000 characters
-        extraData5:
-          type: string
-          example: '0000'
-          description: Extra data field. Max 1000 characters
-        name:
-          type: string
-          example: Los Angeles
-          description: Name of entity. Max 100 characters
-      title: Entity
-    ExpenseRoutingTrackingItem:
-      type: object
-      properties:
-        amountSpent:
-          type: number
-        amountSpentConverted:
-          type: number
-        approvalMethod:
-          type: string
-        approver:
-          type: string
-        assignedDate:
-          type: string
-          format: date-time
-        assignedTo:
-          type: array
-          items:
-            type: string
-        assignedToEntityCode:
-          type: string
-        assignedToPersonId:
-          type: integer
-          format: int32
-        assignedToRoleName:
-          type: string
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExpenseRoutingTrackingItem'
-        completedBy:
-          type: string
-        completedByPersonId:
-          type: integer
-          format: int32
-        completedByRoleName:
-          type: string
-        completedDate:
-          type: string
-          format: date-time
-        currencyCodeSpent:
-          type: string
-        currencyCodeSpentConverted:
-          type: string
-        displayStatus:
-          type: string
-        expenseReportItemTypeDisplayName:
-          type: string
-        expenseReportItemTypeName:
-          type: string
-        expenseReportLineItemId:
-          type: string
-        expenseReportLineItemStepId:
-          type: integer
-          format: int64
-        exportDate:
-          type: string
-          format: date-time
-        gateKeeper:
-          type: boolean
-        keepTogetherGroupNum:
-          type: integer
-          format: int32
-        lastRankFromRules:
-          type: integer
-          format: int32
-        lineNumber:
-          type: integer
-          format: int32
-        lineNumber2:
-          type: integer
-          format: int32
-        name:
-          type: string
-        parent:
-          type: boolean
-        parentId:
-          type: string
-        payMeInCurrencyCode:
-          type: string
-        previousApprovers:
-          type: string
-        reportId:
-          type: string
-        routingStatus:
-          type: string
-        ruleDescription:
-          type: string
-        ruleId:
-          type: string
-        statusApproved:
-          type: string
-        step:
-          type: integer
-          format: int32
-      title: ExpenseRoutingTrackingItem
+          example: Jason Klein
+          description: Name of comment author
+      title: Comment

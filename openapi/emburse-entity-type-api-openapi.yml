@@ -19,7 +19,7 @@ paths:
       tags:
       - Entity Type
       summary: Gets list of Entity Types
-      description: This web service allows an external application to fetch a list of Entity Types.  Only returns 100 max results of active entity types.
+      description: This web service allows an external application to fetch a list of Entity Types. Only returns 100 max results of active entity types.
       operationId: getEntityTypesUsingGET
       parameters:
       - name: chain-id
@@ -58,7 +58,13 @@ paths:
       tags:
       - Entity Type
       summary: Create an Entity Type
-      description: "This web service allows an external application to create an Entity Type. \n\nDoes not support the 'languages'. Use POST /v1/entity-types/{entityTypeCode}/languages instead. \n\nThis endpoint does not act as an upsert. It will fail for existing entities, unless the entity already is inactive. If the entity is inactive, it'll reactivate the entity."
+      description: 'This web service allows an external application to create an Entity Type.
+
+
+        Does not support the ''languages''. Use POST /v1/entity-types/{entityTypeCode}/languages instead.
+
+
+        This endpoint does not act as an upsert. It will fail for existing entities, unless the entity already is inactive. If the entity is inactive, it''ll reactivate the entity.'
       operationId: createEntityTypeUsingPOST
       parameters:
       - name: chain-id
@@ -154,7 +160,10 @@ paths:
       tags:
       - Entity Type
       summary: Put Entity Type by Code
-      description: "This web service allows an external application to replace an Entity Type by its Code. \n\nDoes not support the 'languages'. Use PUT /v1/entity-types/{entityTypeCode}/languages/{languageCode} instead."
+      description: 'This web service allows an external application to replace an Entity Type by its Code.
+
+
+        Does not support the ''languages''. Use PUT /v1/entity-types/{entityTypeCode}/languages/{languageCode} instead.'
       operationId: replaceEntityTypeByCodeUsingPUT
       parameters:
       - name: chain-id
@@ -298,7 +307,10 @@ paths:
       tags:
       - Entity Type
       summary: Add a language to an EntityType
-      description: "This web service allows an external application to add a localized name to an EntityType. \n\nThis endpoint is not an upsert. Languages that aleady exist cannot be modified except through PUT /entity-types/{entityTypeCode}/languages/{languageCode}"
+      description: 'This web service allows an external application to add a localized name to an EntityType.
+
+
+        This endpoint is not an upsert. Languages that aleady exist cannot be modified except through PUT /entity-types/{entityTypeCode}/languages/{languageCode}'
       operationId: addLanguageUsingPOST
       parameters:
       - name: chain-id
@@ -452,6 +464,23 @@ paths:
       deprecated: false
 components:
   schemas:
+    EntityTypeLanguage:
+      type: object
+      required:
+      - languageCode
+      - name
+      properties:
+        description:
+          type: string
+          description: The description of the EntityType in specified language
+        languageCode:
+          type: string
+          example: en, en_UK, fr, fr_CA
+          description: The locale either ISO 639_1 or a combination of ISO 639_1 and ISO 3166
+        name:
+          type: string
+          description: The name of the EntityType in specified language
+      title: EntityTypeLanguage
     EntityType:
       type: object
       required:
@@ -483,23 +512,6 @@ components:
           - CODE
           - SORT_ORDER
       title: EntityType
-    EntityTypeLanguage:
-      type: object
-      required:
-      - languageCode
-      - name
-      properties:
-        description:
-          type: string
-          description: The description of the EntityType in specified language
-        languageCode:
-          type: string
-          example: en, en_UK, fr, fr_CA
-          description: The locale either ISO 639_1 or a combination of ISO 639_1 and ISO 3166
-        name:
-          type: string
-          description: The name of the EntityType in specified language
-      title: EntityTypeLanguage
     EntityTypeModel:
       type: object
       required:

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: PreApproval API Documentation Pre Approval API Export Controller API
+  title: PreApproval API Documentation Pre Approval API Export…
   description: API for managing pre-approval reports and workflows
   contact:
     name: Chrome River Technologies
@@ -276,6 +276,13 @@ paths:
                 $ref: '#/components/schemas/PreApprovalExport'
 components:
   schemas:
+    AllocationUDATO:
+      type: object
+      properties:
+        udaName:
+          type: string
+        udaValue:
+          type: string
     PAHeaderAllocationTO:
       type: object
       properties:
@@ -299,6 +306,58 @@ components:
           type: string
         udaValue:
           type: string
+    PALineItemTypeTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: ID of the item type. Also used to associate with PreApproval Line Items
+          format: int32
+        name:
+          type: string
+        type:
+          type: string
+        descriptionTemplate:
+          type: string
+        externalRef:
+          type: string
+        other:
+          type: boolean
+      description: Set of Line Item Types associated with the above set of PreApproval Reports
+    EntityLanguage:
+      required:
+      - createDate
+      - customerId
+      - entityId
+      - languageId
+      - name
+      - updateDate
+      type: object
+      properties:
+        entityLanguageId:
+          type: integer
+          format: int32
+        customerId:
+          type: integer
+          format: int32
+        languageId:
+          type: integer
+          format: int32
+        entityId:
+          type: integer
+          format: int32
+        name:
+          type: string
+        createDate:
+          type: string
+          format: date-time
+        updateDate:
+          type: string
+          format: date-time
+        locale:
+          type: string
+        entity:
+          $ref: '#/components/schemas/Entity'
     PermissionV2:
       type: object
       properties:
@@ -306,104 +365,72 @@ components:
           type: string
         actionCode:
           type: string
-    AllocationUDATO:
+    PAHeaderTO:
       type: object
       properties:
-        udaName:
+        paHeaderId:
           type: string
-        udaValue:
+        reportId:
           type: string
-    PersonEntityV2:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        person:
-          $ref: '#/components/schemas/Person'
-        customerId:
-          type: integer
-          format: int32
-        entityId:
-          type: integer
-          format: int32
-        entityName:
+        reportOwnerId:
           type: string
-        entityCode:
+        reportCreatorId:
           type: string
-        entityStatus:
-          type: boolean
-        entityTypeId:
-          type: integer
-          format: int32
-        entityTypeName:
+        reportName:
           type: string
-        entityTypeCode:
+        reportStatus:
           type: string
-        entityTypeIsUsedInRules:
-          type: boolean
-        entityTypeDesc:
-          type: string
-        entityTypeStatus:
-          type: boolean
-        roleId:
-          type: integer
-          format: int32
-        roleName:
-          type: string
-        roleIsUsedInRules:
-          type: boolean
-        roleDescription:
-          type: string
-        active:
-          type: boolean
-        createDate:
-          type: string
-          format: date-time
-        updateDate:
-          type: string
-          format: date-time
         fromDate:
           type: string
           format: date-time
         toDate:
           type: string
           format: date-time
-        dateReplaced:
+        businessPurpose:
+          type: string
+        payMeInCurrency:
+          type: string
+        amountSpentApproved:
+          type: number
+        amountCustomer:
+          type: number
+        currencyCodeCustomer:
+          type: string
+        exchangeRateCustomer:
+          type: string
+        isAmountSpentApprovedSet:
+          type: boolean
+        isApprovedAmountAdjusted:
+          type: boolean
+        isActive:
+          type: boolean
+        submitDate:
           type: string
           format: date-time
-        source:
+        remainingAmount:
+          type: number
+        statusExport:
           type: string
-        personId:
-          type: integer
-          format: int32
-        entityExtraData1:
-          type: string
-        entityExtraData2:
-          type: string
-        entityExtraData3:
-          type: string
-        entityExtraData4:
-          type: string
-        entityExtraData5:
-          type: string
-        entitySortOrder:
-          type: string
-        localizedEntityName:
-          type: string
-        localizedEntityTypeName:
-          type: string
-        localizedRoleName:
-          type: string
-    Uda:
+          enum:
+          - EXP0
+          - EXPF
+        lineItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/PALineItemTO'
+        headerUdas:
+          type: array
+          items:
+            $ref: '#/components/schemas/PAUDATO'
+        preApprovalAllocations:
+          type: array
+          items:
+            $ref: '#/components/schemas/PAHeaderAllocationTO'
+    PAUDATO:
       type: object
       properties:
-        userDefinedAttributeId:
-          type: integer
-          format: int32
-        customerId:
-          type: integer
-          format: int32
+        udaName:
+          type: string
         stringValue:
           type: string
         numberValue:
@@ -411,31 +438,201 @@ components:
         currencyValue:
           type: number
         entityValue:
-          $ref: '#/components/schemas/Entity'
-        entityValueInt:
           type: integer
           format: int32
         dateValue:
           type: string
           format: date-time
-        boolValue:
+        booleanValue:
           type: boolean
-        udaDataType:
+    Entity:
+      required:
+      - active
+      - code
+      - customerId
+      - name
+      - sortOrder
+      type: object
+      properties:
+        entityID:
+          type: integer
+          format: int32
+        customerId:
+          type: integer
+          format: int32
+        name:
           type: string
-          enum:
-          - BooleanValue
-          - CurrencyValue
-          - DateValue
-          - EntityValue
-          - NumberValue
-          - StringValue
-          - DecimalValue
-        xmlElement:
+        code:
           type: string
+        active:
+          type: boolean
+        extraData1:
+          type: string
+        extraData2:
+          type: string
+        extraData3:
+          type: string
+        extraData4:
+          type: string
+        extraData5:
+          type: string
+        createSource:
+          type: string
+        personLoggedInID:
+          type: integer
+          format: int32
+        personDelegateID:
+          type: integer
+          format: int32
+        updateDate:
+          type: string
+          format: date-time
+        sortOrder:
+          type: string
+        entityTypeID:
+          type: integer
+          format: int32
+        entityTypeCode:
+          type: string
+        personEntities:
+          type: array
+          items:
+            $ref: '#/components/schemas/PersonEntity'
+        entityLanguages:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/EntityLanguage'
+        dnd:
+          type: boolean
+    PAEntityTO:
+      type: object
+      properties:
+        entityId:
+          type: integer
+          format: int32
+        entityName:
+          type: string
+        entityCode:
+          type: string
+        extraData1:
+          type: string
+        extraData2:
+          type: string
+        extraData3:
+          type: string
+        extraData4:
+          type: string
+        extraData5:
+          type: string
+      description: Set of Entities associated with the above set of PreApproval Reports
+    PersonAlternateEmailAddress:
+      required:
+      - emailAddress
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        customerId:
+          type: integer
+          format: int32
+        person:
+          $ref: '#/components/schemas/Person'
+        emailAddress:
+          type: string
+        sequence:
+          type: integer
+          format: int32
+        updateDate:
+          type: string
+          format: date-time
+        createDate:
+          type: string
+          format: date-time
+        validated:
+          type: boolean
+    PreApprovalExport:
+      type: object
+      properties:
+        totalItems:
+          type: integer
+          description: Total number of PreApprovals associated with the given ExportId. There may be fewer reports in response if pagination is used
+          format: int32
+        preApprovals:
+          type: array
+          items:
+            $ref: '#/components/schemas/PAHeaderTO'
+        allocations:
+          type: array
+          description: Set of Allocations associated with the above set of PreApproval Reports
+          items:
+            $ref: '#/components/schemas/PAAllocationTO'
+        entities:
+          type: array
+          description: Set of Entities associated with the above set of PreApproval Reports
+          items:
+            $ref: '#/components/schemas/PAEntityTO'
+        persons:
+          type: array
+          description: Set of Persons associated with the above set of PreApproval Reports
+          items:
+            $ref: '#/components/schemas/PAPersonTO'
+        paLineItemTypes:
+          type: array
+          description: Set of Line Item Types associated with the above set of PreApproval Reports
+          items:
+            $ref: '#/components/schemas/PALineItemTypeTO'
+    PersonUDA:
+      required:
+      - createDate
+      - customerID
+      - updateDate
+      - userDefinedAttributeID
+      type: object
+      properties:
+        personUdaID:
+          type: integer
+          format: int32
+        person:
+          $ref: '#/components/schemas/Person'
+        userDefinedAttributeID:
+          type: integer
+          format: int32
+        customerID:
+          type: integer
+          format: int32
+        stringValue:
+          type: string
+        booleanValue:
+          type: boolean
+        entityValue:
+          type: integer
+          format: int32
+        dateValue:
+          type: string
+          format: date-time
+        currencyValue:
+          type: number
+        numberValue:
+          type: number
+        isDeleted:
+          type: boolean
+        createDate:
+          type: string
+          format: date-time
+        updateDate:
+          type: string
+          format: date-time
         udaName:
           type: string
-        personStandardScreenLabel:
+        udaValue:
           type: string
+        userDefinedAttributeValue:
+          type: string
+          writeOnly: true
+    PersonEntityID:
+      type: object
     PAPersonTO:
       type: object
       properties:
@@ -933,75 +1130,6 @@ components:
           type: boolean
         isPoReceivingScreenEnabled:
           type: boolean
-    PersonProfile:
-      type: object
-      properties:
-        personProfileId:
-          type: integer
-          format: int32
-        customerId:
-          type: integer
-          format: int32
-        person:
-          $ref: '#/components/schemas/Person'
-        profileData:
-          type: string
-        createDate:
-          type: string
-          format: date-time
-        updateDate:
-          type: string
-          format: date-time
-    PersonUDA:
-      required:
-      - createDate
-      - customerID
-      - updateDate
-      - userDefinedAttributeID
-      type: object
-      properties:
-        personUdaID:
-          type: integer
-          format: int32
-        person:
-          $ref: '#/components/schemas/Person'
-        userDefinedAttributeID:
-          type: integer
-          format: int32
-        customerID:
-          type: integer
-          format: int32
-        stringValue:
-          type: string
-        booleanValue:
-          type: boolean
-        entityValue:
-          type: integer
-          format: int32
-        dateValue:
-          type: string
-          format: date-time
-        currencyValue:
-          type: number
-        numberValue:
-          type: number
-        isDeleted:
-          type: boolean
-        createDate:
-          type: string
-          format: date-time
-        updateDate:
-          type: string
-          format: date-time
-        udaName:
-          type: string
-        udaValue:
-          type: string
-        userDefinedAttributeValue:
-          type: string
-          writeOnly: true
-    PersonEntityID:
-      type: object
     PersonEntityExport:
       type: object
       properties:
@@ -1012,6 +1140,24 @@ components:
         entity:
           type: string
       description: 'Simplified Person Entity with only three fields: RoleName, EntityType, and Entity'
+    PAAllocationTO:
+      type: object
+      properties:
+        allocationId:
+          type: string
+        description:
+          type: string
+        allocationNumber:
+          type: string
+        clientName:
+          type: string
+        clientNumber:
+          type: string
+        udas:
+          type: array
+          items:
+            $ref: '#/components/schemas/AllocationUDATO'
+      description: Set of Allocations associated with the above set of PreApproval Reports
     PALineItemTO:
       type: object
       properties:
@@ -1046,142 +1192,6 @@ components:
           description: These line item allocations map to the header allocation but provide the CostCodeOverride field
           items:
             $ref: '#/components/schemas/PALineItemAllocationTO'
-    PAAllocationTO:
-      type: object
-      properties:
-        allocationId:
-          type: string
-        description:
-          type: string
-        allocationNumber:
-          type: string
-        clientName:
-          type: string
-        clientNumber:
-          type: string
-        udas:
-          type: array
-          items:
-            $ref: '#/components/schemas/AllocationUDATO'
-      description: Set of Allocations associated with the above set of PreApproval Reports
-    EntityLanguage:
-      required:
-      - createDate
-      - customerId
-      - entityId
-      - languageId
-      - name
-      - updateDate
-      type: object
-      properties:
-        entityLanguageId:
-          type: integer
-          format: int32
-        customerId:
-          type: integer
-          format: int32
-        languageId:
-          type: integer
-          format: int32
-        entityId:
-          type: integer
-          format: int32
-        name:
-          type: string
-        createDate:
-          type: string
-          format: date-time
-        updateDate:
-          type: string
-          format: date-time
-        locale:
-          type: string
-        entity:
-          $ref: '#/components/schemas/Entity'
-    PALineItemTypeTO:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: ID of the item type. Also used to associate with PreApproval Line Items
-          format: int32
-        name:
-          type: string
-        type:
-          type: string
-        descriptionTemplate:
-          type: string
-        externalRef:
-          type: string
-        other:
-          type: boolean
-      description: Set of Line Item Types associated with the above set of PreApproval Reports
-    PALineItemAllocationTO:
-      type: object
-      properties:
-        allocationId:
-          type: string
-          description: This Id maps to the header level allocation Id
-        costCodeOverride:
-          type: string
-        entityId1:
-          type: integer
-          format: int32
-        entityId2:
-          type: integer
-          format: int32
-        amountSpent:
-          type: number
-        percent:
-          type: number
-      description: These line item allocations map to the header allocation but provide the CostCodeOverride field
-    PersonAlternateEmailAddress:
-      required:
-      - emailAddress
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        customerId:
-          type: integer
-          format: int32
-        person:
-          $ref: '#/components/schemas/Person'
-        emailAddress:
-          type: string
-        sequence:
-          type: integer
-          format: int32
-        updateDate:
-          type: string
-          format: date-time
-        createDate:
-          type: string
-          format: date-time
-        validated:
-          type: boolean
-    PAEntityTO:
-      type: object
-      properties:
-        entityId:
-          type: integer
-          format: int32
-        entityName:
-          type: string
-        entityCode:
-          type: string
-        extraData1:
-          type: string
-        extraData2:
-          type: string
-        extraData3:
-          type: string
-        extraData4:
-          type: string
-        extraData5:
-          type: string
-      description: Set of Entities associated with the above set of PreApproval Reports
     PersonEntity:
       required:
       - customerId
@@ -1207,72 +1217,34 @@ components:
           type: boolean
         entity:
           $ref: '#/components/schemas/Entity'
-    PAHeaderTO:
+    PALineItemAllocationTO:
       type: object
       properties:
-        paHeaderId:
+        allocationId:
           type: string
-        reportId:
+          description: This Id maps to the header level allocation Id
+        costCodeOverride:
           type: string
-        reportOwnerId:
-          type: string
-        reportCreatorId:
-          type: string
-        reportName:
-          type: string
-        reportStatus:
-          type: string
-        fromDate:
-          type: string
-          format: date-time
-        toDate:
-          type: string
-          format: date-time
-        businessPurpose:
-          type: string
-        payMeInCurrency:
-          type: string
-        amountSpentApproved:
+        entityId1:
+          type: integer
+          format: int32
+        entityId2:
+          type: integer
+          format: int32
+        amountSpent:
           type: number
-        amountCustomer:
+        percent:
           type: number
-        currencyCodeCustomer:
-          type: string
-        exchangeRateCustomer:
-          type: string
-        isAmountSpentApprovedSet:
-          type: boolean
-        isApprovedAmountAdjusted:
-          type: boolean
-        isActive:
-          type: boolean
-        submitDate:
-          type: string
-          format: date-time
-        remainingAmount:
-          type: number
-        statusExport:
-          type: string
-          enum:
-          - EXP0
-          - EXPF
-        lineItems:
-          type: array
-          items:
-            $ref: '#/components/schemas/PALineItemTO'
-        headerUdas:
-          type: array
-          items:
-            $ref: '#/components/schemas/PAUDATO'
-        preApprovalAllocations:
-          type: array
-          items:
-            $ref: '#/components/schemas/PAHeaderAllocationTO'
-    PAUDATO:
+      description: These line item allocations map to the header allocation but provide the CostCodeOverride field
+    Uda:
       type: object
       properties:
-        udaName:
-          type: string
+        userDefinedAttributeId:
+          type: integer
+          format: int32
+        customerId:
+          type: integer
+          format: int32
         stringValue:
           type: string
         numberValue:
@@ -1280,101 +1252,129 @@ components:
         currencyValue:
           type: number
         entityValue:
+          $ref: '#/components/schemas/Entity'
+        entityValueInt:
           type: integer
           format: int32
         dateValue:
           type: string
           format: date-time
-        booleanValue:
+        boolValue:
           type: boolean
-    Entity:
-      required:
-      - active
-      - code
-      - customerId
-      - name
-      - sortOrder
+        udaDataType:
+          type: string
+          enum:
+          - BooleanValue
+          - CurrencyValue
+          - DateValue
+          - EntityValue
+          - NumberValue
+          - StringValue
+          - DecimalValue
+        xmlElement:
+          type: string
+        udaName:
+          type: string
+        personStandardScreenLabel:
+          type: string
+    PersonProfile:
       type: object
       properties:
-        entityID:
+        personProfileId:
           type: integer
           format: int32
         customerId:
           type: integer
           format: int32
-        name:
+        person:
+          $ref: '#/components/schemas/Person'
+        profileData:
           type: string
-        code:
+        createDate:
           type: string
-        active:
-          type: boolean
-        extraData1:
-          type: string
-        extraData2:
-          type: string
-        extraData3:
-          type: string
-        extraData4:
-          type: string
-        extraData5:
-          type: string
-        createSource:
-          type: string
-        personLoggedInID:
-          type: integer
-          format: int32
-        personDelegateID:
-          type: integer
-          format: int32
+          format: date-time
         updateDate:
           type: string
           format: date-time
-        sortOrder:
-          type: string
-        entityTypeID:
-          type: integer
-          format: int32
-        entityTypeCode:
-          type: string
-        personEntities:
-          type: array
-          items:
-            $ref: '#/components/schemas/PersonEntity'
-        entityLanguages:
-          uniqueItems: true
-          type: array
-          items:
-            $ref: '#/components/schemas/EntityLanguage'
-        dnd:
-          type: boolean
-    PreApprovalExport:
+    PersonEntityV2:
       type: object
       properties:
-        totalItems:
+        id:
           type: integer
-          description: Total number of PreApprovals associated with the given ExportId. There may be fewer reports in response if pagination is used
           format: int32
-        preApprovals:
-          type: array
-          items:
-            $ref: '#/components/schemas/PAHeaderTO'
-        allocations:
-          type: array
-          description: Set of Allocations associated with the above set of PreApproval Reports
-          items:
-            $ref: '#/components/schemas/PAAllocationTO'
-        entities:
-          type: array
-          description: Set of Entities associated with the above set of PreApproval Reports
-          items:
-            $ref: '#/components/schemas/PAEntityTO'
-        persons:
-          type: array
-          description: Set of Persons associated with the above set of PreApproval Reports
-          items:
-            $ref: '#/components/schemas/PAPersonTO'
-        paLineItemTypes:
-          type: array
-          description: Set of Line Item Types associated with the above set of PreApproval Reports
-          items:
-            $ref: '#/components/schemas/PALineItemTypeTO'
+        person:
+          $ref: '#/components/schemas/Person'
+        customerId:
+          type: integer
+          format: int32
+        entityId:
+          type: integer
+          format: int32
+        entityName:
+          type: string
+        entityCode:
+          type: string
+        entityStatus:
+          type: boolean
+        entityTypeId:
+          type: integer
+          format: int32
+        entityTypeName:
+          type: string
+        entityTypeCode:
+          type: string
+        entityTypeIsUsedInRules:
+          type: boolean
+        entityTypeDesc:
+          type: string
+        entityTypeStatus:
+          type: boolean
+        roleId:
+          type: integer
+          format: int32
+        roleName:
+          type: string
+        roleIsUsedInRules:
+          type: boolean
+        roleDescription:
+          type: string
+        active:
+          type: boolean
+        createDate:
+          type: string
+          format: date-time
+        updateDate:
+          type: string
+          format: date-time
+        fromDate:
+          type: string
+          format: date-time
+        toDate:
+          type: string
+          format: date-time
+        dateReplaced:
+          type: string
+          format: date-time
+        source:
+          type: string
+        personId:
+          type: integer
+          format: int32
+        entityExtraData1:
+          type: string
+        entityExtraData2:
+          type: string
+        entityExtraData3:
+          type: string
+        entityExtraData4:
+          type: string
+        entityExtraData5:
+          type: string
+        entitySortOrder:
+          type: string
+        localizedEntityName:
+          type: string
+        localizedEntityTypeName:
+          type: string
+        localizedRoleName:
+          type: string

@@ -145,16 +145,6 @@ paths:
                 $ref: '#/components/schemas/PoReceiptExternal'
       deprecated: false
 components:
-  requestBodies:
-    upsertReceiptUsingPOSTPoreceiptexternal:
-      content:
-        application/json:
-          schema:
-            type: object
-            additionalProperties:
-              type: object
-      description: poReceiptExternal
-      required: true
   schemas:
     PoReceiptExternal:
       type: object
@@ -225,6 +215,12 @@ components:
           type: string
           description: Customer's unique ID of the vendor that is created from the customer's system. The customer will provide this value initially and it needs to be in sync with the value shared with Chrome River.
       title: PoReceiptExternal
+    PoReceiptNoteExternal:
+      type: object
+      properties:
+        note:
+          type: string
+      title: PoReceiptNoteExternal
     PoReceiptLineExternal:
       type: object
       required:
@@ -292,9 +288,13 @@ components:
           type: string
           description: Vendor's item ID on the Receipt line.
       title: PoReceiptLineExternal
-    PoReceiptNoteExternal:
-      type: object
-      properties:
-        note:
-          type: string
-      title: PoReceiptNoteExternal
+  requestBodies:
+    upsertReceiptUsingPOSTPoreceiptexternal:
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+      description: poReceiptExternal
+      required: true

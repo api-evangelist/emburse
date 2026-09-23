@@ -100,6 +100,8 @@ paths:
           description: Internal Server Error
       tags:
       - Locations
+      summary: Get locations
+      x-summary-source: derived
     post:
       operationId: post_locations
       description: ''
@@ -132,6 +134,8 @@ paths:
           description: Internal Server Error
       tags:
       - Locations
+      summary: Post locations
+      x-summary-source: derived
   /locations/{id}:
     get:
       operationId: get_locations_by_id
@@ -190,6 +194,8 @@ paths:
           description: Internal Server Error
       tags:
       - Locations
+      summary: Get locations by id
+      x-summary-source: derived
     put:
       operationId: put_locations_by_id
       description: Always perform a partial update.
@@ -252,6 +258,8 @@ paths:
           description: Internal Server Error
       tags:
       - Locations
+      summary: Put locations by id
+      x-summary-source: derived
     delete:
       operationId: delete_locations_by_id
       description: ''
@@ -305,6 +313,8 @@ paths:
           description: Internal Server Error
       tags:
       - Locations
+      summary: Delete locations by id
+      x-summary-source: derived
 components:
   schemas:
     _Segment:

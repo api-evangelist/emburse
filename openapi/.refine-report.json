@@ -63,7 +63,9 @@
     "emburse-shipping-addresses-api-openapi.yml",
     "emburse-transactions-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -100,7 +102,9 @@
     "emburse-virtual-cards-openapi.yml: declared missing tag: Requisitions",
     "emburse-virtual-cards-openapi.yml: declared missing tag: Shared Links",
     "emburse-virtual-cards-openapi.yml: declared missing tag: Shipping Addresses",
-    "emburse-virtual-cards-openapi.yml: declared missing tag: Transactions"
+    "emburse-virtual-cards-openapi.yml: declared missing tag: Transactions",
+    "superseded outputs removed: emburse-o-auth-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 48 total)"
   ],
   "skipped": [
     "emburse-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -130,7 +134,7 @@
     "emburse-locations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "emburse-members-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "emburse-merchant-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "emburse-oauth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "emburse-o-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "emburse-paid-expense-controller-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "emburse-person-controller-v2-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "emburse-person-controller-v3-api-openapi.yml: previously refined output, superseded by openapi/_original/",

@@ -240,6 +240,17 @@ paths:
       deprecated: false
 components:
   schemas:
+    EntityTypeTO:
+      type: object
+      properties:
+        code:
+          type: string
+        entityTypeId:
+          type: integer
+          format: int32
+        name:
+          type: string
+      title: EntityTypeTO
     MatterUDATO:
       type: object
       properties:
@@ -259,6 +270,45 @@ components:
         value:
           type: string
       title: MatterUDATO
+    PersonTO:
+      type: object
+      properties:
+        name:
+          type: string
+        personId:
+          type: string
+      title: PersonTO
+    EntityTO:
+      type: object
+      properties:
+        code:
+          type: string
+        entityId:
+          type: integer
+          format: int32
+        entityType:
+          $ref: '#/components/schemas/EntityTypeTO'
+        extraData1:
+          type: string
+        extraData2:
+          type: string
+        extraData3:
+          type: string
+        extraData4:
+          type: string
+        extraData5:
+          type: string
+        name:
+          type: string
+        order:
+          type: integer
+          format: int32
+      title: EntityTO
+    Map_string_string_:
+      type: object
+      title: Map«string,string»
+      additionalProperties:
+        type: string
     MatterTO:
       type: object
       properties:
@@ -394,56 +444,6 @@ components:
         udf4:
           type: string
       title: MatterTO
-    EntityTypeTO:
-      type: object
-      properties:
-        code:
-          type: string
-        entityTypeId:
-          type: integer
-          format: int32
-        name:
-          type: string
-      title: EntityTypeTO
-    EntityTO:
-      type: object
-      properties:
-        code:
-          type: string
-        entityId:
-          type: integer
-          format: int32
-        entityType:
-          $ref: '#/components/schemas/EntityTypeTO'
-        extraData1:
-          type: string
-        extraData2:
-          type: string
-        extraData3:
-          type: string
-        extraData4:
-          type: string
-        extraData5:
-          type: string
-        name:
-          type: string
-        order:
-          type: integer
-          format: int32
-      title: EntityTO
-    PersonTO:
-      type: object
-      properties:
-        name:
-          type: string
-        personId:
-          type: string
-      title: PersonTO
-    Map_string_string_:
-      type: object
-      title: Map«string,string»
-      additionalProperties:
-        type: string
   requestBodies:
     MatterTO:
       content:

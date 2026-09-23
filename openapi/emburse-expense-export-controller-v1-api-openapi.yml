@@ -18,7 +18,7 @@ paths:
     post:
       tags:
       - expense-export-controller-v1
-      summary: Post status of an expense export.
+      summary: Post status of an expense export
       description: This web service allows an external application to post status of an expense export.
       operationId: updateExpenseExportStatusUsingPOST
       parameters:
@@ -72,7 +72,7 @@ paths:
     patch:
       tags:
       - expense-export-controller-v1
-      summary: Repost External Export Status By ExportIds.
+      summary: Repost External Export Status By ExportIds
       description: This web service allows an external application to repost External Export Status By ExportIds.
       operationId: repostExternalExportStatusByExportIdsUsingPATCH
       parameters:
@@ -126,7 +126,7 @@ paths:
     get:
       tags:
       - expense-export-controller-v1
-      summary: Retrieve either a list of incoming expense export IDs or export details for a specific expense export.
+      summary: Retrieve either a list of incoming expense export IDs or export details for a…
       description: This web service allows an external application to fetch either a list of incoming expense export IDs or fetch export details for a specific export. To retrieve the list of export IDs, no export-id should be passed in the header of this call. To retrieve details of a specific export, the export-id header should be populated with the desired export ID.
       operationId: getExportIdsUsingGET
       parameters:
@@ -170,23 +170,6 @@ paths:
           description: Service unavailable. Please try again later.
       deprecated: false
 components:
-  requestBodies:
-    repostExternalExportStatusByExportIdsUsingPATCHListOfExportids:
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              type: string
-      description: exportIds
-      required: true
-    ExportStatusModel:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ExportStatusModel'
-      description: Payload required to post status of an export
-      required: true
   schemas:
     ExportIdsModel:
       type: object
@@ -227,3 +210,20 @@ components:
           - error
           - transferred
       title: ExportStatusModel
+  requestBodies:
+    ExportStatusModel:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExportStatusModel'
+      description: Payload required to post status of an export
+      required: true
+    repostExternalExportStatusByExportIdsUsingPATCHListOfExportids:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string
+      description: exportIds
+      required: true

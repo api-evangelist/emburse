@@ -159,6 +159,8 @@ paths:
           description: Internal Server Error
       tags:
       - Transactions
+      summary: Get transactions
+      x-summary-source: derived
   /transactions/{id}:
     get:
       operationId: get_transactions_by_id
@@ -276,6 +278,8 @@ paths:
           description: Internal Server Error
       tags:
       - Transactions
+      summary: Get transactions by id
+      x-summary-source: derived
     put:
       operationId: put_transactions_by_id
       description: Always perform a partial update.
@@ -397,6 +401,8 @@ paths:
           description: Internal Server Error
       tags:
       - Transactions
+      summary: Put transactions by id
+      x-summary-source: derived
 components:
   schemas:
     APITransaction:

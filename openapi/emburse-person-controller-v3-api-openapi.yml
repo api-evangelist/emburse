@@ -121,9 +121,7 @@ paths:
       tags:
       - person-controller-v3
       summary: Create/update persons
-      description: 'This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS. This endpoint tokenizes all PII data before sending the request to Chrome River.
-
-        '
+      description: This web service provides ability to create/update persons. TO BE USED ONLY BY SAP CONNECTORS. This endpoint tokenizes all PII data before sending the request to Chrome River.
       operationId: bulkUpsertPersonsForSAPConnector
       parameters:
       - name: chain-id
@@ -183,6 +181,50 @@ paths:
                   $ref: '#/components/schemas/Response'
 components:
   schemas:
+    AlternateCurrency:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Currency type
+          enum:
+          - ALT
+          - OTHER
+          example: ALT
+        code:
+          type: string
+          description: Currency code in ISO-4217
+          example: USD
+      required:
+      - code
+      - type
+    PersonEntityView:
+      type: object
+      properties:
+        roleName:
+          type: string
+          description: The name of the role for the person-entity relationship. Max 50 characters
+          example: APReview
+        entityTypeCode:
+          type: string
+          description: The entity type code for the person-entity relationship. Max 50 characters
+          example: DEPT
+        entityTypeName:
+          type: string
+          description: The entity type name for the person-entity relationship; not required for create/update. Max 50 characters
+          example: Department
+        entityCode:
+          type: string
+          description: The entity code for the person-entity relationship. Max 50 characters
+          example: 100
+        entityName:
+          type: string
+          description: The entity name for the person-entity relationship; not required for create/update. Max 100 characters
+          example: Administrative
+      required:
+      - entityCode
+      - entityTypeCode
+      - roleName
     Response:
       type: object
       properties:
@@ -215,50 +257,6 @@ components:
       required:
       - name
       - value
-    PersonEntityView:
-      type: object
-      properties:
-        roleName:
-          type: string
-          description: The name of the role for the person-entity relationship. Max 50 characters
-          example: APReview
-        entityTypeCode:
-          type: string
-          description: The entity type code for the person-entity relationship. Max 50 characters
-          example: DEPT
-        entityTypeName:
-          type: string
-          description: The entity type name for the person-entity relationship; not required for create/update. Max 50 characters
-          example: Department
-        entityCode:
-          type: string
-          description: The entity code for the person-entity relationship. Max 50 characters
-          example: 100
-        entityName:
-          type: string
-          description: The entity name for the person-entity relationship; not required for create/update. Max 100 characters
-          example: Administrative
-      required:
-      - entityCode
-      - entityTypeCode
-      - roleName
-    AlternateCurrency:
-      type: object
-      properties:
-        type:
-          type: string
-          description: Currency type
-          enum:
-          - ALT
-          - OTHER
-          example: ALT
-        code:
-          type: string
-          description: Currency code in ISO-4217
-          example: USD
-      required:
-      - code
-      - type
     PersonView:
       type: object
       properties:

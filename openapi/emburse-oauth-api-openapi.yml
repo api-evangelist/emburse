@@ -11,7 +11,7 @@ servers:
 security:
 - BearerAuth: []
 tags:
-- name: Oauth
+- name: OAuth
 paths:
   /oauth/token/challenge:
     get:
@@ -75,7 +75,9 @@ paths:
         '500':
           description: Internal Server Error
       tags:
-      - Oauth
+      - OAuth
+      summary: Get oauth token challenge
+      x-summary-source: derived
     post:
       operationId: post_oauth_token_challenge
       description: Handle MFA challenges.
@@ -113,7 +115,9 @@ paths:
         '500':
           description: Internal Server Error
       tags:
-      - Oauth
+      - OAuth
+      summary: Post oauth token challenge
+      x-summary-source: derived
   /oauth/token:
     post:
       operationId: post_oauth_token
@@ -146,7 +150,9 @@ paths:
         '500':
           description: Internal Server Error
       tags:
-      - Oauth
+      - OAuth
+      summary: Post oauth token
+      x-summary-source: derived
   /oauth/token/revoke:
     post:
       operationId: post_oauth_token_revoke
@@ -182,7 +188,9 @@ paths:
         '500':
           description: Internal Server Error
       tags:
-      - Oauth
+      - OAuth
+      summary: Post oauth token revoke
+      x-summary-source: derived
 components:
   schemas:
     Answer:

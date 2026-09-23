@@ -38,6 +38,8 @@ paths:
           description: Unauthorized - Invalid or missing authentication token.
       tags:
       - Merchant Categories
+      summary: Get merchant categories
+      x-summary-source: derived
 components:
   securitySchemes:
     BearerAuth:

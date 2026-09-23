@@ -100,6 +100,8 @@ paths:
           description: Internal Server Error
       tags:
       - Labels
+      summary: Get labels
+      x-summary-source: derived
     post:
       operationId: post_labels
       description: ''
@@ -132,6 +134,8 @@ paths:
           description: Internal Server Error
       tags:
       - Labels
+      summary: Post labels
+      x-summary-source: derived
   /labels/{id}:
     get:
       operationId: get_labels_by_id
@@ -190,6 +194,8 @@ paths:
           description: Internal Server Error
       tags:
       - Labels
+      summary: Get labels by id
+      x-summary-source: derived
     put:
       operationId: put_labels_by_id
       description: Always perform a partial update.
@@ -252,6 +258,8 @@ paths:
           description: Internal Server Error
       tags:
       - Labels
+      summary: Put labels by id
+      x-summary-source: derived
     delete:
       operationId: delete_labels_by_id
       description: ''
@@ -305,6 +313,8 @@ paths:
           description: Internal Server Error
       tags:
       - Labels
+      summary: Delete labels by id
+      x-summary-source: derived
 components:
   schemas:
     _Segment:

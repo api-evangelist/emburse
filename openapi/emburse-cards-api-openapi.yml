@@ -138,6 +138,8 @@ paths:
           description: Internal Server Error
       tags:
       - Cards
+      summary: Get cards
+      x-summary-source: derived
     post:
       operationId: post_cards
       description: ''
@@ -170,6 +172,8 @@ paths:
           description: Internal Server Error
       tags:
       - Cards
+      summary: Post cards
+      x-summary-source: derived
   /cards/{id}:
     get:
       operationId: get_cards_by_id
@@ -210,6 +214,8 @@ paths:
           description: Internal Server Error
       tags:
       - Cards
+      summary: Get cards by id
+      x-summary-source: derived
     put:
       operationId: put_cards_by_id
       description: Always perform a partial update.
@@ -310,6 +316,8 @@ paths:
           description: Internal Server Error
       tags:
       - Cards
+      summary: Put cards by id
+      x-summary-source: derived
     delete:
       operationId: delete_cards_by_id
       description: ''
@@ -401,6 +409,8 @@ paths:
           description: Internal Server Error
       tags:
       - Cards
+      summary: Delete cards by id
+      x-summary-source: derived
   /cards/{id}/pan:
     get:
       operationId: get_cards_by_id_pan
@@ -435,8 +445,19 @@ paths:
           description: Internal Server Error
       tags:
       - Cards
+      summary: Get cards by id pan
+      x-summary-source: derived
 components:
   schemas:
+    APICardPAN:
+      type: object
+      properties:
+        pan:
+          type: string
+          readOnly: true
+        cvv:
+          type: string
+          readOnly: true
     APICard:
       type: object
       properties:
@@ -824,15 +845,6 @@ components:
       - allowance
       - expiration
       - created_at
-    APICardPAN:
-      type: object
-      properties:
-        pan:
-          type: string
-          readOnly: true
-        cvv:
-          type: string
-          readOnly: true
   securitySchemes:
     BearerAuth:
       type: http

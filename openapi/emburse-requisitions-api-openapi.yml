@@ -130,6 +130,8 @@ paths:
           description: Internal Server Error
       tags:
       - Requisitions
+      summary: Get requisitions
+      x-summary-source: derived
     post:
       operationId: post_requisitions
       description: ''
@@ -162,6 +164,8 @@ paths:
           description: Internal Server Error
       tags:
       - Requisitions
+      summary: Post requisitions
+      x-summary-source: derived
   /requisitions/{id}:
     get:
       operationId: get_requisitions_by_id
@@ -250,6 +254,8 @@ paths:
           description: Internal Server Error
       tags:
       - Requisitions
+      summary: Get requisitions by id
+      x-summary-source: derived
     put:
       operationId: put_requisitions_by_id
       description: Always perform a partial update.
@@ -342,6 +348,8 @@ paths:
           description: Internal Server Error
       tags:
       - Requisitions
+      summary: Put requisitions by id
+      x-summary-source: derived
     delete:
       operationId: delete_requisitions_by_id
       description: ''
@@ -425,6 +433,8 @@ paths:
           description: Internal Server Error
       tags:
       - Requisitions
+      summary: Delete requisitions by id
+      x-summary-source: derived
 components:
   schemas:
     APIRequisition:

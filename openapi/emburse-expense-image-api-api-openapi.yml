@@ -20,7 +20,7 @@ paths:
     get:
       tags:
       - expense-image-api
-      summary: Get voucher invoices for a given date range.
+      summary: Get voucher invoices for a given date range
       description: Get voucher invoices for a given date range. Returns an xml file.
       operationId: getByDateRange
       parameters:
@@ -74,7 +74,7 @@ paths:
     get:
       tags:
       - expense-image-api
-      summary: Get voucher invoices for a given date range.
+      summary: Get voucher invoices for a given date range
       description: Get voucher invoices for a given date range. Returns an xml file.
       operationId: getVoucherInvoicesForXml
       parameters:
@@ -128,7 +128,7 @@ paths:
     get:
       tags:
       - expense-image-api
-      summary: Get voucher invoices for a given date range.
+      summary: Get voucher invoices for a given date range
       description: Get voucher invoices for a given date range. Returns an xml file.
       operationId: getVoucherInvoicesForOFD
       parameters:
@@ -333,7 +333,7 @@ paths:
     get:
       tags:
       - expense-image-api
-      summary: Get voucher invoice by its number.
+      summary: Get voucher invoice by its number
       description: Get voucher invoice by its number. Returns zip archive with xml file.
       operationId: getReceiptsForXml
       parameters:
@@ -375,7 +375,7 @@ paths:
     get:
       tags:
       - expense-image-api
-      summary: Get OFD receipts associated to a VoucherInvoice Number.
+      summary: Get OFD receipts associated to a VoucherInvoice Number
       description: Get receipt images for a voucher invoice number. Returns zip archive with receipt image files.
       operationId: getReceiptsForOFD
       parameters:
@@ -680,35 +680,11 @@ paths:
         '412':
           $ref: '#/components/responses/412'
 components:
-  parameters:
-    customer-code:
-      name: customer-code
-      in: header
-      description: Unique customer identifier provided by Chrome River
-      required: true
-      schema:
-        type: string
-    chain-id:
-      name: chain-id
-      in: header
-      description: Reference used to track the flow of the request
-      required: true
-      schema:
-        type: string
-    x-api-key:
-      name: x-api-key
-      in: header
-      description: API key for Authentication
-      required: true
-      schema:
-        type: string
   schemas:
     lineItemVoucherInvoiceList:
       type: array
       items:
         $ref: '#/components/schemas/lineItemVoucherInvoice'
-    lineItemVoucherInvoice:
-      type: string
     VoucherInvoiceTO:
       type: object
       properties:
@@ -725,6 +701,30 @@ components:
           type: string
         isReceiptUpdatedAfterExport:
           type: string
+    lineItemVoucherInvoice:
+      type: string
+  parameters:
+    x-api-key:
+      name: x-api-key
+      in: header
+      description: API key for Authentication
+      required: true
+      schema:
+        type: string
+    chain-id:
+      name: chain-id
+      in: header
+      description: Reference used to track the flow of the request
+      required: true
+      schema:
+        type: string
+    customer-code:
+      name: customer-code
+      in: header
+      description: Unique customer identifier provided by Chrome River
+      required: true
+      schema:
+        type: string
   responses:
     '412':
       description: This feature is not activated for customer = %d. Please contact Support@Chromeriver.com

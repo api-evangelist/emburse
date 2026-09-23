@@ -11,13 +11,13 @@ info:
 servers:
 - url: https://service.chromeriver.com
 tags:
-- name: Entity (V1)
+- name: Entity (v1)
   description: V1 Entity Controller
 paths:
   /v1/entities:
     get:
       tags:
-      - Entity (V1)
+      - Entity (v1)
       summary: Get list of Entities
       description: This web service allows an external application to get a list of active entities. This endpoint does not provide filtering by entity code, type code, or status. If filtering is necessary, use GET v2/entities.
       operationId: getUsingGET
@@ -56,7 +56,7 @@ paths:
       deprecated: false
     post:
       tags:
-      - Entity (V1)
+      - Entity (v1)
       summary: Create/Update Entities
       description: This web service allows an external application to create or update a list of entities.
       operationId: upsertEntitiesUsingPOST
@@ -107,7 +107,7 @@ paths:
       deprecated: false
     delete:
       tags:
-      - Entity (V1)
+      - Entity (v1)
       summary: Delete Entities
       description: This web service allows an external application to delete a list of entities.
       operationId: deleteEntitiesUsingDELETE
@@ -178,6 +178,27 @@ components:
         name:
           type: string
       title: EntityLanguage
+    ApiResponse:
+      type: object
+      properties:
+        entityCode:
+          type: string
+        entityTypeCode:
+          type: string
+        errorMessage:
+          type: string
+        operationType:
+          type: string
+          enum:
+          - INSERT
+          - UPDATE
+          - DELETE
+        result:
+          type: string
+          enum:
+          - SUCCESS
+          - FAIL
+      title: ApiResponse
     Entity:
       type: object
       required:
@@ -225,27 +246,6 @@ components:
           items:
             $ref: '#/components/schemas/EntityLanguage'
       title: Entity
-    ApiResponse:
-      type: object
-      properties:
-        entityCode:
-          type: string
-        entityTypeCode:
-          type: string
-        errorMessage:
-          type: string
-        operationType:
-          type: string
-          enum:
-          - INSERT
-          - UPDATE
-          - DELETE
-        result:
-          type: string
-          enum:
-          - SUCCESS
-          - FAIL
-      title: ApiResponse
   requestBodies:
     EntityArray:
       content:
