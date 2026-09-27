@@ -328,63 +328,22 @@ paths:
       deprecated: false
 components:
   schemas:
-    AllocationUDA:
+    UDAPerson:
       type: object
       properties:
         name:
           type: string
-        value:
+        personUniqueId:
           type: string
-      title: AllocationUDA
-    MatterOnSelect:
+      title: UDAPerson
+    PersonTO:
       type: object
       properties:
-        entityTypeCode:
-          type: string
-        matterUniqueID:
-          type: string
-      title: MatterOnSelect
-    EntityTypeTO:
-      type: object
-      properties:
-        code:
-          type: string
-        entityTypeId:
-          type: integer
-          format: int32
         name:
           type: string
-      title: EntityTypeTO
-    MatterUDATO:
-      type: object
-      properties:
-        action:
+        personId:
           type: string
-          enum:
-          - upsert
-          - delete
-        dataType:
-          type: string
-        name:
-          type: string
-        udaName:
-          type: string
-        udaValue:
-          type: string
-        value:
-          type: string
-      title: MatterUDATO
-    AllocationPaginationResponse:
-      type: object
-      properties:
-        allocations:
-          type: array
-          description: List of allocations.
-          items:
-            $ref: '#/components/schemas/ResponseAllocationView'
-        meta:
-          $ref: '#/components/schemas/PaginationMetadata'
-      title: AllocationPaginationResponse
+      title: PersonTO
     ApiResponse:
       type: object
       properties:
@@ -404,6 +363,17 @@ components:
           - SUCCESS
           - FAIL
       title: ApiResponse
+    EntityTypeTO:
+      type: object
+      properties:
+        code:
+          type: string
+        entityTypeId:
+          type: integer
+          format: int32
+        name:
+          type: string
+      title: EntityTypeTO
     MatterFilter:
       type: object
       properties:
@@ -414,169 +384,6 @@ components:
         search2:
           type: string
       title: MatterFilter
-    ResponseAllocationView:
-      type: object
-      properties:
-        allocationId:
-          type: string
-          example: 1000-001_0222
-          description: Unique Allocation ID.
-        allocationName:
-          type: string
-          example: AUTOAPPROVE (BY)
-          description: Corresponding Allocation name.
-        allocationNumber:
-          type: string
-          example: 1000-001
-          description: Unique Allocation number.
-        clientName:
-          type: string
-          example: Autoapprove
-          description: Corresponding Client name.
-        entityTypeId1:
-          type: integer
-          format: int32
-          example: 100500
-          description: Corresponding OnSelect Entity1 ID.
-        entityTypeId2:
-          type: integer
-          format: int32
-          example: 100500
-          description: Corresponding OnSelect Entity2 ID.
-        isRecent:
-          type: boolean
-          example: true
-          description: Corresponding isRecent
-      title: ResponseAllocationView
-    PaginationMetadata:
-      type: object
-      properties:
-        pageNumber:
-          type: integer
-          format: int32
-          example: 1
-          description: Requested page number.
-        pageSize:
-          type: integer
-          format: int32
-          example: 10
-          description: Actual page size.
-        totalPages:
-          type: integer
-          format: int32
-          example: 1
-          description: Total pages (in actual size) in response.
-        totalRecords:
-          type: integer
-          format: int32
-          example: 1
-          description: Total records of allocation in response
-      title: PaginationMetadata
-    AllocationEntity:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-      title: AllocationEntity
-    AllocationView:
-      type: object
-      properties:
-        allocationEntities:
-          type: array
-          description: List of allocation entities.
-          items:
-            $ref: '#/components/schemas/AllocationEntity'
-        allocationName:
-          type: string
-          example: AUTOAPPROVE (BY)
-          description: Corresponding Allocation name.
-        allocationNumber:
-          type: string
-          example: 1000-001
-          description: Unique Allocation number.
-        clientName:
-          type: string
-          example: Autoapprove
-          description: Corresponding Client name.
-        clientNumber:
-          type: string
-          example: cn1000
-          description: Unique Client number.
-        closedDate:
-          type: string
-          example: 2017-10-18 18:46:19+00:00
-          description: Allocation is unavailable for selection after the closedDate.
-        currency:
-          type: string
-          example: USD
-          description: 'Currency code of the Allocation. Format: ISO 4217 code (alpha)'
-        extraLineItemData1LegalValues:
-          type: string
-          example: 00,10,20,30,40
-          description: List of valid GLDept values that may be selected along with this specific allocation. Must map to customer's CodeType.  Values separated by commas
-        filterTerms1:
-          type: array
-          description: List of search terms used for 1st allocation filter.
-          items:
-            type: string
-        filterTerms2:
-          type: array
-          description: List of search terms used for 2nd allocation filter.
-          items:
-            type: string
-        glAccount:
-          type: string
-          example: test GL
-          description: General Ledger Account.
-        locale:
-          type: string
-          example: en
-          description: 'Language of the Allocation. Format: ISO 639-1 (2-letter code)'
-        onSelect1EntityTypeCode:
-          type: string
-          example: false
-          description: Entity Type that will be linked to the allocation On Select 1.
-        onSelect2EntityTypeCode:
-          type: string
-          example: DEP
-          description: Entity Type that will be linked to the allocation On Select 2.
-        parentClientNumber:
-          type: string
-          example: cn1000
-          description: Optional Parent Grouping Identifier.
-        routeIndependent:
-          type: boolean
-          example: true
-          description: Assigns the status of an allocation to treat uniquely when it is considered billable.
-        startDate:
-          type: string
-          example: 2017-10-18 18:46:19+00:00
-          description: Allocation is available for selection from the startDate.
-        type:
-          type: string
-          example: B
-          description: Allocation type.
-        udaPersons:
-          type: array
-          description: List of PersonUniqueIDs used for allocation assignment.
-          items:
-            $ref: '#/components/schemas/UDAPerson'
-        udas:
-          type: array
-          description: List of User Defined Attributes.
-          items:
-            $ref: '#/components/schemas/AllocationUDA'
-      title: AllocationView
-    PersonTO:
-      type: object
-      properties:
-        name:
-          type: string
-        personId:
-          type: string
-      title: PersonTO
     EntityTO:
       type: object
       properties:
@@ -603,11 +410,38 @@ components:
           type: integer
           format: int32
       title: EntityTO
-    Map_string_string_:
+    PaginationMetadata:
       type: object
-      title: Map«string,string»
-      additionalProperties:
-        type: string
+      properties:
+        pageNumber:
+          type: integer
+          format: int32
+          example: 1
+          description: Requested page number.
+        pageSize:
+          type: integer
+          format: int32
+          example: 10
+          description: Actual page size.
+        totalPages:
+          type: integer
+          format: int32
+          example: 1
+          description: Total pages (in actual size) in response.
+        totalRecords:
+          type: integer
+          format: int32
+          example: 1
+          description: Total records of allocation in response
+      title: PaginationMetadata
+    MatterOnSelect:
+      type: object
+      properties:
+        entityTypeCode:
+          type: string
+        matterUniqueID:
+          type: string
+      title: MatterOnSelect
     MatterTO:
       type: object
       properties:
@@ -743,22 +577,181 @@ components:
         udf4:
           type: string
       title: MatterTO
-    UDAPerson:
+    AllocationEntity:
       type: object
       properties:
         name:
           type: string
-        personUniqueId:
+        value:
           type: string
-      title: UDAPerson
+      title: AllocationEntity
+    AllocationPaginationResponse:
+      type: object
+      properties:
+        allocations:
+          type: array
+          description: List of allocations.
+          items:
+            $ref: '#/components/schemas/ResponseAllocationView'
+        meta:
+          $ref: '#/components/schemas/PaginationMetadata'
+      title: AllocationPaginationResponse
+    ResponseAllocationView:
+      type: object
+      properties:
+        allocationId:
+          type: string
+          example: 1000-001_0222
+          description: Unique Allocation ID.
+        allocationName:
+          type: string
+          example: AUTOAPPROVE (BY)
+          description: Corresponding Allocation name.
+        allocationNumber:
+          type: string
+          example: 1000-001
+          description: Unique Allocation number.
+        clientName:
+          type: string
+          example: Autoapprove
+          description: Corresponding Client name.
+        entityTypeId1:
+          type: integer
+          format: int32
+          example: 100500
+          description: Corresponding OnSelect Entity1 ID.
+        entityTypeId2:
+          type: integer
+          format: int32
+          example: 100500
+          description: Corresponding OnSelect Entity2 ID.
+        isRecent:
+          type: boolean
+          example: true
+          description: Corresponding isRecent
+      title: ResponseAllocationView
+    MatterUDATO:
+      type: object
+      properties:
+        action:
+          type: string
+          enum:
+          - upsert
+          - delete
+        dataType:
+          type: string
+        name:
+          type: string
+        udaName:
+          type: string
+        udaValue:
+          type: string
+        value:
+          type: string
+      title: MatterUDATO
+    AllocationUDA:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      title: AllocationUDA
+    AllocationView:
+      type: object
+      properties:
+        allocationEntities:
+          type: array
+          description: List of allocation entities.
+          items:
+            $ref: '#/components/schemas/AllocationEntity'
+        allocationName:
+          type: string
+          example: AUTOAPPROVE (BY)
+          description: Corresponding Allocation name.
+        allocationNumber:
+          type: string
+          example: 1000-001
+          description: Unique Allocation number.
+        clientName:
+          type: string
+          example: Autoapprove
+          description: Corresponding Client name.
+        clientNumber:
+          type: string
+          example: cn1000
+          description: Unique Client number.
+        closedDate:
+          type: string
+          example: 2017-10-18 18:46:19+00:00
+          description: Allocation is unavailable for selection after the closedDate.
+        currency:
+          type: string
+          example: USD
+          description: 'Currency code of the Allocation. Format: ISO 4217 code (alpha)'
+        extraLineItemData1LegalValues:
+          type: string
+          example: 00,10,20,30,40
+          description: List of valid GLDept values that may be selected along with this specific allocation. Must map to customer's CodeType.  Values separated by commas
+        filterTerms1:
+          type: array
+          description: List of search terms used for 1st allocation filter.
+          items:
+            type: string
+        filterTerms2:
+          type: array
+          description: List of search terms used for 2nd allocation filter.
+          items:
+            type: string
+        glAccount:
+          type: string
+          example: test GL
+          description: General Ledger Account.
+        locale:
+          type: string
+          example: en
+          description: 'Language of the Allocation. Format: ISO 639-1 (2-letter code)'
+        onSelect1EntityTypeCode:
+          type: string
+          example: false
+          description: Entity Type that will be linked to the allocation On Select 1.
+        onSelect2EntityTypeCode:
+          type: string
+          example: DEP
+          description: Entity Type that will be linked to the allocation On Select 2.
+        parentClientNumber:
+          type: string
+          example: cn1000
+          description: Optional Parent Grouping Identifier.
+        routeIndependent:
+          type: boolean
+          example: true
+          description: Assigns the status of an allocation to treat uniquely when it is considered billable.
+        startDate:
+          type: string
+          example: 2017-10-18 18:46:19+00:00
+          description: Allocation is available for selection from the startDate.
+        type:
+          type: string
+          example: B
+          description: Allocation type.
+        udaPersons:
+          type: array
+          description: List of PersonUniqueIDs used for allocation assignment.
+          items:
+            $ref: '#/components/schemas/UDAPerson'
+        udas:
+          type: array
+          description: List of User Defined Attributes.
+          items:
+            $ref: '#/components/schemas/AllocationUDA'
+      title: AllocationView
+    Map_string_string_:
+      type: object
+      title: Map«string,string»
+      additionalProperties:
+        type: string
   requestBodies:
-    MatterOnSelect:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/MatterOnSelect'
-      description: matterOnSelect
-      required: true
     AllocationViewArray:
       content:
         application/json:
@@ -767,4 +760,11 @@ components:
             items:
               $ref: '#/components/schemas/AllocationView'
       description: List of allocations
+      required: true
+    MatterOnSelect:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/MatterOnSelect'
+      description: matterOnSelect
       required: true

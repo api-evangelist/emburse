@@ -680,29 +680,6 @@ paths:
         '412':
           $ref: '#/components/responses/412'
 components:
-  schemas:
-    lineItemVoucherInvoiceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/lineItemVoucherInvoice'
-    VoucherInvoiceTO:
-      type: object
-      properties:
-        reportID:
-          type: string
-        voucherInvoice:
-          type: string
-        invoiceDate:
-          type: string
-          format: date-time
-        invoiceDateString:
-          type: string
-        vendorNumber:
-          type: string
-        isReceiptUpdatedAfterExport:
-          type: string
-    lineItemVoucherInvoice:
-      type: string
   parameters:
     x-api-key:
       name: x-api-key
@@ -725,6 +702,29 @@ components:
       required: true
       schema:
         type: string
+  schemas:
+    lineItemVoucherInvoice:
+      type: string
+    VoucherInvoiceTO:
+      type: object
+      properties:
+        reportID:
+          type: string
+        voucherInvoice:
+          type: string
+        invoiceDate:
+          type: string
+          format: date-time
+        invoiceDateString:
+          type: string
+        vendorNumber:
+          type: string
+        isReceiptUpdatedAfterExport:
+          type: string
+    lineItemVoucherInvoiceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/lineItemVoucherInvoice'
   responses:
     '412':
       description: This feature is not activated for customer = %d. Please contact Support@Chromeriver.com

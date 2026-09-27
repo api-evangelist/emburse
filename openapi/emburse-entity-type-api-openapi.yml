@@ -463,7 +463,42 @@ paths:
           description: Service unavailable.
       deprecated: false
 components:
+  requestBodies:
+    EntityTypeLanguage:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EntityTypeLanguage'
+      description: entityTypeLanguage
+      required: true
   schemas:
+    EntityTypeModel:
+      type: object
+      required:
+      - code
+      - description
+      - name
+      properties:
+        code:
+          type: string
+          example: DEPT
+        name:
+          type: string
+          example: Department
+        description:
+          type: string
+          example: List of departments
+        loadOnLogin:
+          type: boolean
+          description: Flag to cache Entity Type during login process.
+        sortType:
+          type: string
+          description: Sort type for list of Entities for Entity Type
+          enum:
+          - NAME
+          - CODE
+          - SORT_ORDER
+      title: EntityTypeModel
     EntityTypeLanguage:
       type: object
       required:
@@ -512,38 +547,3 @@ components:
           - CODE
           - SORT_ORDER
       title: EntityType
-    EntityTypeModel:
-      type: object
-      required:
-      - code
-      - description
-      - name
-      properties:
-        code:
-          type: string
-          example: DEPT
-        name:
-          type: string
-          example: Department
-        description:
-          type: string
-          example: List of departments
-        loadOnLogin:
-          type: boolean
-          description: Flag to cache Entity Type during login process.
-        sortType:
-          type: string
-          description: Sort type for list of Entities for Entity Type
-          enum:
-          - NAME
-          - CODE
-          - SORT_ORDER
-      title: EntityTypeModel
-  requestBodies:
-    EntityTypeLanguage:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/EntityTypeLanguage'
-      description: entityTypeLanguage
-      required: true

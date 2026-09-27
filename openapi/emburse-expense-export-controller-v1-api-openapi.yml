@@ -170,20 +170,24 @@ paths:
           description: Service unavailable. Please try again later.
       deprecated: false
 components:
+  requestBodies:
+    ExportStatusModel:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExportStatusModel'
+      description: Payload required to post status of an export
+      required: true
+    repostExternalExportStatusByExportIdsUsingPATCHListOfExportids:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string
+      description: exportIds
+      required: true
   schemas:
-    ExportIdsModel:
-      type: object
-      required:
-      - exportIds
-      properties:
-        exportIds:
-          type: array
-          example:
-          - 5F98D1D2-B67E-DDC5-EF62-2237531E8ADB
-          description: List of export IDs.
-          items:
-            type: string
-      title: ExportIdsModel
     ExportStatusModel:
       type: object
       required:
@@ -210,20 +214,16 @@ components:
           - error
           - transferred
       title: ExportStatusModel
-  requestBodies:
-    ExportStatusModel:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ExportStatusModel'
-      description: Payload required to post status of an export
-      required: true
-    repostExternalExportStatusByExportIdsUsingPATCHListOfExportids:
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              type: string
-      description: exportIds
-      required: true
+    ExportIdsModel:
+      type: object
+      required:
+      - exportIds
+      properties:
+        exportIds:
+          type: array
+          example:
+          - 5F98D1D2-B67E-DDC5-EF62-2237531E8ADB
+          description: List of export IDs.
+          items:
+            type: string
+      title: ExportIdsModel

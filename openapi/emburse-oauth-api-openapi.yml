@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Emburse Cards OAUTH API
+  title: Emburse Cards OAuth API
   version: 1.0.0
   description: Emburse Cards API enables the creation and management of virtual and physical spending cards at scale for custom business solutions and third-party integrations.
 servers:
@@ -193,14 +193,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Answer:
-      type: object
-      properties:
-        answer:
-          type: string
-          writeOnly: true
-      required:
-      - answer
     RevokeToken:
       type: object
       properties:
@@ -216,6 +208,14 @@ components:
       required:
       - client_id
       - client_secret
+    Answer:
+      type: object
+      properties:
+        answer:
+          type: string
+          writeOnly: true
+      required:
+      - answer
   securitySchemes:
     BearerAuth:
       type: http

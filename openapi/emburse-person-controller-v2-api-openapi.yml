@@ -211,51 +211,6 @@ components:
       required:
       - code
       - type
-    PersonEntityView:
-      type: object
-      properties:
-        roleName:
-          type: string
-          description: The name of the role for the person-entity relationship. Max 50 characters
-          example: APReview
-        entityTypeCode:
-          type: string
-          description: The entity type code for the person-entity relationship. Max 50 characters
-          example: DEPT
-        entityTypeName:
-          type: string
-          description: The entity type name for the person-entity relationship; not required for create/update. Max 50 characters
-          example: Department
-        entityCode:
-          type: string
-          description: The entity code for the person-entity relationship. Max 50 characters
-          example: 100
-        entityName:
-          type: string
-          description: The entity name for the person-entity relationship; not required for create/update. Max 100 characters
-          example: Administrative
-      required:
-      - entityCode
-      - entityTypeCode
-      - roleName
-    Response:
-      type: object
-      properties:
-        personUniqueId:
-          type: string
-          description: Unique identifier for a person
-          example: jdoe
-        result:
-          type: string
-          description: Result of operation
-          enum:
-          - SUCCESS
-          - FAIL
-          example: FAIL
-        errorMessage:
-          type: string
-          description: Error message provided for a FAIL result
-          example: firstName may not be empty
     PersonUdaView:
       type: object
       properties:
@@ -487,3 +442,48 @@ components:
       - primaryEmailAddress
       - status
       - username
+    Response:
+      type: object
+      properties:
+        personUniqueId:
+          type: string
+          description: Unique identifier for a person
+          example: jdoe
+        result:
+          type: string
+          description: Result of operation
+          enum:
+          - SUCCESS
+          - FAIL
+          example: FAIL
+        errorMessage:
+          type: string
+          description: Error message provided for a FAIL result
+          example: firstName may not be empty
+    PersonEntityView:
+      type: object
+      properties:
+        roleName:
+          type: string
+          description: The name of the role for the person-entity relationship. Max 50 characters
+          example: APReview
+        entityTypeCode:
+          type: string
+          description: The entity type code for the person-entity relationship. Max 50 characters
+          example: DEPT
+        entityTypeName:
+          type: string
+          description: The entity type name for the person-entity relationship; not required for create/update. Max 50 characters
+          example: Department
+        entityCode:
+          type: string
+          description: The entity code for the person-entity relationship. Max 50 characters
+          example: 100
+        entityName:
+          type: string
+          description: The entity name for the person-entity relationship; not required for create/update. Max 100 characters
+          example: Administrative
+      required:
+      - entityCode
+      - entityTypeCode
+      - roleName

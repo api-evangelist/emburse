@@ -497,14 +497,6 @@ paths:
           description: Invoice has been deleted or no longer assigned for approval.
       deprecated: false
 components:
-  requestBodies:
-    InvoiceSubmitOptionsExternal:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/InvoiceSubmitOptionsExternal'
-      description: ' '
-      required: true
   schemas:
     InvoicePaymentOutput:
       type: object
@@ -556,6 +548,37 @@ components:
           - CHECK
           - CC
       title: InvoicePaymentOutput
+    InvoicePaymentFilter:
+      type: object
+      properties:
+        invoiceId:
+          type: string
+          example: test
+          description: Filter Invoice Number of Paid Invoice. 36 characters limit
+        paidDateFrom:
+          type: string
+          format: date-time
+          description: 'Filter Invoice Payment Completion Date From Bottom, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        paidDateTo:
+          type: string
+          format: date-time
+          description: 'Filter Invoice Payment Completion Date To Top, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+      title: InvoicePaymentFilter
+    InvoiceFilter:
+      type: object
+      required:
+      - fromDate
+      - toDate
+      properties:
+        fromDate:
+          type: string
+          example: 2025-12-01 00:01:00+00:00
+          description: Initial dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
+        toDate:
+          type: string
+          example: 2025-12-02 00:00:00+00:00
+          description: Final dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
+      title: InvoiceFilter
     InvoiceSubmitOptionsExternal:
       type: object
       required:
@@ -609,6 +632,70 @@ components:
           - BLKS
           - NONE
       title: InvoiceSubmitOptionsExternal
+    InvoicePaymentCustomer:
+      type: object
+      required:
+      - amount
+      - currencyCode
+      - invoiceId
+      - paidDate
+      properties:
+        amount:
+          type: number
+          example: 1000
+          description: Payment Amount for the Invoice
+        amountDiscount:
+          type: number
+          example: 1000
+          description: Discount Amount for the Invoice
+        bankNumber:
+          type: string
+          example: 25
+          description: Bank Account Number. 36 character limit
+        checkMailedDate:
+          type: string
+          format: date-time
+          description: 'Check Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        checkNumber:
+          type: string
+          example: 47029
+          description: Check Number. 36 character limit
+        currencyCode:
+          type: string
+          example: USD
+          description: Currency in which Paid Invoice is created. These codes are standard three character values (e.g., USD, GBP, JPY, HKD, etc).
+        dupeChecks:
+          type: array
+          example:
+          - InvoiceID
+          - AmountSpent
+          description: Fields to use for duplicate check. Will only be used when checkDupePayments is set to True
+          items:
+            type: string
+            enum:
+            - AmountSpent
+            - CurrencyCode
+            - PaidDate
+            - CheckNumber
+            - BankNumber
+            - InvoiceID
+        invoiceId:
+          type: string
+          example: test
+          description: Invoice Number of Paid Invoice. 36 characters limit
+        paidDate:
+          type: string
+          format: date-time
+          description: 'Invoice Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        paymentMethod:
+          type: string
+          example: ACH
+          description: PaymentMethod, Examples value are "ACH", "CHECK", "CC"
+          enum:
+          - ACH
+          - CHECK
+          - CC
+      title: InvoicePaymentCustomer
     InvoicePaymentExternal:
       type: object
       required:
@@ -694,133 +781,6 @@ components:
           type: string
           description: Transaction Number. 36 character limit
       title: InvoicePaymentExternal
-    InvoicePaymentFilter:
-      type: object
-      properties:
-        invoiceId:
-          type: string
-          example: test
-          description: Filter Invoice Number of Paid Invoice. 36 characters limit
-        paidDateFrom:
-          type: string
-          format: date-time
-          description: 'Filter Invoice Payment Completion Date From Bottom, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        paidDateTo:
-          type: string
-          format: date-time
-          description: 'Filter Invoice Payment Completion Date To Top, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-      title: InvoicePaymentFilter
-    InvoiceError:
-      type: object
-      properties:
-        chain-id:
-          type: string
-        code:
-          type: string
-        detail:
-          type: string
-        id:
-          type: string
-        message:
-          type: string
-        meta:
-          type: object
-        session-id:
-          type: string
-        status:
-          type: string
-        title:
-          type: string
-      title: InvoiceError
-    InvoiceSDIResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/InvoiceHeaderSDI'
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/InvoiceError'
-      title: InvoiceSDIResponse
-    InvoicePaymentCustomer:
-      type: object
-      required:
-      - amount
-      - currencyCode
-      - invoiceId
-      - paidDate
-      properties:
-        amount:
-          type: number
-          example: 1000
-          description: Payment Amount for the Invoice
-        amountDiscount:
-          type: number
-          example: 1000
-          description: Discount Amount for the Invoice
-        bankNumber:
-          type: string
-          example: 25
-          description: Bank Account Number. 36 character limit
-        checkMailedDate:
-          type: string
-          format: date-time
-          description: 'Check Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        checkNumber:
-          type: string
-          example: 47029
-          description: Check Number. 36 character limit
-        currencyCode:
-          type: string
-          example: USD
-          description: Currency in which Paid Invoice is created. These codes are standard three character values (e.g., USD, GBP, JPY, HKD, etc).
-        dupeChecks:
-          type: array
-          example:
-          - InvoiceID
-          - AmountSpent
-          description: Fields to use for duplicate check. Will only be used when checkDupePayments is set to True
-          items:
-            type: string
-            enum:
-            - AmountSpent
-            - CurrencyCode
-            - PaidDate
-            - CheckNumber
-            - BankNumber
-            - InvoiceID
-        invoiceId:
-          type: string
-          example: test
-          description: Invoice Number of Paid Invoice. 36 characters limit
-        paidDate:
-          type: string
-          format: date-time
-          description: 'Invoice Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        paymentMethod:
-          type: string
-          example: ACH
-          description: PaymentMethod, Examples value are "ACH", "CHECK", "CC"
-          enum:
-          - ACH
-          - CHECK
-          - CC
-      title: InvoicePaymentCustomer
-    InvoiceFilter:
-      type: object
-      required:
-      - fromDate
-      - toDate
-      properties:
-        fromDate:
-          type: string
-          example: 2025-12-01 00:01:00+00:00
-          description: Initial dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
-        toDate:
-          type: string
-          example: 2025-12-02 00:00:00+00:00
-          description: Final dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
-      title: InvoiceFilter
     Invoice:
       type: object
       required:
@@ -846,6 +806,28 @@ components:
           type: string
           description: Vendor unique Id
       title: Invoice
+    InvoiceError:
+      type: object
+      properties:
+        chain-id:
+          type: string
+        code:
+          type: string
+        detail:
+          type: string
+        id:
+          type: string
+        message:
+          type: string
+        meta:
+          type: object
+        session-id:
+          type: string
+        status:
+          type: string
+        title:
+          type: string
+      title: InvoiceError
     InvoiceHeaderSDI:
       type: object
       properties:
@@ -931,3 +913,21 @@ components:
           - BLKS
           - NONE
       title: InvoiceAssignOptionsExternal
+    InvoiceSDIResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/InvoiceHeaderSDI'
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/InvoiceError'
+      title: InvoiceSDIResponse
+  requestBodies:
+    InvoiceSubmitOptionsExternal:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/InvoiceSubmitOptionsExternal'
+      description: ' '
+      required: true

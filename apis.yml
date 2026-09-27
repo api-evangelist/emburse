@@ -114,7 +114,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-allocation-api-controller-v-1-api
-  name: Emburse allocation-api-controller-v-1 API
+  name: Emburse Allocation API Controller V 1 API
   description: >-
     The allocation-api-controller-v-1 API from Emburse — 1 operation(s) for allocation-api-controller-v-1.
   humanURL: https://www.emburse.com/api-docs
@@ -129,7 +129,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-allocation-api-controller-v-2-api
-  name: Emburse allocation-api-controller-v-2 API
+  name: Emburse Allocation API Controller V 2 API
   description: >-
     The allocation-api-controller-v-2 API from Emburse — 1 operation(s) for allocation-api-controller-v-2.
   humanURL: https://www.emburse.com/api-docs
@@ -144,7 +144,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-allocation-api-controller-v-3-api
-  name: Emburse allocation-api-controller-v-3 API
+  name: Emburse Allocation API Controller V 3 API
   description: >-
     V3 endpoints include better support and error handling for allocation user defined attributes (UDA).
   humanURL: https://www.emburse.com/api-docs
@@ -271,7 +271,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-approval-controller-v1-api
-  name: Emburse expense-approval-controller-v1 API
+  name: Emburse Expense Approval Controller V1 API
   description: Approve, return and reassign expense reports.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -285,7 +285,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-approval-controller-v2-api
-  name: Emburse expense-approval-controller-v2 API
+  name: Emburse Expense Approval Controller V2 API
   description: Approve, return and reassign expense reports using username or email of approver.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -299,7 +299,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-controller-v1-api
-  name: Emburse expense-controller-v1 API
+  name: Emburse Expense Controller V1 API
   description: Retrieve expense report information and create draft expense reports
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -313,7 +313,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-controller-v3-api
-  name: Emburse expense-controller-v3 API
+  name: Emburse Expense Controller V3 API
   description: Retrieve expense reports by filter(s)
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -327,7 +327,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-export-controller-v1-api
-  name: Emburse expense-export-controller-v1 API
+  name: Emburse Expense Export Controller V1 API
   description: Get and post expense export information.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -341,7 +341,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-export-controller-v2-api
-  name: Emburse expense-export-controller-v2 API
+  name: Emburse Expense Export Controller V2 API
   description: Get and post expense or invoice export information.
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -355,7 +355,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-image-api-api
-  name: Emburse expense-image-api
+  name: Emburse Expense Image API
   description: Retrieve Expense Report Receipts / Images
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -369,7 +369,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-receipts-controller-api
-  name: Emburse expense-receipts-controller API
+  name: Emburse Expense Receipts Controller API
   description: Retrieve expense receipt PDF
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -383,7 +383,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-report-line-item-controller-api
-  name: Emburse expense-report-line-item-controller API
+  name: Emburse Expense Report Line Item Controller API
   description: Retrieve expense report line items
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -397,7 +397,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-expense-types-controller-api
-  name: Emburse expense-types-controller API
+  name: Emburse Expense Types Controller API
   description: Retrieve expense type information
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -411,7 +411,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-invoice-api-external-controller-api
-  name: Emburse invoice-api-external-controller API
+  name: Emburse Invoice API External Controller API
   description: Operations in Invoice Api
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -483,7 +483,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-paid-expense-controller-api
-  name: Emburse paid-expense-controller API
+  name: Emburse Paid Expense Controller API
   description: Post payments
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -497,7 +497,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-person-controller-v2-api
-  name: Emburse person-controller-v2 API
+  name: Emburse Person Controller V2 API
   description: Person Controller v2
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -511,7 +511,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-person-controller-v3-api
-  name: Emburse person-controller-v3 API
+  name: Emburse Person Controller V3 API
   description: Person Controller v3
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -525,7 +525,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-person-controller-v4-api
-  name: Emburse person-controller-v4 API
+  name: Emburse Person Controller V4 API
   description: Person Web Services
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -539,7 +539,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-po-api-controller-api
-  name: Emburse po-api-controller API
+  name: Emburse Po API Controller API
   description: Operations in PO APIs
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -553,7 +553,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-po-api-receipt-controller-api
-  name: Emburse po-api-receipt-controller API
+  name: Emburse Po API Receipt Controller API
   description: Operations in PO Receipts APIs
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -567,7 +567,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-pre-approval-api-controller-api
-  name: Emburse pre-approval-api-controller API
+  name: Emburse Pre Approval API Controller API
   description: >-
     The pre-approval-api-controller API from Emburse — 9 operation(s) for pre-approval-api-controller.
   humanURL: https://www.emburse.com/api-docs
@@ -582,7 +582,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-pre-approval-api-controller-v-2-api
-  name: Emburse pre-approval-api-controller-v-2 API
+  name: Emburse Pre Approval API Controller V 2 API
   description: >-
     The pre-approval-api-controller-v-2 API from Emburse — 3 operation(s) for pre-approval-api-controller-v-2.
   humanURL: https://www.emburse.com/api-docs
@@ -597,7 +597,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-pre-approval-api-export-controller-api
-  name: Emburse pre-approval-api-export-controller API
+  name: Emburse Pre Approval API Export Controller API
   description: >-
     The pre-approval-api-export-controller API from Emburse — 4 operation(s) for pre-approval-api-export-controller.
   humanURL: https://www.emburse.com/api-docs
@@ -612,7 +612,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-pre-approval-import-controller-api
-  name: Emburse pre-approval-import-controller API
+  name: Emburse Pre Approval Import Controller API
   description: >-
     The pre-approval-import-controller API from Emburse — 1 operation(s) for pre-approval-import-controller.
   humanURL: https://www.emburse.com/api-docs
@@ -641,7 +641,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-returned-payments-controller-api
-  name: Emburse returned-payments-controller API
+  name: Emburse Returned Payments Controller API
   description: Retrieve information concerning returned payments
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -655,7 +655,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-sap-person-controller-api
-  name: Emburse sap-person-controller API
+  name: Emburse Sap Person Controller API
   description: Sap Person Controller
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/
@@ -728,7 +728,7 @@ apis:
   - type: Documentation
     url: https://www.emburse.com/enterprise/implementation-toolkit/rest-api-specifications
 - aid: emburse:emburse-vendor-api-controller-api
-  name: Emburse vendor-api-controller API
+  name: Emburse Vendor API Controller API
   description: Operations in Vendor API application service
   humanURL: https://www.emburse.com/api-docs
   baseURL: https://api.emburse.com/v1/

@@ -170,14 +170,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    EntityLanguage:
-      type: object
-      properties:
-        locale:
-          type: string
-        name:
-          type: string
-      title: EntityLanguage
     ApiResponse:
       type: object
       properties:
@@ -199,6 +191,14 @@ components:
           - SUCCESS
           - FAIL
       title: ApiResponse
+    EntityLanguage:
+      type: object
+      properties:
+        locale:
+          type: string
+        name:
+          type: string
+      title: EntityLanguage
     Entity:
       type: object
       required:
