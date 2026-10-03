@@ -182,6 +182,14 @@ paths:
       deprecated: false
 components:
   schemas:
+    EntityLanguage:
+      type: object
+      properties:
+        locale:
+          type: string
+        name:
+          type: string
+      title: EntityLanguage
     GetEntitiesApiResponse:
       type: object
       properties:
@@ -193,14 +201,6 @@ components:
           type: integer
           format: int32
       title: GetEntitiesApiResponse
-    EntityLanguage:
-      type: object
-      properties:
-        locale:
-          type: string
-        name:
-          type: string
-      title: EntityLanguage
     Entity:
       type: object
       required:

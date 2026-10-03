@@ -406,133 +406,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    LineItemAllocation:
-      type: object
-      properties:
-        allocationId:
-          type: string
-          example: 001109-600001_001109
-          description: Allocation identifier. Max 255 characters
-        allocationRefereceString:
-          type: string
-          example: 1000-7302-FirmPaid
-          description: Concatenated string of all allocation reference values. Max 1650 characters
-        allocationReference:
-          $ref: '#/components/schemas/LineItemAllocationReference'
-        amount:
-          type: number
-          example: 25
-          description: Amount of total expense due to allocation
-        amountSpentApproved:
-          type: number
-          example: 25
-          description: Amount of total approved expense due to allocation
-        clientName:
-          type: string
-          example: FIRM FUNCTIONS (CHICAGO)
-          description: Allocation client name. Max 130 characters
-        clientNumber:
-          type: string
-          example: 1000
-          description: Allocation number. Max 150 characters
-        costCodeOverride:
-          type: string
-          example: 617500
-          description: Cost code override value. Max 50 characters
-        description:
-          type: string
-          example: Athletics
-          description: Description of allocation. Max 255 characters
-        entityField1:
-          type: string
-          example: 801
-          description: Entity field. Max 50 characters
-        entityField2:
-          type: string
-          example: 700
-          description: Entity field. Max 50 characters
-        entityField3:
-          type: string
-          example: 9999
-          description: Entity field. Max 50 characters
-        glAccount:
-          type: string
-          example: 617500
-          description: GL account. Max 50 characters
-        isPersonal:
-          type: boolean
-          example: false
-          description: Indicates whether this is a personal allocation
-        matterOnSelect1:
-          type: string
-          description: Matter on select 1. Max 50 characters
-        matterOnSelect2:
-          type: string
-          description: Matter on select 2. Max 50 characters
-        number:
-          type: string
-          example: 001109-600001
-          description: Allocation number. Max 150 characters
-        percent:
-          type: number
-          example: 50
-          description: Percent of total expense due to allocation
-        type:
-          type: string
-          example: 1000
-          description: Allocation type. Max 10 characters
-        udf1:
-          type: string
-          example: General
-          description: User defined field. Max 50 characters
-        udf2:
-          type: string
-          example: PTBSM1
-          description: User defined field. Max 50 characters
-        udf3:
-          type: string
-          example: RCM2
-          description: User defined field. Max 50 characters
-        udf4:
-          type: string
-          description: User defined field. Max 50 characters
-        vatAmount:
-          type: number
-          example: 4.33
-          description: Amount of VAT tax
-        vatAmount2:
-          type: number
-          example: 4.33
-          description: Amount of VAT tax
-        vatAmount3:
-          type: number
-          example: 4.33
-          description: Amount of VAT tax
-        vatTaxCode:
-          type: string
-          example: HST
-          description: VAT tax code. Max 10 characters
-        vatTaxCode2:
-          type: string
-          example: GST
-          description: VAT tax code 2. Max 10 characters
-        vatTaxCode3:
-          type: string
-          example: PST
-          description: VAT tax code 3. Max 10 characters
-        vatTaxPercentage:
-          type: number
-          example: 5
-          description: Rate of VAT tax
-        vatTaxPercentage2:
-          type: number
-          example: 5
-          description: Rate of VAT tax
-        vatTaxPercentage3:
-          type: number
-          example: 5
-          description: Rate of VAT tax
-      title: LineItemAllocation
     ExpenseReport:
       type: object
       properties:
@@ -647,6 +520,58 @@ components:
           example: 2022-01-12 05:34:32:000
           description: Date expense report was last updated
       title: ExpenseReport
+    LineItemAllocationReference:
+      type: object
+      properties:
+        allocationSeg1:
+          type: string
+          description: Allocation reference segment 1. Max 100 characters
+        allocationSeg10:
+          type: string
+          description: Allocation reference segment 10. Max 100 characters
+        allocationSeg11:
+          type: string
+          description: Allocation reference segment 11. Max 100 characters
+        allocationSeg12:
+          type: string
+          description: Allocation reference segment 12. Max 100 characters
+        allocationSeg13:
+          type: string
+          description: Allocation reference segment 13. Max 100 characters
+        allocationSeg14:
+          type: string
+          description: Allocation reference segment 14. Max 100 characters
+        allocationSeg15:
+          type: string
+          description: Allocation reference segment 15. Max 100 characters
+        allocationSeg16:
+          type: string
+          description: Allocation reference segment 16. Max 100 characters
+        allocationSeg2:
+          type: string
+          description: Allocation reference segment 2. Max 100 characters
+        allocationSeg3:
+          type: string
+          description: Allocation reference segment 3. Max 100 characters
+        allocationSeg4:
+          type: string
+          description: Allocation reference segment 4. Max 100 characters
+        allocationSeg5:
+          type: string
+          description: Allocation reference segment 5. Max 100 characters
+        allocationSeg6:
+          type: string
+          description: Allocation reference segment 6. Max 100 characters
+        allocationSeg7:
+          type: string
+          description: Allocation reference segment 7. Max 100 characters
+        allocationSeg8:
+          type: string
+          description: Allocation reference segment 8. Max 100 characters
+        allocationSeg9:
+          type: string
+          description: Allocation reference segment 9. Max 100 characters
+      title: LineItemAllocationReference
     ExpenseHeaderNote:
       type: object
       properties:
@@ -676,53 +601,105 @@ components:
           type: string
           format: date-time
       title: ExpenseHeaderNote
-    PaLineItemType:
+    PerDiemRate:
       type: object
       properties:
-        externalRef:
+        amountMaximumPerDiem:
+          type: number
+        city:
           type: string
-          example: 4320
-          description: Reference to an external system's expense types. Max 50 characters
-        id:
+      title: PerDiemRate
+    ComplianceItem:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Receipt must be attached > 10.00 USD
+          description: Description of compliance issue
+        messageCode:
+          type: string
+          example: 422
+          description: Compliance code that was issued. Max 10 characters
+        response:
+          type: string
+          example: Lost the receipt
+          description: Expense owner's response to compliance issue. Max 255 characters
+        status:
+          type: string
+          example: Validated
+          description: Compliance status
+          enum:
+          - New
+          - Violation
+          - Warning
+          - Validated
+          - NonValidated
+        type:
           type: integer
           format: int32
-          example: 1398
-          description: Internal ID of preapproval line item
-        name:
-          type: string
-          example: Airfare
-          description: Expense type of preapproval line item. Max 50 characters
-        type:
-          type: string
-          example: LineItem
+          example: 0
           enum:
-          - LineItem
-          - Header
-      title: PaLineItemType
-    PersonEntities:
+          - 0
+          - 1
+      title: ComplianceItem
+    ExpenseReportLineItemPersonGuest:
       type: object
       properties:
-        entityCode:
+        amount:
+          type: number
+          example: 11.98
+          description: Amount of expense spent by/for guest
+        company:
           type: string
-          example: FIN
-          description: Entity code. Max 50 characters
-        entityName:
+          example: CFA Consultants
+          description: Company of guest. Max 100 characters
+        firstName:
           type: string
-          example: Finance
-          description: Entity name. Max 100 characters
-        entityTypeCode:
+          example: Jennifer
+          description: First name of guest. Max 100 characters
+        guestType:
           type: string
-          example: DEPT
-          description: Entity type code. Max 32 characters
-        entityTypeName:
+          example: InternalGuest
+          description: Type of guest
+          enum:
+          - InternalGuest
+          - ExternalGuest
+          - HealthCareProvider
+          - TemporaryHealthCareProvider
+          - CRMGuest
+        lastName:
           type: string
-          example: Department
-          description: Entity type name. Max 50 characters
-        roleName:
+          example: Garth
+          description: Last name of guest. Max 100 characters
+        percentage:
+          type: number
+          example: 10
+          description: Percentage of expense spent by/for guest
+        title:
           type: string
-          example: Part Of
-          description: Role name for the person-entity relationship. Max 50 characters
-      title: PersonEntities
+          example: Legal Consultant
+          description: Title of guest. Max 255 characters
+      title: ExpenseReportLineItemPersonGuest
+    BudgetDetail:
+      type: object
+      properties:
+        amount:
+          type: number
+        budgetId:
+          type: string
+        docLineItemId:
+          type: string
+        docType:
+          type: string
+        encumbered:
+          type: boolean
+        externalReference:
+          type: string
+        ruleCode:
+          type: string
+        type:
+          type: string
+      title: BudgetDetail
     ExpenseReportLineItem:
       type: object
       properties:
@@ -1162,96 +1139,101 @@ components:
           example: Los Angeles
           description: Name of entity. Max 100 characters
       title: Entity
-    LineItemAllocationReference:
+    UserDefinedAttribute:
       type: object
       properties:
-        allocationSeg1:
-          type: string
-          description: Allocation reference segment 1. Max 100 characters
-        allocationSeg10:
-          type: string
-          description: Allocation reference segment 10. Max 100 characters
-        allocationSeg11:
-          type: string
-          description: Allocation reference segment 11. Max 100 characters
-        allocationSeg12:
-          type: string
-          description: Allocation reference segment 12. Max 100 characters
-        allocationSeg13:
-          type: string
-          description: Allocation reference segment 13. Max 100 characters
-        allocationSeg14:
-          type: string
-          description: Allocation reference segment 14. Max 100 characters
-        allocationSeg15:
-          type: string
-          description: Allocation reference segment 15. Max 100 characters
-        allocationSeg16:
-          type: string
-          description: Allocation reference segment 16. Max 100 characters
-        allocationSeg2:
-          type: string
-          description: Allocation reference segment 2. Max 100 characters
-        allocationSeg3:
-          type: string
-          description: Allocation reference segment 3. Max 100 characters
-        allocationSeg4:
-          type: string
-          description: Allocation reference segment 4. Max 100 characters
-        allocationSeg5:
-          type: string
-          description: Allocation reference segment 5. Max 100 characters
-        allocationSeg6:
-          type: string
-          description: Allocation reference segment 6. Max 100 characters
-        allocationSeg7:
-          type: string
-          description: Allocation reference segment 7. Max 100 characters
-        allocationSeg8:
-          type: string
-          description: Allocation reference segment 8. Max 100 characters
-        allocationSeg9:
-          type: string
-          description: Allocation reference segment 9. Max 100 characters
-      title: LineItemAllocationReference
-    ExpenseReportLineItemPersonGuest:
-      type: object
-      properties:
-        amount:
+        booleanValue:
+          type: boolean
+          description: Populated if UDA is a boolean value
+        currencyValue:
           type: number
-          example: 11.98
-          description: Amount of expense spent by/for guest
-        company:
+          example: 100
+          description: Populated if UDA is a monetary value
+        dateValue:
           type: string
-          example: CFA Consultants
-          description: Company of guest. Max 100 characters
+          format: date-time
+          description: Populated if UDA is a date value
+        entityValue:
+          $ref: '#/components/schemas/Entity'
+        entityValueInt:
+          type: integer
+          format: int32
+          example: 90
+          description: Populated if UDA is an entity. ID of entity
+        numberValue:
+          type: number
+          example: 100
+          description: Populated if UDA is a number value
+        stringValue:
+          type: string
+          example: 1000 North Sunset Road
+          description: Populated if UDA is a String value. Max 1000 characters
+        udaDataType:
+          type: string
+          example: booleanValue
+          description: DataType of UDA
+          enum:
+          - booleanValue
+          - stringValue
+          - numberValue
+          - currencyValue
+          - entityValue
+          - dateValue
+        udaName:
+          type: string
+          description: Name of user defined attribute. Max 60 characters
+      title: UserDefinedAttribute
+    Person:
+      type: object
+      properties:
         firstName:
           type: string
-          example: Jennifer
-          description: First name of guest. Max 100 characters
-        guestType:
-          type: string
-          example: InternalGuest
-          description: Type of guest
-          enum:
-          - InternalGuest
-          - ExternalGuest
-          - HealthCareProvider
-          - TemporaryHealthCareProvider
-          - CRMGuest
+          example: Smith
+          description: Person's last name. Max 100 characters
         lastName:
           type: string
-          example: Garth
-          description: Last name of guest. Max 100 characters
-        percentage:
-          type: number
-          example: 10
-          description: Percentage of expense spent by/for guest
+          example: Jacob
+          description: Person's first name. Max 100 characters
+        personEntities:
+          type: array
+          description: List of person entities associated with person
+          items:
+            $ref: '#/components/schemas/PersonEntities'
+        personUniqueId:
+          type: string
+          example: jsmith
+          description: Unique identifier for person. Max 100 characters
+        primaryEmailAddress:
+          type: string
+          example: jacob.smith@cpa.org
+          description: Person's primary email address. Max 100 characters
+        reportsToUniqueId:
+          type: string
+          example: lkemp
+          description: Unique identifier for manager person reports to
         title:
           type: string
-          example: Legal Consultant
-          description: Title of guest. Max 255 characters
-      title: ExpenseReportLineItemPersonGuest
+          example: Associate Accountant
+          description: Person's title. Max 255 characters
+        uniquePersonId:
+          type: string
+      title: Person
+    Comment:
+      type: object
+      properties:
+        comment:
+          type: string
+          example: Submitted via Chrome River Application. Max 2000 characters
+        createDate:
+          type: string
+          format: date-time
+          example: 2023-01-09 10:57:53+00:00
+          description: Date of comment creation.
+        creatorName:
+          type: string
+          example: Jason Klein
+          description: Name of comment author
+      title: Comment
     OpenExpenseReport:
       type: object
       properties:
@@ -1268,6 +1250,30 @@ components:
           example: 010093028019
           description: 12 digit report ID
       title: OpenExpenseReport
+    PersonEntities:
+      type: object
+      properties:
+        entityCode:
+          type: string
+          example: FIN
+          description: Entity code. Max 50 characters
+        entityName:
+          type: string
+          example: Finance
+          description: Entity name. Max 100 characters
+        entityTypeCode:
+          type: string
+          example: DEPT
+          description: Entity type code. Max 32 characters
+        entityTypeName:
+          type: string
+          example: Department
+          description: Entity type name. Max 50 characters
+        roleName:
+          type: string
+          example: Part Of
+          description: Role name for the person-entity relationship. Max 50 characters
+      title: PersonEntities
     ExpenseRoutingTrackingItem:
       type: object
       properties:
@@ -1363,162 +1369,133 @@ components:
           type: integer
           format: int32
       title: ExpenseRoutingTrackingItem
-    Person:
+    LineItemAllocation:
       type: object
       properties:
-        firstName:
+        allocationId:
           type: string
-          example: Smith
-          description: Person's last name. Max 100 characters
-        lastName:
+          example: 001109-600001_001109
+          description: Allocation identifier. Max 255 characters
+        allocationRefereceString:
           type: string
-          example: Jacob
-          description: Person's first name. Max 100 characters
-        personEntities:
-          type: array
-          description: List of person entities associated with person
-          items:
-            $ref: '#/components/schemas/PersonEntities'
-        personUniqueId:
-          type: string
-          example: jsmith
-          description: Unique identifier for person. Max 100 characters
-        primaryEmailAddress:
-          type: string
-          example: jacob.smith@cpa.org
-          description: Person's primary email address. Max 100 characters
-        reportsToUniqueId:
-          type: string
-          example: lkemp
-          description: Unique identifier for manager person reports to
-        title:
-          type: string
-          example: Associate Accountant
-          description: Person's title. Max 255 characters
-        uniquePersonId:
-          type: string
-      title: Person
-    ComplianceItem:
-      type: object
-      properties:
-        description:
-          type: string
-          example: Receipt must be attached > 10.00 USD
-          description: Description of compliance issue
-        messageCode:
-          type: string
-          example: 422
-          description: Compliance code that was issued. Max 10 characters
-        response:
-          type: string
-          example: Lost the receipt
-          description: Expense owner's response to compliance issue. Max 255 characters
-        status:
-          type: string
-          example: Validated
-          description: Compliance status
-          enum:
-          - New
-          - Violation
-          - Warning
-          - Validated
-          - NonValidated
-        type:
-          type: integer
-          format: int32
-          example: 0
-          enum:
-          - 0
-          - 1
-      title: ComplianceItem
-    Comment:
-      type: object
-      properties:
-        comment:
-          type: string
-          example: Submitted via Chrome River Application. Max 2000 characters
-        createDate:
-          type: string
-          format: date-time
-          example: 2023-01-09 10:57:53+00:00
-          description: Date of comment creation.
-        creatorName:
-          type: string
-          example: Jason Klein
-          description: Name of comment author
-      title: Comment
-    PerDiemRate:
-      type: object
-      properties:
-        amountMaximumPerDiem:
-          type: number
-        city:
-          type: string
-      title: PerDiemRate
-    BudgetDetail:
-      type: object
-      properties:
+          example: 1000-7302-FirmPaid
+          description: Concatenated string of all allocation reference values. Max 1650 characters
+        allocationReference:
+          $ref: '#/components/schemas/LineItemAllocationReference'
         amount:
           type: number
-        budgetId:
+          example: 25
+          description: Amount of total expense due to allocation
+        amountSpentApproved:
+          type: number
+          example: 25
+          description: Amount of total approved expense due to allocation
+        clientName:
           type: string
-        docLineItemId:
+          example: FIRM FUNCTIONS (CHICAGO)
+          description: Allocation client name. Max 130 characters
+        clientNumber:
           type: string
-        docType:
+          example: 1000
+          description: Allocation number. Max 150 characters
+        costCodeOverride:
           type: string
-        encumbered:
+          example: 617500
+          description: Cost code override value. Max 50 characters
+        description:
+          type: string
+          example: Athletics
+          description: Description of allocation. Max 255 characters
+        entityField1:
+          type: string
+          example: 801
+          description: Entity field. Max 50 characters
+        entityField2:
+          type: string
+          example: 700
+          description: Entity field. Max 50 characters
+        entityField3:
+          type: string
+          example: 9999
+          description: Entity field. Max 50 characters
+        glAccount:
+          type: string
+          example: 617500
+          description: GL account. Max 50 characters
+        isPersonal:
           type: boolean
-        externalReference:
+          example: false
+          description: Indicates whether this is a personal allocation
+        matterOnSelect1:
           type: string
-        ruleCode:
+          description: Matter on select 1. Max 50 characters
+        matterOnSelect2:
           type: string
+          description: Matter on select 2. Max 50 characters
+        number:
+          type: string
+          example: 001109-600001
+          description: Allocation number. Max 150 characters
+        percent:
+          type: number
+          example: 50
+          description: Percent of total expense due to allocation
         type:
           type: string
-      title: BudgetDetail
-    UserDefinedAttribute:
-      type: object
-      properties:
-        booleanValue:
-          type: boolean
-          description: Populated if UDA is a boolean value
-        currencyValue:
+          example: 1000
+          description: Allocation type. Max 10 characters
+        udf1:
+          type: string
+          example: General
+          description: User defined field. Max 50 characters
+        udf2:
+          type: string
+          example: PTBSM1
+          description: User defined field. Max 50 characters
+        udf3:
+          type: string
+          example: RCM2
+          description: User defined field. Max 50 characters
+        udf4:
+          type: string
+          description: User defined field. Max 50 characters
+        vatAmount:
           type: number
-          example: 100
-          description: Populated if UDA is a monetary value
-        dateValue:
-          type: string
-          format: date-time
-          description: Populated if UDA is a date value
-        entityValue:
-          $ref: '#/components/schemas/Entity'
-        entityValueInt:
-          type: integer
-          format: int32
-          example: 90
-          description: Populated if UDA is an entity. ID of entity
-        numberValue:
+          example: 4.33
+          description: Amount of VAT tax
+        vatAmount2:
           type: number
-          example: 100
-          description: Populated if UDA is a number value
-        stringValue:
+          example: 4.33
+          description: Amount of VAT tax
+        vatAmount3:
+          type: number
+          example: 4.33
+          description: Amount of VAT tax
+        vatTaxCode:
           type: string
-          example: 1000 North Sunset Road
-          description: Populated if UDA is a String value. Max 1000 characters
-        udaDataType:
+          example: HST
+          description: VAT tax code. Max 10 characters
+        vatTaxCode2:
           type: string
-          example: booleanValue
-          description: DataType of UDA
-          enum:
-          - booleanValue
-          - stringValue
-          - numberValue
-          - currencyValue
-          - entityValue
-          - dateValue
-        udaName:
+          example: GST
+          description: VAT tax code 2. Max 10 characters
+        vatTaxCode3:
           type: string
-          description: Name of user defined attribute. Max 60 characters
-      title: UserDefinedAttribute
+          example: PST
+          description: VAT tax code 3. Max 10 characters
+        vatTaxPercentage:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+        vatTaxPercentage2:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+        vatTaxPercentage3:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+      title: LineItemAllocation
     ExpenseReportHeaderCreateModel:
       type: object
       required:
@@ -1539,3 +1516,26 @@ components:
           example: 1
           description: Field used to associate an Expense Transactions Group with the report.
       title: ExpenseReportHeaderCreateModel
+    PaLineItemType:
+      type: object
+      properties:
+        externalRef:
+          type: string
+          example: 4320
+          description: Reference to an external system's expense types. Max 50 characters
+        id:
+          type: integer
+          format: int32
+          example: 1398
+          description: Internal ID of preapproval line item
+        name:
+          type: string
+          example: Airfare
+          description: Expense type of preapproval line item. Max 50 characters
+        type:
+          type: string
+          example: LineItem
+          enum:
+          - LineItem
+          - Header
+      title: PaLineItemType

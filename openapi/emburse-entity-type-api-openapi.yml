@@ -463,59 +463,7 @@ paths:
           description: Service unavailable.
       deprecated: false
 components:
-  requestBodies:
-    EntityTypeLanguage:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/EntityTypeLanguage'
-      description: entityTypeLanguage
-      required: true
   schemas:
-    EntityTypeModel:
-      type: object
-      required:
-      - code
-      - description
-      - name
-      properties:
-        code:
-          type: string
-          example: DEPT
-        name:
-          type: string
-          example: Department
-        description:
-          type: string
-          example: List of departments
-        loadOnLogin:
-          type: boolean
-          description: Flag to cache Entity Type during login process.
-        sortType:
-          type: string
-          description: Sort type for list of Entities for Entity Type
-          enum:
-          - NAME
-          - CODE
-          - SORT_ORDER
-      title: EntityTypeModel
-    EntityTypeLanguage:
-      type: object
-      required:
-      - languageCode
-      - name
-      properties:
-        description:
-          type: string
-          description: The description of the EntityType in specified language
-        languageCode:
-          type: string
-          example: en, en_UK, fr, fr_CA
-          description: The locale either ISO 639_1 or a combination of ISO 639_1 and ISO 3166
-        name:
-          type: string
-          description: The name of the EntityType in specified language
-      title: EntityTypeLanguage
     EntityType:
       type: object
       required:
@@ -547,3 +495,55 @@ components:
           - CODE
           - SORT_ORDER
       title: EntityType
+    EntityTypeLanguage:
+      type: object
+      required:
+      - languageCode
+      - name
+      properties:
+        description:
+          type: string
+          description: The description of the EntityType in specified language
+        languageCode:
+          type: string
+          example: en, en_UK, fr, fr_CA
+          description: The locale either ISO 639_1 or a combination of ISO 639_1 and ISO 3166
+        name:
+          type: string
+          description: The name of the EntityType in specified language
+      title: EntityTypeLanguage
+    EntityTypeModel:
+      type: object
+      required:
+      - code
+      - description
+      - name
+      properties:
+        code:
+          type: string
+          example: DEPT
+        name:
+          type: string
+          example: Department
+        description:
+          type: string
+          example: List of departments
+        loadOnLogin:
+          type: boolean
+          description: Flag to cache Entity Type during login process.
+        sortType:
+          type: string
+          description: Sort type for list of Entities for Entity Type
+          enum:
+          - NAME
+          - CODE
+          - SORT_ORDER
+      title: EntityTypeModel
+  requestBodies:
+    EntityTypeLanguage:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EntityTypeLanguage'
+      description: entityTypeLanguage
+      required: true

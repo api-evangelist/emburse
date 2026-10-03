@@ -755,133 +755,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    LineItemAllocation:
-      type: object
-      properties:
-        allocationId:
-          type: string
-          example: 001109-600001_001109
-          description: Allocation identifier. Max 255 characters
-        allocationRefereceString:
-          type: string
-          example: 1000-7302-FirmPaid
-          description: Concatenated string of all allocation reference values. Max 1650 characters
-        allocationReference:
-          $ref: '#/components/schemas/LineItemAllocationReference'
-        amount:
-          type: number
-          example: 25
-          description: Amount of total expense due to allocation
-        amountSpentApproved:
-          type: number
-          example: 25
-          description: Amount of total approved expense due to allocation
-        clientName:
-          type: string
-          example: FIRM FUNCTIONS (CHICAGO)
-          description: Allocation client name. Max 130 characters
-        clientNumber:
-          type: string
-          example: 1000
-          description: Allocation number. Max 150 characters
-        costCodeOverride:
-          type: string
-          example: 617500
-          description: Cost code override value. Max 50 characters
-        description:
-          type: string
-          example: Athletics
-          description: Description of allocation. Max 255 characters
-        entityField1:
-          type: string
-          example: 801
-          description: Entity field. Max 50 characters
-        entityField2:
-          type: string
-          example: 700
-          description: Entity field. Max 50 characters
-        entityField3:
-          type: string
-          example: 9999
-          description: Entity field. Max 50 characters
-        glAccount:
-          type: string
-          example: 617500
-          description: GL account. Max 50 characters
-        isPersonal:
-          type: boolean
-          example: false
-          description: Indicates whether this is a personal allocation
-        matterOnSelect1:
-          type: string
-          description: Matter on select 1. Max 50 characters
-        matterOnSelect2:
-          type: string
-          description: Matter on select 2. Max 50 characters
-        number:
-          type: string
-          example: 001109-600001
-          description: Allocation number. Max 150 characters
-        percent:
-          type: number
-          example: 50
-          description: Percent of total expense due to allocation
-        type:
-          type: string
-          example: 1000
-          description: Allocation type. Max 10 characters
-        udf1:
-          type: string
-          example: General
-          description: User defined field. Max 50 characters
-        udf2:
-          type: string
-          example: PTBSM1
-          description: User defined field. Max 50 characters
-        udf3:
-          type: string
-          example: RCM2
-          description: User defined field. Max 50 characters
-        udf4:
-          type: string
-          description: User defined field. Max 50 characters
-        vatAmount:
-          type: number
-          example: 4.33
-          description: Amount of VAT tax
-        vatAmount2:
-          type: number
-          example: 4.33
-          description: Amount of VAT tax
-        vatAmount3:
-          type: number
-          example: 4.33
-          description: Amount of VAT tax
-        vatTaxCode:
-          type: string
-          example: HST
-          description: VAT tax code. Max 10 characters
-        vatTaxCode2:
-          type: string
-          example: GST
-          description: VAT tax code 2. Max 10 characters
-        vatTaxCode3:
-          type: string
-          example: PST
-          description: VAT tax code 3. Max 10 characters
-        vatTaxPercentage:
-          type: number
-          example: 5
-          description: Rate of VAT tax
-        vatTaxPercentage2:
-          type: number
-          example: 5
-          description: Rate of VAT tax
-        vatTaxPercentage3:
-          type: number
-          example: 5
-          description: Rate of VAT tax
-      title: LineItemAllocation
     ExpenseReport:
       type: object
       properties:
@@ -996,14 +869,114 @@ components:
           example: 2022-01-12 05:34:32:000
           description: Date expense report was last updated
       title: ExpenseReport
-    NotesModel:
+    TripReportSummary:
       type: object
       properties:
-        note:
+        amount:
+          type: number
+          example: 155.98
+          description: Total amount of expenses during trip
+        createDate:
           type: string
-          example: Returned due to missing receipts
-          description: Any comment/note that will be tied with the Approval/Return. Max 2000 characters
-      title: NotesModel
+          format: date-time
+        currency:
+          type: string
+          example: USD
+          description: Currency of expenses during trip (ISO-4217)
+        miscellaneous:
+          type: array
+          description: List of record locators for trip segments (ie. Air/Rail segments)
+          items:
+            $ref: '#/components/schemas/RecordLocator'
+        name:
+          type: string
+          example: Trip to N.Z. 2023/10
+          description: Name of trip report. Max 45 characters
+        numberOfExpenseItems:
+          type: integer
+          format: int32
+          example: 3
+          description: Number of expense items during trip
+        reportDate:
+          type: string
+          format: date-time
+          description: Date report created
+        reportNumber:
+          type: string
+          example: 010009384720
+          description: 12 digit report ID
+        reportType:
+          type: string
+          example: report
+          description: Type of report
+        status:
+          type: string
+          example: Pending Approval
+          description: Status of trip report
+        tripEndDate:
+          type: string
+          format: date-time
+          description: End date of trip
+        tripStartDate:
+          type: string
+          format: date-time
+          description: Start date of trip
+        updateDate:
+          type: string
+          format: date-time
+      title: TripReportSummary
+    LineItemAllocationReference:
+      type: object
+      properties:
+        allocationSeg1:
+          type: string
+          description: Allocation reference segment 1. Max 100 characters
+        allocationSeg10:
+          type: string
+          description: Allocation reference segment 10. Max 100 characters
+        allocationSeg11:
+          type: string
+          description: Allocation reference segment 11. Max 100 characters
+        allocationSeg12:
+          type: string
+          description: Allocation reference segment 12. Max 100 characters
+        allocationSeg13:
+          type: string
+          description: Allocation reference segment 13. Max 100 characters
+        allocationSeg14:
+          type: string
+          description: Allocation reference segment 14. Max 100 characters
+        allocationSeg15:
+          type: string
+          description: Allocation reference segment 15. Max 100 characters
+        allocationSeg16:
+          type: string
+          description: Allocation reference segment 16. Max 100 characters
+        allocationSeg2:
+          type: string
+          description: Allocation reference segment 2. Max 100 characters
+        allocationSeg3:
+          type: string
+          description: Allocation reference segment 3. Max 100 characters
+        allocationSeg4:
+          type: string
+          description: Allocation reference segment 4. Max 100 characters
+        allocationSeg5:
+          type: string
+          description: Allocation reference segment 5. Max 100 characters
+        allocationSeg6:
+          type: string
+          description: Allocation reference segment 6. Max 100 characters
+        allocationSeg7:
+          type: string
+          description: Allocation reference segment 7. Max 100 characters
+        allocationSeg8:
+          type: string
+          description: Allocation reference segment 8. Max 100 characters
+        allocationSeg9:
+          type: string
+          description: Allocation reference segment 9. Max 100 characters
+      title: LineItemAllocationReference
     CountModel:
       type: object
       properties:
@@ -1013,53 +986,139 @@ components:
           example: 9
           description: The number of expense reports awaiting approval by approver.
       title: CountModel
-    PaLineItemType:
+    PerDiemRate:
       type: object
       properties:
-        externalRef:
+        amountMaximumPerDiem:
+          type: number
+        city:
           type: string
-          example: 4320
-          description: Reference to an external system's expense types. Max 50 characters
-        id:
+      title: PerDiemRate
+    ComplianceItem:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Receipt must be attached > 10.00 USD
+          description: Description of compliance issue
+        messageCode:
+          type: string
+          example: 422
+          description: Compliance code that was issued. Max 10 characters
+        response:
+          type: string
+          example: Lost the receipt
+          description: Expense owner's response to compliance issue. Max 255 characters
+        status:
+          type: string
+          example: Validated
+          description: Compliance status
+          enum:
+          - New
+          - Violation
+          - Warning
+          - Validated
+          - NonValidated
+        type:
           type: integer
           format: int32
-          example: 1398
-          description: Internal ID of preapproval line item
-        name:
-          type: string
-          example: Airfare
-          description: Expense type of preapproval line item. Max 50 characters
-        type:
-          type: string
-          example: LineItem
+          example: 0
           enum:
-          - LineItem
-          - Header
-      title: PaLineItemType
-    PersonEntities:
+          - 0
+          - 1
+      title: ComplianceItem
+    ExpenseReportLineItemPersonGuest:
       type: object
       properties:
-        entityCode:
+        amount:
+          type: number
+          example: 11.98
+          description: Amount of expense spent by/for guest
+        company:
           type: string
-          example: FIN
-          description: Entity code. Max 50 characters
-        entityName:
+          example: CFA Consultants
+          description: Company of guest. Max 100 characters
+        firstName:
           type: string
-          example: Finance
-          description: Entity name. Max 100 characters
-        entityTypeCode:
+          example: Jennifer
+          description: First name of guest. Max 100 characters
+        guestType:
           type: string
-          example: DEPT
-          description: Entity type code. Max 32 characters
-        entityTypeName:
+          example: InternalGuest
+          description: Type of guest
+          enum:
+          - InternalGuest
+          - ExternalGuest
+          - HealthCareProvider
+          - TemporaryHealthCareProvider
+          - CRMGuest
+        lastName:
           type: string
-          example: Department
-          description: Entity type name. Max 50 characters
-        roleName:
+          example: Garth
+          description: Last name of guest. Max 100 characters
+        percentage:
+          type: number
+          example: 10
+          description: Percentage of expense spent by/for guest
+        title:
           type: string
-          example: Part Of
-          description: Role name for the person-entity relationship. Max 50 characters
-      title: PersonEntities
+          example: Legal Consultant
+          description: Title of guest. Max 255 characters
+      title: ExpenseReportLineItemPersonGuest
+    BudgetDetail:
+      type: object
+      properties:
+        amount:
+          type: number
+        budgetId:
+          type: string
+        docLineItemId:
+          type: string
+        docType:
+          type: string
+        encumbered:
+          type: boolean
+        externalReference:
+          type: string
+        ruleCode:
+          type: string
+        type:
+          type: string
+      title: BudgetDetail
+    RecordLocator:
+      type: object
+      properties:
+        recordLocator:
+          type: string
+          example: GCY3PL
+          description: Record locator value
+        type:
+          type: string
+          example: RAIL
+          description: Type of trip
+      title: RecordLocator
+    TripReportSummaryHeader:
+      type: object
+      properties:
+        totalRecords:
+          type: integer
+          format: int32
+          example: 1
+          description: Total number of records in trip report
+        tripReportSummaries:
+          type: array
+          description: List of trip report summaries
+          items:
+            $ref: '#/components/schemas/TripReportSummary'
+      title: TripReportSummaryHeader
+    NotesModel:
+      type: object
+      properties:
+        note:
+          type: string
+          example: Returned due to missing receipts
+          description: Any comment/note that will be tied with the Approval/Return. Max 2000 characters
+      title: NotesModel
     ExpenseReportLineItem:
       type: object
       properties:
@@ -1467,46 +1526,6 @@ components:
         totalFoodAmount:
           type: number
       title: PerDiemLineItem
-    ReassignModelV1:
-      type: object
-      required:
-      - note
-      properties:
-        assignedEntityCode:
-          type: string
-          example: 4404291000
-          description: Entity Code for the group to which the report is assigned.  Must be used with assignedRoleName, and assignedEntityTypeCode. Max 50 characters
-        assignedEntityTypeCode:
-          type: string
-          example: DEPT
-          description: Entity Type Code for the group to which the report is assigned.  Must be used with assignedRoleName, and assignedEntityCode. Max 32 characters
-        assignedRoleName:
-          type: string
-          example: Part Of
-          description: Role Name for the group to which the report is assigned.  Must be used with assignedEntityCode, and assignedEntityTypeCode. Max 50 characters
-        assignedUser:
-          type: string
-          example: lsuarez
-          description: Unique ID for user to whom the report is assigned to. Max 100 characters
-        note:
-          type: string
-          example: Please review this pre-approval report
-          description: Any comment/note that will be tied with the Reassign. Max 2000 characters
-      title: ReassignModelV1
-    TripReportSummaryHeader:
-      type: object
-      properties:
-        totalRecords:
-          type: integer
-          format: int32
-          example: 1
-          description: Total number of records in trip report
-        tripReportSummaries:
-          type: array
-          description: List of trip report summaries
-          items:
-            $ref: '#/components/schemas/TripReportSummary'
-      title: TripReportSummaryHeader
     Entity:
       type: object
       properties:
@@ -1539,181 +1558,32 @@ components:
           example: Los Angeles
           description: Name of entity. Max 100 characters
       title: Entity
-    LineItemAllocationReference:
+    ReassignModelV1:
       type: object
+      required:
+      - note
       properties:
-        allocationSeg1:
+        assignedEntityCode:
           type: string
-          description: Allocation reference segment 1. Max 100 characters
-        allocationSeg10:
+          example: 4404291000
+          description: Entity Code for the group to which the report is assigned.  Must be used with assignedRoleName, and assignedEntityTypeCode. Max 50 characters
+        assignedEntityTypeCode:
           type: string
-          description: Allocation reference segment 10. Max 100 characters
-        allocationSeg11:
+          example: DEPT
+          description: Entity Type Code for the group to which the report is assigned.  Must be used with assignedRoleName, and assignedEntityCode. Max 32 characters
+        assignedRoleName:
           type: string
-          description: Allocation reference segment 11. Max 100 characters
-        allocationSeg12:
+          example: Part Of
+          description: Role Name for the group to which the report is assigned.  Must be used with assignedEntityCode, and assignedEntityTypeCode. Max 50 characters
+        assignedUser:
           type: string
-          description: Allocation reference segment 12. Max 100 characters
-        allocationSeg13:
+          example: lsuarez
+          description: Unique ID for user to whom the report is assigned to. Max 100 characters
+        note:
           type: string
-          description: Allocation reference segment 13. Max 100 characters
-        allocationSeg14:
-          type: string
-          description: Allocation reference segment 14. Max 100 characters
-        allocationSeg15:
-          type: string
-          description: Allocation reference segment 15. Max 100 characters
-        allocationSeg16:
-          type: string
-          description: Allocation reference segment 16. Max 100 characters
-        allocationSeg2:
-          type: string
-          description: Allocation reference segment 2. Max 100 characters
-        allocationSeg3:
-          type: string
-          description: Allocation reference segment 3. Max 100 characters
-        allocationSeg4:
-          type: string
-          description: Allocation reference segment 4. Max 100 characters
-        allocationSeg5:
-          type: string
-          description: Allocation reference segment 5. Max 100 characters
-        allocationSeg6:
-          type: string
-          description: Allocation reference segment 6. Max 100 characters
-        allocationSeg7:
-          type: string
-          description: Allocation reference segment 7. Max 100 characters
-        allocationSeg8:
-          type: string
-          description: Allocation reference segment 8. Max 100 characters
-        allocationSeg9:
-          type: string
-          description: Allocation reference segment 9. Max 100 characters
-      title: LineItemAllocationReference
-    ExpenseReportLineItemPersonGuest:
-      type: object
-      properties:
-        amount:
-          type: number
-          example: 11.98
-          description: Amount of expense spent by/for guest
-        company:
-          type: string
-          example: CFA Consultants
-          description: Company of guest. Max 100 characters
-        firstName:
-          type: string
-          example: Jennifer
-          description: First name of guest. Max 100 characters
-        guestType:
-          type: string
-          example: InternalGuest
-          description: Type of guest
-          enum:
-          - InternalGuest
-          - ExternalGuest
-          - HealthCareProvider
-          - TemporaryHealthCareProvider
-          - CRMGuest
-        lastName:
-          type: string
-          example: Garth
-          description: Last name of guest. Max 100 characters
-        percentage:
-          type: number
-          example: 10
-          description: Percentage of expense spent by/for guest
-        title:
-          type: string
-          example: Legal Consultant
-          description: Title of guest. Max 255 characters
-      title: ExpenseReportLineItemPersonGuest
-    Person:
-      type: object
-      properties:
-        firstName:
-          type: string
-          example: Smith
-          description: Person's last name. Max 100 characters
-        lastName:
-          type: string
-          example: Jacob
-          description: Person's first name. Max 100 characters
-        personEntities:
-          type: array
-          description: List of person entities associated with person
-          items:
-            $ref: '#/components/schemas/PersonEntities'
-        personUniqueId:
-          type: string
-          example: jsmith
-          description: Unique identifier for person. Max 100 characters
-        primaryEmailAddress:
-          type: string
-          example: jacob.smith@cpa.org
-          description: Person's primary email address. Max 100 characters
-        reportsToUniqueId:
-          type: string
-          example: lkemp
-          description: Unique identifier for manager person reports to
-        title:
-          type: string
-          example: Associate Accountant
-          description: Person's title. Max 255 characters
-        uniquePersonId:
-          type: string
-      title: Person
-    ComplianceItem:
-      type: object
-      properties:
-        description:
-          type: string
-          example: Receipt must be attached > 10.00 USD
-          description: Description of compliance issue
-        messageCode:
-          type: string
-          example: 422
-          description: Compliance code that was issued. Max 10 characters
-        response:
-          type: string
-          example: Lost the receipt
-          description: Expense owner's response to compliance issue. Max 255 characters
-        status:
-          type: string
-          example: Validated
-          description: Compliance status
-          enum:
-          - New
-          - Violation
-          - Warning
-          - Validated
-          - NonValidated
-        type:
-          type: integer
-          format: int32
-          example: 0
-          enum:
-          - 0
-          - 1
-      title: ComplianceItem
-    ExpenseSubmit:
-      type: object
-      properties:
-        comment:
-          type: string
-          example: Submitted via API
-          description: Comment to add to report submission. Max 10000 characters
-        moveIncompleteLineItemsToNewReport:
-          type: boolean
-          example: true
-          description: Flag to indicate that incomplete line items should be moved to a new report before submission
-        responsesForWarnings:
-          type: object
-          description: 'Compliance warning responses. (ie. "302": "OK with no receipt")'
-          additionalProperties:
-            type: string
-      title: ExpenseSubmit
+          example: Please review this pre-approval report
+          description: Any comment/note that will be tied with the Reassign. Max 2000 characters
+      title: ReassignModelV1
     ExpenseSubmitResponse:
       type: object
       properties:
@@ -1728,50 +1598,6 @@ components:
         submitted:
           type: boolean
       title: ExpenseSubmitResponse
-    Comment:
-      type: object
-      properties:
-        comment:
-          type: string
-          example: Submitted via Chrome River Application. Max 2000 characters
-        createDate:
-          type: string
-          format: date-time
-          example: 2023-01-09 10:57:53+00:00
-          description: Date of comment creation.
-        creatorName:
-          type: string
-          example: Jason Klein
-          description: Name of comment author
-      title: Comment
-    PerDiemRate:
-      type: object
-      properties:
-        amountMaximumPerDiem:
-          type: number
-        city:
-          type: string
-      title: PerDiemRate
-    BudgetDetail:
-      type: object
-      properties:
-        amount:
-          type: number
-        budgetId:
-          type: string
-        docLineItemId:
-          type: string
-        docType:
-          type: string
-        encumbered:
-          type: boolean
-        externalReference:
-          type: string
-        ruleCode:
-          type: string
-        type:
-          type: string
-      title: BudgetDetail
     UserDefinedAttribute:
       type: object
       properties:
@@ -1816,74 +1642,248 @@ components:
           type: string
           description: Name of user defined attribute. Max 60 characters
       title: UserDefinedAttribute
-    RecordLocator:
+    Person:
       type: object
       properties:
-        recordLocator:
+        firstName:
           type: string
-          example: GCY3PL
-          description: Record locator value
-        type:
+          example: Smith
+          description: Person's last name. Max 100 characters
+        lastName:
           type: string
-          example: RAIL
-          description: Type of trip
-      title: RecordLocator
-    TripReportSummary:
+          example: Jacob
+          description: Person's first name. Max 100 characters
+        personEntities:
+          type: array
+          description: List of person entities associated with person
+          items:
+            $ref: '#/components/schemas/PersonEntities'
+        personUniqueId:
+          type: string
+          example: jsmith
+          description: Unique identifier for person. Max 100 characters
+        primaryEmailAddress:
+          type: string
+          example: jacob.smith@cpa.org
+          description: Person's primary email address. Max 100 characters
+        reportsToUniqueId:
+          type: string
+          example: lkemp
+          description: Unique identifier for manager person reports to
+        title:
+          type: string
+          example: Associate Accountant
+          description: Person's title. Max 255 characters
+        uniquePersonId:
+          type: string
+      title: Person
+    Comment:
       type: object
       properties:
-        amount:
-          type: number
-          example: 155.98
-          description: Total amount of expenses during trip
+        comment:
+          type: string
+          example: Submitted via Chrome River Application. Max 2000 characters
         createDate:
           type: string
           format: date-time
-        currency:
+          example: 2023-01-09 10:57:53+00:00
+          description: Date of comment creation.
+        creatorName:
           type: string
-          example: USD
-          description: Currency of expenses during trip (ISO-4217)
-        miscellaneous:
-          type: array
-          description: List of record locators for trip segments (ie. Air/Rail segments)
-          items:
-            $ref: '#/components/schemas/RecordLocator'
-        name:
+          example: Jason Klein
+          description: Name of comment author
+      title: Comment
+    PersonEntities:
+      type: object
+      properties:
+        entityCode:
           type: string
-          example: Trip to N.Z. 2023/10
-          description: Name of trip report. Max 45 characters
-        numberOfExpenseItems:
+          example: FIN
+          description: Entity code. Max 50 characters
+        entityName:
+          type: string
+          example: Finance
+          description: Entity name. Max 100 characters
+        entityTypeCode:
+          type: string
+          example: DEPT
+          description: Entity type code. Max 32 characters
+        entityTypeName:
+          type: string
+          example: Department
+          description: Entity type name. Max 50 characters
+        roleName:
+          type: string
+          example: Part Of
+          description: Role name for the person-entity relationship. Max 50 characters
+      title: PersonEntities
+    ExpenseSubmit:
+      type: object
+      properties:
+        comment:
+          type: string
+          example: Submitted via API
+          description: Comment to add to report submission. Max 10000 characters
+        moveIncompleteLineItemsToNewReport:
+          type: boolean
+          example: true
+          description: Flag to indicate that incomplete line items should be moved to a new report before submission
+        responsesForWarnings:
+          type: object
+          description: 'Compliance warning responses. (ie. "302": "OK with no receipt")'
+          additionalProperties:
+            type: string
+      title: ExpenseSubmit
+    LineItemAllocation:
+      type: object
+      properties:
+        allocationId:
+          type: string
+          example: 001109-600001_001109
+          description: Allocation identifier. Max 255 characters
+        allocationRefereceString:
+          type: string
+          example: 1000-7302-FirmPaid
+          description: Concatenated string of all allocation reference values. Max 1650 characters
+        allocationReference:
+          $ref: '#/components/schemas/LineItemAllocationReference'
+        amount:
+          type: number
+          example: 25
+          description: Amount of total expense due to allocation
+        amountSpentApproved:
+          type: number
+          example: 25
+          description: Amount of total approved expense due to allocation
+        clientName:
+          type: string
+          example: FIRM FUNCTIONS (CHICAGO)
+          description: Allocation client name. Max 130 characters
+        clientNumber:
+          type: string
+          example: 1000
+          description: Allocation number. Max 150 characters
+        costCodeOverride:
+          type: string
+          example: 617500
+          description: Cost code override value. Max 50 characters
+        description:
+          type: string
+          example: Athletics
+          description: Description of allocation. Max 255 characters
+        entityField1:
+          type: string
+          example: 801
+          description: Entity field. Max 50 characters
+        entityField2:
+          type: string
+          example: 700
+          description: Entity field. Max 50 characters
+        entityField3:
+          type: string
+          example: 9999
+          description: Entity field. Max 50 characters
+        glAccount:
+          type: string
+          example: 617500
+          description: GL account. Max 50 characters
+        isPersonal:
+          type: boolean
+          example: false
+          description: Indicates whether this is a personal allocation
+        matterOnSelect1:
+          type: string
+          description: Matter on select 1. Max 50 characters
+        matterOnSelect2:
+          type: string
+          description: Matter on select 2. Max 50 characters
+        number:
+          type: string
+          example: 001109-600001
+          description: Allocation number. Max 150 characters
+        percent:
+          type: number
+          example: 50
+          description: Percent of total expense due to allocation
+        type:
+          type: string
+          example: 1000
+          description: Allocation type. Max 10 characters
+        udf1:
+          type: string
+          example: General
+          description: User defined field. Max 50 characters
+        udf2:
+          type: string
+          example: PTBSM1
+          description: User defined field. Max 50 characters
+        udf3:
+          type: string
+          example: RCM2
+          description: User defined field. Max 50 characters
+        udf4:
+          type: string
+          description: User defined field. Max 50 characters
+        vatAmount:
+          type: number
+          example: 4.33
+          description: Amount of VAT tax
+        vatAmount2:
+          type: number
+          example: 4.33
+          description: Amount of VAT tax
+        vatAmount3:
+          type: number
+          example: 4.33
+          description: Amount of VAT tax
+        vatTaxCode:
+          type: string
+          example: HST
+          description: VAT tax code. Max 10 characters
+        vatTaxCode2:
+          type: string
+          example: GST
+          description: VAT tax code 2. Max 10 characters
+        vatTaxCode3:
+          type: string
+          example: PST
+          description: VAT tax code 3. Max 10 characters
+        vatTaxPercentage:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+        vatTaxPercentage2:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+        vatTaxPercentage3:
+          type: number
+          example: 5
+          description: Rate of VAT tax
+      title: LineItemAllocation
+    PaLineItemType:
+      type: object
+      properties:
+        externalRef:
+          type: string
+          example: 4320
+          description: Reference to an external system's expense types. Max 50 characters
+        id:
           type: integer
           format: int32
-          example: 3
-          description: Number of expense items during trip
-        reportDate:
+          example: 1398
+          description: Internal ID of preapproval line item
+        name:
           type: string
-          format: date-time
-          description: Date report created
-        reportNumber:
+          example: Airfare
+          description: Expense type of preapproval line item. Max 50 characters
+        type:
           type: string
-          example: 010009384720
-          description: 12 digit report ID
-        reportType:
-          type: string
-          example: report
-          description: Type of report
-        status:
-          type: string
-          example: Pending Approval
-          description: Status of trip report
-        tripEndDate:
-          type: string
-          format: date-time
-          description: End date of trip
-        tripStartDate:
-          type: string
-          format: date-time
-          description: Start date of trip
-        updateDate:
-          type: string
-          format: date-time
-      title: TripReportSummary
+          example: LineItem
+          enum:
+          - LineItem
+          - Header
+      title: PaLineItemType
   requestBodies:
     NotesModel:
       content:
@@ -1892,12 +1892,12 @@ components:
             $ref: '#/components/schemas/NotesModel'
       description: Note tied to Return
       required: true
-    ExpenseSubmit:
+    NotesModel2:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ExpenseSubmit'
-      description: Optional body
+            $ref: '#/components/schemas/NotesModel'
+      description: Optional note tied to Approval
     ReassignModelV1:
       content:
         application/json:
@@ -1905,9 +1905,9 @@ components:
             $ref: '#/components/schemas/ReassignModelV1'
       description: Payload required to do a reassign
       required: true
-    NotesModel2:
+    ExpenseSubmit:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/NotesModel'
-      description: Optional note tied to Approval
+            $ref: '#/components/schemas/ExpenseSubmit'
+      description: Optional body

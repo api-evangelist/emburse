@@ -160,14 +160,22 @@ paths:
       deprecated: false
 components:
   schemas:
-    UDAPerson:
+    AllocationUDA:
       type: object
       properties:
         name:
           type: string
-        personUniqueId:
+        value:
           type: string
-      title: UDAPerson
+      title: AllocationUDA
+    AllocationEntity:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      title: AllocationEntity
     ApiResponse:
       type: object
       properties:
@@ -187,22 +195,14 @@ components:
           - SUCCESS
           - FAIL
       title: ApiResponse
-    AllocationEntity:
+    UDAPerson:
       type: object
       properties:
         name:
           type: string
-        value:
+        personUniqueId:
           type: string
-      title: AllocationEntity
-    AllocationUDA:
-      type: object
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-      title: AllocationUDA
+      title: UDAPerson
     AllocationView:
       type: object
       properties:
@@ -259,7 +259,7 @@ components:
           description: 'Language of the Allocation. Format: ISO 639-1 (2-letter code)'
         onSelect1EntityTypeCode:
           type: string
-          example: false
+          example: 'OFF'
           description: Entity Type that will be linked to the allocation On Select 1.
         onSelect2EntityTypeCode:
           type: string

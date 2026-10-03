@@ -240,14 +240,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    PersonTO:
-      type: object
-      properties:
-        name:
-          type: string
-        personId:
-          type: string
-      title: PersonTO
     EntityTO:
       type: object
       properties:
@@ -274,6 +266,25 @@ components:
           type: integer
           format: int32
       title: EntityTO
+    EntityTypeTO:
+      type: object
+      properties:
+        code:
+          type: string
+        entityTypeId:
+          type: integer
+          format: int32
+        name:
+          type: string
+      title: EntityTypeTO
+    PersonTO:
+      type: object
+      properties:
+        name:
+          type: string
+        personId:
+          type: string
+      title: PersonTO
     MatterTO:
       type: object
       properties:
@@ -354,7 +365,7 @@ components:
           description: 'Language of the Allocation. Format: ISO 639-1 (2-letter code)'
         onSelect1EntityTypeCode:
           type: string
-          example: false
+          example: 'OFF'
           description: Entity Type that will be linked to the allocation On Select 1.
         onSelect2EntityTypeCode:
           type: string
@@ -409,6 +420,11 @@ components:
         udf4:
           type: string
       title: MatterTO
+    Map_string_string_:
+      type: object
+      title: Map«string,string»
+      additionalProperties:
+        type: string
     MatterUDATO:
       type: object
       properties:
@@ -428,22 +444,6 @@ components:
         value:
           type: string
       title: MatterUDATO
-    EntityTypeTO:
-      type: object
-      properties:
-        code:
-          type: string
-        entityTypeId:
-          type: integer
-          format: int32
-        name:
-          type: string
-      title: EntityTypeTO
-    Map_string_string_:
-      type: object
-      title: Map«string,string»
-      additionalProperties:
-        type: string
   requestBodies:
     MatterTO:
       content:

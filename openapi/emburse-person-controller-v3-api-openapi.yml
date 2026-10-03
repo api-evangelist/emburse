@@ -181,37 +181,24 @@ paths:
                   $ref: '#/components/schemas/Response'
 components:
   schemas:
-    AlternateCurrency:
+    Response:
       type: object
       properties:
-        type:
+        personUniqueId:
           type: string
-          description: Currency type
+          description: Unique identifier for a person
+          example: jdoe
+        result:
+          type: string
+          description: Result of operation
           enum:
-          - ALT
-          - OTHER
-          example: ALT
-        code:
+          - SUCCESS
+          - FAIL
+          example: FAIL
+        errorMessage:
           type: string
-          description: Currency code in ISO-4217
-          example: USD
-      required:
-      - code
-      - type
-    PersonUdaView:
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'Customer defined field name (Note: UDF1/UDF2/UDF3 are reserved names which are used for population of UDF fields) '
-          example: StartDate
-        value:
-          type: string
-          description: Customer defined field value
-          example: 2017-10-03 00:00:00
-      required:
-      - name
-      - value
+          description: Error message provided for a FAIL result
+          example: firstName may not be empty
     PersonView:
       type: object
       properties:
@@ -429,24 +416,37 @@ components:
       - primaryEmailAddress
       - status
       - username
-    Response:
+    PersonUdaView:
       type: object
       properties:
-        personUniqueId:
+        name:
           type: string
-          description: Unique identifier for a person
-          example: jdoe
-        result:
+          description: 'Customer defined field name (Note: UDF1/UDF2/UDF3 are reserved names which are used for population of UDF fields) '
+          example: StartDate
+        value:
           type: string
-          description: Result of operation
+          description: Customer defined field value
+          example: 2017-10-03 00:00:00
+      required:
+      - name
+      - value
+    AlternateCurrency:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Currency type
           enum:
-          - SUCCESS
-          - FAIL
-          example: FAIL
-        errorMessage:
+          - ALT
+          - OTHER
+          example: ALT
+        code:
           type: string
-          description: Error message provided for a FAIL result
-          example: firstName may not be empty
+          description: Currency code in ISO-4217
+          example: USD
+      required:
+      - code
+      - type
     PersonEntityView:
       type: object
       properties:
