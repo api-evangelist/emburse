@@ -182,25 +182,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    EntityLanguage:
-      type: object
-      properties:
-        locale:
-          type: string
-        name:
-          type: string
-      title: EntityLanguage
-    GetEntitiesApiResponse:
-      type: object
-      properties:
-        entities:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entity'
-        total:
-          type: integer
-          format: int32
-      title: GetEntitiesApiResponse
     Entity:
       type: object
       required:
@@ -248,3 +229,22 @@ components:
           items:
             $ref: '#/components/schemas/EntityLanguage'
       title: Entity
+    GetEntitiesApiResponse:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+        total:
+          type: integer
+          format: int32
+      title: GetEntitiesApiResponse
+    EntityLanguage:
+      type: object
+      properties:
+        locale:
+          type: string
+        name:
+          type: string
+      title: EntityLanguage

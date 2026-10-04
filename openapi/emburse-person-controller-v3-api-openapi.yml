@@ -199,6 +199,20 @@ components:
           type: string
           description: Error message provided for a FAIL result
           example: firstName may not be empty
+    PersonUdaView:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 'Customer defined field name (Note: UDF1/UDF2/UDF3 are reserved names which are used for population of UDF fields) '
+          example: StartDate
+        value:
+          type: string
+          description: Customer defined field value
+          example: 2017-10-03 00:00:00
+      required:
+      - name
+      - value
     PersonView:
       type: object
       properties:
@@ -416,20 +430,6 @@ components:
       - primaryEmailAddress
       - status
       - username
-    PersonUdaView:
-      type: object
-      properties:
-        name:
-          type: string
-          description: 'Customer defined field name (Note: UDF1/UDF2/UDF3 are reserved names which are used for population of UDF fields) '
-          example: StartDate
-        value:
-          type: string
-          description: Customer defined field value
-          example: 2017-10-03 00:00:00
-      required:
-      - name
-      - value
     AlternateCurrency:
       type: object
       properties:

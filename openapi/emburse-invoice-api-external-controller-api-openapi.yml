@@ -498,85 +498,23 @@ paths:
       deprecated: false
 components:
   schemas:
-    InvoiceFilter:
+    InvoiceHeaderSDI:
       type: object
-      required:
-      - fromDate
-      - toDate
       properties:
-        fromDate:
-          type: string
-          example: 2025-12-01 00:01:00+00:00
-          description: Initial dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
-        toDate:
-          type: string
-          example: 2025-12-02 00:00:00+00:00
-          description: Final dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
-      title: InvoiceFilter
-    InvoicePaymentCustomer:
-      type: object
-      required:
-      - amount
-      - currencyCode
-      - invoiceId
-      - paidDate
-      properties:
-        amount:
+        amountSpent:
           type: number
-          example: 1000
-          description: Payment Amount for the Invoice
-        amountDiscount:
-          type: number
-          example: 1000
-          description: Discount Amount for the Invoice
-        bankNumber:
+        currencyCodeSpent:
           type: string
-          example: 25
-          description: Bank Account Number. 36 character limit
-        checkMailedDate:
+        headerStatus:
+          type: string
+        invoiceDate:
           type: string
           format: date-time
-          description: 'Check Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        checkNumber:
-          type: string
-          example: 47029
-          description: Check Number. 36 character limit
-        currencyCode:
-          type: string
-          example: USD
-          description: Currency in which Paid Invoice is created. These codes are standard three character values (e.g., USD, GBP, JPY, HKD, etc).
-        dupeChecks:
-          type: array
-          example:
-          - InvoiceID
-          - AmountSpent
-          description: Fields to use for duplicate check. Will only be used when checkDupePayments is set to True
-          items:
-            type: string
-            enum:
-            - AmountSpent
-            - CurrencyCode
-            - PaidDate
-            - CheckNumber
-            - BankNumber
-            - InvoiceID
         invoiceId:
           type: string
-          example: test
-          description: Invoice Number of Paid Invoice. 36 characters limit
-        paidDate:
+        invoiceNumber:
           type: string
-          format: date-time
-          description: 'Invoice Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        paymentMethod:
-          type: string
-          example: ACH
-          description: PaymentMethod, Examples value are "ACH", "CHECK", "CC"
-          enum:
-          - ACH
-          - CHECK
-          - CC
-      title: InvoicePaymentCustomer
+      title: InvoiceHeaderSDI
     InvoiceSubmitOptionsExternal:
       type: object
       required:
@@ -630,96 +568,22 @@ components:
           - BLKS
           - NONE
       title: InvoiceSubmitOptionsExternal
-    InvoiceAssignOptionsExternal:
+    InvoicePaymentFilter:
       type: object
-      required:
-      - approvalMethod
-      - entityCode
-      - entityTypeCode
-      - invoiceId
-      - roleName
-      - routingType
-      - submitSource
       properties:
-        additionalPersonUniqueId:
-          type: string
-          description: Person Unique ID for an Additional Reviewer
-        approvalMethod:
-          type: string
-          example: EMAI
-          description: 'Types of Approval Methods: Email(EMAI), Dashboard(DASH), Mobile(MOBL), AutoApprove(AUTO), Mercury(MERC), None(NONE)'
-          enum:
-          - EMAI
-          - DASH
-          - MOBL
-          - AUTO
-          - MERC
-          - NONE
-        entityCode:
-          type: string
-          example: 100
-          description: The entity code for the person-entity relationship. Max 50 characters
-        entityTypeCode:
-          type: string
-          example: DEPT
-          description: The entity type code for the person-entity relationship. Max 50 characters
         invoiceId:
           type: string
           example: test
-          description: Invoice Number - 36 characters limit
-        notes:
+          description: Filter Invoice Number of Paid Invoice. 36 characters limit
+        paidDateFrom:
           type: string
-          example: Example Comment For My Invoice
-          description: Comment that will be added to InvoiceHeader upon successful request
-        roleName:
+          format: date-time
+          description: 'Filter Invoice Payment Completion Date From Bottom, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        paidDateTo:
           type: string
-          example: APReview
-          description: The name of the role for the person-entity relationship. Max 50 characters
-        routingType:
-          type: string
-          example: ENTY
-          description: 'Types of Routing: Entity(ENTY), Normal(ROUT), Owner(OWNR), Person(PERS), Other(RETA), Creator(RETC), Recall(RECL)'
-          enum:
-          - ENTY
-          - ROUT
-          - OWNR
-          - PERS
-          - RETA
-          - RETC
-          - RECL
-        submitSource:
-          type: string
-          example: INVS
-          description: 'Types of Submit Source: Invoice Submit (INVS), Approval Submit (APPS), Invoice Management Submit(IMGT), Bulk Submit (BLKS), NONE(NONE)'
-          enum:
-          - INVS
-          - APPS
-          - IMGT
-          - BLKS
-          - NONE
-      title: InvoiceAssignOptionsExternal
-    InvoiceError:
-      type: object
-      properties:
-        chain-id:
-          type: string
-        code:
-          type: string
-        detail:
-          type: string
-        id:
-          type: string
-        message:
-          type: string
-        meta:
-          type: object
-        session-id:
-          type: string
-        status:
-          type: string
-        title:
-          type: string
-      title: InvoiceError
+          format: date-time
+          description: 'Filter Invoice Payment Completion Date To Top, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+      title: InvoicePaymentFilter
     InvoicePaymentOutput:
       type: object
       required:
@@ -855,23 +719,153 @@ components:
           type: string
           description: Transaction Number. 36 character limit
       title: InvoicePaymentExternal
-    InvoiceHeaderSDI:
+    InvoicePaymentCustomer:
       type: object
+      required:
+      - amount
+      - currencyCode
+      - invoiceId
+      - paidDate
       properties:
-        amountSpent:
+        amount:
           type: number
-        currencyCodeSpent:
+          example: 1000
+          description: Payment Amount for the Invoice
+        amountDiscount:
+          type: number
+          example: 1000
+          description: Discount Amount for the Invoice
+        bankNumber:
           type: string
-        headerStatus:
-          type: string
-        invoiceDate:
+          example: 25
+          description: Bank Account Number. 36 character limit
+        checkMailedDate:
           type: string
           format: date-time
+          description: 'Check Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        checkNumber:
+          type: string
+          example: 47029
+          description: Check Number. 36 character limit
+        currencyCode:
+          type: string
+          example: USD
+          description: Currency in which Paid Invoice is created. These codes are standard three character values (e.g., USD, GBP, JPY, HKD, etc).
+        dupeChecks:
+          type: array
+          example:
+          - InvoiceID
+          - AmountSpent
+          description: Fields to use for duplicate check. Will only be used when checkDupePayments is set to True
+          items:
+            type: string
+            enum:
+            - AmountSpent
+            - CurrencyCode
+            - PaidDate
+            - CheckNumber
+            - BankNumber
+            - InvoiceID
         invoiceId:
           type: string
-        invoiceNumber:
+          example: test
+          description: Invoice Number of Paid Invoice. 36 characters limit
+        paidDate:
           type: string
-      title: InvoiceHeaderSDI
+          format: date-time
+          description: 'Invoice Payment Completion Date, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
+        paymentMethod:
+          type: string
+          example: ACH
+          description: PaymentMethod, Examples value are "ACH", "CHECK", "CC"
+          enum:
+          - ACH
+          - CHECK
+          - CC
+      title: InvoicePaymentCustomer
+    InvoiceFilter:
+      type: object
+      required:
+      - fromDate
+      - toDate
+      properties:
+        fromDate:
+          type: string
+          example: 2025-12-01 00:01:00+00:00
+          description: Initial dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
+        toDate:
+          type: string
+          example: 2025-12-02 00:00:00+00:00
+          description: Final dequeued date for filtering (inclusive). ISO-8601/RFC3339 timestamp. UTC recommended.
+      title: InvoiceFilter
+    InvoiceAssignOptionsExternal:
+      type: object
+      required:
+      - approvalMethod
+      - entityCode
+      - entityTypeCode
+      - invoiceId
+      - roleName
+      - routingType
+      - submitSource
+      properties:
+        additionalPersonUniqueId:
+          type: string
+          description: Person Unique ID for an Additional Reviewer
+        approvalMethod:
+          type: string
+          example: EMAI
+          description: 'Types of Approval Methods: Email(EMAI), Dashboard(DASH), Mobile(MOBL), AutoApprove(AUTO), Mercury(MERC), None(NONE)'
+          enum:
+          - EMAI
+          - DASH
+          - MOBL
+          - AUTO
+          - MERC
+          - NONE
+        entityCode:
+          type: string
+          example: 100
+          description: The entity code for the person-entity relationship. Max 50 characters
+        entityTypeCode:
+          type: string
+          example: DEPT
+          description: The entity type code for the person-entity relationship. Max 50 characters
+        invoiceId:
+          type: string
+          example: test
+          description: Invoice Number - 36 characters limit
+        notes:
+          type: string
+          example: Example Comment For My Invoice
+          description: Comment that will be added to InvoiceHeader upon successful request
+        roleName:
+          type: string
+          example: APReview
+          description: The name of the role for the person-entity relationship. Max 50 characters
+        routingType:
+          type: string
+          example: ENTY
+          description: 'Types of Routing: Entity(ENTY), Normal(ROUT), Owner(OWNR), Person(PERS), Other(RETA), Creator(RETC), Recall(RECL)'
+          enum:
+          - ENTY
+          - ROUT
+          - OWNR
+          - PERS
+          - RETA
+          - RETC
+          - RECL
+        submitSource:
+          type: string
+          example: INVS
+          description: 'Types of Submit Source: Invoice Submit (INVS), Approval Submit (APPS), Invoice Management Submit(IMGT), Bulk Submit (BLKS), NONE(NONE)'
+          enum:
+          - INVS
+          - APPS
+          - IMGT
+          - BLKS
+          - NONE
+      title: InvoiceAssignOptionsExternal
     InvoiceSDIResponse:
       type: object
       properties:
@@ -882,22 +876,28 @@ components:
           items:
             $ref: '#/components/schemas/InvoiceError'
       title: InvoiceSDIResponse
-    InvoicePaymentFilter:
+    InvoiceError:
       type: object
       properties:
-        invoiceId:
+        chain-id:
           type: string
-          example: test
-          description: Filter Invoice Number of Paid Invoice. 36 characters limit
-        paidDateFrom:
+        code:
           type: string
-          format: date-time
-          description: 'Filter Invoice Payment Completion Date From Bottom, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-        paidDateTo:
+        detail:
           type: string
-          format: date-time
-          description: 'Filter Invoice Payment Completion Date To Top, Accepted date format: "yyyy-MM-dd''T''HH:mm:ss.SSSZ"'
-      title: InvoicePaymentFilter
+        id:
+          type: string
+        message:
+          type: string
+        meta:
+          type: object
+        session-id:
+          type: string
+        status:
+          type: string
+        title:
+          type: string
+      title: InvoiceError
     Invoice:
       type: object
       required:

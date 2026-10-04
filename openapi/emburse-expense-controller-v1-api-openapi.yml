@@ -406,300 +406,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    ExpenseReport:
-      type: object
-      properties:
-        budgetDetails:
-          type: array
-          description: Details of budget encumbrance/liquidation amounts associated with the preapproval attached to the report. Only relevant for customers using encumbrance/liquidation.
-          items:
-            $ref: '#/components/schemas/BudgetDetail'
-        comments:
-          type: array
-          description: List of comments written on the expense report
-          items:
-            $ref: '#/components/schemas/Comment'
-        complianceItems:
-          type: array
-          description: List of compliance item issues associated with the expense report
-          items:
-            $ref: '#/components/schemas/ComplianceItem'
-        createDate:
-          type: string
-          format: date-time
-          example: 2022-01-12 03:34:32:000
-          description: Date expense report was created
-        currencyCode:
-          type: string
-          example: USD
-          description: Employee's PayMeInCurrency
-        expenseReportUrl:
-          type: string
-          example: https://app.chromeriver.com/expense_reports_app/DEV034334052?customerCode=CF7H
-          description: URL of expense report
-        hasComplianceItems:
-          type: boolean
-          example: false
-          description: Used in expense-report-approval summaries to notify if header, line item, or children items have compliance items
-        images:
-          type: array
-          description: Filenames of images attached to expense report header
-          items:
-            type: string
-        lineItems:
-          type: array
-          description: List of expense report line items
-          items:
-            $ref: '#/components/schemas/ExpenseReportLineItem'
-        numberOfExpenseLineItems:
-          type: integer
-          format: int32
-          example: 1
-          description: Number of expense items in report
-        preApprovalReportId:
-          type: string
-          example: 010038294829
-          description: 12 character ID of preapproval attached to expense report
-        receiptUrl:
-          type: string
-          example: https://chromeriver.com/v2/expense-report-receipts/010034331701?customerCode=ABCD
-          description: URL of receipt attached to report
-        reportId:
-          type: string
-          example: 010083927384
-          description: 12 character ID of expense report
-        reportName:
-          type: string
-          example: Trip to St. Louis 9/19-9/20
-          description: Name of expense report. Max 45 characters
-        reportOwner:
-          $ref: '#/components/schemas/Person'
-        reportStatus:
-          type: string
-          example: Submitted
-          description: Status of expense report
-          enum:
-          - New
-          - Draft
-          - Submitted
-          - Deleted
-          - Returned
-        reportTotalAmount:
-          type: number
-          example: 119.81
-          description: Total of expenses in report
-        reportTotalAmountApproved:
-          type: number
-          example: 119.81
-          description: Total of approved expenses in report
-        reportTotalFirmPaidAmount:
-          type: number
-          example: 119.81
-          description: Total of firm paid expenses in report
-        reportTotalPayMeAmount:
-          type: number
-          example: 119.81
-          description: Total of amount due to expense owner
-        submitDate:
-          type: string
-          format: date-time
-          example: 2022-01-12 05:34:32:000
-          description: Date expense report was submitted
-        transactionGroupReferenceNumber:
-          type: string
-          example: IBQRNA1
-          description: Expense transaction group reference number associated with the expense report. Max 255 characters
-        udas:
-          type: array
-          description: Returned on GET requests. POST/PATCH/PUT requests with this field will result in a BAD_REQUEST
-          items:
-            $ref: '#/components/schemas/UserDefinedAttribute'
-        updateDate:
-          type: string
-          format: date-time
-          example: 2022-01-12 05:34:32:000
-          description: Date expense report was last updated
-      title: ExpenseReport
-    LineItemAllocationReference:
-      type: object
-      properties:
-        allocationSeg1:
-          type: string
-          description: Allocation reference segment 1. Max 100 characters
-        allocationSeg10:
-          type: string
-          description: Allocation reference segment 10. Max 100 characters
-        allocationSeg11:
-          type: string
-          description: Allocation reference segment 11. Max 100 characters
-        allocationSeg12:
-          type: string
-          description: Allocation reference segment 12. Max 100 characters
-        allocationSeg13:
-          type: string
-          description: Allocation reference segment 13. Max 100 characters
-        allocationSeg14:
-          type: string
-          description: Allocation reference segment 14. Max 100 characters
-        allocationSeg15:
-          type: string
-          description: Allocation reference segment 15. Max 100 characters
-        allocationSeg16:
-          type: string
-          description: Allocation reference segment 16. Max 100 characters
-        allocationSeg2:
-          type: string
-          description: Allocation reference segment 2. Max 100 characters
-        allocationSeg3:
-          type: string
-          description: Allocation reference segment 3. Max 100 characters
-        allocationSeg4:
-          type: string
-          description: Allocation reference segment 4. Max 100 characters
-        allocationSeg5:
-          type: string
-          description: Allocation reference segment 5. Max 100 characters
-        allocationSeg6:
-          type: string
-          description: Allocation reference segment 6. Max 100 characters
-        allocationSeg7:
-          type: string
-          description: Allocation reference segment 7. Max 100 characters
-        allocationSeg8:
-          type: string
-          description: Allocation reference segment 8. Max 100 characters
-        allocationSeg9:
-          type: string
-          description: Allocation reference segment 9. Max 100 characters
-      title: LineItemAllocationReference
-    ExpenseHeaderNote:
-      type: object
-      properties:
-        createDate:
-          type: string
-          format: date-time
-        createDateStr:
-          type: string
-        creatorName:
-          type: string
-        customerID:
-          type: integer
-          format: int32
-        expenseReportHeaderID:
-          type: string
-        headerNoteID:
-          type: string
-        headerUpdateDate:
-          type: string
-          format: date-time
-        note:
-          type: string
-        personID:
-          type: integer
-          format: int32
-        submitDate:
-          type: string
-          format: date-time
-      title: ExpenseHeaderNote
-    PerDiemRate:
-      type: object
-      properties:
-        amountMaximumPerDiem:
-          type: number
-        city:
-          type: string
-      title: PerDiemRate
-    ComplianceItem:
-      type: object
-      properties:
-        description:
-          type: string
-          example: Receipt must be attached > 10.00 USD
-          description: Description of compliance issue
-        messageCode:
-          type: string
-          example: 422
-          description: Compliance code that was issued. Max 10 characters
-        response:
-          type: string
-          example: Lost the receipt
-          description: Expense owner's response to compliance issue. Max 255 characters
-        status:
-          type: string
-          example: Validated
-          description: Compliance status
-          enum:
-          - New
-          - Violation
-          - Warning
-          - Validated
-          - NonValidated
-        type:
-          type: integer
-          format: int32
-          example: 0
-          enum:
-          - 0
-          - 1
-      title: ComplianceItem
-    ExpenseReportLineItemPersonGuest:
-      type: object
-      properties:
-        amount:
-          type: number
-          example: 11.98
-          description: Amount of expense spent by/for guest
-        company:
-          type: string
-          example: CFA Consultants
-          description: Company of guest. Max 100 characters
-        firstName:
-          type: string
-          example: Jennifer
-          description: First name of guest. Max 100 characters
-        guestType:
-          type: string
-          example: InternalGuest
-          description: Type of guest
-          enum:
-          - InternalGuest
-          - ExternalGuest
-          - HealthCareProvider
-          - TemporaryHealthCareProvider
-          - CRMGuest
-        lastName:
-          type: string
-          example: Garth
-          description: Last name of guest. Max 100 characters
-        percentage:
-          type: number
-          example: 10
-          description: Percentage of expense spent by/for guest
-        title:
-          type: string
-          example: Legal Consultant
-          description: Title of guest. Max 255 characters
-      title: ExpenseReportLineItemPersonGuest
-    BudgetDetail:
-      type: object
-      properties:
-        amount:
-          type: number
-        budgetId:
-          type: string
-        docLineItemId:
-          type: string
-        docType:
-          type: string
-        encumbered:
-          type: boolean
-        externalReference:
-          type: string
-        ruleCode:
-          type: string
-        type:
-          type: string
-      title: BudgetDetail
     ExpenseReportLineItem:
       type: object
       properties:
@@ -939,6 +645,326 @@ components:
           example: 100
           description: Rate of VAT refund for 3rd VAT tax code
       title: ExpenseReportLineItem
+    BudgetDetail:
+      type: object
+      properties:
+        amount:
+          type: number
+        budgetId:
+          type: string
+        docLineItemId:
+          type: string
+        docType:
+          type: string
+        encumbered:
+          type: boolean
+        externalReference:
+          type: string
+        ruleCode:
+          type: string
+        type:
+          type: string
+      title: BudgetDetail
+    ComplianceItem:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Receipt must be attached > 10.00 USD
+          description: Description of compliance issue
+        messageCode:
+          type: string
+          example: 422
+          description: Compliance code that was issued. Max 10 characters
+        response:
+          type: string
+          example: Lost the receipt
+          description: Expense owner's response to compliance issue. Max 255 characters
+        status:
+          type: string
+          example: Validated
+          description: Compliance status
+          enum:
+          - New
+          - Violation
+          - Warning
+          - Validated
+          - NonValidated
+        type:
+          type: integer
+          format: int32
+          example: 0
+          enum:
+          - 0
+          - 1
+      title: ComplianceItem
+    LineItemAllocationReference:
+      type: object
+      properties:
+        allocationSeg1:
+          type: string
+          description: Allocation reference segment 1. Max 100 characters
+        allocationSeg10:
+          type: string
+          description: Allocation reference segment 10. Max 100 characters
+        allocationSeg11:
+          type: string
+          description: Allocation reference segment 11. Max 100 characters
+        allocationSeg12:
+          type: string
+          description: Allocation reference segment 12. Max 100 characters
+        allocationSeg13:
+          type: string
+          description: Allocation reference segment 13. Max 100 characters
+        allocationSeg14:
+          type: string
+          description: Allocation reference segment 14. Max 100 characters
+        allocationSeg15:
+          type: string
+          description: Allocation reference segment 15. Max 100 characters
+        allocationSeg16:
+          type: string
+          description: Allocation reference segment 16. Max 100 characters
+        allocationSeg2:
+          type: string
+          description: Allocation reference segment 2. Max 100 characters
+        allocationSeg3:
+          type: string
+          description: Allocation reference segment 3. Max 100 characters
+        allocationSeg4:
+          type: string
+          description: Allocation reference segment 4. Max 100 characters
+        allocationSeg5:
+          type: string
+          description: Allocation reference segment 5. Max 100 characters
+        allocationSeg6:
+          type: string
+          description: Allocation reference segment 6. Max 100 characters
+        allocationSeg7:
+          type: string
+          description: Allocation reference segment 7. Max 100 characters
+        allocationSeg8:
+          type: string
+          description: Allocation reference segment 8. Max 100 characters
+        allocationSeg9:
+          type: string
+          description: Allocation reference segment 9. Max 100 characters
+      title: LineItemAllocationReference
+    PaLineItemType:
+      type: object
+      properties:
+        externalRef:
+          type: string
+          example: 4320
+          description: Reference to an external system's expense types. Max 50 characters
+        id:
+          type: integer
+          format: int32
+          example: 1398
+          description: Internal ID of preapproval line item
+        name:
+          type: string
+          example: Airfare
+          description: Expense type of preapproval line item. Max 50 characters
+        type:
+          type: string
+          example: LineItem
+          enum:
+          - LineItem
+          - Header
+      title: PaLineItemType
+    ExpenseReportLineItemPersonGuest:
+      type: object
+      properties:
+        amount:
+          type: number
+          example: 11.98
+          description: Amount of expense spent by/for guest
+        company:
+          type: string
+          example: CFA Consultants
+          description: Company of guest. Max 100 characters
+        firstName:
+          type: string
+          example: Jennifer
+          description: First name of guest. Max 100 characters
+        guestType:
+          type: string
+          example: InternalGuest
+          description: Type of guest
+          enum:
+          - InternalGuest
+          - ExternalGuest
+          - HealthCareProvider
+          - TemporaryHealthCareProvider
+          - CRMGuest
+        lastName:
+          type: string
+          example: Garth
+          description: Last name of guest. Max 100 characters
+        percentage:
+          type: number
+          example: 10
+          description: Percentage of expense spent by/for guest
+        title:
+          type: string
+          example: Legal Consultant
+          description: Title of guest. Max 255 characters
+      title: ExpenseReportLineItemPersonGuest
+    Comment:
+      type: object
+      properties:
+        comment:
+          type: string
+          example: Submitted via Chrome River Application. Max 2000 characters
+        createDate:
+          type: string
+          format: date-time
+          example: 2023-01-09 10:57:53+00:00
+          description: Date of comment creation.
+        creatorName:
+          type: string
+          example: Jason Klein
+          description: Name of comment author
+      title: Comment
+    ExpenseReport:
+      type: object
+      properties:
+        budgetDetails:
+          type: array
+          description: Details of budget encumbrance/liquidation amounts associated with the preapproval attached to the report. Only relevant for customers using encumbrance/liquidation.
+          items:
+            $ref: '#/components/schemas/BudgetDetail'
+        comments:
+          type: array
+          description: List of comments written on the expense report
+          items:
+            $ref: '#/components/schemas/Comment'
+        complianceItems:
+          type: array
+          description: List of compliance item issues associated with the expense report
+          items:
+            $ref: '#/components/schemas/ComplianceItem'
+        createDate:
+          type: string
+          format: date-time
+          example: 2022-01-12 03:34:32:000
+          description: Date expense report was created
+        currencyCode:
+          type: string
+          example: USD
+          description: Employee's PayMeInCurrency
+        expenseReportUrl:
+          type: string
+          example: https://app.chromeriver.com/expense_reports_app/DEV034334052?customerCode=CF7H
+          description: URL of expense report
+        hasComplianceItems:
+          type: boolean
+          example: false
+          description: Used in expense-report-approval summaries to notify if header, line item, or children items have compliance items
+        images:
+          type: array
+          description: Filenames of images attached to expense report header
+          items:
+            type: string
+        lineItems:
+          type: array
+          description: List of expense report line items
+          items:
+            $ref: '#/components/schemas/ExpenseReportLineItem'
+        numberOfExpenseLineItems:
+          type: integer
+          format: int32
+          example: 1
+          description: Number of expense items in report
+        preApprovalReportId:
+          type: string
+          example: 010038294829
+          description: 12 character ID of preapproval attached to expense report
+        receiptUrl:
+          type: string
+          example: https://chromeriver.com/v2/expense-report-receipts/010034331701?customerCode=ABCD
+          description: URL of receipt attached to report
+        reportId:
+          type: string
+          example: 010083927384
+          description: 12 character ID of expense report
+        reportName:
+          type: string
+          example: Trip to St. Louis 9/19-9/20
+          description: Name of expense report. Max 45 characters
+        reportOwner:
+          $ref: '#/components/schemas/Person'
+        reportStatus:
+          type: string
+          example: Submitted
+          description: Status of expense report
+          enum:
+          - New
+          - Draft
+          - Submitted
+          - Deleted
+          - Returned
+        reportTotalAmount:
+          type: number
+          example: 119.81
+          description: Total of expenses in report
+        reportTotalAmountApproved:
+          type: number
+          example: 119.81
+          description: Total of approved expenses in report
+        reportTotalFirmPaidAmount:
+          type: number
+          example: 119.81
+          description: Total of firm paid expenses in report
+        reportTotalPayMeAmount:
+          type: number
+          example: 119.81
+          description: Total of amount due to expense owner
+        submitDate:
+          type: string
+          format: date-time
+          example: 2022-01-12 05:34:32:000
+          description: Date expense report was submitted
+        transactionGroupReferenceNumber:
+          type: string
+          example: IBQRNA1
+          description: Expense transaction group reference number associated with the expense report. Max 255 characters
+        udas:
+          type: array
+          description: Returned on GET requests. POST/PATCH/PUT requests with this field will result in a BAD_REQUEST
+          items:
+            $ref: '#/components/schemas/UserDefinedAttribute'
+        updateDate:
+          type: string
+          format: date-time
+          example: 2022-01-12 05:34:32:000
+          description: Date expense report was last updated
+      title: ExpenseReport
+    PersonEntities:
+      type: object
+      properties:
+        entityCode:
+          type: string
+          example: FIN
+          description: Entity code. Max 50 characters
+        entityName:
+          type: string
+          example: Finance
+          description: Entity name. Max 100 characters
+        entityTypeCode:
+          type: string
+          example: DEPT
+          description: Entity type code. Max 32 characters
+        entityTypeName:
+          type: string
+          example: Department
+          description: Entity type name. Max 50 characters
+        roleName:
+          type: string
+          example: Part Of
+          description: Role name for the person-entity relationship. Max 50 characters
+      title: PersonEntities
     PerDiemLineItem:
       type: object
       properties:
@@ -1107,38 +1133,6 @@ components:
         totalFoodAmount:
           type: number
       title: PerDiemLineItem
-    Entity:
-      type: object
-      properties:
-        code:
-          type: string
-          example: 100
-          description: Entity code. Max 50 characters
-        extraData1:
-          type: string
-          example: Main
-          description: Extra data field. Max 1000 characters
-        extraData2:
-          type: string
-          example: Office
-          description: Extra data field. Max 1000 characters
-        extraData3:
-          type: string
-          example: 1000
-          description: Extra data field. Max 1000 characters
-        extraData4:
-          type: string
-          example: 900
-          description: Extra data field. Max 1000 characters
-        extraData5:
-          type: string
-          example: '0000'
-          description: Extra data field. Max 1000 characters
-        name:
-          type: string
-          example: Los Angeles
-          description: Name of entity. Max 100 characters
-      title: Entity
     UserDefinedAttribute:
       type: object
       properties:
@@ -1183,97 +1177,6 @@ components:
           type: string
           description: Name of user defined attribute. Max 60 characters
       title: UserDefinedAttribute
-    Person:
-      type: object
-      properties:
-        firstName:
-          type: string
-          example: Smith
-          description: Person's last name. Max 100 characters
-        lastName:
-          type: string
-          example: Jacob
-          description: Person's first name. Max 100 characters
-        personEntities:
-          type: array
-          description: List of person entities associated with person
-          items:
-            $ref: '#/components/schemas/PersonEntities'
-        personUniqueId:
-          type: string
-          example: jsmith
-          description: Unique identifier for person. Max 100 characters
-        primaryEmailAddress:
-          type: string
-          example: jacob.smith@cpa.org
-          description: Person's primary email address. Max 100 characters
-        reportsToUniqueId:
-          type: string
-          example: lkemp
-          description: Unique identifier for manager person reports to
-        title:
-          type: string
-          example: Associate Accountant
-          description: Person's title. Max 255 characters
-        uniquePersonId:
-          type: string
-      title: Person
-    Comment:
-      type: object
-      properties:
-        comment:
-          type: string
-          example: Submitted via Chrome River Application. Max 2000 characters
-        createDate:
-          type: string
-          format: date-time
-          example: 2023-01-09 10:57:53+00:00
-          description: Date of comment creation.
-        creatorName:
-          type: string
-          example: Jason Klein
-          description: Name of comment author
-      title: Comment
-    OpenExpenseReport:
-      type: object
-      properties:
-        dateOfLastChange:
-          type: string
-          example: 2022-10-13T10:29:32.000X
-          description: Date report was last updated
-        personUniqueId:
-          type: string
-          example: jsmith
-          description: Unique ID of report owner. Max 50 characters
-        reportId:
-          type: string
-          example: 010093028019
-          description: 12 digit report ID
-      title: OpenExpenseReport
-    PersonEntities:
-      type: object
-      properties:
-        entityCode:
-          type: string
-          example: FIN
-          description: Entity code. Max 50 characters
-        entityName:
-          type: string
-          example: Finance
-          description: Entity name. Max 100 characters
-        entityTypeCode:
-          type: string
-          example: DEPT
-          description: Entity type code. Max 32 characters
-        entityTypeName:
-          type: string
-          example: Department
-          description: Entity type name. Max 50 characters
-        roleName:
-          type: string
-          example: Part Of
-          description: Role name for the person-entity relationship. Max 50 characters
-      title: PersonEntities
     ExpenseRoutingTrackingItem:
       type: object
       properties:
@@ -1496,6 +1399,59 @@ components:
           example: 5
           description: Rate of VAT tax
       title: LineItemAllocation
+    PerDiemRate:
+      type: object
+      properties:
+        amountMaximumPerDiem:
+          type: number
+        city:
+          type: string
+      title: PerDiemRate
+    OpenExpenseReport:
+      type: object
+      properties:
+        dateOfLastChange:
+          type: string
+          example: 2022-10-13T10:29:32.000X
+          description: Date report was last updated
+        personUniqueId:
+          type: string
+          example: jsmith
+          description: Unique ID of report owner. Max 50 characters
+        reportId:
+          type: string
+          example: 010093028019
+          description: 12 digit report ID
+      title: OpenExpenseReport
+    ExpenseHeaderNote:
+      type: object
+      properties:
+        createDate:
+          type: string
+          format: date-time
+        createDateStr:
+          type: string
+        creatorName:
+          type: string
+        customerID:
+          type: integer
+          format: int32
+        expenseReportHeaderID:
+          type: string
+        headerNoteID:
+          type: string
+        headerUpdateDate:
+          type: string
+          format: date-time
+        note:
+          type: string
+        personID:
+          type: integer
+          format: int32
+        submitDate:
+          type: string
+          format: date-time
+      title: ExpenseHeaderNote
     ExpenseReportHeaderCreateModel:
       type: object
       required:
@@ -1516,26 +1472,70 @@ components:
           example: 1
           description: Field used to associate an Expense Transactions Group with the report.
       title: ExpenseReportHeaderCreateModel
-    PaLineItemType:
+    Person:
       type: object
       properties:
-        externalRef:
+        firstName:
           type: string
-          example: 4320
-          description: Reference to an external system's expense types. Max 50 characters
-        id:
-          type: integer
-          format: int32
-          example: 1398
-          description: Internal ID of preapproval line item
+          example: Smith
+          description: Person's last name. Max 100 characters
+        lastName:
+          type: string
+          example: Jacob
+          description: Person's first name. Max 100 characters
+        personEntities:
+          type: array
+          description: List of person entities associated with person
+          items:
+            $ref: '#/components/schemas/PersonEntities'
+        personUniqueId:
+          type: string
+          example: jsmith
+          description: Unique identifier for person. Max 100 characters
+        primaryEmailAddress:
+          type: string
+          example: jacob.smith@cpa.org
+          description: Person's primary email address. Max 100 characters
+        reportsToUniqueId:
+          type: string
+          example: lkemp
+          description: Unique identifier for manager person reports to
+        title:
+          type: string
+          example: Associate Accountant
+          description: Person's title. Max 255 characters
+        uniquePersonId:
+          type: string
+      title: Person
+    Entity:
+      type: object
+      properties:
+        code:
+          type: string
+          example: 100
+          description: Entity code. Max 50 characters
+        extraData1:
+          type: string
+          example: Main
+          description: Extra data field. Max 1000 characters
+        extraData2:
+          type: string
+          example: Office
+          description: Extra data field. Max 1000 characters
+        extraData3:
+          type: string
+          example: 1000
+          description: Extra data field. Max 1000 characters
+        extraData4:
+          type: string
+          example: 900
+          description: Extra data field. Max 1000 characters
+        extraData5:
+          type: string
+          example: '0000'
+          description: Extra data field. Max 1000 characters
         name:
           type: string
-          example: Airfare
-          description: Expense type of preapproval line item. Max 50 characters
-        type:
-          type: string
-          example: LineItem
-          enum:
-          - LineItem
-          - Header
-      title: PaLineItemType
+          example: Los Angeles
+          description: Name of entity. Max 100 characters
+      title: Entity

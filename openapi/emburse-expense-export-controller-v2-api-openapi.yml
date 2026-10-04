@@ -190,13 +190,6 @@ paths:
       deprecated: false
 components:
   requestBodies:
-    ExportStatusModel:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ExportStatusModel'
-      description: Payload required to post status of an export
-      required: true
     repostExternalExportStatusByExportIdsUsingPATCHListOfExportids:
       content:
         application/json:
@@ -205,6 +198,13 @@ components:
             items:
               type: string
       description: exportIds
+      required: true
+    ExportStatusModel:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExportStatusModel'
+      description: Payload required to post status of an export
       required: true
   schemas:
     ExportStatusModel:

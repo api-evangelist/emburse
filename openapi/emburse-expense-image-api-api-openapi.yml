@@ -680,9 +680,29 @@ paths:
         '412':
           $ref: '#/components/responses/412'
 components:
+  parameters:
+    x-api-key:
+      name: x-api-key
+      in: header
+      description: API key for Authentication
+      required: true
+      schema:
+        type: string
+    chain-id:
+      name: chain-id
+      in: header
+      description: Reference used to track the flow of the request
+      required: true
+      schema:
+        type: string
+    customer-code:
+      name: customer-code
+      in: header
+      description: Unique customer identifier provided by Chrome River
+      required: true
+      schema:
+        type: string
   schemas:
-    lineItemVoucherInvoice:
-      type: string
     VoucherInvoiceTO:
       type: object
       properties:
@@ -699,32 +719,12 @@ components:
           type: string
         isReceiptUpdatedAfterExport:
           type: string
+    lineItemVoucherInvoice:
+      type: string
     lineItemVoucherInvoiceList:
       type: array
       items:
         $ref: '#/components/schemas/lineItemVoucherInvoice'
-  parameters:
-    chain-id:
-      name: chain-id
-      in: header
-      description: Reference used to track the flow of the request
-      required: true
-      schema:
-        type: string
-    x-api-key:
-      name: x-api-key
-      in: header
-      description: API key for Authentication
-      required: true
-      schema:
-        type: string
-    customer-code:
-      name: customer-code
-      in: header
-      description: Unique customer identifier provided by Chrome River
-      required: true
-      schema:
-        type: string
   responses:
     '412':
       description: This feature is not activated for customer = %d. Please contact Support@Chromeriver.com

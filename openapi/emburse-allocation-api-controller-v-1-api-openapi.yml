@@ -239,44 +239,15 @@ paths:
           description: Service unavailable.
       deprecated: false
 components:
+  requestBodies:
+    MatterTO:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/MatterTO'
+      description: matterTO
+      required: true
   schemas:
-    EntityTO:
-      type: object
-      properties:
-        code:
-          type: string
-        entityId:
-          type: integer
-          format: int32
-        entityType:
-          $ref: '#/components/schemas/EntityTypeTO'
-        extraData1:
-          type: string
-        extraData2:
-          type: string
-        extraData3:
-          type: string
-        extraData4:
-          type: string
-        extraData5:
-          type: string
-        name:
-          type: string
-        order:
-          type: integer
-          format: int32
-      title: EntityTO
-    EntityTypeTO:
-      type: object
-      properties:
-        code:
-          type: string
-        entityTypeId:
-          type: integer
-          format: int32
-        name:
-          type: string
-      title: EntityTypeTO
     PersonTO:
       type: object
       properties:
@@ -285,6 +256,11 @@ components:
         personId:
           type: string
       title: PersonTO
+    Map_string_string_:
+      type: object
+      title: Map«string,string»
+      additionalProperties:
+        type: string
     MatterTO:
       type: object
       properties:
@@ -420,11 +396,6 @@ components:
         udf4:
           type: string
       title: MatterTO
-    Map_string_string_:
-      type: object
-      title: Map«string,string»
-      additionalProperties:
-        type: string
     MatterUDATO:
       type: object
       properties:
@@ -444,11 +415,40 @@ components:
         value:
           type: string
       title: MatterUDATO
-  requestBodies:
-    MatterTO:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/MatterTO'
-      description: matterTO
-      required: true
+    EntityTypeTO:
+      type: object
+      properties:
+        code:
+          type: string
+        entityTypeId:
+          type: integer
+          format: int32
+        name:
+          type: string
+      title: EntityTypeTO
+    EntityTO:
+      type: object
+      properties:
+        code:
+          type: string
+        entityId:
+          type: integer
+          format: int32
+        entityType:
+          $ref: '#/components/schemas/EntityTypeTO'
+        extraData1:
+          type: string
+        extraData2:
+          type: string
+        extraData3:
+          type: string
+        extraData4:
+          type: string
+        extraData5:
+          type: string
+        name:
+          type: string
+        order:
+          type: integer
+          format: int32
+      title: EntityTO

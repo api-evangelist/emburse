@@ -170,14 +170,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    EntityLanguage:
-      type: object
-      properties:
-        locale:
-          type: string
-        name:
-          type: string
-      title: EntityLanguage
     ApiResponse:
       type: object
       properties:
@@ -246,6 +238,14 @@ components:
           items:
             $ref: '#/components/schemas/EntityLanguage'
       title: Entity
+    EntityLanguage:
+      type: object
+      properties:
+        locale:
+          type: string
+        name:
+          type: string
+      title: EntityLanguage
   requestBodies:
     EntityArray:
       content:
