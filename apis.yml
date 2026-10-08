@@ -53,6 +53,11 @@ tags:
 - Invoice Processing
 - Finance
 - Fintech
+- Ai Apps
+- Travel And Expense
+- Invoice Management
+- Spend Management
+- Enterprise Software
 tags_raw:
 - Expense Management
 - AP Automation
@@ -63,6 +68,11 @@ tags_raw:
 - Invoice Processing
 - Finance
 - FinTech
+- Ai Apps
+- Travel And Expense
+- Invoice Management
+- Spend Management
+- Enterprise Software
 apis:
 - name: Emburse Professional API
   description: >
@@ -791,6 +801,8 @@ common:
   url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/vocabulary/emburse-vocabulary.yml
 - type: JSONLDContext
   url: https://raw.githubusercontent.com/api-evangelist/emburse/refs/heads/main/json-ld/emburse-context.jsonld
+- type: Website
+  url: https://www.emburse.com/enterprise/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
