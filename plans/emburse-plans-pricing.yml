@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-06-12 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-06-12'
 spec: API Commons Plans 0.1
 provider: Emburse
 providerId: emburse
@@ -198,3 +203,52 @@ plans:
       - type: boolean
         name: OAuth 2.0 Authentication
         value: true
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  units: []
+  plans:
+  - name: Emburse Professional Essential
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Emburse Professional Pro
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Emburse Professional Enterprise
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Emburse Cards Starter
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Emburse Cards Business
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Emburse Cards Enterprise
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Emburse Spend Plus
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
